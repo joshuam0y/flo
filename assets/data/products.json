@@ -1,0 +1,323 @@
+{
+  "currency": "usd",
+  "shipping": {
+    "flatRate": 8,
+    "freeOver": 150
+  },
+  "products": [
+    {
+      "id": "cloud-hoodie",
+      "name": "Cloud Hoodie",
+      "type": "hoodie",
+      "category": "tops",
+      "price": 88,
+      "badge": "Best seller",
+      "colors": [
+        {
+          "name": "Bone",
+          "hex": "#e9e2d6"
+        },
+        {
+          "name": "Espresso",
+          "hex": "#3b2b22"
+        },
+        {
+          "name": "Sage",
+          "hex": "#a9ae98"
+        },
+        {
+          "name": "Onyx",
+          "hex": "#1c1b1a"
+        }
+      ],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "front": "chest",
+      "back": "back-big",
+      "description": "Our heaviest fleece, brushed until it feels like the inside of a cloud. Dropped shoulders, a double-layer hood and a boxy, slightly cropped body.",
+      "details": [
+        "Heavyweight brushed fleece",
+        "Double-layer hood, no drawcord aglets to rattle",
+        "Ribbed cuffs and hem",
+        "Tonal embroidered chest mark"
+      ],
+      "photos": []
+    },
+    {
+      "id": "cloud-sweatpant",
+      "name": "Cloud Sweatpant",
+      "type": "pant",
+      "category": "bottoms",
+      "price": 78,
+      "badge": "Pairs with the hoodie",
+      "colors": [
+        {
+          "name": "Espresso",
+          "hex": "#3b2b22"
+        },
+        {
+          "name": "Bone",
+          "hex": "#e9e2d6"
+        },
+        {
+          "name": "Sage",
+          "hex": "#a9ae98"
+        },
+        {
+          "name": "Onyx",
+          "hex": "#1c1b1a"
+        }
+      ],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "front": "thigh",
+      "back": "none",
+      "description": "The other half of the set. A relaxed straight leg that stacks just right over a sneaker, with a wide elastic waistband you will forget is there.",
+      "details": [
+        "Heavyweight brushed fleece",
+        "Elastic waistband with internal drawcord",
+        "Side seam pockets",
+        "Ribbed ankle cuff"
+      ],
+      "photos": []
+    },
+    {
+      "id": "everyday-tee",
+      "name": "Everyday Heavy Tee",
+      "type": "tee",
+      "category": "tops",
+      "price": 48,
+      "badge": "",
+      "colors": [
+        {
+          "name": "Chalk",
+          "hex": "#f2efe8"
+        },
+        {
+          "name": "Oat",
+          "hex": "#d6c7b0"
+        },
+        {
+          "name": "Onyx",
+          "hex": "#1c1b1a"
+        }
+      ],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "front": "chest",
+      "back": "back-type",
+      "description": "A thick, structured tee that holds its shape after a hundred washes. Boxy through the body with a tight, low-profile collar.",
+      "details": [
+        "Heavyweight combed cotton",
+        "Garment-dyed for a lived-in tone",
+        "Boxy fit, dropped shoulder",
+        "Printed back graphic"
+      ],
+      "photos": []
+    },
+    {
+      "id": "maison-crew",
+      "name": "Maison Crewneck",
+      "type": "crew",
+      "category": "tops",
+      "price": 82,
+      "badge": "New",
+      "colors": [
+        {
+          "name": "Navy",
+          "hex": "#232a38"
+        },
+        {
+          "name": "Heather",
+          "hex": "#c9c6bf"
+        },
+        {
+          "name": "Bone",
+          "hex": "#e9e2d6"
+        }
+      ],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "front": "center",
+      "back": "none",
+      "description": "Collegiate shape, grown-up fabric. The serif mark sits dead center, the way the old sweatshirts did it.",
+      "details": [
+        "Heavyweight brushed fleece",
+        "Thick ribbed collar, cuffs and hem",
+        "Center chest print",
+        "Relaxed fit"
+      ],
+      "photos": []
+    },
+    {
+      "id": "lounge-longsleeve",
+      "name": "Lounge Long Sleeve",
+      "type": "longsleeve",
+      "category": "tops",
+      "price": 58,
+      "badge": "",
+      "colors": [
+        {
+          "name": "Clay",
+          "hex": "#b4775a"
+        },
+        {
+          "name": "Chalk",
+          "hex": "#f2efe8"
+        },
+        {
+          "name": "Onyx",
+          "hex": "#1c1b1a"
+        }
+      ],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "front": "chest",
+      "back": "back-type",
+      "description": "The tee, with sleeves. Made for layering under the hoodie or wearing on its own when the evenings start to turn.",
+      "details": [
+        "Heavyweight combed cotton",
+        "Rib cuffs",
+        "Chest and back prints",
+        "Relaxed fit"
+      ],
+      "photos": []
+    },
+    {
+      "id": "cloud-short",
+      "name": "Cloud Fleece Short",
+      "type": "short",
+      "category": "bottoms",
+      "price": 62,
+      "badge": "",
+      "colors": [
+        {
+          "name": "Sage",
+          "hex": "#a9ae98"
+        },
+        {
+          "name": "Bone",
+          "hex": "#e9e2d6"
+        },
+        {
+          "name": "Onyx",
+          "hex": "#1c1b1a"
+        }
+      ],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "front": "thigh",
+      "back": "none",
+      "description": "Same fleece as the hoodie, cut above the knee. For warm mornings and long flights.",
+      "details": [
+        "Heavyweight brushed fleece",
+        "Elastic waistband with drawcord",
+        "Side pockets",
+        "7 inch inseam"
+      ],
+      "photos": []
+    },
+    {
+      "id": "signature-cap",
+      "name": "Signature Cap",
+      "type": "cap",
+      "category": "accessories",
+      "price": 38,
+      "badge": "",
+      "colors": [
+        {
+          "name": "Onyx",
+          "hex": "#1c1b1a"
+        },
+        {
+          "name": "Bone",
+          "hex": "#e9e2d6"
+        },
+        {
+          "name": "Espresso",
+          "hex": "#3b2b22"
+        }
+      ],
+      "sizes": [
+        "One size"
+      ],
+      "front": "center",
+      "back": "none",
+      "description": "Unstructured six-panel with a soft curved brim and an adjustable strap. Embroidered serif mark.",
+      "details": [
+        "Washed cotton twill",
+        "Unstructured crown",
+        "Adjustable strap with metal buckle",
+        "Embroidered front"
+      ],
+      "photos": []
+    },
+    {
+      "id": "monogram-tote",
+      "name": "Monogram Tote",
+      "type": "tote",
+      "category": "accessories",
+      "price": 42,
+      "badge": "",
+      "colors": [
+        {
+          "name": "Natural",
+          "hex": "#e6dccb"
+        },
+        {
+          "name": "Onyx",
+          "hex": "#1c1b1a"
+        }
+      ],
+      "sizes": [
+        "One size"
+      ],
+      "front": "monogram",
+      "back": "monogram",
+      "description": "Heavy canvas, all-over fló monogram, long enough handles to wear on the shoulder.",
+      "details": [
+        "Heavy cotton canvas",
+        "All-over monogram print",
+        "Shoulder-length handles",
+        "Fits a 15 inch laptop"
+      ],
+      "photos": []
+    }
+  ]
+}

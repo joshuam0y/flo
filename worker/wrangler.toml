@@ -1,0 +1,19 @@
+name = "flo-checkout"
+main = "src/index.js"
+compatibility_date = "2026-09-01"
+
+[vars]
+SITE_URL = "https://joshuam0y.github.io/flo"
+CATALOG_URL = "https://joshuam0y.github.io/flo/assets/data/products.json"
+ALLOWED_ORIGINS = "https://joshuam0y.github.io"
+SHIP_COUNTRIES = "US"
+# "false" = orders land in Printful as drafts you approve by hand (safer while testing).
+# "true"  = orders go straight into production as soon as the customer pays.
+PRINTFUL_AUTO_CONFIRM = "false"
+
+# Secrets — set these with `npx wrangler secret put NAME`, never commit them:
+#   STRIPE_SECRET_KEY        sk_live_... (or sk_test_... while testing)
+#   STRIPE_WEBHOOK_SECRET    whsec_...
+#   PRINTFUL_TOKEN           Printful private token
+#   PRINTFUL_STORE_ID        (optional) if your token covers more than one store
+#   PRINTFUL_VARIANTS        (optional) JSON map of site SKU -> Printful sync variant id
