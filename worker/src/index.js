@@ -89,7 +89,7 @@ function resolveSku(catalog, sku) {
   if (typeof sku !== "string") return null;
   const [id, colorSlug, sizeSlug] = sku.split("_");
   const product = catalog.products.find(p => p.id === id);
-  if (!product) return null;
+  if (!product || product.hidden) return null;
   const color = product.colors.find(c => slug(c.name) === colorSlug);
   const size = product.sizes.find(s => slug(s) === sizeSlug);
   if (!color || !size) return null;

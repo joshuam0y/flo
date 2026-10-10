@@ -12,6 +12,7 @@
   async function loadCatalog() {
     const res = await fetch("assets/data/products.json?v=" + Date.now());
     catalog = await res.json();
+    catalog.products = catalog.products.filter(p => !p.hidden); // hidden products stay in the file for later drops
     return catalog;
   }
   const findProduct = id => catalog.products.find(p => p.id === id);
@@ -219,14 +220,16 @@
       hero.innerHTML = garmentSVG(p.type, "#e9e2d6", { front: p.front, back: p.back }, { side: "back", label: "Grand Touring Tee, back" });
     }
     $$("[data-tile]").forEach(el => {
-      const [id, colorName] = el.dataset.tile.split(":");
+      const [id, colorName, side] = el.dataset.tile.split(":");
       const p = findProduct(id);
+      if (!p) return;
       const c = p.colors.find(x => x.name === colorName) || p.colors[0];
-      el.insertAdjacentHTML("afterbegin", garmentSVG(p.type, c.hex, { front: p.front, back: p.back }, { label: p.name }));
+      el.insertAdjacentHTML("afterbegin", garmentSVG(p.type, c.hex, { front: p.front, back: p.back }, { side, ink: c.ink, label: p.name }));
     });
     $$("[data-art]").forEach(el => {
       const [id, colorName, side] = el.dataset.art.split(":");
       const p = findProduct(id);
+      if (!p) return;
       const c = p.colors.find(x => x.name === colorName) || p.colors[0];
       el.insertAdjacentHTML("afterbegin", garmentSVG(p.type, c.hex, { front: p.front, back: p.back }, { side, label: p.name }));
     });
@@ -236,7 +239,8 @@
     const grid = $("#shop-grid");
     if (!grid) return;
     const params = new URLSearchParams(location.search);
-    let active = params.get("c") || "all";
+    const categories = new Set(catalog.products.map(p => p.category));
+    let active = categories.has(params.get("c")) ? params.get("c") : "all"; // old links (?c=tops) fall back to all
     const draw = () => {
       const list = catalog.products.filter(p => active === "all" || p.category === active);
       grid.innerHTML = list.map(card).join("");
@@ -275,6 +279,7 @@
     root.querySelector(".pdp__desc").textContent = p.description;
     $("#pdp-badge").textContent = p.badge || "flò essentials";
     $("#pdp-details").innerHTML = `<ul>${p.details.map(d => `<li>${d}</li>`).join("")}</ul>`;
+    if (p.fit) $("#pdp-fit").textContent = p.fit;
 
     const swatches = $("#pdp-swatches");
     swatches.innerHTML = p.colors.map(c =>

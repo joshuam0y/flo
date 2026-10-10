@@ -7,10 +7,56 @@
   },
   "products": [
     {
+      "id": "grand-touring-tee",
+      "name": "Grand Touring Tee",
+      "type": "tee",
+      "category": "tees",
+      "price": 54,
+      "badge": "New · Drop 001",
+      "colors": [
+        {
+          "name": "Bone",
+          "hex": "#e9e2d6"
+        },
+        {
+          "name": "Onyx",
+          "hex": "#1c1b1a"
+        },
+        {
+          "name": "Espresso",
+          "hex": "#3b2b22"
+        },
+        {
+          "name": "Chalk",
+          "hex": "#f2efe8"
+        }
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "front": "chest",
+      "back": "img:grand-touring",
+      "description": "Comfort at any speed. A grand tourer on a desert road at golden hour, framed in an arch and printed full-size on the back of our heavyweight tee, with the serif mark at the chest.",
+      "details": [
+        "Shaka Wear Max Heavyweight tee (SHMHSS)",
+        "7.5 oz, 100% US cotton",
+        "Relaxed fit, slightly dropped shoulder",
+        "Full back print, small chest mark",
+        "Ink matched to the shirt colour"
+      ],
+      "photos": [],
+      "lead": "back",
+      "fit": "Relaxed fit with a slightly dropped shoulder. Take your usual size for the intended look, or size down for a closer fit."
+    },
+    {
       "id": "cloud-hoodie",
       "name": "Cloud Hoodie",
       "type": "hoodie",
-      "category": "tops",
+      "category": "hoodies",
       "price": 88,
       "badge": "Signature",
       "colors": [
@@ -46,21 +92,23 @@
       ],
       "front": "img:crest-car",
       "back": "classic",
-      "description": "Our heaviest fleece, brushed until it feels like the inside of a cloud. Grand Touring crest on the front, FLÒ across the back, and a boxy, slightly cropped body.",
+      "description": "Soft midweight fleece with a cotton face, made to be worn every day. Grand Touring crest on the front, FLÒ across the back.",
       "details": [
-        "Heavyweight brushed fleece",
-        "Double-layer hood, no drawcord aglets to rattle",
+        "Independent Trading Co. Midweight Hoodie (SS4500)",
+        "8.5 oz fleece, 80% cotton / 20% polyester, 100% cotton face",
+        "Jersey-lined hood, metal eyelets",
         "Ribbed cuffs and hem",
         "Grand Touring crest on the front",
         "FLÒ wordmark across the upper back"
       ],
-      "photos": []
+      "photos": [],
+      "fit": "Unisex regular fit. Take your usual size, or size up for a roomier hoodie."
     },
     {
       "id": "palm-springs-tee",
       "name": "Palm Springs Tee",
       "type": "tee",
-      "category": "tops",
+      "category": "tees",
       "price": 48,
       "badge": "New",
       "colors": [
@@ -90,52 +138,49 @@
       "photos": [
         "assets/img/products/palm-springs-front.jpg?v=2",
         "assets/img/products/palm-springs-back.jpg?v=2"
-      ]
+      ],
+      "fit": "Regular fit. Take your usual size."
     },
     {
-      "id": "grand-touring-tee",
-      "name": "Grand Touring Tee",
+      "id": "everyday-tee",
+      "name": "Everyday Heavy Tee",
       "type": "tee",
-      "category": "tops",
-      "price": 54,
-      "badge": "New · Drop 001",
+      "category": "tees",
+      "price": 48,
+      "badge": "",
       "colors": [
         {
-          "name": "Bone",
-          "hex": "#e9e2d6"
+          "name": "Chalk",
+          "hex": "#f2efe8"
+        },
+        {
+          "name": "Oat",
+          "hex": "#d6c7b0"
         },
         {
           "name": "Onyx",
           "hex": "#1c1b1a"
-        },
-        {
-          "name": "Espresso",
-          "hex": "#3b2b22"
-        },
-        {
-          "name": "Chalk",
-          "hex": "#f2efe8"
         }
       ],
       "sizes": [
-        "XS",
         "S",
         "M",
         "L",
         "XL",
         "XXL"
       ],
-      "front": "chest",
-      "back": "img:grand-touring",
-      "description": "Comfort at any speed. A grand tourer on a desert road at golden hour, framed in an arch and printed full-size on the back of our heavyweight tee, with the serif mark at the chest.",
+      "front": "img:crest-car",
+      "back": "classic",
+      "description": "A thick, structured tee that keeps its shape wash after wash, with a sturdy one-inch collar that won't stretch out.",
       "details": [
-        "Heavyweight combed cotton",
-        "Boxy fit, dropped shoulder",
-        "Full back print, small chest mark",
-        "Ink matched to the shirt colour"
+        "Shaka Wear Max Heavyweight tee (SHMHSS)",
+        "7.5 oz, 100% US cotton",
+        "Relaxed fit, slightly dropped shoulder",
+        "Grand Touring crest on the front",
+        "FLÒ wordmark across the upper back"
       ],
       "photos": [],
-      "lead": "back"
+      "fit": "Relaxed fit with a slightly dropped shoulder. Take your usual size for the intended look, or size down for a closer fit."
     },
     {
       "id": "cloud-sweatpant",
@@ -179,48 +224,8 @@
         "Side seam pockets",
         "Ribbed ankle cuff"
       ],
-      "photos": []
-    },
-    {
-      "id": "everyday-tee",
-      "name": "Everyday Heavy Tee",
-      "type": "tee",
-      "category": "tops",
-      "price": 48,
-      "badge": "",
-      "colors": [
-        {
-          "name": "Chalk",
-          "hex": "#f2efe8"
-        },
-        {
-          "name": "Oat",
-          "hex": "#d6c7b0"
-        },
-        {
-          "name": "Onyx",
-          "hex": "#1c1b1a"
-        }
-      ],
-      "sizes": [
-        "XS",
-        "S",
-        "M",
-        "L",
-        "XL",
-        "XXL"
-      ],
-      "front": "img:crest-car",
-      "back": "classic",
-      "description": "A thick, structured tee that holds its shape after a hundred washes. Boxy through the body with a tight, low-profile collar.",
-      "details": [
-        "Heavyweight combed cotton",
-        "Garment-dyed for a lived-in tone",
-        "Boxy fit, dropped shoulder",
-        "Grand Touring crest on the front",
-        "FLÒ wordmark across the upper back"
-      ],
-      "photos": []
+      "photos": [],
+      "hidden": true
     },
     {
       "id": "maison-crew",
@@ -266,7 +271,8 @@
         "Grand Touring crest on the front",
         "FLÒ wordmark across the upper back"
       ],
-      "photos": []
+      "photos": [],
+      "hidden": true
     },
     {
       "id": "lounge-longsleeve",
@@ -307,7 +313,8 @@
         "Grand Touring crest on the front",
         "FLÒ wordmark across the upper back"
       ],
-      "photos": []
+      "photos": [],
+      "hidden": true
     },
     {
       "id": "cloud-short",
@@ -347,7 +354,8 @@
         "Side pockets",
         "7 inch inseam"
       ],
-      "photos": []
+      "photos": [],
+      "hidden": true
     },
     {
       "id": "signature-cap",
@@ -382,7 +390,8 @@
         "Adjustable strap with metal buckle",
         "Embroidered front"
       ],
-      "photos": []
+      "photos": [],
+      "hidden": true
     },
     {
       "id": "monogram-tote",
@@ -413,7 +422,8 @@
         "Shoulder-length handles",
         "Fits a 15 inch laptop"
       ],
-      "photos": []
+      "photos": [],
+      "hidden": true
     }
   ]
 }

@@ -9,9 +9,9 @@ window.FLO_CONFIG = {
   // e.g. hero: "assets/img/hero.jpg". Until then each slot shows an illustration.
   photos: {
     hero: "",
-    "tile-tops": "",
-    "tile-bottoms": "",
-    "tile-accessories": "",
+    "tile-hoodies": "",
+    "tile-tees": "",
+    "tile-grand-touring": "",
     editorial: "",
     about: ""
   }

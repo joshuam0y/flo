@@ -182,6 +182,7 @@
     $("#state").innerHTML = `<option value="" disabled selected hidden></option>` + STATES.map(s => `<option>${s}</option>`).join("");
     const res = await fetch("assets/data/products.json?v=" + Date.now());
     catalog = await res.json();
+    catalog.products = catalog.products.filter(p => !p.hidden);
     items = readBag().filter(i => product(i.id));
     if (!items.length) { location.href = "shop.html"; return; }
 
