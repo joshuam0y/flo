@@ -28,6 +28,13 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Marcellus";
+  src: url("../fonts/marcellus-latin-400-normal.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
 /* ---------- Tokens ---------- */
 :root {
   --paper: #faf8f4;

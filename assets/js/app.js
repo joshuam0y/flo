@@ -20,7 +20,7 @@
     const photo = side === "back" ? p.photos[1] : p.photos[0];
     if (photo) return `<img class="photo ${className || ""}" src="${photo}" alt="${p.name} in ${color.name}" loading="lazy">`;
     return garmentSVG(p.type, color.hex, { front: p.front, back: p.back }, {
-      side, className, label: `${p.name} in ${color.name}, ${side} view`
+      side, className, ink: color.ink, label: `${p.name} in ${color.name}, ${side} view`
     });
   }
 
@@ -200,6 +200,8 @@
       if (en.isIntersecting) { en.target.classList.add("is-in"); io.unobserve(en.target); }
     }), { rootMargin: "0px 0px -8% 0px" });
     $$(".reveal:not(.is-in)").forEach(el => io.observe(el));
+    // never leave products invisible if the observer is slow or unsupported
+    setTimeout(() => $$(".reveal").forEach(el => el.classList.add("is-in")), 1200);
   }
 
   /* ---------- Pages ---------- */
@@ -260,7 +262,7 @@
         <div class="pdp__shot slot">${hasBack ? art(p, color, p.lead === "back" ? "front" : "back") : art(p, color, "front")}</div>
         <div class="pdp__shot pdp__shot--wide slot">${p.photos[2]
           ? `<img class="photo" src="${p.photos[2]}" alt="${p.name} worn" loading="lazy">`
-          : garmentSVG(p.type, color.hex, { front: p.front, back: p.back }, { side: hasBack ? "back" : "front" })}</div>`;
+          : garmentSVG(p.type, color.hex, { front: p.front, back: p.back }, { side: hasBack ? "back" : "front", ink: color.ink })}</div>`;
     };
 
     root.querySelector(".pdp__name").textContent = p.name;

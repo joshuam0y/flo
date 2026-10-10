@@ -14,6 +14,11 @@
       "badge": "Best seller",
       "colors": [
         {
+          "name": "Rose",
+          "hex": "#f48b9b",
+          "ink": "white"
+        },
+        {
           "name": "Bone",
           "hex": "#e9e2d6"
         },
@@ -38,14 +43,15 @@
         "XL",
         "XXL"
       ],
-      "front": "chest",
-      "back": "back-big",
-      "description": "Our heaviest fleece, brushed until it feels like the inside of a cloud. Dropped shoulders, a double-layer hood and a boxy, slightly cropped body.",
+      "front": "img:crest-car",
+      "back": "classic",
+      "description": "Our heaviest fleece, brushed until it feels like the inside of a cloud. Grand Touring crest on the front, FLÓ across the back, and a boxy, slightly cropped body.",
       "details": [
         "Heavyweight brushed fleece",
         "Double-layer hood, no drawcord aglets to rattle",
         "Ribbed cuffs and hem",
-        "Tonal embroidered chest mark"
+        "Grand Touring crest on the front",
+        "FLÓ wordmark across the upper back"
       ],
       "photos": []
     },
@@ -127,7 +133,7 @@
         "XL",
         "XXL"
       ],
-      "front": "thigh",
+      "front": "classic",
       "back": "none",
       "description": "The other half of the set. A relaxed straight leg that stacks just right over a sneaker, with a wide elastic waistband you will forget is there.",
       "details": [
@@ -167,14 +173,15 @@
         "XL",
         "XXL"
       ],
-      "front": "chest",
-      "back": "back-type",
+      "front": "img:crest-car",
+      "back": "classic",
       "description": "A thick, structured tee that holds its shape after a hundred washes. Boxy through the body with a tight, low-profile collar.",
       "details": [
         "Heavyweight combed cotton",
         "Garment-dyed for a lived-in tone",
         "Boxy fit, dropped shoulder",
-        "Printed back graphic"
+        "Grand Touring crest on the front",
+        "FLÓ wordmark across the upper back"
       ],
       "photos": []
     },
@@ -186,6 +193,11 @@
       "price": 82,
       "badge": "New",
       "colors": [
+        {
+          "name": "Rose",
+          "hex": "#f48b9b",
+          "ink": "white"
+        },
         {
           "name": "Navy",
           "hex": "#232a38"
@@ -207,14 +219,15 @@
         "XL",
         "XXL"
       ],
-      "front": "center",
-      "back": "none",
-      "description": "Collegiate shape, grown-up fabric. The serif mark sits dead center, the way the old sweatshirts did it.",
+      "front": "img:crest-car",
+      "back": "classic",
+      "description": "Collegiate shape, grown-up fabric. The Grand Touring crest sits on the chest, with the classic FLÓ wordmark across the back.",
       "details": [
         "Heavyweight brushed fleece",
         "Thick ribbed collar, cuffs and hem",
-        "Center chest print",
-        "Relaxed fit"
+        "Relaxed fit",
+        "Grand Touring crest on the front",
+        "FLÓ wordmark across the upper back"
       ],
       "photos": []
     },
@@ -247,14 +260,15 @@
         "XL",
         "XXL"
       ],
-      "front": "chest",
-      "back": "back-type",
+      "front": "img:crest-car",
+      "back": "classic",
       "description": "The tee, with sleeves. Made for layering under the hoodie or wearing on its own when the evenings start to turn.",
       "details": [
         "Heavyweight combed cotton",
         "Rib cuffs",
-        "Chest and back prints",
-        "Relaxed fit"
+        "Relaxed fit",
+        "Grand Touring crest on the front",
+        "FLÓ wordmark across the upper back"
       ],
       "photos": []
     },
@@ -287,7 +301,7 @@
         "XL",
         "XXL"
       ],
-      "front": "thigh",
+      "front": "classic",
       "back": "none",
       "description": "Same fleece as the hoodie, cut above the knee. For warm mornings and long flights.",
       "details": [
@@ -322,7 +336,7 @@
       "sizes": [
         "One size"
       ],
-      "front": "center",
+      "front": "classic",
       "back": "none",
       "description": "Unstructured six-panel with a soft curved brim and an adjustable strap. Embroidered serif mark.",
       "details": [

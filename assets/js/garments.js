@@ -87,7 +87,9 @@
     return "#" + c.map(v => v.toString(16).padStart(2, "0")).join("");
   }
 
-  function printMarkup(kind, s, ink, id) {
+  const PRINT_RATIOS = { "grand-touring": 0.9, "crest-car": 1, "classic-wordmark": 0.3 };
+
+  function printMarkup(kind, s, ink, id, back) {
     const serif = "font-family:'Bodoni Moda',Didot,serif";
     const sans = "font-family:Jost,Futura,sans-serif";
     if (kind === "chest" && s.chest) {
@@ -115,11 +117,25 @@
         `<text x="${x}" y="${y - 30 + i * 40}" text-anchor="middle" fill="${ink}" style="${sans};font-size:38px;font-weight:700;font-style:italic;letter-spacing:1px">${t}</text>`
       ).join("") + `<text x="${x}" y="${y + 70}" text-anchor="middle" fill="${ink}" style="${serif};font-size:20px;font-style:italic">${BRAND}</text>`;
     }
-    if (kind && kind.startsWith("img:") && s.back) {
-      // artwork file, in a black-ink and a cream-ink version: assets/img/prints/<name>-black|cream.png
-      const file = `assets/img/prints/${kind.slice(4)}-${ink === "#efe8dc" ? "cream" : "black"}.png`;
-      const w = 200, h = w * 0.9;
-      return `<image href="${file}" x="${s.back[0] - w / 2}" y="${s.back[1] - h / 2 + 4}" width="${w}" height="${h}"/>`;
+    if (kind && kind.startsWith("img:")) {
+      // artwork files in black, cream and white ink: assets/img/prints/<name>-<ink>.png
+      const name = kind.slice(4);
+      const inkName = ink === "#ffffff" ? "white" : ink === "#efe8dc" ? "cream" : "black";
+      const file = `assets/img/prints/${name}-${inkName}.png`;
+      const ratio = PRINT_RATIOS[name] || 1;
+      const anchor = back ? s.back : s.center;
+      if (!anchor) return "";
+      const w = back ? 200 : 150, h = w * ratio;
+      return `<image href="${file}" x="${anchor[0] - w / 2}" y="${anchor[1] - h / 2 + (back ? 4 : 0)}" width="${w}" height="${h}"/>`;
+    }
+    if (kind === "classic") {
+      // the FLÓ wordmark in Marcellus: upper back on tops, thigh on bottoms, front of the cap
+      const classic = "font-family:Marcellus,'Bodoni Moda',serif";
+      const spot = back && s.back ? [s.back[0], s.back[1] - 66, 62, 7]
+        : s.thigh ? [s.thigh[0], s.thigh[1], 24, 3]
+        : s.center ? [s.center[0], s.center[1], 46, 5] : null;
+      if (!spot) return "";
+      return `<text x="${spot[0]}" y="${spot[1]}" text-anchor="middle" fill="${ink}" style="${classic};font-size:${spot[2]}px;letter-spacing:${spot[3]}px">FLÓ</text>`;
     }
     if (kind === "monogram") {
       // all-over pattern, clipped to the bag body
@@ -180,7 +196,7 @@
     if (s.button) parts.push(`<circle cx="${s.button[0]}" cy="${s.button[1]}" r="8" fill="${edge}"/>`);
     if (type === "cap" && back) parts.push(`<path d="M164 300 C170 262 230 262 236 300 Z" fill="${shade(hex, dark ? -14 : -30)}"/>`);
 
-    parts.push(printMarkup(back ? kind.back : kind.front, s, ink, id));
+    parts.push(printMarkup(back ? kind.back : kind.front, s, opts.ink === "white" ? "#ffffff" : ink, id, back));
 
     // light falloff over everything that sits on the garment body
     parts.push(`<use href="#b${id}" fill="url(#g${id})"/>`);
