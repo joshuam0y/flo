@@ -120,31 +120,8 @@
     writeBag(items.filter(i => i.qty > 0));
   }
 
-  async function checkout() {
-    const items = readBag();
-    if (!items.length) return;
-    const url = window.FLO_CONFIG && window.FLO_CONFIG.checkoutUrl;
-    if (!url) {
-      toast("Checkout opens with our first drop. Join the list to hear first.");
-      return;
-    }
-    const btn = $("#bag-checkout");
-    btn.disabled = true;
-    btn.textContent = "Opening secure checkout…";
-    try {
-      const res = await fetch(url, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ items: items.map(i => ({ sku: i.sku, qty: i.qty })) })
-      });
-      const data = await res.json();
-      if (!res.ok || !data.url) throw new Error(data.error || "Checkout failed");
-      location.href = data.url;
-    } catch (err) {
-      toast("Something went wrong opening checkout. Please try again.");
-      btn.disabled = false;
-      btn.textContent = "Checkout";
-    }
+  function checkout() {
+    if (readBag().length) location.href = "checkout.html";
   }
 
   /* ---------- UI chrome ---------- */
@@ -312,7 +289,34 @@
   }
 
   function renderSuccess() {
-    if (document.body.dataset.page === "success") writeBag([]);
+    if (document.body.dataset.page !== "success") return;
+    writeBag([]);
+    let order = null;
+    try { order = JSON.parse(localStorage.getItem("flo-last-order")); } catch { /* ignore */ }
+    const num = new URLSearchParams(location.search).get("order");
+    if (!order || order.number !== num) return; // Stripe orders keep the generic thank-you
+    const m = n => "$" + n.toFixed(2);
+    const day = n => { const d = new Date(order.placed); d.setDate(d.getDate() + n); return d.toLocaleDateString("en-US", { month: "short", day: "numeric" }); };
+    const [lo, hi] = order.method.id === "express" ? [4, 7] : [6, 12];
+    $("#confirm").innerHTML = `
+      <p class="label label--mute">Order ${order.number}${order.demo ? " · demo" : ""}</p>
+      <h1 class="display confirm__title">Thank you, <em>${order.ship.name.split(" ")[0]}.</em></h1>
+      <p style="color:var(--ink-2);max-width:520px">Your order is confirmed and your pieces are going into production. We've sent a receipt to <b>${order.email}</b>, and tracking will follow as soon as it ships.</p>
+      ${order.demo ? `<p class="label" style="color:#8a5a12;margin-top:14px">Demo order: no payment was taken.</p>` : ""}
+      <div class="track"><span class="on"></span><span></span><span></span><span></span></div>
+      <div class="track-labels label label--mute"><span>Confirmed</span><span>In production</span><span>Shipped</span><span>Arrives ${day(lo)}–${day(hi)}</span></div>
+      <div class="confirm__grid">
+        <div><p class="label">Shipping to</p><p>${order.ship.name}<br>${order.ship.lines.join("<br>")}</p></div>
+        <div><p class="label">Delivery</p><p>${order.method.name} · ${order.method.note}<br>Paid with card ${order.card}</p></div>
+      </div>
+      ${order.items.map(i => `<div class="bag__row" style="padding:10px 0;border-bottom:1px solid var(--line)"><span>${i.name} <span class="label label--mute">${i.color} · ${i.size} × ${i.qty}</span></span><span>${m(i.price * i.qty)}</span></div>`).join("")}
+      <div class="co-totals" style="border:0">
+        <div class="bag__row"><span>Subtotal</span><span>${m(order.totals.subtotal)}</span></div>
+        ${order.totals.off ? `<div class="bag__row"><span>Discount (${order.discount})</span><span>−${m(order.totals.off)}</span></div>` : ""}
+        <div class="bag__row"><span>Shipping</span><span>${order.totals.ship ? m(order.totals.ship) : "Free"}</span></div>
+        <div class="bag__row co-total"><span>Total</span><b>${m(order.totals.total)}</b></div>
+      </div>
+      <p style="margin-top:40px"><a class="btn btn--solid" style="width:auto" href="shop.html">Continue shopping</a></p>`;
   }
 
   /* ---------- Boot ---------- */

@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Checkout — fló</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#faf8f4">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/jost-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/style.css?v=7">
+</head>
+<body data-page="checkout">
+<header class="co-header">
+  <a class="wordmark" href="index.html" aria-label="fló home">fló</a>
+  <span class="label label--mute co-secure"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4 7V5a4 4 0 0 1 8 0v2h1v8H3V7h1Zm2 0h4V5a2 2 0 0 0-4 0v2Z" fill="currentColor"/></svg> Secure checkout</span>
+</header>
+
+<div class="co-demo" id="co-demo" hidden>
+  <span class="label">Demo mode</span> Payments aren't switched on yet, so no card will be charged. Don't enter real card details. Use 4242 4242 4242 4242.
+</div>
+
+<main class="co">
+  <form class="co__main" id="co-form" novalidate>
+    <nav class="co-steps label label--mute" aria-label="Checkout steps">
+      <a href="#" data-open-bag-link>Bag</a> <span>›</span> <b>Information</b> <span>›</span> <span>Shipping</span> <span>›</span> <span>Payment</span>
+    </nav>
+
+    <section class="co-sec">
+      <div class="co-sec__head"><h2 class="co-h">Contact</h2></div>
+      <div class="field"><input id="email" name="email" type="email" autocomplete="email" placeholder=" " required><label for="email">Email</label></div>
+      <label class="check"><input type="checkbox" name="news" checked> <span>Email me about drops and restocks</span></label>
+    </section>
+
+    <section class="co-sec">
+      <div class="co-sec__head"><h2 class="co-h">Delivery</h2></div>
+      <div class="field"><select id="country" name="country" autocomplete="country" required><option value="US" selected>United States</option></select><label for="country">Country</label></div>
+      <div class="row2">
+        <div class="field"><input id="first" name="first" autocomplete="given-name" placeholder=" " required><label for="first">First name</label></div>
+        <div class="field"><input id="last" name="last" autocomplete="family-name" placeholder=" " required><label for="last">Last name</label></div>
+      </div>
+      <div class="field"><input id="address1" name="address1" autocomplete="address-line1" placeholder=" " required><label for="address1">Address</label></div>
+      <div class="field"><input id="address2" name="address2" autocomplete="address-line2" placeholder=" "><label for="address2">Apartment, suite, etc. (optional)</label></div>
+      <div class="row3">
+        <div class="field"><input id="city" name="city" autocomplete="address-level2" placeholder=" " required><label for="city">City</label></div>
+        <div class="field"><select id="state" name="state" autocomplete="address-level1" required></select><label for="state">State</label></div>
+        <div class="field"><input id="zip" name="zip" autocomplete="postal-code" inputmode="numeric" placeholder=" " required pattern="\d{5}(-\d{4})?"><label for="zip">ZIP code</label></div>
+      </div>
+      <div class="field"><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder=" "><label for="phone">Phone (for delivery updates, optional)</label></div>
+    </section>
+
+    <section class="co-sec">
+      <div class="co-sec__head"><h2 class="co-h">Shipping method</h2></div>
+      <div class="radios" id="ship-options"></div>
+    </section>
+
+    <section class="co-sec" id="pay-sec">
+      <div class="co-sec__head"><h2 class="co-h">Payment</h2><span class="label label--mute">All transactions are secure and encrypted</span></div>
+      <div class="paybox">
+        <div class="paybox__head"><span>Credit or debit card</span><span class="cards label label--mute">Visa · Mastercard · Amex</span></div>
+        <div class="paybox__body">
+          <div class="field"><input id="card" name="card" inputmode="numeric" autocomplete="cc-number" placeholder=" " required maxlength="23"><label for="card">Card number</label></div>
+          <div class="row2">
+            <div class="field"><input id="exp" name="exp" inputmode="numeric" autocomplete="cc-exp" placeholder=" " required maxlength="7"><label for="exp">Expiration (MM / YY)</label></div>
+            <div class="field"><input id="cvc" name="cvc" inputmode="numeric" autocomplete="cc-csc" placeholder=" " required maxlength="4"><label for="cvc">Security code</label></div>
+          </div>
+          <div class="field"><input id="cardname" name="cardname" autocomplete="cc-name" placeholder=" " required><label for="cardname">Name on card</label></div>
+        </div>
+      </div>
+      <label class="check"><input type="checkbox" checked disabled> <span>Billing address same as delivery</span></label>
+    </section>
+
+    <p class="co-error" id="co-error" role="alert" hidden></p>
+    <button class="btn btn--solid co-pay" id="co-pay" type="submit">Pay now</button>
+    <p class="co-fine">By placing your order you agree to our <a class="link-u" href="about.html#returns">returns policy</a>. Every piece is made to order and ships in 3–7 business days.</p>
+  </form>
+
+  <aside class="co__side">
+    <button class="co-toggle" id="co-toggle" type="button" aria-expanded="false">
+      <span class="label">Order summary</span><span id="co-toggle-total"></span>
+    </button>
+    <div class="co-summary" id="co-summary">
+      <div id="co-lines"></div>
+      <form class="discount" id="discount-form">
+        <div class="field"><input id="code" placeholder=" " autocomplete="off"><label for="code">Discount code</label></div>
+        <button class="btn" type="submit">Apply</button>
+      </form>
+      <p class="co-code-msg label" id="code-msg" aria-live="polite"></p>
+      <div class="co-totals">
+        <div class="bag__row"><span>Subtotal</span><span id="t-sub"></span></div>
+        <div class="bag__row" id="t-disc-row" hidden><span>Discount <span class="label label--mute" id="t-disc-code"></span></span><span id="t-disc"></span></div>
+        <div class="bag__row"><span>Shipping</span><span id="t-ship"></span></div>
+        <div class="bag__row label--mute"><span>Taxes</span><span>Calculated at payment</span></div>
+        <div class="bag__row co-total"><span>Total</span><span><small class="label label--mute">USD</small> <b id="t-total"></b></span></div>
+      </div>
+    </div>
+  </aside>
+</main>
+
+<div class="toast label" id="toast" role="status" aria-live="polite"></div>
+<script src="assets/js/config.js?v=7"></script>
+<script src="assets/js/garments.js?v=7"></script>
+<script src="assets/js/checkout.js?v=7"></script>
+</body>
+</html>

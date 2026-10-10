@@ -87,7 +87,7 @@
     return "#" + c.map(v => v.toString(16).padStart(2, "0")).join("");
   }
 
-  const PRINT_RATIOS = { "grand-touring": 0.9, "crest-car": 1, "classic-wordmark": 0.3 };
+  const PRINT_RATIOS = { "grand-touring": 1, "crest-car": 1, "classic-wordmark": 0.3 };
 
   function printMarkup(kind, s, ink, id, back) {
     const serif = "font-family:'Bodoni Moda',Didot,serif";

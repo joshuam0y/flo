@@ -11,7 +11,7 @@
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="assets/fonts/bodoni-moda-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/jost-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/style.css?v=6">
+<link rel="stylesheet" href="assets/css/style.css?v=7">
 </head>
 <body data-page="success">
 <div class="announce"><span class="label">Free shipping on orders over $150 &nbsp;·&nbsp; Every piece made to order</span></div>
@@ -42,14 +42,12 @@
   </div>
 </nav>
 <main>
-
-<section class="section" style="text-align:center;min-height:60vh;display:grid;place-content:center;gap:24px">
+<section class="confirm" id="confirm">
   <p class="label label--mute">Order confirmed</p>
-  <h1 class="display" style="font-size:clamp(48px,8vw,112px)">Thank <em>you.</em></h1>
-  <p style="max-width:440px;margin:0 auto;color:var(--ink-2)">Your piece is now being made. A receipt is on its way to your inbox, and we'll email tracking as soon as it ships.</p>
-  <p><a class="btn btn--solid" style="width:auto" href="shop.html">Continue shopping</a></p>
+  <h1 class="display confirm__title">Thank <em>you.</em></h1>
+  <p style="max-width:440px;color:var(--ink-2)">Your piece is now being made. A receipt is on its way to your inbox, and we'll email tracking as soon as it ships.</p>
+  <p style="margin-top:32px"><a class="btn btn--solid" style="width:auto" href="shop.html">Continue shopping</a></p>
 </section>
-
 </main>
 <footer class="footer">
   <div class="footer__cols">
@@ -88,12 +86,12 @@
     <div class="bag__row"><span>Shipping</span><span id="bag-shipping">—</span></div>
     <p class="bag__fine" id="bag-free"></p>
     <button class="btn btn--solid" id="bag-checkout" disabled>Checkout</button>
-    <p class="bag__fine">Secure checkout. Taxes calculated at payment.</p>
+    <p class="bag__fine">Secure checkout · taxes calculated at payment</p>
   </div>
 </aside>
 <div class="toast label" id="toast" role="status" aria-live="polite"></div>
-<script src="assets/js/config.js?v=6"></script>
-<script src="assets/js/garments.js?v=6"></script>
-<script src="assets/js/app.js?v=6"></script>
+<script src="assets/js/config.js?v=7"></script>
+<script src="assets/js/garments.js?v=7"></script>
+<script src="assets/js/app.js?v=7"></script>
 </body>
 </html>
