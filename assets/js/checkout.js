@@ -179,6 +179,7 @@
 
   /* ---------- Boot ---------- */
   document.addEventListener("DOMContentLoaded", async () => {
+    if (!window.FLO_CONFIG || window.FLO_CONFIG.mode !== "live") { location.replace("index.html"); return; } // checkout opens on drop day
     $("#state").innerHTML = `<option value="" disabled selected hidden></option>` + STATES.map(s => `<option>${s}</option>`).join("");
     const res = await fetch("assets/data/products.json?v=" + Date.now());
     catalog = await res.json();

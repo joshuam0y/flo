@@ -1,9 +1,9 @@
 {
   "currency": "usd",
   "shipping": {
-    "flatRate": 8,
-    "freeOver": 150,
-    "express": 18
+    "flatRate": 5,
+    "freeOver": 75,
+    "express": 14
   },
   "products": [
     {
@@ -11,7 +11,7 @@
       "name": "Grand Touring Tee",
       "type": "tee",
       "category": "tees",
-      "price": 54,
+      "price": 42,
       "badge": "New · Drop 001",
       "colors": [
         {
@@ -57,7 +57,7 @@
       "name": "Cloud Hoodie",
       "type": "hoodie",
       "category": "hoodies",
-      "price": 88,
+      "price": 68,
       "badge": "Signature",
       "colors": [
         {
@@ -109,7 +109,7 @@
       "name": "Palm Springs Tee",
       "type": "tee",
       "category": "tees",
-      "price": 48,
+      "price": 38,
       "badge": "New",
       "colors": [
         {
@@ -146,7 +146,7 @@
       "name": "Everyday Heavy Tee",
       "type": "tee",
       "category": "tees",
-      "price": 48,
+      "price": 38,
       "badge": "",
       "colors": [
         {

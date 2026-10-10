@@ -8,6 +8,60 @@
 
   let catalog = null;
 
+  /* ---------- Store mode ---------- */
+  const CFG = window.FLO_CONFIG || {};
+  const prelaunch = CFG.mode !== "live";
+  const signupEndpoint = CFG.signupUrl || (CFG.checkoutUrl ? CFG.checkoutUrl.replace(/\/checkout$/, "/subscribe") : "");
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+  async function joinList(email) {
+    const res = await fetch(signupEndpoint, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email })
+    });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok) throw new Error(data.error || "Something went wrong. Please try again.");
+  }
+
+  // A sign-up form wired to the list, or a pointer to Instagram while sign-ups aren't connected
+  function notifyMarkup(lead) {
+    if (!signupEndpoint) {
+      return `<p>${lead}</p><a class="btn btn--solid" href="${esc(CFG.instagram || "#")}" target="_blank" rel="noopener">Follow for the drop date</a>`;
+    }
+    return `<p>${lead}</p>
+      <form class="notify__form">
+        <input type="email" required placeholder="Email address" aria-label="Email address">
+        <button type="submit">Notify me</button>
+      </form>
+      <p class="notify__msg" aria-live="polite"></p>`;
+  }
+
+  function bindNotify(root) {
+    const form = root.querySelector(".notify__form");
+    if (!form) return;
+    form.addEventListener("submit", async e => {
+      e.preventDefault();
+      const msg = root.querySelector(".notify__msg");
+      msg.textContent = "Joining…";
+      try {
+        await joinList(form.querySelector("input").value);
+        msg.textContent = "You're on the list. We'll email you when the drop opens.";
+        form.reset();
+      } catch (err) { msg.textContent = err.message; }
+    });
+  }
+
+  function setAnnounce() {
+    const el = $("#announce");
+    if (!el || !catalog) return;
+    const free = `Free shipping over ${money(catalog.shipping.freeOver)}`;
+    const code = CFG.launch && CFG.launch.code;
+    if (prelaunch) el.innerHTML = `Drop 001 is coming soon<span class="hide-sm"> &nbsp;·&nbsp; ${free}</span>`;
+    else if (code) el.innerHTML = `${esc(CFG.launch.offer)} with code ${esc(code)}<span class="hide-sm"> &nbsp;·&nbsp; ${free}</span>`;
+    else el.innerHTML = `${free}<span class="hide-sm"> &nbsp;·&nbsp; Every piece made to order</span>`;
+  }
+
   /* ---------- Catalog ---------- */
   async function loadCatalog() {
     const res = await fetch("assets/data/products.json?v=" + Date.now());
@@ -122,6 +176,7 @@
   }
 
   function checkout() {
+    if (prelaunch) return;
     if (readBag().length) location.href = "checkout.html";
   }
 
@@ -162,32 +217,28 @@
       if (e.key === "Escape") { closeBag(); menu.classList.remove("is-open"); }
     });
 
-    // Sign-ups go to the checkout worker's /subscribe; until it's deployed, say so instead of pretending
-    const checkoutUrl = window.FLO_CONFIG && window.FLO_CONFIG.checkoutUrl;
-    $$(".signup__form").forEach(form => form.addEventListener("submit", async e => {
-      e.preventDefault();
+    // The email list: sign-ups go to the worker's /subscribe, or to Instagram until that's connected
+    $$(".signup__form").forEach(form => {
       const msg = form.nextElementSibling;
-      if (!checkoutUrl) { msg.textContent = "Sign-ups open soon. Check back before the next drop."; return; }
-      msg.textContent = "Joining…";
-      try {
-        const res = await fetch(checkoutUrl.replace(/\/checkout$/, "/subscribe"), {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email: form.querySelector("input[type=email]").value })
-        });
-        const data = await res.json().catch(() => ({}));
-        if (!res.ok) throw new Error(data.error);
-        msg.textContent = "You're on the list. We'll be in touch before the drop.";
-        form.reset();
-      } catch (err) {
-        msg.textContent = (err && err.message) || "Something went wrong. Please try again.";
+      if (!signupEndpoint) {
+        form.outerHTML = `<a class="btn btn--white" href="${esc(CFG.instagram || "#")}" target="_blank" rel="noopener">Follow for the drop date</a>`;
+        return;
       }
-    }));
+      form.addEventListener("submit", async e => {
+        e.preventDefault();
+        msg.textContent = "Joining…";
+        try {
+          await joinList(form.querySelector("input[type=email]").value);
+          msg.textContent = "You're on the list. We'll be in touch before the drop.";
+          form.reset();
+        } catch (err) { msg.textContent = err.message; }
+      });
+    });
   }
 
   // Photo slots: only load photos that are listed in config.js
   function fillPhotos() {
-    const photos = (window.FLO_CONFIG && window.FLO_CONFIG.photos) || {};
+    const photos = CFG.photos || {};
     $$("[data-photo]").forEach(img => {
       const src = photos[img.dataset.photo];
       if (!src) { img.remove(); return; }
@@ -307,6 +358,14 @@
     });
 
     const add = $("#pdp-add");
+    if (prelaunch) {
+      // before the drop: no bag, just a way to hear when it opens
+      add.hidden = true;
+      const box = $("#pdp-notify");
+      box.innerHTML = notifyMarkup(`Drop 001 is coming soon. ${esc(p.name)}, ${money(p.price)}.`);
+      box.hidden = false;
+      bindNotify(box);
+    }
     add.textContent = size ? `Add to bag · ${money(p.price)}` : "Select a size";
     add.addEventListener("click", () => {
       if (!size) { toast("Please choose a size."); return; }
@@ -354,6 +413,7 @@
 
   /* ---------- Boot ---------- */
   document.addEventListener("DOMContentLoaded", async () => {
+    document.body.classList.toggle("is-prelaunch", prelaunch);
     bindChrome();
     fillPhotos();
     try {
@@ -362,6 +422,7 @@
       console.error("Could not load products.json. Preview the site through a local server, not file://", err);
       return;
     }
+    setAnnounce();
     renderHome();
     renderShop();
     renderProduct();

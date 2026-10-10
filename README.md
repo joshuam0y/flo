@@ -18,7 +18,8 @@ Customer ──► flò site (GitHub Pages) ──► Checkout worker (Cloudflar
 | Product photos | add paths to a product's `"photos"` list: `[front, back, lifestyle]` |
 | Homepage photos | drop files in `assets/img` and list them under `photos` in `assets/js/config.js` (slots: hero, tile-hoodies, tile-tees, tile-grand-touring, editorial, about) |
 | Colours, fonts, spacing | `assets/css/style.css` (tokens at the top) |
-| Checkout URL, photos | `assets/js/config.js` |
+| Store mode (pre-launch or live), checkout URL, sign-ups, launch code, photos | `assets/js/config.js` |
+| Shipping, refund, privacy and terms | `policies.html` |
 | Print artwork (sources and Printify-ready files) | `artwork/` (see `artwork/README.md`) |
 
 After changing CSS or JS, bump the `?v=` number on the `<link>` and `<script>` tags in every page so browsers fetch the new files.
@@ -26,6 +27,15 @@ After changing CSS or JS, bump the `?v=` number on the `<link>` and `<script>` t
 Until a photo exists, the site draws a clean illustration of the garment in the selected colour, so nothing looks broken.
 
 Preview locally with `python -m http.server` in this folder, then open http://localhost:8000. The site needs a local server, not a double-clicked file.
+
+## Pre-launch and launch day
+
+The store starts in pre-launch mode (`mode: "prelaunch"` in `assets/js/config.js`): people can browse every product and price, but there's no bag or checkout. Product pages and the homepage offer a "notify me" sign-up instead, or point to Instagram until the email list is connected (step 7 below). This is the version to link from Instagram and TikTok.
+
+On drop day, once the steps below are done and a test order has worked:
+
+1. In Stripe, create the launch code: Product catalogue, Coupons, a 15% coupon, then a promotion code `DROP001` with an end date two weeks out. Make friend codes the same way (10% each, one per person) to see who sends sales.
+2. Set `mode: "live"` in `assets/js/config.js` and push. The top banner switches to "15% off Drop 001 with code DROP001", and Add to bag and checkout turn on.
 
 ## Turning on real sales
 
