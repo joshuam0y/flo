@@ -50,6 +50,50 @@
       "photos": []
     },
     {
+      "id": "grand-touring-tee",
+      "name": "Grand Touring Tee",
+      "type": "tee",
+      "category": "tops",
+      "price": 54,
+      "badge": "New — Drop 001",
+      "colors": [
+        {
+          "name": "Bone",
+          "hex": "#e9e2d6"
+        },
+        {
+          "name": "Onyx",
+          "hex": "#1c1b1a"
+        },
+        {
+          "name": "Espresso",
+          "hex": "#3b2b22"
+        },
+        {
+          "name": "Chalk",
+          "hex": "#f2efe8"
+        }
+      ],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "front": "chest",
+      "back": "img:grand-touring",
+      "description": "Comfort at any speed. A low-slung grand tourer parked across an oversized fló, printed full-size on the back of our heavyweight tee, with the serif mark at the chest.",
+      "details": [
+        "Heavyweight combed cotton",
+        "Boxy fit, dropped shoulder",
+        "Full back print, small chest mark",
+        "Ink matched to the shirt colour"
+      ],
+      "photos": []
+    },
+    {
       "id": "cloud-sweatpant",
       "name": "Cloud Sweatpant",
       "type": "pant",

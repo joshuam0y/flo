@@ -115,6 +115,12 @@
         `<text x="${x}" y="${y - 30 + i * 40}" text-anchor="middle" fill="${ink}" style="${sans};font-size:38px;font-weight:700;font-style:italic;letter-spacing:1px">${t}</text>`
       ).join("") + `<text x="${x}" y="${y + 70}" text-anchor="middle" fill="${ink}" style="${serif};font-size:20px;font-style:italic">${BRAND}</text>`;
     }
+    if (kind && kind.startsWith("img:") && s.back) {
+      // artwork file, in a black-ink and a cream-ink version: assets/img/prints/<name>-black|cream.png
+      const file = `assets/img/prints/${kind.slice(4)}-${ink === "#efe8dc" ? "cream" : "black"}.png`;
+      const w = 200, h = w * 0.9;
+      return `<image href="${file}" x="${s.back[0] - w / 2}" y="${s.back[1] - h / 2 + 4}" width="${w}" height="${h}"/>`;
+    }
     if (kind === "monogram") {
       // all-over pattern, clipped to the bag body
       let cells = "";
