@@ -10,7 +10,7 @@
 
   /* ---------- Catalog ---------- */
   async function loadCatalog() {
-    const res = await fetch("assets/data/products.json");
+    const res = await fetch("assets/data/products.json?v=" + Date.now());
     catalog = await res.json();
     return catalog;
   }
@@ -208,8 +208,8 @@
     if (grid) grid.innerHTML = catalog.products.slice(0, 4).map(card).join("");
     const hero = $("#hero-art");
     if (hero) {
-      const p = findProduct("cloud-hoodie");
-      hero.innerHTML = garmentSVG(p.type, "#e9e2d6", { front: p.front, back: p.back }, { side: "back", label: "Cloud Hoodie, back" });
+      const p = findProduct("grand-touring-tee");
+      hero.innerHTML = garmentSVG(p.type, "#e9e2d6", { front: p.front, back: p.back }, { side: "back", label: "Grand Touring Tee, back" });
     }
     $$("[data-tile]").forEach(el => {
       const [id, colorName] = el.dataset.tile.split(":");
