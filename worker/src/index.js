@@ -33,7 +33,7 @@ export default {
 /* ---------- Checkout ---------- */
 
 async function checkout(request, env, cors) {
-  const { items, shipping: method, email } = await request.json();
+  const { items, email } = await request.json();
   if (!Array.isArray(items) || !items.length || items.length > 30) {
     return json({ error: "Your bag is empty." }, 400, cors);
   }
@@ -50,9 +50,9 @@ async function checkout(request, env, cors) {
   }
 
   const subtotal = lines.reduce((s, l) => s + l.product.price * l.qty, 0);
-  const { flatRate, freeOver, express } = catalog.shipping;
-  const isExpress = method === "express";
-  const shipping = isExpress ? express : subtotal >= freeOver ? 0 : flatRate;
+  // Standard shipping only, matching shipping_method 1 in the Printify order below
+  const { flatRate, freeOver } = catalog.shipping;
+  const shipping = subtotal >= freeOver ? 0 : flatRate;
   const currency = catalog.currency || "usd";
 
   const form = new URLSearchParams();
@@ -67,7 +67,7 @@ async function checkout(request, env, cors) {
     form.set(`shipping_address_collection[allowed_countries][${i}]`, c.trim()));
 
   form.set("shipping_options[0][shipping_rate_data][type]", "fixed_amount");
-  form.set("shipping_options[0][shipping_rate_data][display_name]", isExpress ? "Express shipping" : shipping ? "Standard shipping" : "Free shipping");
+  form.set("shipping_options[0][shipping_rate_data][display_name]", shipping ? "Standard shipping" : "Free shipping");
   form.set("shipping_options[0][shipping_rate_data][fixed_amount][amount]", String(shipping * 100));
   form.set("shipping_options[0][shipping_rate_data][fixed_amount][currency]", currency);
 

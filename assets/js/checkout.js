@@ -18,9 +18,10 @@
 
   function shipOptions(subtotal) {
     const s = catalog.shipping;
+    // Standard only: the worker sends every order to Printify as standard shipping, so don't sell
+    // an express option until the print shop offers it and the worker requests it
     return [
-      { id: "standard", name: "Standard", note: "Made to order · 3 to 7 business days", price: subtotal >= s.freeOver ? 0 : s.flatRate },
-      { id: "express", name: "Express", note: "Made to order · 2 to 4 business days", price: s.express }
+      { id: "standard", name: "Standard", note: "Made to order · ships in 3 to 7 business days, tracked", price: subtotal >= s.freeOver ? 0 : s.flatRate }
     ];
   }
 

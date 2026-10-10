@@ -2,8 +2,7 @@
   "currency": "usd",
   "shipping": {
     "flatRate": 5,
-    "freeOver": 75,
-    "express": 14
+    "freeOver": 75
   },
   "products": [
     {
