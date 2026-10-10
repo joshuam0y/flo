@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000" width="1000" height="1000">
+  <!-- flò Grand Touring back print. The scene keeps its own colours; lettering and frame use the ink (currentColor) -->
+  <style>
+    @font-face { font-family: Marcellus; src: url("../assets/fonts/marcellus-latin-400-normal.woff2"); }
+    @font-face { font-family: Jost; src: url("../assets/fonts/jost-latin-wght-normal.woff2"); font-weight: 100 900; }
+    @font-face { font-family: Jost; src: url("../assets/fonts/jost-latin-wght-italic.woff2"); font-style: italic; font-weight: 100 900; }
+    @font-face { font-family: Bodoni; src: url("../assets/fonts/bodoni-moda-latin-wght-italic.woff2"); font-style: italic; font-weight: 400 900; }
+    .caps { font-family: Jost; font-weight: 500; font-size: 22px; letter-spacing: 9px; fill: currentColor; }
+    .mark { font-family: Marcellus; font-size: 196px; letter-spacing: 6px; }
+    .tag { font-family: Jost; font-style: italic; font-weight: 600; font-size: 40px; letter-spacing: 8px; fill: currentColor; }
+    .script { font-family: Bodoni; font-style: italic; font-size: 26px; fill: currentColor; }
+  </style>
+  <defs>
+    <clipPath id="arch"><path d="M240 770 L240 430 A260 260 0 0 1 760 430 L760 770 Z"/></clipPath>
+    <pattern id="dots" width="13" height="13" patternUnits="userSpaceOnUse">
+      <circle cx="6.5" cy="6.5" r="3.6" fill="#df8a4e"/>
+    </pattern>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff" stop-opacity="1"/>
+      <stop offset="0.75" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <mask id="dotfade"><rect x="240" y="160" width="520" height="420" fill="url(#fade)"/></mask>
+    <mask id="sunstripes">
+      <rect x="300" y="420" width="400" height="400" fill="#fff"/>
+      <rect x="300" y="566" width="400" height="6" fill="#000"/>
+      <rect x="300" y="590" width="400" height="9" fill="#000"/>
+      <rect x="300" y="613" width="400" height="12" fill="#000"/>
+    </mask>
+  </defs>
+
+  <text class="caps" x="500" y="110" text-anchor="middle">MAISON DE CONFORT · GRAND TOURING</text>
+
+  <g clip-path="url(#arch)">
+    <rect x="240" y="160" width="520" height="490" fill="#f1c98e"/>
+    <rect x="240" y="160" width="520" height="420" fill="url(#dots)" mask="url(#dotfade)"/>
+    <circle cx="500" cy="640" r="150" fill="#e8853a" mask="url(#sunstripes)"/>
+    <path d="M240 650 L240 596 L298 566 L342 584 L408 534 L468 578 L522 550 L598 592 L652 566 L704 588 L760 562 L760 650 Z" fill="#c46f45"/>
+    <path d="M240 650 L240 616 L318 604 L382 622 L452 600 L540 626 L620 606 L700 624 L760 610 L760 650 Z" fill="#8a4630"/>
+    <rect x="240" y="648" width="520" height="130" fill="#e3b27a"/>
+    <path d="M240 664 L760 664 M240 676 L760 676" stroke="#d29a62" stroke-width="2"/>
+    <rect x="240" y="702" width="520" height="46" fill="#3b2c25"/>
+    <path d="M250 725 L750 725" stroke="#f3e2c6" stroke-width="3" stroke-dasharray="26 22"/>
+
+    <!-- the car -->
+    <g transform="translate(500 668) scale(0.56) translate(-505 -205)" stroke-linejoin="round" stroke-linecap="round">
+      <path d="M146 244 C142 222 146 204 160 194 C200 182 250 168 300 140 C340 118 384 102 432 98 C470 96 500 100 520 110 C536 120 552 138 566 154 C572 160 580 162 592 163 C680 168 770 172 830 178 C852 182 862 196 864 214 L864 240 C864 248 858 252 850 252 L782 252 A62 62 0 0 0 658 252 L332 252 A62 62 0 0 0 208 252 L156 252 C150 252 146 250 146 244 Z" fill="#3e6f8e" stroke="#1b1714" stroke-width="5"/>
+      <path d="M162 200 C330 186 600 180 852 190 L854 214 C600 206 330 212 156 222 Z" fill="#335d78"/>
+      <path d="M318 150 C352 128 392 112 432 108 C468 106 494 110 510 118 C526 128 540 142 552 156 Z" fill="#22303a" stroke="#1b1714" stroke-width="4"/>
+      <path d="M360 140 C390 124 420 116 440 114 L436 150 Z" fill="#40525e"/>
+      <path d="M444 108 L440 156" stroke="#1b1714" stroke-width="5"/>
+      <path d="M216 236 L650 236" stroke="#efe3cf" stroke-width="3.2"/>
+      <path d="M432 160 L436 246 M586 164 L582 244" stroke="#1b1714" stroke-width="2.4"/>
+      <path d="M450 182 L472 182" stroke="#efe3cf" stroke-width="4"/>
+      <path d="M836 192 C846 190 854 196 856 206 C846 208 838 202 836 192 Z" fill="#fff4dc" stroke="#1b1714" stroke-width="2.4"/>
+      <path d="M864 226 L874 226 C880 226 882 232 880 238 L864 241" fill="none" stroke="#efe3cf" stroke-width="4"/>
+      <path d="M152 204 L162 202 L162 214 L150 216 Z" fill="#c8402c" stroke="#1b1714" stroke-width="2"/>
+      <path d="M146 232 L136 232 C130 232 128 238 132 242 L148 244" fill="none" stroke="#efe3cf" stroke-width="4"/>
+      <path d="M790 204 L800 222 M802 203 L812 221 M814 202 L824 220" stroke="#1b1714" stroke-width="2.6"/>
+      <g id="pw">
+        <circle cx="270" cy="248" r="50" fill="#1b1714"/>
+        <circle cx="270" cy="248" r="36" fill="#d8cfc0"/>
+        <path d="M270 213 L270 283 M235 248 L305 248 M245 223 L295 273 M295 223 L245 273 M257 215 L283 281 M283 215 L257 281 M237 235 L303 261 M303 235 L237 261" stroke="#8c8478" stroke-width="2.4"/>
+        <circle cx="270" cy="248" r="10" fill="#efe3cf" stroke="#8c8478" stroke-width="2"/>
+      </g>
+      <use href="#pw" xlink:href="#pw" x="450"/>
+    </g>
+
+    <!-- FLÒ with a print-style offset shadow -->
+    <text class="mark" x="506" y="422" text-anchor="middle" fill="#c46f45">FLÒ</text>
+    <text class="mark" x="500" y="416" text-anchor="middle" fill="#fff6e8">FLÒ</text>
+  </g>
+
+  <path d="M240 770 L240 430 A260 260 0 0 1 760 430 L760 770 Z" fill="none" stroke="currentColor" stroke-width="5"/>
+  <path d="M228 782 L228 430 A272 272 0 0 1 772 430 L772 782 Z" fill="none" stroke="currentColor" stroke-width="1.6"/>
+
+  <text class="tag" x="500" y="850" text-anchor="middle">COMFORT AT ANY SPEED</text>
+  <text class="script" x="500" y="892" text-anchor="middle">golden hour · n° 001 · est. mmxxvi</text>
+</svg>

@@ -617,7 +617,6 @@ input { font: inherit; }
 .pdp__shot--wide .photo--product { padding: 0; object-fit: cover; mix-blend-mode: normal; }
 
 /* ---------- Phone refinements ---------- */
-.soon { color: var(--mute); font-size: 14px; }
 @media (max-width: 700px) {
   /* product cards: name on its own line, price under it, so long names don't get squeezed */
   .card__info { flex-direction: column; gap: 2px; padding: 12px 10px 0; }

@@ -121,7 +121,7 @@
       // artwork files in black, cream and white ink: assets/img/prints/<name>-<ink>.png
       const name = kind.slice(4);
       const inkName = ink === "#ffffff" ? "white" : ink === "#efe8dc" ? "cream" : "black";
-      const file = `assets/img/prints/${name}-${inkName}.png?v=2`;
+      const file = `assets/img/prints/${name}-${inkName}.png?v=3`;
       const ratio = PRINT_RATIOS[name] || 1;
       const anchor = back ? s.back : s.center;
       if (!anchor) return "";

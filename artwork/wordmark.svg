@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300" width="1000" height="300">
+  <!-- flò wordmark in Marcellus. One ink colour (currentColor) -->
+  <style>
+    @font-face { font-family: Marcellus; src: url("../assets/fonts/marcellus-latin-400-normal.woff2"); }
+    text { font-family: Marcellus; font-size: 262px; letter-spacing: 10px; fill: currentColor; }
+  </style>
+  <text x="505" y="268" text-anchor="middle">FLÒ</text>
+</svg>

@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000" width="1000" height="1000">
+  <!-- flò Grand Touring crest. One ink colour (currentColor); export with artwork/README.md -->
+  <style>
+    @font-face { font-family: Marcellus; src: url("../assets/fonts/marcellus-latin-400-normal.woff2"); }
+    @font-face { font-family: Jost; src: url("../assets/fonts/jost-latin-wght-normal.woff2"); font-weight: 100 900; }
+    @font-face { font-family: Bodoni; src: url("../assets/fonts/bodoni-moda-latin-wght-italic.woff2"); font-style: italic; font-weight: 400 900; }
+    .caps { font-family: Jost; font-weight: 500; font-size: 38px; letter-spacing: 14px; fill: currentColor; }
+    .mark { font-family: Marcellus; font-size: 172px; letter-spacing: 6px; fill: currentColor; }
+    .small { font-family: Jost; font-weight: 500; font-size: 19px; letter-spacing: 7px; fill: currentColor; }
+    .script { font-family: Bodoni; font-style: italic; font-size: 30px; fill: currentColor; }
+    .line { fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; }
+  </style>
+  <defs>
+    <path id="top" d="M 118 500 A 382 382 0 0 1 882 500"/>
+    <path id="bottom" d="M 82 500 A 418 418 0 0 0 918 500"/>
+  </defs>
+
+  <!-- rings -->
+  <circle class="line" cx="500" cy="500" r="472" stroke-width="7"/>
+  <circle class="line" cx="500" cy="500" r="456" stroke-width="1.6"/>
+  <circle class="line" cx="500" cy="500" r="344" stroke-width="1.6"/>
+  <circle class="line" cx="500" cy="500" r="330" stroke-width="5"/>
+
+  <!-- lettering around the band -->
+  <text class="caps" text-anchor="middle"><textPath xlink:href="#top" href="#top" startOffset="50%">MAISON DE CONFORT</textPath></text>
+  <text class="caps" text-anchor="middle"><textPath xlink:href="#bottom" href="#bottom" startOffset="50%">GRAND TOURING</textPath></text>
+  <!-- diamonds at 9 and 3 o'clock -->
+  <path d="M100 500 l14 -14 l14 14 l-14 14 Z M872 500 l14 -14 l14 14 l-14 14 Z" fill="currentColor"/>
+
+  <!-- centre -->
+  <text class="small" x="500" y="300" text-anchor="middle">N° 001</text>
+  <path class="line" d="M330 292 L420 292 M580 292 L670 292" stroke-width="1.6"/>
+  <text class="mark" x="500" y="482" text-anchor="middle">FLÒ</text>
+
+  <g transform="translate(500 598) scale(0.6) translate(-500 -205)">
+    <g class="line" stroke-width="4.4">
+      <path d="M146 244 C142 222 146 204 160 194 C200 182 250 168 300 140 C340 118 384 102 432 98 C470 96 500 100 520 110 C536 120 552 138 566 154 C572 160 580 162 592 163 C680 168 770 172 830 178 C852 182 862 196 864 214 L864 240 C864 248 858 252 850 252 L782 252 A62 62 0 0 0 658 252 L332 252 A62 62 0 0 0 208 252 L156 252 C150 252 146 250 146 244 Z"/>
+      <path d="M318 150 C352 128 392 112 432 108 C468 106 494 110 510 118 C526 128 540 142 552 156 Z" stroke-width="3.4"/>
+      <path d="M444 108 L440 156" stroke-width="3.4"/>
+      <path d="M162 200 C330 186 600 180 852 190" stroke-width="2.4"/>
+      <path d="M216 236 L650 236" stroke-width="2"/>
+      <path d="M432 160 L436 246 M586 164 L582 244" stroke-width="2.2"/>
+      <path d="M450 182 L472 182" stroke-width="3.6"/>
+      <path d="M836 192 C846 190 854 196 856 206 C846 208 838 202 836 192 Z" stroke-width="2.6"/>
+      <path d="M864 226 L874 226 C880 226 882 232 880 238 L864 241" stroke-width="2.8"/>
+      <path d="M152 204 L162 202 L162 214 L150 216" stroke-width="2.6"/>
+      <path d="M146 232 L136 232 C130 232 128 238 132 242 L148 244" stroke-width="2.8"/>
+      <path d="M612 172 L770 179" stroke-width="1.8"/>
+      <path d="M790 204 L800 222 M802 203 L812 221 M814 202 L824 220" stroke-width="2"/>
+      <g id="cw">
+        <circle cx="270" cy="248" r="50"/>
+        <circle cx="270" cy="248" r="37" stroke-width="2.6"/>
+        <circle cx="270" cy="248" r="10" stroke-width="2.6"/>
+        <path d="M270 211 L270 285 M233 248 L307 248 M244 222 L296 274 M296 222 L244 274 M256 213 L284 283 M284 213 L256 283 M235 234 L305 262 M305 234 L235 262" stroke-width="2.2"/>
+      </g>
+      <use href="#cw" xlink:href="#cw" x="450"/>
+      <path d="M130 300 L870 300" stroke-width="2.2"/>
+    </g>
+  </g>
+
+  <text class="script" x="500" y="716" text-anchor="middle">comfort at any speed</text>
+  <text class="small" x="500" y="762" text-anchor="middle">EST. MMXXVI</text>
+</svg>
