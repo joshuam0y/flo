@@ -1,7 +1,7 @@
 /* Flat garment illustrations. They stand in for product photography until real
    photos are added to a product's "photos" list in products.json. */
 (function () {
-  const BRAND = "fló";
+  const BRAND = "flò";
   let uid = 0;
 
   const SHAPES = {
@@ -121,7 +121,7 @@
       // artwork files in black, cream and white ink: assets/img/prints/<name>-<ink>.png
       const name = kind.slice(4);
       const inkName = ink === "#ffffff" ? "white" : ink === "#efe8dc" ? "cream" : "black";
-      const file = `assets/img/prints/${name}-${inkName}.png`;
+      const file = `assets/img/prints/${name}-${inkName}.png?v=2`;
       const ratio = PRINT_RATIOS[name] || 1;
       const anchor = back ? s.back : s.center;
       if (!anchor) return "";
@@ -129,13 +129,13 @@
       return `<image href="${file}" x="${anchor[0] - w / 2}" y="${anchor[1] - h / 2 + (back ? 4 : 0)}" width="${w}" height="${h}"/>`;
     }
     if (kind === "classic") {
-      // the FLÓ wordmark in Marcellus: upper back on tops, thigh on bottoms, front of the cap
+      // the FLÒ wordmark in Marcellus: upper back on tops, thigh on bottoms, front of the cap
       const classic = "font-family:Marcellus,'Bodoni Moda',serif";
       const spot = back && s.back ? [s.back[0], s.back[1] - 22, 62, 7]
         : s.thigh ? [s.thigh[0], s.thigh[1], 24, 3]
         : s.center ? [s.center[0], s.center[1], 46, 5] : null;
       if (!spot) return "";
-      return `<text x="${spot[0]}" y="${spot[1]}" text-anchor="middle" fill="${ink}" style="${classic};font-size:${spot[2]}px;letter-spacing:${spot[3]}px">FLÓ</text>`;
+      return `<text x="${spot[0]}" y="${spot[1]}" text-anchor="middle" fill="${ink}" style="${classic};font-size:${spot[2]}px;letter-spacing:${spot[3]}px">FLÒ</text>`;
     }
     if (kind === "monogram") {
       // all-over pattern, clipped to the bag body

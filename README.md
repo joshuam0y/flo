@@ -1,9 +1,9 @@
-# fló · maison de confort
+# flò · maison de confort
 
-Storefront for fló: a static site on GitHub Pages, with card payments handled by Stripe and orders made and shipped automatically by Printify.
+Storefront for flò: a static site on GitHub Pages, with card payments handled by Stripe and orders made and shipped automatically by Printify.
 
 ```
-Customer ──► fló site (GitHub Pages) ──► Checkout worker (Cloudflare) ──► Stripe payment page
+Customer ──► flò site (GitHub Pages) ──► Checkout worker (Cloudflare) ──► Stripe payment page
                                                   ▲                               │ paid
                                                   └──── webhook ◄──────────────────┘
                                                   │

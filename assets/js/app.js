@@ -256,7 +256,7 @@
     const root = $("#pdp");
     if (!root) return;
     const p = findProduct(new URLSearchParams(location.search).get("id")) || catalog.products[0];
-    document.title = `${p.name} | fló`;
+    document.title = `${p.name} | flò`;
     let color = p.colors[0];
     let size = p.sizes.length === 1 ? p.sizes[0] : null;
 
@@ -273,7 +273,7 @@
     root.querySelector(".pdp__name").textContent = p.name;
     root.querySelector(".pdp__price").textContent = money(p.price);
     root.querySelector(".pdp__desc").textContent = p.description;
-    $("#pdp-badge").textContent = p.badge || "fló essentials";
+    $("#pdp-badge").textContent = p.badge || "flò essentials";
     $("#pdp-details").innerHTML = `<ul>${p.details.map(d => `<li>${d}</li>`).join("")}</ul>`;
 
     const swatches = $("#pdp-swatches");

@@ -1,4 +1,4 @@
-/* fló checkout worker (Cloudflare Workers)
+/* flò checkout worker (Cloudflare Workers)
  *
  *   POST /checkout   bag items -> Stripe Checkout Session -> { url }
  *   POST /webhook    Stripe "checkout.session.completed" -> Printify order
