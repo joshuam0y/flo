@@ -57,6 +57,42 @@
       "photos": []
     },
     {
+      "id": "palm-springs-tee",
+      "name": "Palm Springs Tee",
+      "type": "tee",
+      "category": "tops",
+      "price": 48,
+      "badge": "New",
+      "colors": [
+        {
+          "name": "Black",
+          "hex": "#161616",
+          "ink": "white"
+        }
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "front": "classic",
+      "back": "none",
+      "lead": "back",
+      "description": "Two palms and a sun-faded script across the back, the FLÒ mark at the chest. Made for long drives out to the desert.",
+      "details": [
+        "Soft-washed cotton tee",
+        "Regular fit",
+        "Palm Springs graphic on the back",
+        "FLÒ wordmark on the left chest"
+      ],
+      "photos": [
+        "assets/img/products/palm-springs-front.jpg",
+        "assets/img/products/palm-springs-back.jpg"
+      ]
+    },
+    {
       "id": "grand-touring-tee",
       "name": "Grand Touring Tee",
       "type": "tee",

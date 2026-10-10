@@ -33,7 +33,8 @@
 
   function thumb(p, colorName) {
     const c = p.colors.find(x => x.name === colorName) || p.colors[0];
-    if (p.photos[0]) return `<img class="photo" src="${p.photos[0]}" alt="">`;
+    const shot = p.lead === "back" ? p.photos[1] || p.photos[0] : p.photos[0];
+    if (shot) return `<img class="photo photo--product" src="${shot}" alt="">`;
     const side = p.lead === "back" ? "back" : "front";
     return garmentSVG(p.type, c.hex, { front: p.front, back: p.back }, { side, ink: c.ink, label: p.name });
   }

@@ -18,7 +18,7 @@
 
   function art(p, color, side, className) {
     const photo = side === "back" ? p.photos[1] : p.photos[0];
-    if (photo) return `<img class="photo ${className || ""}" src="${photo}" alt="${p.name} in ${color.name}" loading="lazy">`;
+    if (photo) return `<img class="photo photo--product ${className || ""}" src="${photo}" alt="${p.name} in ${color.name}, ${side}" loading="lazy">`;
     return garmentSVG(p.type, color.hex, { front: p.front, back: p.back }, {
       side, className, ink: color.ink, label: `${p.name} in ${color.name}, ${side} view`
     });
@@ -237,9 +237,9 @@
       $("#pdp-gallery").innerHTML = `
         <div class="pdp__shot slot">${art(p, color, p.lead === "back" ? "back" : "front")}</div>
         <div class="pdp__shot slot">${hasBack ? art(p, color, p.lead === "back" ? "front" : "back") : art(p, color, "front")}</div>
-        <div class="pdp__shot pdp__shot--wide slot">${p.photos[2]
-          ? `<img class="photo" src="${p.photos[2]}" alt="${p.name} worn" loading="lazy">`
-          : garmentSVG(p.type, color.hex, { front: p.front, back: p.back }, { side: hasBack ? "back" : "front", ink: color.ink })}</div>`;
+        ${p.photos.length && !p.photos[2] ? "" : `<div class="pdp__shot pdp__shot--wide slot">${p.photos[2]
+          ? `<img class="photo photo--product" src="${p.photos[2]}" alt="${p.name} detail" loading="lazy">`
+          : garmentSVG(p.type, color.hex, { front: p.front, back: p.back }, { side: hasBack ? "back" : "front", ink: color.ink })}</div>`}`;
     };
 
     root.querySelector(".pdp__name").textContent = p.name;

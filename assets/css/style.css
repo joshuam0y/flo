@@ -603,3 +603,8 @@ input { font: inherit; }
 .track span.on { background: var(--ink); }
 .track-labels { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
 @media (max-width: 600px) { .confirm__grid { grid-template-columns: 1fr; } }
+
+/* Printify-style mockups on white: blend the white into the card colour */
+.photo--product { object-fit: contain; mix-blend-mode: multiply; padding: 6%; }
+.card__media .photo { transition: opacity .45s ease; }
+.pdp__shot--wide .photo--product { padding: 0; object-fit: cover; mix-blend-mode: normal; }
