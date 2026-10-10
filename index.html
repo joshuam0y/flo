@@ -3,18 +3,22 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>fló — Maison de confort</title>
+<title>fló | Maison de confort</title>
 <meta name="description" content="Elevated comfort essentials. Heavyweight hoodies, sweatpants and everyday pieces, made to order.">
 <meta name="theme-color" content="#faf8f4">
-<meta property="og:title" content="fló — Maison de confort">
+<meta property="og:title" content="fló | Maison de confort">
 <meta property="og:description" content="Elevated comfort essentials. Heavyweight hoodies, sweatpants and everyday pieces, made to order.">
+<meta property="og:image" content="https://joshuam0y.github.io/flo/assets/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="assets/fonts/bodoni-moda-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/jost-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/style.css?v=8">
+<link rel="stylesheet" href="assets/css/style.css?v=9">
 </head>
 <body>
-<div class="announce"><span class="label">Free shipping on orders over $150 &nbsp;·&nbsp; Every piece made to order</span></div>
+<div class="announce"><span class="label">Free shipping on orders over $150<span class="hide-sm"> &nbsp;·&nbsp; Every piece made to order</span></span></div>
 <header class="header header--overlay">
   <div class="header__left">
     <button class="burger label" data-open-menu aria-label="Open menu"><i></i><span class="hide-sm">Menu</span></button>
@@ -37,7 +41,7 @@
     <li><a href="about.html">The house</a></li>
   </ul>
   <div class="menu__aside">
-    <p class="label">fló — maison de confort</p>
+    <p class="label">fló · maison de confort</p>
     <p>Elevated essentials, cut heavy and finished soft. Every piece is made to order, so nothing is wasted.</p>
   </div>
 </nav>
@@ -45,15 +49,15 @@
 
 <section class="hero">
   <div class="hero__fallback" id="hero-art"></div>
-  <!-- Add a lifestyle photo at assets/img/hero.jpg and it covers the illustration -->
-  <img class="hero__img" src="assets/img/hero.jpg" alt="" onerror="this.remove()">
+  <!-- Add a lifestyle photo to assets/img and list it under photos in assets/js/config.js; it covers the illustration -->
+  <img class="hero__img" data-photo="hero" alt="" hidden>
   <div class="hero__copy">
-    <p class="label">New — The Grand Touring Tee</p>
+    <p class="label">New · The Grand Touring Tee</p>
     <h1 class="display hero__title">Comfort at <em>any speed.</em></h1>
     <p class="hero__sub">A low-slung grand tourer parked across an oversized fló, printed full-size on our heavyweight tee.</p>
     <div class="hero__ctas">
       <a class="btn btn--white" href="shop.html">Shop the drop</a>
-      <a class="btn btn--light" href="product.html?id=grand-touring-tee">Shop the tee — $54</a>
+      <a class="btn btn--light" href="product.html?id=grand-touring-tee">Shop the tee · $54</a>
     </div>
   </div>
 </section>
@@ -62,12 +66,12 @@
   <div class="label">Made to order</div>
   <div class="label">Heavyweight fleece</div>
   <div class="label">Free shipping over $150</div>
-  <div class="label">Ships in 3–7 days</div>
+  <div class="label">Ships in 3 to 7 days</div>
 </div>
 
 <section class="section">
   <div class="section__head">
-    <h2 class="display section__title">The <em>best sellers</em></h2>
+    <h2 class="display section__title">The <em>first drop</em></h2>
     <a class="label link-u" href="shop.html">Shop all</a>
   </div>
   <div class="grid" id="bestsellers"></div>
@@ -75,15 +79,15 @@
 
 <div class="tiles">
   <a class="tile slot" href="shop.html?c=tops" data-tile="cloud-hoodie:Espresso" style="background:#d8cbb9">
-    <img class="photo" src="assets/img/tile-tops.jpg" alt="" onerror="this.remove()">
+    <img class="photo" data-photo="tile-tops" alt="" hidden>
     <div class="tile__label"><h3 class="display">Hoodies</h3><span class="label">Shop →</span></div>
   </a>
   <a class="tile slot" href="shop.html?c=bottoms" data-tile="cloud-sweatpant:Bone" style="background:#a9ae98">
-    <img class="photo" src="assets/img/tile-bottoms.jpg" alt="" onerror="this.remove()">
+    <img class="photo" data-photo="tile-bottoms" alt="" hidden>
     <div class="tile__label"><h3 class="display">Sweatpants</h3><span class="label">Shop →</span></div>
   </a>
   <a class="tile slot" href="shop.html?c=accessories" data-tile="monogram-tote:Natural" style="background:#3b2b22;color:#f1ebe0">
-    <img class="photo" src="assets/img/tile-accessories.jpg" alt="" onerror="this.remove()">
+    <img class="photo" data-photo="tile-accessories" alt="" hidden>
     <div class="tile__label"><h3 class="display">Accessories</h3><span class="label">Shop →</span></div>
   </a>
 </div>
@@ -95,7 +99,7 @@
 
 <section class="editorial">
   <div class="editorial__panel slot" data-art="cloud-hoodie:Bone:back">
-    <img class="photo" src="assets/img/editorial.jpg" alt="" onerror="this.remove()">
+    <img class="photo" data-photo="editorial" alt="" hidden>
   </div>
   <div class="editorial__copy reveal">
     <p class="label label--mute">The house</p>
@@ -108,7 +112,7 @@
 <section class="section">
   <div class="pillars">
     <div class="reveal"><p class="label label--mute">01</p><h3>Cut heavy</h3><p>Dense, structured fleece and cotton that drape like a garment twice the price and keep their shape wash after wash.</p></div>
-    <div class="reveal"><p class="label label--mute">02</p><h3>Finished soft</h3><p>Every piece is brushed and washed before it ships, so it feels broken-in from the first wear.</p></div>
+    <div class="reveal"><p class="label label--mute">02</p><h3>Finished soft</h3><p>Soft-hand cotton and brushed fleece, chosen for how they feel, so every piece is comfortable from the first wear.</p></div>
     <div class="reveal"><p class="label label--mute">03</p><h3>Made to order</h3><p>Nothing sits in a warehouse. Your piece is made when you order it, which means no overstock and no waste.</p></div>
   </div>
 </section>
@@ -139,8 +143,8 @@
       <li><a href="about.html">Our story</a></li>
       <li><a href="about.html#made-to-order">Made to order</a></li></ul></div>
     <div><p class="label">Follow</p><ul>
-      <li><a href="#" aria-label="Instagram (coming soon)">Instagram</a></li>
-      <li><a href="#" aria-label="TikTok (coming soon)">TikTok</a></li></ul></div>
+      <li><span class="soon">Instagram, soon</span></li>
+      <li><span class="soon">TikTok, soon</span></li></ul></div>
   </div>
   <div class="footer__mark" aria-hidden="true">fló</div>
   <div class="footer__base label label--mute">
@@ -157,15 +161,15 @@
   <div class="bag__items" id="bag-items"></div>
   <div class="bag__foot">
     <div class="bag__row"><span>Subtotal</span><span id="bag-subtotal">$0</span></div>
-    <div class="bag__row"><span>Shipping</span><span id="bag-shipping">—</span></div>
+    <div class="bag__row"><span>Shipping</span><span id="bag-shipping"></span></div>
     <p class="bag__fine" id="bag-free"></p>
     <button class="btn btn--solid" id="bag-checkout" disabled>Checkout</button>
     <p class="bag__fine">Secure checkout · taxes calculated at payment</p>
   </div>
 </aside>
 <div class="toast label" id="toast" role="status" aria-live="polite"></div>
-<script src="assets/js/config.js?v=8"></script>
-<script src="assets/js/garments.js?v=8"></script>
-<script src="assets/js/app.js?v=8"></script>
+<script src="assets/js/config.js?v=9"></script>
+<script src="assets/js/garments.js?v=9"></script>
+<script src="assets/js/app.js?v=9"></script>
 </body>
 </html>

@@ -104,7 +104,7 @@
     }
     const t = totals(items);
     $("#bag-subtotal").textContent = money(t.subtotal);
-    $("#bag-shipping").textContent = t.subtotal === 0 ? "—" : t.shipping === 0 ? "Free" : money(t.shipping);
+    $("#bag-shipping").textContent = t.subtotal === 0 ? "" : t.shipping === 0 ? "Free" : money(t.shipping);
     $("#bag-checkout").disabled = !items.length;
     const left = catalog.shipping.freeOver - t.subtotal;
     $("#bag-free").textContent = t.subtotal > 0 && left > 0
@@ -161,11 +161,39 @@
       if (e.key === "Escape") { closeBag(); menu.classList.remove("is-open"); }
     });
 
-    $$(".signup__form").forEach(form => form.addEventListener("submit", e => {
+    // Sign-ups go to the checkout worker's /subscribe; until it's deployed, say so instead of pretending
+    const checkoutUrl = window.FLO_CONFIG && window.FLO_CONFIG.checkoutUrl;
+    $$(".signup__form").forEach(form => form.addEventListener("submit", async e => {
       e.preventDefault();
-      form.nextElementSibling.textContent = "You're on the list. We'll be in touch before the drop.";
-      form.reset();
+      const msg = form.nextElementSibling;
+      if (!checkoutUrl) { msg.textContent = "Sign-ups open soon. Check back before the next drop."; return; }
+      msg.textContent = "Joining…";
+      try {
+        const res = await fetch(checkoutUrl.replace(/\/checkout$/, "/subscribe"), {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email: form.querySelector("input[type=email]").value })
+        });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok) throw new Error(data.error);
+        msg.textContent = "You're on the list. We'll be in touch before the drop.";
+        form.reset();
+      } catch (err) {
+        msg.textContent = (err && err.message) || "Something went wrong. Please try again.";
+      }
     }));
+  }
+
+  // Photo slots: only load photos that are listed in config.js
+  function fillPhotos() {
+    const photos = (window.FLO_CONFIG && window.FLO_CONFIG.photos) || {};
+    $$("[data-photo]").forEach(img => {
+      const src = photos[img.dataset.photo];
+      if (!src) { img.remove(); return; }
+      img.onerror = () => img.remove();
+      img.src = src;
+      img.hidden = false;
+    });
   }
 
   function bindReveal() {
@@ -228,7 +256,7 @@
     const root = $("#pdp");
     if (!root) return;
     const p = findProduct(new URLSearchParams(location.search).get("id")) || catalog.products[0];
-    document.title = `${p.name} — fló`;
+    document.title = `${p.name} | fló`;
     let color = p.colors[0];
     let size = p.sizes.length === 1 ? p.sizes[0] : null;
 
@@ -270,11 +298,11 @@
       if (!b) return;
       size = b.dataset.size;
       $$(".size", sizes).forEach(s => s.setAttribute("aria-pressed", s === b));
-      $("#pdp-add").textContent = `Add to bag — ${money(p.price)}`;
+      $("#pdp-add").textContent = `Add to bag · ${money(p.price)}`;
     });
 
     const add = $("#pdp-add");
-    add.textContent = size ? `Add to bag — ${money(p.price)}` : "Select a size";
+    add.textContent = size ? `Add to bag · ${money(p.price)}` : "Select a size";
     add.addEventListener("click", () => {
       if (!size) { toast("Please choose a size."); return; }
       addToBag(p.id, color.name, size);
@@ -304,7 +332,7 @@
       <p style="color:var(--ink-2);max-width:520px">Your order is confirmed and your pieces are going into production. We've sent a receipt to <b>${order.email}</b>, and tracking will follow as soon as it ships.</p>
       ${order.demo ? `<p class="label" style="color:#8a5a12;margin-top:14px">Demo order: no payment was taken.</p>` : ""}
       <div class="track"><span class="on"></span><span></span><span></span><span></span></div>
-      <div class="track-labels label label--mute"><span>Confirmed</span><span>In production</span><span>Shipped</span><span>Arrives ${day(lo)}–${day(hi)}</span></div>
+      <div class="track-labels label label--mute"><span>Confirmed</span><span>In production</span><span>Shipped</span><span>Arrives ${day(lo)} to ${day(hi)}</span></div>
       <div class="confirm__grid">
         <div><p class="label">Shipping to</p><p>${order.ship.name}<br>${order.ship.lines.join("<br>")}</p></div>
         <div><p class="label">Delivery</p><p>${order.method.name} · ${order.method.note}<br>Paid with card ${order.card}</p></div>
@@ -322,10 +350,11 @@
   /* ---------- Boot ---------- */
   document.addEventListener("DOMContentLoaded", async () => {
     bindChrome();
+    fillPhotos();
     try {
       await loadCatalog();
     } catch (err) {
-      console.error("Could not load products.json — preview the site through a local server, not file://", err);
+      console.error("Could not load products.json. Preview the site through a local server, not file://", err);
       return;
     }
     renderHome();

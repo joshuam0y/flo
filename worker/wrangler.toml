@@ -7,13 +7,20 @@ SITE_URL = "https://joshuam0y.github.io/flo"
 CATALOG_URL = "https://joshuam0y.github.io/flo/assets/data/products.json"
 ALLOWED_ORIGINS = "https://joshuam0y.github.io"
 SHIP_COUNTRIES = "US"
-# "false" = orders land in Printful as drafts you approve by hand (safer while testing).
+# "false" = orders wait in Printify "On hold" until you press Send to production (safer while testing).
 # "true"  = orders go straight into production as soon as the customer pays.
-PRINTFUL_AUTO_CONFIRM = "false"
+PRINTIFY_AUTO_SEND = "false"
 
-# Secrets — set these with `npx wrangler secret put NAME`, never commit them:
+# Secrets: set these with `npx wrangler secret put NAME`, never commit them:
 #   STRIPE_SECRET_KEY        sk_live_... (or sk_test_... while testing)
 #   STRIPE_WEBHOOK_SECRET    whsec_...
-#   PRINTFUL_TOKEN           Printful private token
-#   PRINTFUL_STORE_ID        (optional) if your token covers more than one store
-#   PRINTFUL_VARIANTS        (optional) JSON map of site SKU -> Printful sync variant id
+#   PRINTIFY_TOKEN           Printify personal access token (scopes: orders.read, orders.write)
+#   PRINTIFY_SHOP_ID         the number of your Printify store (see README)
+#   PRINTIFY_VARIANTS        (optional) JSON map of site SKU -> { "product_id": "...", "variant_id": 12345 }
+
+# Email sign-ups (optional): create a KV namespace with
+#   npx wrangler kv namespace create SUBSCRIBERS
+# and paste the id it prints below, then uncomment these lines.
+# [[kv_namespaces]]
+# binding = "SUBSCRIBERS"
+# id = "paste-the-id-here"

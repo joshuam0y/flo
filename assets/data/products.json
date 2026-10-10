@@ -12,7 +12,7 @@
       "type": "hoodie",
       "category": "tops",
       "price": 88,
-      "badge": "Best seller",
+      "badge": "Signature",
       "colors": [
         {
           "name": "Rose",
@@ -80,12 +80,12 @@
       "front": "classic",
       "back": "none",
       "lead": "back",
-      "description": "Two palms and a sun-faded script across the back, the FLÒ mark at the chest. Made for long drives out to the desert.",
+      "description": "Two palms and a sun-faded script across the back, the FLÓ mark at the chest. Made for long drives out to the desert.",
       "details": [
         "Soft-washed cotton tee",
         "Regular fit",
         "Palm Springs graphic on the back",
-        "FLÒ wordmark on the left chest"
+        "FLÓ wordmark on the left chest"
       ],
       "photos": [
         "assets/img/products/palm-springs-front.jpg?v=2",
@@ -98,7 +98,7 @@
       "type": "tee",
       "category": "tops",
       "price": 54,
-      "badge": "New — Drop 001",
+      "badge": "New · Drop 001",
       "colors": [
         {
           "name": "Bone",

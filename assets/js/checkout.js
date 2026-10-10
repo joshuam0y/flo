@@ -19,8 +19,8 @@
   function shipOptions(subtotal) {
     const s = catalog.shipping;
     return [
-      { id: "standard", name: "Standard", note: "Made to order · 3–7 business days", price: subtotal >= s.freeOver ? 0 : s.flatRate },
-      { id: "express", name: "Express", note: "Made to order · 2–4 business days", price: s.express }
+      { id: "standard", name: "Standard", note: "Made to order · 3 to 7 business days", price: subtotal >= s.freeOver ? 0 : s.flatRate },
+      { id: "express", name: "Express", note: "Made to order · 2 to 4 business days", price: s.express }
     ];
   }
 
@@ -128,6 +128,12 @@
     btn.textContent = live ? "Opening secure payment…" : "Processing…";
 
     if (live) {
+      if (form.news.checked) {
+        // join the email list too; a failure here shouldn't block the payment
+        fetch(window.FLO_CONFIG.checkoutUrl.replace(/\/checkout$/, "/subscribe"), {
+          method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ email: form.email.value })
+        }).catch(() => {});
+      }
       try {
         const res = await fetch(window.FLO_CONFIG.checkoutUrl, {
           method: "POST",
@@ -194,7 +200,7 @@
       if (live) { msg.textContent = "You can enter discount codes on the payment page."; return; }
       if (DEMO_CODES[code]) {
         discount = { code, rate: DEMO_CODES[code] };
-        msg.textContent = `${code} applied — ${DEMO_CODES[code] * 100}% off`;
+        msg.textContent = `${code} applied: ${DEMO_CODES[code] * 100}% off`;
       } else {
         discount = null;
         msg.textContent = code ? "That code isn't valid." : "";

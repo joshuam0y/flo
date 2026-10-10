@@ -206,8 +206,15 @@ input { font: inherit; }
 .hero__title em { font-style: italic; }
 .hero__sub { max-width: 400px; margin: 22px 0 32px; font-size: 16px; color: rgba(255, 255, 255, .88); }
 .hero__ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+/* Phones: stack the shirt above the headline instead of overlapping them */
 @media (max-width: 760px) {
-  .hero__fallback { width: 78%; right: 11%; top: 34%; }
+  .hero { flex-direction: column; align-items: stretch; justify-content: flex-end; min-height: 0; padding-top: var(--header-h); }
+  .hero__fallback { position: relative; right: auto; top: auto; transform: none; width: min(72%, 330px); margin: 8px auto 4px; }
+  .hero__copy { padding: 0 var(--gutter) 40px; }
+  .hero__title { font-size: clamp(50px, 15vw, 72px); }
+  .hero__sub { margin: 16px 0 26px; font-size: 15px; }
+  .hero__ctas { flex-direction: column; }
+  .hero__ctas .btn { width: 100%; }
 }
 
 /* Photo slots: a real photo covers the illustrated fallback once it exists */
@@ -471,7 +478,7 @@ input { font: inherit; }
 .bag__items { flex: 1; overflow-y: auto; padding: 8px 24px; }
 .bag__empty { color: var(--mute); padding: 40px 0; text-align: center; }
 .line { display: grid; grid-template-columns: 84px 1fr auto; gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--line); }
-.line__img { aspect-ratio: 4 / 5; background: var(--paper-2); padding: 10%; }
+.line__img { position: relative; overflow: hidden; display: block; aspect-ratio: 4 / 5; background: var(--paper-2); padding: 10%; }
 .line__name { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; font-weight: 500; }
 .line__meta { color: var(--mute); font-size: 13px; }
 .qty { display: inline-flex; gap: 14px; align-items: center; margin-top: 10px; font-size: 13px; }
@@ -608,3 +615,29 @@ input { font: inherit; }
 .photo--product { object-fit: contain; mix-blend-mode: multiply; padding: 6%; }
 .card__media .photo { transition: opacity .45s ease; }
 .pdp__shot--wide .photo--product { padding: 0; object-fit: cover; mix-blend-mode: normal; }
+
+/* ---------- Phone refinements ---------- */
+.soon { color: var(--mute); font-size: 14px; }
+@media (max-width: 700px) {
+  /* product cards: name on its own line, price under it, so long names don't get squeezed */
+  .card__info { flex-direction: column; gap: 2px; padding: 12px 10px 0; }
+  .card__name { font-size: 11px; letter-spacing: .12em; }
+  .card__badge { top: 10px; left: 10px; font-size: 9px; letter-spacing: .16em; }
+  /* shop filters: smaller gaps so all four fit; the count moves below */
+  .filters { flex-wrap: wrap; row-gap: 6px; overflow: visible; }
+  .filters__set { gap: 18px; flex-wrap: wrap; row-gap: 8px; }
+  .filters__set .label { font-size: 10px; letter-spacing: .14em; }
+  .page-head { padding: 36px var(--gutter) 24px; }
+  .section__head { margin-bottom: 24px; }
+}
+@media (max-width: 900px) {
+  /* product page: swipe through photos so the name, price and Add to bag sit near the top */
+  .pdp__gallery { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 2px; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  .pdp__gallery::-webkit-scrollbar { display: none; }
+  .pdp__shot, .pdp__shot--wide { flex: 0 0 86%; aspect-ratio: 4 / 5; scroll-snap-align: start; padding: 10%; }
+  .pdp__shot--wide { background: var(--ink); }
+  .pdp__shot:only-child { flex-basis: 100%; }
+  .pdp__info { padding: 28px var(--gutter) 40px; }
+  .pdp__name { margin-top: 8px; }
+  .pdp__desc { margin: 16px 0 24px; }
+}
