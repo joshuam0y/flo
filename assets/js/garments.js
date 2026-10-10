@@ -131,7 +131,7 @@
     if (kind === "classic") {
       // the FLÓ wordmark in Marcellus: upper back on tops, thigh on bottoms, front of the cap
       const classic = "font-family:Marcellus,'Bodoni Moda',serif";
-      const spot = back && s.back ? [s.back[0], s.back[1] - 66, 62, 7]
+      const spot = back && s.back ? [s.back[0], s.back[1] - 22, 62, 7]
         : s.thigh ? [s.thigh[0], s.thigh[1], 24, 3]
         : s.center ? [s.center[0], s.center[1], 46, 5] : null;
       if (!spot) return "";
