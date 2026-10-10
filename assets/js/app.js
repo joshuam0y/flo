@@ -27,10 +27,12 @@
   function card(p) {
     const c = p.colors[0];
     const hasBack = p.back !== "none" || p.photos[1];
+    // graphic pieces lead with the back print; hovering shows the other side
+    const [first, second] = p.lead === "back" ? ["back", "front"] : ["front", "back"];
     return `<a class="card reveal" href="product.html?id=${p.id}">
       <div class="card__media">
-        ${art(p, c, "front", "is-front")}
-        ${hasBack ? art(p, c, "back", "is-back") : ""}
+        ${art(p, c, first, "is-front")}
+        ${hasBack ? art(p, c, second, "is-back") : ""}
         ${p.badge ? `<span class="card__badge label">${p.badge}</span>` : ""}
       </div>
       <div class="card__info">
@@ -254,8 +256,8 @@
     const drawGallery = () => {
       const hasBack = p.back !== "none" || p.photos[1];
       $("#pdp-gallery").innerHTML = `
-        <div class="pdp__shot slot">${art(p, color, "front")}</div>
-        <div class="pdp__shot slot">${hasBack ? art(p, color, "back") : art(p, color, "front")}</div>
+        <div class="pdp__shot slot">${art(p, color, p.lead === "back" ? "back" : "front")}</div>
+        <div class="pdp__shot slot">${hasBack ? art(p, color, p.lead === "back" ? "front" : "back") : art(p, color, "front")}</div>
         <div class="pdp__shot pdp__shot--wide slot">${p.photos[2]
           ? `<img class="photo" src="${p.photos[2]}" alt="${p.name} worn" loading="lazy">`
           : garmentSVG(p.type, color.hex, { front: p.front, back: p.back }, { side: hasBack ? "back" : "front" })}</div>`;

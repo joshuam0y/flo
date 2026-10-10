@@ -91,7 +91,8 @@
         "Full back print, small chest mark",
         "Ink matched to the shirt colour"
       ],
-      "photos": []
+      "photos": [],
+      "lead": "back"
     },
     {
       "id": "cloud-sweatpant",
