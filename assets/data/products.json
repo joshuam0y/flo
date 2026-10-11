@@ -464,7 +464,7 @@
       "name": "Apparel Crewneck",
       "type": "crew",
       "category": "crewnecks",
-      "price": 58,
+      "price": 44.99,
       "badge": "Drop 001",
       "colors": [
         {
@@ -683,7 +683,7 @@
       "name": "Forward Crewneck",
       "type": "crew",
       "category": "crewnecks",
-      "price": 58,
+      "price": 44.99,
       "badge": "Drop 001",
       "colors": [
         {
@@ -1037,7 +1037,7 @@
       "name": "Maison Crewneck",
       "type": "crew",
       "category": "crewnecks",
-      "price": 82,
+      "price": 44.99,
       "badge": "New",
       "colors": [
         {
