@@ -116,6 +116,80 @@
       ]
     },
     {
+      "id": "apparel-crew",
+      "name": "Apparel Crewneck",
+      "type": "crew",
+      "category": "tops",
+      "price": 58,
+      "badge": "New",
+      "colors": [
+        {
+          "name": "Black",
+          "hex": "#161616",
+          "ink": "white"
+        }
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "front": "classic",
+      "back": "none",
+      "lead": "front",
+      "description": "The house seal on the front, ringed with Shipping Globally · Designed Locally · Made on Demand. The arched Apparel mark sits across the back.",
+      "details": [
+        "Heavyweight cotton-blend fleece",
+        "Classic fit, ribbed cuffs and hem",
+        "Seal print on the front",
+        "Arched Apparel mark on the back"
+      ],
+      "photos": [
+        "assets/img/products/apparel-crew-front.jpg?v=1",
+        "assets/img/products/apparel-crew-back.jpg?v=1"
+      ],
+      "fit": "Classic fit. Take your usual size."
+    },
+    {
+      "id": "forward-crew",
+      "name": "Forward Crewneck",
+      "type": "crew",
+      "category": "tops",
+      "price": 58,
+      "badge": "New",
+      "colors": [
+        {
+          "name": "Sand",
+          "hex": "#d6c6ae"
+        }
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "front": "classic",
+      "back": "none",
+      "lead": "back",
+      "description": "FORWARD set small at the chest. On the back, a silver race car in red livery runs across a distressed No. 001.",
+      "details": [
+        "Soft, garment-washed fleece",
+        "Relaxed fit, dropped shoulder",
+        "Small wordmark on the chest",
+        "Full race graphic on the back"
+      ],
+      "photos": [
+        "assets/img/products/forward-crew-front.jpg?v=1",
+        "assets/img/products/forward-crew-back.jpg?v=1"
+      ],
+      "fit": "Relaxed fit. Take your usual size.",
+      "flag": "Back shown is the trademark-safe replacement for the 911 art; update the back print in Printify to match before it can sell"
+    },
+    {
       "id": "grand-touring-tee",
       "name": "Grand Touring Tee",
       "type": "tee",
