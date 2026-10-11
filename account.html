@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Orders &amp; rewards | flò</title>
+<meta name="description" content="Your flò orders, your first-order code and promo codes.">
+<meta name="theme-color" content="#faf8f4">
+<meta property="og:title" content="Orders & rewards | flò">
+<meta property="og:description" content="Your flò orders, your first-order code and promo codes.">
+<meta property="og:image" content="https://joshuam0y.github.io/flo/assets/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/bodoni-moda-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/jost-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/style.css?v=22">
+</head>
+<body>
+<div class="announce"><span class="label" id="announce">Free shipping on orders over $75<span class="hide-sm"> &nbsp;·&nbsp; Every piece made to order</span></span></div>
+<header class="header">
+  <div class="header__left">
+    <button class="burger label" data-open-menu aria-label="Open menu"><i></i><span class="hide-sm">Menu</span></button>
+    <a class="label hide-sm" href="shop.html">Shop</a>
+    <a class="label hide-sm" href="shop.html?c=tees">T-Shirts</a>
+    <a class="label hide-sm" href="shop.html?c=crewnecks">Crewnecks</a>
+    <a class="label hide-sm" href="shop.html?c=hoodies">Hoodies</a>
+  </div>
+  <a class="wordmark" href="index.html" aria-label="flò home">flò</a>
+  <div class="header__right">
+    <a class="label hide-sm" href="about.html">The House</a>
+    <a class="label hide-sm" href="account.html">Account</a>
+    <button class="label" data-open-bag>Bag (<span class="bag-count">0</span>)</button>
+  </div>
+</header>
+<nav class="menu" id="menu" aria-label="Main menu">
+  <button class="menu__close label" data-close-menu>Close ✕</button>
+  <ul class="menu__list">
+    <li><a href="shop.html">Shop all</a></li>
+    <li><a href="shop.html?c=tees">T-Shirts</a></li>
+    <li><a href="shop.html?c=crewnecks">Crewnecks</a></li>
+    <li><a href="shop.html?c=hoodies">Hoodies</a></li>
+    <li><a href="shop.html?c=bottoms">Bottoms</a></li>
+    <li><a href="shop.html?c=accessories">Accessories</a></li>
+    <li><a href="account.html">Account</a></li>
+    <li><a href="about.html">The house</a></li>
+  </ul>
+  <div class="menu__aside">
+    <p class="label">flò · maison de confort</p>
+    <p>Elevated essentials, finished soft. Every piece is made to order, so nothing is wasted.</p>
+  </div>
+</nav>
+<main>
+<section class="account" id="account"><p class="label label--mute">Loading…</p></section>
+</main>
+<footer class="footer">
+  <div class="footer__cols">
+    <div><p class="label">Shop</p><ul>
+      <li><a href="shop.html?c=tees">T-Shirts</a></li>
+      <li><a href="shop.html?c=crewnecks">Crewnecks</a></li>
+      <li><a href="shop.html?c=hoodies">Hoodies</a></li>
+      <li><a href="shop.html?c=bottoms">Bottoms</a></li>
+      <li><a href="shop.html?c=accessories">Accessories</a></li>
+      <li><a href="shop.html">Shop all</a></li></ul></div>
+    <div><p class="label">Client services</p><ul>
+      <li><a href="account.html">Orders &amp; rewards</a></li>
+      <li><a href="about.html#shipping">Shipping</a></li>
+      <li><a href="about.html#returns">Returns &amp; exchanges</a></li>
+      <li><a href="about.html#sizing">Size guide</a></li>
+      <li><a href="policies.html#refunds">Refund policy</a></li>
+      <li><a href="policies.html#privacy">Privacy</a></li>
+      <li><a href="policies.html#terms">Terms</a></li>
+      <li><a href="mailto:jmoy2077@gmail.com">Contact us</a></li></ul></div>
+    <div><p class="label">The house</p><ul>
+      <li><a href="about.html">Our story</a></li>
+      <li><a href="about.html#made-to-order">Made to order</a></li></ul></div>
+    <div><p class="label">Follow</p><ul>
+      <li><a href="https://www.instagram.com/jomohoops/" target="_blank" rel="noopener">Instagram</a></li>
+      <li><a href="https://www.tiktok.com/@jomohoops" target="_blank" rel="noopener">TikTok</a></li></ul></div>
+  </div>
+  <div class="footer__mark" aria-hidden="true">flò</div>
+  <div class="footer__base label label--mute">
+    <span>© 2026 flò. All rights reserved.</span>
+    <span>Maison de confort</span>
+  </div>
+</footer>
+<div class="scrim" id="scrim" data-close-bag></div>
+<aside class="bag" id="bag" aria-label="Shopping bag">
+  <div class="bag__head">
+    <span class="label">Your bag (<span class="bag-count">0</span>)</span>
+    <button class="label" data-close-bag>Close ✕</button>
+  </div>
+  <div class="bag__items" id="bag-items"></div>
+  <div class="bag__foot">
+    <div class="bag__row"><span>Subtotal</span><span id="bag-subtotal">$0</span></div>
+    <div class="bag__row"><span>Shipping</span><span id="bag-shipping"></span></div>
+    <p class="bag__fine" id="bag-free"></p>
+    <button class="btn btn--solid" id="bag-checkout" disabled>Checkout</button>
+    <p class="bag__fine">Secure checkout · taxes calculated at payment</p>
+  </div>
+</aside>
+<div class="toast label" id="toast" role="status" aria-live="polite"></div>
+<script src="assets/js/config.js?v=22"></script>
+<script src="assets/js/garments.js?v=22"></script>
+<script src="assets/js/app.js?v=22"></script>
+</body>
+</html>

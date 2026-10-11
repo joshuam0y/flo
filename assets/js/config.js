@@ -19,6 +19,14 @@ window.FLO_CONFIG = {
   // Set code to "" to hide it.
   launch: { code: "DROP001", offer: "15% off Drop 001" },
 
+  // Joining the email list gives a personal one-time code for this much off a first order (the worker makes it in
+  // Stripe; keep it the same as WELCOME_PERCENT in worker/wrangler.toml). The offer only shows once sign-ups work.
+  welcome: { percent: 20 },
+
+  // "View my orders" on the account page: Stripe's customer portal login link (Stripe Dashboard, Settings, Billing,
+  // Customer portal, turn on the login link and paste it here). Empty: the page says orders come after the drop.
+  ordersUrl: "",
+
   // Homepage and about-page photos (hero, editorial, about). Drop a file in assets/img and add it here,
   // e.g. hero: "assets/img/hero.jpg". Until then each slot shows an illustration.
   photos: {

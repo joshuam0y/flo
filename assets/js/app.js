@@ -14,6 +14,14 @@
   const signupEndpoint = CFG.signupUrl || (CFG.checkoutUrl ? CFG.checkoutUrl.replace(/\/checkout$/, "/subscribe") : "");
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
+  // The welcome code from joining the list, kept on this device so the account page and checkout can show it
+  const WELCOME_KEY = "flo-welcome";
+  const readWelcome = () => {
+    try { const w = JSON.parse(localStorage.getItem(WELCOME_KEY)); return w && w.expires * 1000 > Date.now() ? w : null; } catch { return null; }
+  };
+  // the first-order discount for joining, shown only once sign-ups really work
+  const offer = () => (CFG.welcome && signupEndpoint ? CFG.welcome.percent : 0);
+
   async function joinList(email) {
     const res = await fetch(signupEndpoint, {
       method: "POST",
@@ -22,10 +30,19 @@
     });
     const data = await res.json().catch(() => ({}));
     if (!res.ok) throw new Error(data.error || "Something went wrong. Please try again.");
+    if (data.code) { try { localStorage.setItem(WELCOME_KEY, JSON.stringify({ code: data.code, percent: data.percent, expires: data.expires })); } catch { /* private mode */ } }
+    return data;
+  }
+
+  const shortDate = sec => new Date(sec * 1000).toLocaleDateString("en-US", { month: "short", day: "numeric" });
+  function joinedHtml(data, fallback) {
+    if (!data.code) return esc(fallback);
+    return `You're in. Your ${data.percent}% off code for your first order: <b class="code">${esc(data.code)}</b> (until ${shortDate(data.expires)}). It's saved on this device and on your <a class="link-u" href="account.html">account page</a>.`;
   }
 
   // A sign-up form wired to the list, or a pointer to Instagram while sign-ups aren't connected
   function notifyMarkup(lead) {
+    if (offer() && !/% off/.test(lead)) lead += ` Join the list for ${offer()}% off your first order.`;
     if (!signupEndpoint) {
       return `<p>${lead}</p><a class="btn btn--solid" href="${esc(CFG.instagram || "#")}" target="_blank" rel="noopener">Follow for the drop date</a>`;
     }
@@ -45,8 +62,8 @@
       const msg = root.querySelector(".notify__msg");
       msg.textContent = "Joining…";
       try {
-        await joinList(form.querySelector("input").value);
-        msg.textContent = "You're on the list. We'll email you when the drop opens.";
+        const data = await joinList(form.querySelector("input").value);
+        msg.innerHTML = joinedHtml(data, "You're on the list. We'll email you when the drop opens.");
         form.reset();
       } catch (err) { msg.textContent = err.message; }
     });
@@ -236,15 +253,59 @@
         form.outerHTML = `<a class="btn btn--white" href="${esc(CFG.instagram || "#")}" target="_blank" rel="noopener">Follow for the drop date</a>`;
         return;
       }
+      if (offer()) form.insertAdjacentHTML("beforebegin", `<p class="signup__offer">Join the list and get ${offer()}% off your first order.</p>`);
       form.addEventListener("submit", async e => {
         e.preventDefault();
         msg.textContent = "Joining…";
         try {
-          await joinList(form.querySelector("input[type=email]").value);
-          msg.textContent = "You're on the list. We'll be in touch before the drop.";
+          const data = await joinList(form.querySelector("input[type=email]").value);
+          msg.innerHTML = joinedHtml(data, "You're on the list. We'll be in touch before the drop.");
           form.reset();
         } catch (err) { msg.textContent = err.message; }
       });
+    });
+  }
+
+  // Account page: orders (Stripe's customer portal), the welcome code and how promo codes work
+  function renderAccount() {
+    const root = $("#account");
+    if (!root) return;
+    const w = readWelcome(), pct = offer();
+    root.innerHTML = `
+      <p class="label label--mute">Your account</p>
+      <h1 class="display account__title">Orders &amp; <em>rewards</em></h1>
+      <div class="account__grid">
+        <div class="account__card">
+          <p class="label">Your orders</p>
+          ${CFG.ordersUrl
+            ? `<p>Sign in with the email you ordered with. Stripe, our payment provider, emails you a one-time code, then shows every order and receipt. No password needed.</p>
+               <a class="btn btn--solid" href="${esc(CFG.ordersUrl)}" target="_blank" rel="noopener">View my orders</a>`
+            : `<p>Your orders will show up here once Drop 001 is on sale. Every order also comes with an email receipt and tracking.</p>`}
+        </div>
+        <div class="account__card" id="account-rewards">
+          <p class="label">Rewards</p>
+          ${w
+            ? `<p>Your ${w.percent}% off first-order code:</p>
+               <p class="account__code"><b>${esc(w.code)}</b> <button class="label link-u" data-copy="${esc(w.code)}">Copy</button></p>
+               <p class="account__fine">Enter it on the payment page. One use, first order only, until ${shortDate(w.expires)}.</p>`
+            : pct
+            ? `<div class="notify">${notifyMarkup(`Join the list and get ${pct}% off your first order. Your code shows up here right away.`)}</div>`
+            : `<p>Rewards open with Drop 001.</p><a class="btn btn--solid" href="${esc(CFG.instagram || "#")}" target="_blank" rel="noopener">Follow for the drop date</a>`}
+        </div>
+        <div class="account__card">
+          <p class="label">Promo codes</p>
+          <p>Codes go in on the payment page, one per order.${CFG.launch?.code && !prelaunch ? ` Right now: <b>${esc(CFG.launch.code)}</b> for ${esc(CFG.launch.offer)}.` : ""}</p>
+        </div>
+      </div>`;
+    const box = root.querySelector("#account-rewards .notify");
+    if (box) {
+      bindNotify(box);
+      box.addEventListener("submit", () => setTimeout(function wait() { if (readWelcome()) renderAccount(); else if (box.isConnected) setTimeout(wait, 400); }, 400));
+    }
+    root.addEventListener("click", e => {
+      const c = e.target.closest("[data-copy]");
+      if (!c) return;
+      navigator.clipboard?.writeText(c.dataset.copy).then(() => toast("Code copied"), () => toast(c.dataset.copy));
     });
   }
 
@@ -505,6 +566,7 @@
       return;
     }
     setAnnounce();
+    renderAccount();
     renderHome();
     renderShop();
     renderProduct();

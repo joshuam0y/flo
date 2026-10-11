@@ -10,6 +10,9 @@ SHIP_COUNTRIES = "US"
 # "false" = orders wait in Printify "On hold" until you press Send to production (safer while testing).
 # "true"  = orders go straight into production as soon as the customer pays.
 PRINTIFY_AUTO_SEND = "false"
+# Joining the email list gives a personal one-time code for this much off a first order, valid this many days
+WELCOME_PERCENT = "20"
+WELCOME_DAYS = "60"
 
 # Secrets: set these with `npx wrangler secret put NAME`, never commit them:
 #   STRIPE_SECRET_KEY        sk_live_... (or sk_test_... while testing)

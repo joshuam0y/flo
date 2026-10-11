@@ -700,3 +700,18 @@ input { font: inherit; }
 .is-white .photo--product { mix-blend-mode: normal; }
 
 .size:disabled { color: var(--line); border-color: var(--line); background: repeating-linear-gradient(135deg, transparent 0 6px, rgba(0,0,0,.04) 6px 7px); cursor: not-allowed; text-decoration: line-through; }
+
+/* ---------- Account: orders and rewards ---------- */
+.account { max-width: 1040px; margin: 0 auto; padding: 56px var(--gutter) 96px; display: grid; gap: 24px; }
+.account__title { font-size: clamp(48px, 8vw, 96px); }
+.account__title em { font-style: italic; }
+.account__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2px; margin-top: 12px; }
+.account__card { background: var(--paper-2); padding: 28px; display: grid; gap: 14px; align-content: start; }
+.account__card p { margin: 0; color: var(--ink-2); }
+.account__card .label { color: var(--ink); }
+.account__card .btn { width: 100%; }
+.account__code { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.account__code b { font-family: var(--sans); font-weight: 500; font-size: 22px; letter-spacing: .12em; color: var(--ink); background: var(--paper); border: 1px dashed var(--ink-2); padding: 8px 14px; }
+.account__fine { font-size: 13px; color: var(--mute) !important; }
+.notify__msg .code, .signup__msg .code { letter-spacing: .1em; }
+.signup__offer { color: var(--paper) !important; font-size: 17px; margin-top: -16px !important; }

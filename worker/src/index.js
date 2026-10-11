@@ -2,7 +2,8 @@
  *
  *   POST /checkout   bag items -> Stripe Checkout Session -> { url }
  *   POST /webhook    Stripe "checkout.session.completed" -> Printify order
- *   POST /subscribe  email sign-up, saved in the SUBSCRIBERS KV namespace
+ *   POST /subscribe  email sign-up (saved in the SUBSCRIBERS KV namespace) -> a personal one-time
+ *                    code for WELCOME_PERCENT off a first order, created in Stripe
  *
  * Prices always come from the published products.json, never from the browser,
  * so nobody can edit the bag in devtools and pay $1 for a hoodie.
@@ -62,6 +63,10 @@ async function checkout(request, env, cors) {
   form.set("success_url", `${env.SITE_URL}/success.html?session_id={CHECKOUT_SESSION_ID}`);
   form.set("cancel_url", `${env.SITE_URL}/checkout.html`);
   form.set("allow_promotion_codes", "true"); // create codes under Stripe → Product catalogue → Coupons
+  // a Stripe customer and an invoice for every order, so customers can sign in to Stripe's customer portal
+  // (the "My orders" link) and see past orders and receipts
+  form.set("customer_creation", "always");
+  form.set("invoice_creation[enabled]", "true");
   if (typeof email === "string" && /^[^@\s]+@[^@\s]+$/.test(email)) form.set("customer_email", email);
   form.set("phone_number_collection[enabled]", "true");
   form.set("billing_address_collection", "auto");
@@ -182,9 +187,49 @@ async function subscribe(request, env, cors) {
   if (typeof email !== "string" || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email) || email.length > 200) {
     return json({ error: "Please enter a valid email address." }, 400, cors);
   }
-  if (!env.SUBSCRIBERS) return json({ error: "Sign-ups aren't open yet." }, 503, cors);
-  await env.SUBSCRIBERS.put(email.toLowerCase(), new Date().toISOString());
-  return json({ ok: true }, 200, cors);
+  const key = email.trim().toLowerCase();
+  const now = Math.floor(Date.now() / 1000);
+  let saved = null;
+  if (env.SUBSCRIBERS) {
+    const raw = await env.SUBSCRIBERS.get(key);
+    try { saved = raw ? JSON.parse(raw) : null; } catch { saved = { joined: raw }; }   // early sign-ups stored just a date
+  }
+  // one welcome code per email: signing up again shows the same code
+  if (saved?.code && saved.expires > now) return json({ ok: true, code: saved.code, percent: saved.percent, expires: saved.expires }, 200, cors);
+  if (!env.STRIPE_SECRET_KEY) {
+    if (!env.SUBSCRIBERS) return json({ error: "Sign-ups aren't open yet." }, 503, cors);
+    await env.SUBSCRIBERS.put(key, JSON.stringify({ joined: saved?.joined || new Date().toISOString() }));
+    return json({ ok: true }, 200, cors);
+  }
+  const percent = Number(env.WELCOME_PERCENT || 20);
+  const expires = now + Number(env.WELCOME_DAYS || 60) * 86400;
+  const code = `WELCOME-${randomCode(6)}`;
+  // single use, and Stripe only accepts it from a customer with no earlier purchase
+  await stripe(env, "/promotion_codes", { method: "POST", body: new URLSearchParams({
+    coupon: await welcomeCoupon(env, percent), code, max_redemptions: "1", "restrictions[first_time_transaction]": "true",
+    expires_at: String(expires), "metadata[email]": key
+  }) });
+  if (env.SUBSCRIBERS) {
+    await env.SUBSCRIBERS.put(key, JSON.stringify({ joined: saved?.joined || new Date().toISOString(), code, percent, expires }));
+  }
+  return json({ ok: true, code, percent, expires }, 200, cors);
+}
+
+// The coupon behind every welcome code, made the first time it's needed
+async function welcomeCoupon(env, percent) {
+  const id = `flo-welcome-${percent}`;
+  try {
+    await stripe(env, `/coupons/${id}`, { method: "GET" });
+  } catch {
+    await stripe(env, "/coupons", { method: "POST", body: new URLSearchParams({ id, percent_off: String(percent), duration: "once", name: `Welcome ${percent}% off` }) });
+  }
+  return id;
+}
+
+// WELCOME-7K2QXF: no 0/O or 1/I/L, so codes are easy to read and type
+function randomCode(n) {
+  const abc = "ABCDEFGHJKMNPQRSTUVWXYZ23456789";
+  return [...crypto.getRandomValues(new Uint8Array(n))].map(x => abc[x % abc.length]).join("");
 }
 
 /* ---------- Helpers ---------- */
@@ -194,7 +239,9 @@ async function stripe(env, path, init) {
     ...init,
     headers: {
       Authorization: `Bearer ${env.STRIPE_SECRET_KEY}`,
-      "Content-Type": "application/x-www-form-urlencoded"
+      "Content-Type": "application/x-www-form-urlencoded",
+      // pinned so Stripe changing its API can't break checkout or the welcome codes
+      "Stripe-Version": env.STRIPE_API_VERSION || "2024-06-20"
     }
   });
   const data = await res.json();
