@@ -8,7 +8,8 @@
   const STATES = "AL AK AZ AR CA CO CT DE DC FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY".split(" ");
 
   const $ = s => document.querySelector(s);
-  const money = n => "$" + n.toFixed(2);
+  const money = n => "$" + (Math.round(Number(n) * 100) / 100).toFixed(2);
+  const cents = n => Math.round(Number(n) * 100);   // money math in whole cents, so $44.99 sums never drift
   const live = !!(window.FLO_CONFIG && window.FLO_CONFIG.checkoutUrl);
 
   let catalog, items, discount = null, shipChoice = "standard";
@@ -26,10 +27,10 @@
   }
 
   function totals() {
-    const subtotal = items.reduce((n, i) => n + product(i.id).price * i.qty, 0);
-    const off = discount ? Math.round(subtotal * discount.rate * 100) / 100 : 0;
-    const ship = shipOptions(subtotal).find(o => o.id === shipChoice).price;
-    return { subtotal, off, ship, total: subtotal - off + ship };
+    const sub = items.reduce((n, i) => n + cents(product(i.id).price) * i.qty, 0);
+    const off = discount ? Math.round(sub * discount.rate) : 0;
+    const ship = cents(shipOptions(sub / 100).find(o => o.id === shipChoice).price);
+    return { subtotal: sub / 100, off: off / 100, ship: ship / 100, total: (sub - off + ship) / 100 };
   }
 
   function thumb(p, colorName) {

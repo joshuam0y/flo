@@ -2,7 +2,9 @@
   const BAG_KEY = "flo-bag";
   const $ = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
-  const money = n => "$" + (Number.isInteger(n) ? n.toFixed(0) : n.toFixed(2)); // $25, $28.99
+  // every price and total with cents ($25.00, $44.99); sums are done in whole cents so they never drift
+  const money = n => "$" + (Math.round(Number(n) * 100) / 100).toFixed(2);
+  const cents = n => Math.round(Number(n) * 100);
   const slug = s => s.toLowerCase().replace(/[^a-z0-9]+/g, "-");
   const skuOf = (id, color, size) => `${id}_${slug(color)}_${slug(size)}`;
 
@@ -148,13 +150,13 @@
   }
 
   function totals(items) {
-    const subtotal = items.reduce((sum, i) => {
+    const sub = items.reduce((sum, i) => {
       const p = findProduct(i.id);
-      return p ? sum + p.price * i.qty : sum;
+      return p ? sum + cents(p.price) * i.qty : sum;
     }, 0);
     const { flatRate, freeOver } = catalog.shipping;
-    const shipping = subtotal === 0 || subtotal >= freeOver ? 0 : flatRate;
-    return { subtotal, shipping, total: subtotal + shipping };
+    const ship = sub === 0 || sub >= cents(freeOver) ? 0 : cents(flatRate);
+    return { subtotal: sub / 100, shipping: ship / 100, total: (sub + ship) / 100 };
   }
 
   function renderBag() {
@@ -594,7 +596,7 @@
     try { order = JSON.parse(localStorage.getItem("flo-last-order")); } catch { /* ignore */ }
     const num = new URLSearchParams(location.search).get("order");
     if (!order || order.number !== num) return; // Stripe orders keep the generic thank-you
-    const m = n => "$" + n.toFixed(2);
+    const m = money;
     const day = n => { const d = new Date(order.placed); d.setDate(d.getDate() + n); return d.toLocaleDateString("en-US", { month: "short", day: "numeric" }); };
     const [lo, hi] = order.method.id === "express" ? [4, 7] : [6, 12];
     $("#confirm").innerHTML = `

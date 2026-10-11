@@ -53,10 +53,11 @@ async function checkout(request, env, cors) {
     lines.push({ ...line, qty: q });
   }
 
-  const subtotal = lines.reduce((s, l) => s + l.product.price * l.qty, 0);
+  // in whole cents, so prices like $44.99 add up exactly (the free-shipping check depends on it)
+  const subtotalCents = lines.reduce((s, l) => s + Math.round(l.product.price * 100) * l.qty, 0);
   // Standard shipping only, matching shipping_method 1 in the Printify order below
   const { flatRate, freeOver } = catalog.shipping;
-  const shipping = subtotal >= freeOver ? 0 : flatRate;
+  const shipping = subtotalCents >= Math.round(freeOver * 100) ? 0 : flatRate;
   const currency = catalog.currency || "usd";
 
   const form = new URLSearchParams();
@@ -76,7 +77,7 @@ async function checkout(request, env, cors) {
 
   form.set("shipping_options[0][shipping_rate_data][type]", "fixed_amount");
   form.set("shipping_options[0][shipping_rate_data][display_name]", shipping ? "Standard shipping" : "Free shipping");
-  form.set("shipping_options[0][shipping_rate_data][fixed_amount][amount]", String(shipping * 100));
+  form.set("shipping_options[0][shipping_rate_data][fixed_amount][amount]", String(Math.round(shipping * 100)));
   form.set("shipping_options[0][shipping_rate_data][fixed_amount][currency]", currency);
 
   lines.forEach((l, i) => {
