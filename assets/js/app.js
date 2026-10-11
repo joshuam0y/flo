@@ -83,7 +83,8 @@
   const findProduct = id => catalog.products.find(p => p.id === id);
 
   function art(p, color, side, className) {
-    const photo = side === "back" ? p.photos[1] : p.photos[0];
+    const set = (color && color.photos) || p.photos; // Printify colours carry their own mockups
+    const photo = side === "back" ? set[1] : set[0];
     if (photo) return `<img class="photo photo--product ${className || ""}" src="${photo}" alt="${p.name} in ${color.name}, ${side}" loading="lazy">`;
     return garmentSVG(p.type, color.hex, { front: p.front, back: p.back }, {
       side, className, ink: color.ink, label: `${p.name} in ${color.name}, ${side} view`
@@ -407,6 +408,7 @@
       $("#pdp-color").textContent = color.name;
       $$(".swatch", swatches).forEach(s => s.setAttribute("aria-pressed", s === b));
       drawGallery();
+      markSizes();
     });
     $("#pdp-color").textContent = color.name;
 
@@ -414,6 +416,18 @@
     sizes.innerHTML = p.sizes.map(s =>
       `<button class="size" data-size="${s}" aria-pressed="${s === size}">${s}</button>`).join("");
     if (p.sizes.length === 1) sizes.style.gridTemplateColumns = "1fr";
+    // some colours don't come in every size: grey those out, and drop a size that just became unavailable
+    const markSizes = () => {
+      const ok = color.sizes || p.sizes;
+      $$(".size", sizes).forEach(b => { b.disabled = !ok.includes(b.dataset.size); });
+      if (size && !ok.includes(size)) {
+        size = null;
+        $$(".size", sizes).forEach(b => b.setAttribute("aria-pressed", "false"));
+        const add = $("#pdp-add");
+        if (add) add.textContent = "Select a size";
+      }
+    };
+    markSizes();
     sizes.addEventListener("click", e => {
       const b = e.target.closest("[data-size]");
       if (!b) return;

@@ -698,3 +698,5 @@ input { font: inherit; }
 /* light garments: keep the mockup's own white ground so a white shirt doesn't vanish */
 .card__media.is-white, .pdp__shot.is-white { background: #fff; }
 .is-white .photo--product { mix-blend-mode: normal; }
+
+.size:disabled { color: var(--line); border-color: var(--line); background: repeating-linear-gradient(135deg, transparent 0 6px, rgba(0,0,0,.04) 6px 7px); cursor: not-allowed; text-decoration: line-through; }

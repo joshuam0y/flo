@@ -1,4 +1,8 @@
 {
+ "palm-springs-tee_black_xs": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 67831
+ },
  "palm-springs-tee_black_s": {
   "product_id": "6ac24858d101e467a00a3f8b",
   "variant_id": 38164
@@ -15,29 +19,681 @@
   "product_id": "6ac24858d101e467a00a3f8b",
   "variant_id": 38206
  },
- "palm-springs-tee_black_xxl": {
+ "palm-springs-tee_black_2xl": {
   "product_id": "6ac24858d101e467a00a3f8b",
   "variant_id": 38220
  },
- "over-perfection-tee_mint_s": {
+ "palm-springs-tee_black_3xl": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 42122
+ },
+ "palm-springs-tee_black_4xl": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 66213
+ },
+ "palm-springs-tee_black_5xl": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 95180
+ },
+ "palm-springs-tee_charcoal_xs": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 67802
+ },
+ "palm-springs-tee_charcoal_s": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 38153
+ },
+ "palm-springs-tee_charcoal_m": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 38167
+ },
+ "palm-springs-tee_charcoal_l": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 38181
+ },
+ "palm-springs-tee_charcoal_xl": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 38195
+ },
+ "palm-springs-tee_charcoal_2xl": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 38209
+ },
+ "palm-springs-tee_charcoal_3xl": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 42109
+ },
+ "palm-springs-tee_charcoal_4xl": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 66186
+ },
+ "palm-springs-tee_charcoal_5xl": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 95143
+ },
+ "palm-springs-tee_mint-green_s": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 68759
+ },
+ "palm-springs-tee_mint-green_m": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 68767
+ },
+ "palm-springs-tee_mint-green_l": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 68773
+ },
+ "palm-springs-tee_mint-green_xl": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 68779
+ },
+ "palm-springs-tee_mint-green_2xl": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 68785
+ },
+ "palm-springs-tee_mint-green_3xl": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 68791
+ },
+ "palm-springs-tee_jade-dome_s": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 64754
+ },
+ "palm-springs-tee_jade-dome_m": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 64762
+ },
+ "palm-springs-tee_jade-dome_l": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 64770
+ },
+ "palm-springs-tee_jade-dome_xl": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 64778
+ },
+ "palm-springs-tee_jade-dome_2xl": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 64786
+ },
+ "palm-springs-tee_jade-dome_3xl": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 64794
+ },
+ "palm-springs-tee_tropical-blue_s": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 66371
+ },
+ "palm-springs-tee_tropical-blue_m": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 66372
+ },
+ "palm-springs-tee_tropical-blue_l": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 66373
+ },
+ "palm-springs-tee_tropical-blue_xl": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 66374
+ },
+ "palm-springs-tee_tropical-blue_2xl": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 66375
+ },
+ "palm-springs-tee_tropical-blue_3xl": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 66376
+ },
+ "palm-springs-tee_ice-grey_s": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 66241
+ },
+ "palm-springs-tee_ice-grey_m": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 66242
+ },
+ "palm-springs-tee_ice-grey_l": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 66243
+ },
+ "palm-springs-tee_ice-grey_xl": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 66244
+ },
+ "palm-springs-tee_ice-grey_2xl": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 66245
+ },
+ "palm-springs-tee_ice-grey_3xl": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 66246
+ },
+ "palm-springs-tee_heather-indigo_s": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 64751
+ },
+ "palm-springs-tee_heather-indigo_m": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 64759
+ },
+ "palm-springs-tee_heather-indigo_l": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 64767
+ },
+ "palm-springs-tee_heather-indigo_xl": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 64775
+ },
+ "palm-springs-tee_heather-indigo_2xl": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 64783
+ },
+ "palm-springs-tee_heather-indigo_3xl": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 64791
+ },
+ "palm-springs-tee_heather-indigo_4xl": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 66191
+ },
+ "palm-springs-tee_sand_s": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 67436
+ },
+ "palm-springs-tee_sand_m": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 67441
+ },
+ "palm-springs-tee_sand_l": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 67446
+ },
+ "palm-springs-tee_sand_xl": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 67451
+ },
+ "palm-springs-tee_sand_2xl": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 67456
+ },
+ "palm-springs-tee_sand_3xl": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 67461
+ },
+ "palm-springs-tee_dark-chocolate_s": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 38155
+ },
+ "palm-springs-tee_dark-chocolate_m": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 38169
+ },
+ "palm-springs-tee_dark-chocolate_l": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 38183
+ },
+ "palm-springs-tee_dark-chocolate_xl": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 38197
+ },
+ "palm-springs-tee_dark-chocolate_2xl": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 38211
+ },
+ "palm-springs-tee_dark-chocolate_3xl": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 42112
+ },
+ "palm-springs-tee_dark-chocolate_4xl": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 66189
+ },
+ "palm-springs-tee_natural_s": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 63293
+ },
+ "palm-springs-tee_natural_m": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 63298
+ },
+ "palm-springs-tee_natural_l": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 63303
+ },
+ "palm-springs-tee_natural_xl": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 63308
+ },
+ "palm-springs-tee_natural_2xl": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 63313
+ },
+ "palm-springs-tee_natural_3xl": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 63318
+ },
+ "palm-springs-tee_natural_4xl": {
+  "product_id": "6ac24858d101e467a00a3f8b",
+  "variant_id": 66202
+ },
+ "over-perfection-tee_mint-green_s": {
   "product_id": "6ac132eba1fc024e4b0fb1b8",
   "variant_id": 68759
  },
- "over-perfection-tee_mint_m": {
+ "over-perfection-tee_mint-green_m": {
   "product_id": "6ac132eba1fc024e4b0fb1b8",
   "variant_id": 68767
  },
- "over-perfection-tee_mint_l": {
+ "over-perfection-tee_mint-green_l": {
   "product_id": "6ac132eba1fc024e4b0fb1b8",
   "variant_id": 68773
  },
- "over-perfection-tee_mint_xl": {
+ "over-perfection-tee_mint-green_xl": {
   "product_id": "6ac132eba1fc024e4b0fb1b8",
   "variant_id": 68779
  },
- "over-perfection-tee_mint_xxl": {
+ "over-perfection-tee_mint-green_2xl": {
   "product_id": "6ac132eba1fc024e4b0fb1b8",
   "variant_id": 68785
+ },
+ "over-perfection-tee_mint-green_3xl": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 68791
+ },
+ "over-perfection-tee_white_xs": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 67829
+ },
+ "over-perfection-tee_white_s": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 38163
+ },
+ "over-perfection-tee_white_m": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 38177
+ },
+ "over-perfection-tee_white_l": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 38191
+ },
+ "over-perfection-tee_white_xl": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 38205
+ },
+ "over-perfection-tee_white_2xl": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 38219
+ },
+ "over-perfection-tee_white_3xl": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 42120
+ },
+ "over-perfection-tee_white_4xl": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 66211
+ },
+ "over-perfection-tee_white_5xl": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 95175
+ },
+ "over-perfection-tee_red_xs": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 67823
+ },
+ "over-perfection-tee_red_s": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 38160
+ },
+ "over-perfection-tee_red_m": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 38174
+ },
+ "over-perfection-tee_red_l": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 38188
+ },
+ "over-perfection-tee_red_xl": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 38202
+ },
+ "over-perfection-tee_red_2xl": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 38216
+ },
+ "over-perfection-tee_red_3xl": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 42117
+ },
+ "over-perfection-tee_red_4xl": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 66207
+ },
+ "over-perfection-tee_red_5xl": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 95170
+ },
+ "over-perfection-tee_heather-navy_xs": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 67809
+ },
+ "over-perfection-tee_heather-navy_s": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 42818
+ },
+ "over-perfection-tee_heather-navy_m": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 42824
+ },
+ "over-perfection-tee_heather-navy_l": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 42830
+ },
+ "over-perfection-tee_heather-navy_xl": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 42836
+ },
+ "over-perfection-tee_heather-navy_2xl": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 42842
+ },
+ "over-perfection-tee_heather-navy_3xl": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 42848
+ },
+ "over-perfection-tee_heather-navy_4xl": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 66193
+ },
+ "over-perfection-tee_heather-navy_5xl": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 95152
+ },
+ "over-perfection-tee_navy_xs": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 67819
+ },
+ "over-perfection-tee_navy_s": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 38158
+ },
+ "over-perfection-tee_navy_m": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 38172
+ },
+ "over-perfection-tee_navy_l": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 38186
+ },
+ "over-perfection-tee_navy_xl": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 38200
+ },
+ "over-perfection-tee_navy_2xl": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 38214
+ },
+ "over-perfection-tee_navy_3xl": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 42115
+ },
+ "over-perfection-tee_navy_4xl": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 66203
+ },
+ "over-perfection-tee_navy_5xl": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 95166
+ },
+ "over-perfection-tee_pistachio_s": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 105203
+ },
+ "over-perfection-tee_pistachio_m": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 105204
+ },
+ "over-perfection-tee_pistachio_l": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 105205
+ },
+ "over-perfection-tee_pistachio_xl": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 105206
+ },
+ "over-perfection-tee_pistachio_2xl": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 105207
+ },
+ "over-perfection-tee_pistachio_3xl": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 105208
+ },
+ "over-perfection-tee_light-blue_s": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 38157
+ },
+ "over-perfection-tee_light-blue_m": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 38171
+ },
+ "over-perfection-tee_light-blue_l": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 38185
+ },
+ "over-perfection-tee_light-blue_xl": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 38199
+ },
+ "over-perfection-tee_light-blue_2xl": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 38213
+ },
+ "over-perfection-tee_light-blue_3xl": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 42114
+ },
+ "over-perfection-tee_light-blue_4xl": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 66200
+ },
+ "over-perfection-tee_maroon_s": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 63292
+ },
+ "over-perfection-tee_maroon_m": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 63297
+ },
+ "over-perfection-tee_maroon_l": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 63302
+ },
+ "over-perfection-tee_maroon_xl": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 63307
+ },
+ "over-perfection-tee_maroon_2xl": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 63312
+ },
+ "over-perfection-tee_maroon_3xl": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 63317
+ },
+ "over-perfection-tee_indigo-blue_s": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 67438
+ },
+ "over-perfection-tee_indigo-blue_m": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 67443
+ },
+ "over-perfection-tee_indigo-blue_l": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 67448
+ },
+ "over-perfection-tee_indigo-blue_xl": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 67453
+ },
+ "over-perfection-tee_indigo-blue_2xl": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 67458
+ },
+ "over-perfection-tee_indigo-blue_3xl": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 67463
+ },
+ "over-perfection-tee_heather-indigo_s": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 64751
+ },
+ "over-perfection-tee_heather-indigo_m": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 64759
+ },
+ "over-perfection-tee_heather-indigo_l": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 64767
+ },
+ "over-perfection-tee_heather-indigo_xl": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 64775
+ },
+ "over-perfection-tee_heather-indigo_2xl": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 64783
+ },
+ "over-perfection-tee_heather-indigo_3xl": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 64791
+ },
+ "over-perfection-tee_heather-indigo_4xl": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 66191
+ },
+ "over-perfection-tee_sand_s": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 67436
+ },
+ "over-perfection-tee_sand_m": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 67441
+ },
+ "over-perfection-tee_sand_l": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 67446
+ },
+ "over-perfection-tee_sand_xl": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 67451
+ },
+ "over-perfection-tee_sand_2xl": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 67456
+ },
+ "over-perfection-tee_sand_3xl": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 67461
+ },
+ "over-perfection-tee_natural_s": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 63293
+ },
+ "over-perfection-tee_natural_m": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 63298
+ },
+ "over-perfection-tee_natural_l": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 63303
+ },
+ "over-perfection-tee_natural_xl": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 63308
+ },
+ "over-perfection-tee_natural_2xl": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 63313
+ },
+ "over-perfection-tee_natural_3xl": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 63318
+ },
+ "over-perfection-tee_natural_4xl": {
+  "product_id": "6ac132eba1fc024e4b0fb1b8",
+  "variant_id": 66202
+ },
+ "dragon-tee_vintage-white_s": {
+  "product_id": "6ac27e0bc0726c04480aec48",
+  "variant_id": 106062
+ },
+ "dragon-tee_vintage-white_m": {
+  "product_id": "6ac27e0bc0726c04480aec48",
+  "variant_id": 106063
+ },
+ "dragon-tee_vintage-white_l": {
+  "product_id": "6ac27e0bc0726c04480aec48",
+  "variant_id": 106064
+ },
+ "dragon-tee_vintage-white_xl": {
+  "product_id": "6ac27e0bc0726c04480aec48",
+  "variant_id": 106065
+ },
+ "dragon-tee_vintage-white_2xl": {
+  "product_id": "6ac27e0bc0726c04480aec48",
+  "variant_id": 106066
+ },
+ "dragon-tee_vintage-white_3xl": {
+  "product_id": "6ac27e0bc0726c04480aec48",
+  "variant_id": 106067
+ },
+ "dragon-tee_cotton-pink_s": {
+  "product_id": "6ac27e0bc0726c04480aec48",
+  "variant_id": 105922
+ },
+ "dragon-tee_cotton-pink_m": {
+  "product_id": "6ac27e0bc0726c04480aec48",
+  "variant_id": 105923
+ },
+ "dragon-tee_cotton-pink_l": {
+  "product_id": "6ac27e0bc0726c04480aec48",
+  "variant_id": 105924
+ },
+ "dragon-tee_cotton-pink_xl": {
+  "product_id": "6ac27e0bc0726c04480aec48",
+  "variant_id": 105925
+ },
+ "dragon-tee_cotton-pink_2xl": {
+  "product_id": "6ac27e0bc0726c04480aec48",
+  "variant_id": 105926
+ },
+ "dragon-tee_cotton-pink_3xl": {
+  "product_id": "6ac27e0bc0726c04480aec48",
+  "variant_id": 105927
+ },
+ "dragon-tee_french-navy_s": {
+  "product_id": "6ac27e0bc0726c04480aec48",
+  "variant_id": 105942
+ },
+ "dragon-tee_french-navy_m": {
+  "product_id": "6ac27e0bc0726c04480aec48",
+  "variant_id": 105943
+ },
+ "dragon-tee_french-navy_l": {
+  "product_id": "6ac27e0bc0726c04480aec48",
+  "variant_id": 105944
+ },
+ "dragon-tee_french-navy_xl": {
+  "product_id": "6ac27e0bc0726c04480aec48",
+  "variant_id": 105945
+ },
+ "dragon-tee_french-navy_2xl": {
+  "product_id": "6ac27e0bc0726c04480aec48",
+  "variant_id": 105946
+ },
+ "dragon-tee_french-navy_3xl": {
+  "product_id": "6ac27e0bc0726c04480aec48",
+  "variant_id": 105947
  },
  "dragon-tee_white_s": {
   "product_id": "6ac27e0bc0726c04480aec48",
@@ -55,9 +711,13 @@
   "product_id": "6ac27e0bc0726c04480aec48",
   "variant_id": 106075
  },
- "dragon-tee_white_xxl": {
+ "dragon-tee_white_2xl": {
   "product_id": "6ac27e0bc0726c04480aec48",
   "variant_id": 106076
+ },
+ "dragon-tee_white_3xl": {
+  "product_id": "6ac27e0bc0726c04480aec48",
+  "variant_id": 106077
  },
  "apparel-crew_black_s": {
   "product_id": "6acbf5c0b378754520066f4a",
@@ -75,9 +735,357 @@
   "product_id": "6acbf5c0b378754520066f4a",
   "variant_id": 25490
  },
- "apparel-crew_black_xxl": {
+ "apparel-crew_black_2xl": {
   "product_id": "6acbf5c0b378754520066f4a",
   "variant_id": 25521
+ },
+ "apparel-crew_black_3xl": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25552
+ },
+ "apparel-crew_black_4xl": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25583
+ },
+ "apparel-crew_black_5xl": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25614
+ },
+ "apparel-crew_light-pink_s": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25386
+ },
+ "apparel-crew_light-pink_m": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25417
+ },
+ "apparel-crew_light-pink_l": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25448
+ },
+ "apparel-crew_light-pink_xl": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25479
+ },
+ "apparel-crew_light-pink_2xl": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25510
+ },
+ "apparel-crew_light-pink_3xl": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25541
+ },
+ "apparel-crew_orange_s": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25389
+ },
+ "apparel-crew_orange_m": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25420
+ },
+ "apparel-crew_orange_l": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25451
+ },
+ "apparel-crew_orange_xl": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25482
+ },
+ "apparel-crew_orange_2xl": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25513
+ },
+ "apparel-crew_orange_3xl": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25544
+ },
+ "apparel-crew_orange_4xl": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25575
+ },
+ "apparel-crew_orange_5xl": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25606
+ },
+ "apparel-crew_military-green_s": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25404
+ },
+ "apparel-crew_military-green_m": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25435
+ },
+ "apparel-crew_military-green_l": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25466
+ },
+ "apparel-crew_military-green_xl": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25497
+ },
+ "apparel-crew_military-green_2xl": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25528
+ },
+ "apparel-crew_military-green_3xl": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25559
+ },
+ "apparel-crew_purple_s": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25390
+ },
+ "apparel-crew_purple_m": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25421
+ },
+ "apparel-crew_purple_l": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25452
+ },
+ "apparel-crew_purple_xl": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25483
+ },
+ "apparel-crew_purple_2xl": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25514
+ },
+ "apparel-crew_purple_3xl": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25545
+ },
+ "apparel-crew_heliconia_s": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25383
+ },
+ "apparel-crew_heliconia_m": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25414
+ },
+ "apparel-crew_heliconia_l": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25445
+ },
+ "apparel-crew_heliconia_xl": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25476
+ },
+ "apparel-crew_heliconia_2xl": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25507
+ },
+ "apparel-crew_heliconia_3xl": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25538
+ },
+ "apparel-crew_heliconia_4xl": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25569
+ },
+ "apparel-crew_heliconia_5xl": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25600
+ },
+ "apparel-crew_sport-grey_s": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25395
+ },
+ "apparel-crew_sport-grey_m": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25426
+ },
+ "apparel-crew_sport-grey_l": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25457
+ },
+ "apparel-crew_sport-grey_xl": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25488
+ },
+ "apparel-crew_sport-grey_2xl": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25519
+ },
+ "apparel-crew_sport-grey_3xl": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25550
+ },
+ "apparel-crew_sport-grey_4xl": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25581
+ },
+ "apparel-crew_sport-grey_5xl": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25612
+ },
+ "apparel-crew_cherry-red_s": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25399
+ },
+ "apparel-crew_cherry-red_m": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25430
+ },
+ "apparel-crew_cherry-red_l": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25461
+ },
+ "apparel-crew_cherry-red_xl": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25492
+ },
+ "apparel-crew_cherry-red_2xl": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25523
+ },
+ "apparel-crew_cherry-red_3xl": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25554
+ },
+ "apparel-crew_safety-green_s": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25405
+ },
+ "apparel-crew_safety-green_m": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25436
+ },
+ "apparel-crew_safety-green_l": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25467
+ },
+ "apparel-crew_safety-green_xl": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25498
+ },
+ "apparel-crew_safety-green_2xl": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25529
+ },
+ "apparel-crew_safety-green_3xl": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25560
+ },
+ "apparel-crew_safety-green_4xl": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25591
+ },
+ "apparel-crew_safety-green_5xl": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25622
+ },
+ "apparel-crew_indigo-blue_s": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25402
+ },
+ "apparel-crew_indigo-blue_m": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25433
+ },
+ "apparel-crew_indigo-blue_l": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25464
+ },
+ "apparel-crew_indigo-blue_xl": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25495
+ },
+ "apparel-crew_indigo-blue_2xl": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25526
+ },
+ "apparel-crew_indigo-blue_3xl": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25557
+ },
+ "apparel-crew_cardinal-red_s": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25398
+ },
+ "apparel-crew_cardinal-red_m": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25429
+ },
+ "apparel-crew_cardinal-red_l": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25460
+ },
+ "apparel-crew_cardinal-red_xl": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25491
+ },
+ "apparel-crew_cardinal-red_2xl": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25522
+ },
+ "apparel-crew_cardinal-red_3xl": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25553
+ },
+ "apparel-crew_heather-sport-royal_s": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 105386
+ },
+ "apparel-crew_heather-sport-royal_m": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 105387
+ },
+ "apparel-crew_heather-sport-royal_l": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 105388
+ },
+ "apparel-crew_heather-sport-royal_xl": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 105389
+ },
+ "apparel-crew_heather-sport-royal_2xl": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 105390
+ },
+ "apparel-crew_heather-sport-royal_3xl": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 105391
+ },
+ "apparel-crew_heather-sport-dark-maroon_s": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 81993
+ },
+ "apparel-crew_heather-sport-dark-maroon_m": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 81996
+ },
+ "apparel-crew_heather-sport-dark-maroon_l": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 81999
+ },
+ "apparel-crew_heather-sport-dark-maroon_xl": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 82002
+ },
+ "apparel-crew_heather-sport-dark-maroon_2xl": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 82005
+ },
+ "apparel-crew_heather-sport-dark-maroon_3xl": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 82008
+ },
+ "apparel-crew_safety-pink_s": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25393
+ },
+ "apparel-crew_safety-pink_m": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25424
+ },
+ "apparel-crew_safety-pink_l": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25455
+ },
+ "apparel-crew_safety-pink_xl": {
+  "product_id": "6acbf5c0b378754520066f4a",
+  "variant_id": 25486
  },
  "forward-crew_sand_s": {
   "product_id": "6ac27f66424802d4ea07a45c",
@@ -115,8 +1123,184 @@
   "product_id": "6acbff615a6821eb4003d559",
   "variant_id": 33794
  },
- "champs-longsleeve_white_xxl": {
+ "champs-longsleeve_white_2xl": {
   "product_id": "6acbff615a6821eb4003d559",
   "variant_id": 33795
+ },
+ "champs-longsleeve_white_3xl": {
+  "product_id": "6acbff615a6821eb4003d559",
+  "variant_id": 64722
+ },
+ "champs-longsleeve_white_4xl": {
+  "product_id": "6acbff615a6821eb4003d559",
+  "variant_id": 77146
+ },
+ "champs-longsleeve_white_5xl": {
+  "product_id": "6acbff615a6821eb4003d559",
+  "variant_id": 77170
+ },
+ "champs-longsleeve_red_s": {
+  "product_id": "6acbff615a6821eb4003d559",
+  "variant_id": 33776
+ },
+ "champs-longsleeve_red_m": {
+  "product_id": "6acbff615a6821eb4003d559",
+  "variant_id": 33777
+ },
+ "champs-longsleeve_red_l": {
+  "product_id": "6acbff615a6821eb4003d559",
+  "variant_id": 33778
+ },
+ "champs-longsleeve_red_xl": {
+  "product_id": "6acbff615a6821eb4003d559",
+  "variant_id": 33779
+ },
+ "champs-longsleeve_red_2xl": {
+  "product_id": "6acbff615a6821eb4003d559",
+  "variant_id": 33780
+ },
+ "champs-longsleeve_red_3xl": {
+  "product_id": "6acbff615a6821eb4003d559",
+  "variant_id": 64717
+ },
+ "champs-longsleeve_red_4xl": {
+  "product_id": "6acbff615a6821eb4003d559",
+  "variant_id": 77141
+ },
+ "champs-longsleeve_red_5xl": {
+  "product_id": "6acbff615a6821eb4003d559",
+  "variant_id": 77165
+ },
+ "champs-longsleeve_light-blue_s": {
+  "product_id": "6acbff615a6821eb4003d559",
+  "variant_id": 42661
+ },
+ "champs-longsleeve_light-blue_m": {
+  "product_id": "6acbff615a6821eb4003d559",
+  "variant_id": 42662
+ },
+ "champs-longsleeve_light-blue_l": {
+  "product_id": "6acbff615a6821eb4003d559",
+  "variant_id": 42663
+ },
+ "champs-longsleeve_light-blue_xl": {
+  "product_id": "6acbff615a6821eb4003d559",
+  "variant_id": 42664
+ },
+ "champs-longsleeve_light-blue_2xl": {
+  "product_id": "6acbff615a6821eb4003d559",
+  "variant_id": 42665
+ },
+ "champs-longsleeve_light-blue_3xl": {
+  "product_id": "6acbff615a6821eb4003d559",
+  "variant_id": 64712
+ },
+ "champs-longsleeve_light-blue_4xl": {
+  "product_id": "6acbff615a6821eb4003d559",
+  "variant_id": 77136
+ },
+ "champs-longsleeve_light-pink_s": {
+  "product_id": "6acbff615a6821eb4003d559",
+  "variant_id": 42666
+ },
+ "champs-longsleeve_light-pink_m": {
+  "product_id": "6acbff615a6821eb4003d559",
+  "variant_id": 42667
+ },
+ "champs-longsleeve_light-pink_l": {
+  "product_id": "6acbff615a6821eb4003d559",
+  "variant_id": 42668
+ },
+ "champs-longsleeve_light-pink_xl": {
+  "product_id": "6acbff615a6821eb4003d559",
+  "variant_id": 42669
+ },
+ "champs-longsleeve_light-pink_2xl": {
+  "product_id": "6acbff615a6821eb4003d559",
+  "variant_id": 42670
+ },
+ "champs-longsleeve_light-pink_3xl": {
+  "product_id": "6acbff615a6821eb4003d559",
+  "variant_id": 64726
+ },
+ "champs-longsleeve_light-pink_4xl": {
+  "product_id": "6acbff615a6821eb4003d559",
+  "variant_id": 77152
+ },
+ "champs-longsleeve_sport-grey_s": {
+  "product_id": "6acbff615a6821eb4003d559",
+  "variant_id": 33987
+ },
+ "champs-longsleeve_sport-grey_m": {
+  "product_id": "6acbff615a6821eb4003d559",
+  "variant_id": 33988
+ },
+ "champs-longsleeve_sport-grey_l": {
+  "product_id": "6acbff615a6821eb4003d559",
+  "variant_id": 33989
+ },
+ "champs-longsleeve_sport-grey_xl": {
+  "product_id": "6acbff615a6821eb4003d559",
+  "variant_id": 33990
+ },
+ "champs-longsleeve_sport-grey_2xl": {
+  "product_id": "6acbff615a6821eb4003d559",
+  "variant_id": 33991
+ },
+ "champs-longsleeve_sport-grey_3xl": {
+  "product_id": "6acbff615a6821eb4003d559",
+  "variant_id": 64721
+ },
+ "champs-longsleeve_royal_s": {
+  "product_id": "6acbff615a6821eb4003d559",
+  "variant_id": 33781
+ },
+ "champs-longsleeve_royal_m": {
+  "product_id": "6acbff615a6821eb4003d559",
+  "variant_id": 33782
+ },
+ "champs-longsleeve_royal_l": {
+  "product_id": "6acbff615a6821eb4003d559",
+  "variant_id": 33783
+ },
+ "champs-longsleeve_royal_xl": {
+  "product_id": "6acbff615a6821eb4003d559",
+  "variant_id": 33784
+ },
+ "champs-longsleeve_royal_2xl": {
+  "product_id": "6acbff615a6821eb4003d559",
+  "variant_id": 33785
+ },
+ "champs-longsleeve_royal_3xl": {
+  "product_id": "6acbff615a6821eb4003d559",
+  "variant_id": 64718
+ },
+ "champs-longsleeve_royal_4xl": {
+  "product_id": "6acbff615a6821eb4003d559",
+  "variant_id": 77142
+ },
+ "champs-longsleeve_royal_5xl": {
+  "product_id": "6acbff615a6821eb4003d559",
+  "variant_id": 77166
+ },
+ "champs-longsleeve_carolina-blue_s": {
+  "product_id": "6acbff615a6821eb4003d559",
+  "variant_id": 42646
+ },
+ "champs-longsleeve_carolina-blue_m": {
+  "product_id": "6acbff615a6821eb4003d559",
+  "variant_id": 42647
+ },
+ "champs-longsleeve_carolina-blue_l": {
+  "product_id": "6acbff615a6821eb4003d559",
+  "variant_id": 42648
+ },
+ "champs-longsleeve_carolina-blue_xl": {
+  "product_id": "6acbff615a6821eb4003d559",
+  "variant_id": 42649
+ },
+ "champs-longsleeve_carolina-blue_2xl": {
+  "product_id": "6acbff615a6821eb4003d559",
+  "variant_id": 42650
  }
 }

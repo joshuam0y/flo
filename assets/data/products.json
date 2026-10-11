@@ -15,16 +15,162 @@
       "colors": [
         {
           "name": "Black",
-          "hex": "#161616",
-          "ink": "white"
+          "hex": "#000000",
+          "photos": [
+            "assets/img/products/printify/palm-springs-tee-black-front.jpg",
+            "assets/img/products/printify/palm-springs-tee-black-back.jpg"
+          ]
+        },
+        {
+          "name": "Charcoal",
+          "hex": "#585559",
+          "photos": [
+            "assets/img/products/printify/palm-springs-tee-charcoal-front.jpg",
+            "assets/img/products/printify/palm-springs-tee-charcoal-back.jpg"
+          ]
+        },
+        {
+          "name": "Mint Green",
+          "hex": "#b1e0c0",
+          "photos": [
+            "assets/img/products/printify/palm-springs-tee-mint-green-front.jpg",
+            "assets/img/products/printify/palm-springs-tee-mint-green-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL"
+          ]
+        },
+        {
+          "name": "Jade Dome",
+          "hex": "#19998A",
+          "photos": [
+            "assets/img/products/printify/palm-springs-tee-jade-dome-front.jpg",
+            "assets/img/products/printify/palm-springs-tee-jade-dome-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL"
+          ]
+        },
+        {
+          "name": "Tropical Blue",
+          "hex": "#0097A9",
+          "photos": [
+            "assets/img/products/printify/palm-springs-tee-tropical-blue-front.jpg",
+            "assets/img/products/printify/palm-springs-tee-tropical-blue-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL"
+          ]
+        },
+        {
+          "name": "Ice Grey",
+          "hex": "#D7D6D3",
+          "photos": [
+            "assets/img/products/printify/palm-springs-tee-ice-grey-front.jpg",
+            "assets/img/products/printify/palm-springs-tee-ice-grey-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL"
+          ]
+        },
+        {
+          "name": "Heather Indigo",
+          "hex": "#6a798e",
+          "photos": [
+            "assets/img/products/printify/palm-springs-tee-heather-indigo-front.jpg",
+            "assets/img/products/printify/palm-springs-tee-heather-indigo-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL",
+            "4XL"
+          ]
+        },
+        {
+          "name": "Sand",
+          "hex": "#DCD2BE",
+          "photos": [
+            "assets/img/products/printify/palm-springs-tee-sand-front.jpg",
+            "assets/img/products/printify/palm-springs-tee-sand-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL"
+          ]
+        },
+        {
+          "name": "Dark Chocolate",
+          "hex": "#31221D",
+          "photos": [
+            "assets/img/products/printify/palm-springs-tee-dark-chocolate-front.jpg",
+            "assets/img/products/printify/palm-springs-tee-dark-chocolate-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL",
+            "4XL"
+          ]
+        },
+        {
+          "name": "Natural",
+          "hex": "#FFF6E3",
+          "photos": [
+            "assets/img/products/printify/palm-springs-tee-natural-front.jpg",
+            "assets/img/products/printify/palm-springs-tee-natural-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL",
+            "4XL"
+          ]
         }
       ],
       "sizes": [
+        "XS",
         "S",
         "M",
         "L",
         "XL",
-        "XXL"
+        "2XL",
+        "3XL",
+        "4XL",
+        "5XL"
       ],
       "front": "classic",
       "back": "none",
@@ -37,10 +183,12 @@
         "FLÒ wordmark on the left chest"
       ],
       "photos": [
-        "assets/img/products/palm-springs-front.jpg?v=2",
-        "assets/img/products/palm-springs-back.jpg?v=2"
+        "assets/img/products/printify/palm-springs-tee-black-front.jpg",
+        "assets/img/products/printify/palm-springs-tee-black-back.jpg"
       ],
-      "fit": "Regular fit. Take your usual size."
+      "fit": "Regular fit. Take your usual size.",
+      "whiteBg": true,
+      "printify": "6ac24858d101e467a00a3f8b"
     },
     {
       "id": "over-perfection-tee",
@@ -51,16 +199,179 @@
       "badge": "Drop 001",
       "colors": [
         {
-          "name": "Mint",
-          "hex": "#aad7b8"
+          "name": "Mint Green",
+          "hex": "#b1e0c0",
+          "photos": [
+            "assets/img/products/printify/over-perfection-tee-mint-green-front.jpg",
+            "assets/img/products/printify/over-perfection-tee-mint-green-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL"
+          ]
+        },
+        {
+          "name": "White",
+          "hex": "#ffffff",
+          "photos": [
+            "assets/img/products/printify/over-perfection-tee-white-front.jpg",
+            "assets/img/products/printify/over-perfection-tee-white-back.jpg"
+          ]
+        },
+        {
+          "name": "Red",
+          "hex": "#C62A32",
+          "photos": [
+            "assets/img/products/printify/over-perfection-tee-red-front.jpg",
+            "assets/img/products/printify/over-perfection-tee-red-back.jpg"
+          ]
+        },
+        {
+          "name": "Heather Navy",
+          "hex": "#424753",
+          "photos": [
+            "assets/img/products/printify/over-perfection-tee-heather-navy-front.jpg",
+            "assets/img/products/printify/over-perfection-tee-heather-navy-back.jpg"
+          ]
+        },
+        {
+          "name": "Navy",
+          "hex": "#1a2237",
+          "photos": [
+            "assets/img/products/printify/over-perfection-tee-navy-front.jpg",
+            "assets/img/products/printify/over-perfection-tee-navy-back.jpg"
+          ]
+        },
+        {
+          "name": "Pistachio",
+          "hex": "#D3D590",
+          "photos": [
+            "assets/img/products/printify/over-perfection-tee-pistachio-front.jpg",
+            "assets/img/products/printify/over-perfection-tee-pistachio-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL"
+          ]
+        },
+        {
+          "name": "Light Blue",
+          "hex": "#d6e6f7",
+          "photos": [
+            "assets/img/products/printify/over-perfection-tee-light-blue-front.jpg",
+            "assets/img/products/printify/over-perfection-tee-light-blue-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL",
+            "4XL"
+          ]
+        },
+        {
+          "name": "Maroon",
+          "hex": "#642838",
+          "photos": [
+            "assets/img/products/printify/over-perfection-tee-maroon-front.jpg",
+            "assets/img/products/printify/over-perfection-tee-maroon-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL"
+          ]
+        },
+        {
+          "name": "Indigo Blue",
+          "hex": "#476579",
+          "photos": [
+            "assets/img/products/printify/over-perfection-tee-indigo-blue-front.jpg",
+            "assets/img/products/printify/over-perfection-tee-indigo-blue-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL"
+          ]
+        },
+        {
+          "name": "Heather Indigo",
+          "hex": "#6a798e",
+          "photos": [
+            "assets/img/products/printify/over-perfection-tee-heather-indigo-front.jpg",
+            "assets/img/products/printify/over-perfection-tee-heather-indigo-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL",
+            "4XL"
+          ]
+        },
+        {
+          "name": "Sand",
+          "hex": "#DCD2BE",
+          "photos": [
+            "assets/img/products/printify/over-perfection-tee-sand-front.jpg",
+            "assets/img/products/printify/over-perfection-tee-sand-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL"
+          ]
+        },
+        {
+          "name": "Natural",
+          "hex": "#FFF6E3",
+          "photos": [
+            "assets/img/products/printify/over-perfection-tee-natural-front.jpg",
+            "assets/img/products/printify/over-perfection-tee-natural-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL",
+            "4XL"
+          ]
         }
       ],
       "sizes": [
+        "XS",
         "S",
         "M",
         "L",
         "XL",
-        "XXL"
+        "2XL",
+        "3XL",
+        "4XL",
+        "5XL"
       ],
       "front": "classic",
       "back": "none",
@@ -74,9 +385,11 @@
       ],
       "fit": "Regular fit. Take your usual size.",
       "photos": [
-        "assets/img/products/over-perfection-front.jpg",
-        "assets/img/products/over-perfection-back.jpg"
-      ]
+        "assets/img/products/printify/over-perfection-tee-mint-green-front.jpg",
+        "assets/img/products/printify/over-perfection-tee-mint-green-back.jpg"
+      ],
+      "whiteBg": true,
+      "printify": "6ac132eba1fc024e4b0fb1b8"
     },
     {
       "id": "dragon-tee",
@@ -88,8 +401,36 @@
       "flag": "Back design source unknown; confirm he drew the dragon or has a licence to sell it",
       "colors": [
         {
+          "name": "Vintage White",
+          "hex": "#f0e9e6",
+          "photos": [
+            "assets/img/products/printify/dragon-tee-vintage-white-front.jpg",
+            "assets/img/products/printify/dragon-tee-vintage-white-back.jpg"
+          ]
+        },
+        {
+          "name": "Cotton Pink",
+          "hex": "#fdd1d9",
+          "photos": [
+            "assets/img/products/printify/dragon-tee-cotton-pink-front.jpg",
+            "assets/img/products/printify/dragon-tee-cotton-pink-back.jpg"
+          ]
+        },
+        {
+          "name": "French Navy",
+          "hex": "#083148",
+          "photos": [
+            "assets/img/products/printify/dragon-tee-french-navy-front.jpg",
+            "assets/img/products/printify/dragon-tee-french-navy-back.jpg"
+          ]
+        },
+        {
           "name": "White",
-          "hex": "#f4f3ef"
+          "hex": "#F9F9F9",
+          "photos": [
+            "assets/img/products/printify/dragon-tee-white-front.jpg",
+            "assets/img/products/printify/dragon-tee-white-back.jpg"
+          ]
         }
       ],
       "sizes": [
@@ -97,7 +438,8 @@
         "M",
         "L",
         "XL",
-        "XXL"
+        "2XL",
+        "3XL"
       ],
       "front": "none",
       "back": "none",
@@ -111,9 +453,11 @@
       ],
       "fit": "Regular fit. Take your usual size.",
       "photos": [
-        "assets/img/products/dragon-front.jpg",
-        "assets/img/products/dragon-back.jpg"
-      ]
+        "assets/img/products/printify/dragon-tee-vintage-white-front.jpg",
+        "assets/img/products/printify/dragon-tee-vintage-white-back.jpg"
+      ],
+      "whiteBg": true,
+      "printify": "6ac27e0bc0726c04480aec48"
     },
     {
       "id": "apparel-crew",
@@ -125,8 +469,185 @@
       "colors": [
         {
           "name": "Black",
-          "hex": "#161616",
-          "ink": "white"
+          "hex": "#000000",
+          "photos": [
+            "assets/img/products/printify/apparel-crew-black-front.jpg",
+            "assets/img/products/printify/apparel-crew-black-back.jpg"
+          ]
+        },
+        {
+          "name": "Light Pink",
+          "hex": "#FEE0EB",
+          "photos": [
+            "assets/img/products/printify/apparel-crew-light-pink-front.jpg",
+            "assets/img/products/printify/apparel-crew-light-pink-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL"
+          ]
+        },
+        {
+          "name": "Orange",
+          "hex": "#EA5F22",
+          "photos": [
+            "assets/img/products/printify/apparel-crew-orange-front.jpg",
+            "assets/img/products/printify/apparel-crew-orange-back.jpg"
+          ]
+        },
+        {
+          "name": "Military Green",
+          "hex": "#62664C",
+          "photos": [
+            "assets/img/products/printify/apparel-crew-military-green-front.jpg",
+            "assets/img/products/printify/apparel-crew-military-green-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL"
+          ]
+        },
+        {
+          "name": "Purple",
+          "hex": "#3C214E",
+          "photos": [
+            "assets/img/products/printify/apparel-crew-purple-front.jpg",
+            "assets/img/products/printify/apparel-crew-purple-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL"
+          ]
+        },
+        {
+          "name": "Heliconia",
+          "hex": "#DF5086",
+          "photos": [
+            "assets/img/products/printify/apparel-crew-heliconia-front.jpg",
+            "assets/img/products/printify/apparel-crew-heliconia-back.jpg"
+          ]
+        },
+        {
+          "name": "Sport Grey",
+          "hex": "#CACACA",
+          "photos": [
+            "assets/img/products/printify/apparel-crew-sport-grey-front.jpg",
+            "assets/img/products/printify/apparel-crew-sport-grey-back.jpg"
+          ]
+        },
+        {
+          "name": "Cherry Red",
+          "hex": "#B41A29",
+          "photos": [
+            "assets/img/products/printify/apparel-crew-cherry-red-front.jpg",
+            "assets/img/products/printify/apparel-crew-cherry-red-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL"
+          ]
+        },
+        {
+          "name": "Safety Green",
+          "hex": "#F2FB00",
+          "photos": [
+            "assets/img/products/printify/apparel-crew-safety-green-front.jpg",
+            "assets/img/products/printify/apparel-crew-safety-green-back.jpg"
+          ]
+        },
+        {
+          "name": "Indigo Blue",
+          "hex": "#476579",
+          "photos": [
+            "assets/img/products/printify/apparel-crew-indigo-blue-front.jpg",
+            "assets/img/products/printify/apparel-crew-indigo-blue-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL"
+          ]
+        },
+        {
+          "name": "Cardinal Red",
+          "hex": "#911a30",
+          "photos": [
+            "assets/img/products/printify/apparel-crew-cardinal-red-front.jpg",
+            "assets/img/products/printify/apparel-crew-cardinal-red-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL"
+          ]
+        },
+        {
+          "name": "Heather Sport Royal",
+          "hex": "#435DBF",
+          "photos": [
+            "assets/img/products/printify/apparel-crew-heather-sport-royal-front.jpg",
+            "assets/img/products/printify/apparel-crew-heather-sport-royal-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL"
+          ]
+        },
+        {
+          "name": "Heather Sport Dark Maroon",
+          "hex": "#552C2B",
+          "photos": [
+            "assets/img/products/printify/apparel-crew-heather-sport-dark-maroon-front.jpg",
+            "assets/img/products/printify/apparel-crew-heather-sport-dark-maroon-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL"
+          ]
+        },
+        {
+          "name": "Safety Pink",
+          "hex": "#FF8E9D",
+          "photos": [
+            "assets/img/products/printify/apparel-crew-safety-pink-front.jpg",
+            "assets/img/products/printify/apparel-crew-safety-pink-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL"
+          ]
         }
       ],
       "sizes": [
@@ -134,7 +655,10 @@
         "M",
         "L",
         "XL",
-        "XXL"
+        "2XL",
+        "3XL",
+        "4XL",
+        "5XL"
       ],
       "front": "classic",
       "back": "none",
@@ -147,10 +671,12 @@
         "Arched Apparel mark on the back"
       ],
       "photos": [
-        "assets/img/products/apparel-crew-front.jpg?v=1",
-        "assets/img/products/apparel-crew-back.jpg?v=1"
+        "assets/img/products/printify/apparel-crew-black-front.jpg",
+        "assets/img/products/printify/apparel-crew-black-back.jpg"
       ],
-      "fit": "Classic fit. Take your usual size."
+      "fit": "Classic fit. Take your usual size.",
+      "whiteBg": true,
+      "printify": "6acbf5c0b378754520066f4a"
     },
     {
       "id": "forward-crew",
@@ -199,7 +725,92 @@
       "colors": [
         {
           "name": "White",
-          "hex": "#f7f7f5"
+          "hex": "#ffffff",
+          "photos": [
+            "assets/img/products/printify/champs-longsleeve-white-front.jpg",
+            "assets/img/products/printify/champs-longsleeve-white-back.jpg"
+          ]
+        },
+        {
+          "name": "Red",
+          "hex": "#C62A32",
+          "photos": [
+            "assets/img/products/printify/champs-longsleeve-red-front.jpg",
+            "assets/img/products/printify/champs-longsleeve-red-back.jpg"
+          ]
+        },
+        {
+          "name": "Light Blue",
+          "hex": "#d6e6f7",
+          "photos": [
+            "assets/img/products/printify/champs-longsleeve-light-blue-front.jpg",
+            "assets/img/products/printify/champs-longsleeve-light-blue-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL",
+            "4XL"
+          ]
+        },
+        {
+          "name": "Light Pink",
+          "hex": "#FEE0EB",
+          "photos": [
+            "assets/img/products/printify/champs-longsleeve-light-pink-front.jpg",
+            "assets/img/products/printify/champs-longsleeve-light-pink-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL",
+            "4XL"
+          ]
+        },
+        {
+          "name": "Sport Grey",
+          "hex": "#CACACA",
+          "photos": [
+            "assets/img/products/printify/champs-longsleeve-sport-grey-front.jpg",
+            "assets/img/products/printify/champs-longsleeve-sport-grey-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL"
+          ]
+        },
+        {
+          "name": "Royal",
+          "hex": "#084f97",
+          "photos": [
+            "assets/img/products/printify/champs-longsleeve-royal-front.jpg",
+            "assets/img/products/printify/champs-longsleeve-royal-back.jpg"
+          ]
+        },
+        {
+          "name": "Carolina Blue",
+          "hex": "#7BA4DB",
+          "photos": [
+            "assets/img/products/printify/champs-longsleeve-carolina-blue-front.jpg",
+            "assets/img/products/printify/champs-longsleeve-carolina-blue-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL"
+          ]
         }
       ],
       "sizes": [
@@ -207,7 +818,10 @@
         "M",
         "L",
         "XL",
-        "XXL"
+        "2XL",
+        "3XL",
+        "4XL",
+        "5XL"
       ],
       "front": "classic",
       "back": "none",
@@ -220,11 +834,12 @@
         "Statement print on the back"
       ],
       "photos": [
-        "assets/img/products/champs-ls-front.jpg?v=1",
-        "assets/img/products/champs-ls-back.jpg?v=1"
+        "assets/img/products/printify/champs-longsleeve-white-front.jpg",
+        "assets/img/products/printify/champs-longsleeve-white-back.jpg"
       ],
       "fit": "Classic fit. Take your usual size.",
-      "whiteBg": true
+      "whiteBg": true,
+      "printify": "6acbff615a6821eb4003d559"
     },
     {
       "id": "grand-touring-tee",

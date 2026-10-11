@@ -93,7 +93,7 @@ function resolveSku(catalog, sku) {
   const product = catalog.products.find(p => p.id === id);
   if (!product || product.hidden || product.flag) return null; // hidden and concept pieces can't be bought
   const color = product.colors.find(c => slug(c.name) === colorSlug);
-  const size = product.sizes.find(s => slug(s) === sizeSlug);
+  const size = (color && color.sizes || product.sizes).find(s => slug(s) === sizeSlug);
   if (!color || !size) return null;
   return { sku, product, color, size };
 }
