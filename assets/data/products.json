@@ -48,7 +48,7 @@
       "type": "tee",
       "category": "tees",
       "price": 38,
-      "badge": "New",
+      "badge": "Drop 001",
       "colors": [
         {
           "name": "Mint",
@@ -84,7 +84,7 @@
       "type": "tee",
       "category": "tees",
       "price": 38,
-      "badge": "",
+      "badge": "Drop 001",
       "flag": "Back design source unknown; confirm he drew the dragon or has a licence to sell it",
       "colors": [
         {
@@ -121,7 +121,7 @@
       "type": "crew",
       "category": "crewnecks",
       "price": 58,
-      "badge": "New",
+      "badge": "Drop 001",
       "colors": [
         {
           "name": "Black",
@@ -158,7 +158,7 @@
       "type": "crew",
       "category": "crewnecks",
       "price": 58,
-      "badge": "New",
+      "badge": "Drop 001",
       "colors": [
         {
           "name": "Sand",
@@ -188,6 +188,43 @@
       ],
       "fit": "Relaxed fit. Take your usual size.",
       "flag": "Back shown is the trademark-safe replacement for the 911 art; update the back print in Printify to match before it can sell"
+    },
+    {
+      "id": "champs-longsleeve",
+      "name": "Champs Long Sleeve",
+      "type": "longsleeve",
+      "category": "longsleeves",
+      "price": 44,
+      "badge": "Drop 001",
+      "colors": [
+        {
+          "name": "White",
+          "hex": "#f7f7f5"
+        }
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "front": "classic",
+      "back": "none",
+      "lead": "front",
+      "description": "Collegiate pink lettering across the chest with a quiet “Let them talk” underneath. On the back: not here to prove a point or chase attention. Here to compete.",
+      "details": [
+        "Classic cotton long sleeve",
+        "Ribbed cuffs",
+        "Varsity print on the front",
+        "Statement print on the back"
+      ],
+      "photos": [
+        "assets/img/products/champs-ls-front.jpg?v=1",
+        "assets/img/products/champs-ls-back.jpg?v=1"
+      ],
+      "fit": "Classic fit. Take your usual size.",
+      "whiteBg": true
     },
     {
       "id": "grand-touring-tee",
@@ -234,7 +271,8 @@
       "photos": [],
       "lead": "back",
       "fit": "Relaxed fit with a slightly dropped shoulder. Take your usual size for the intended look, or size down for a closer fit.",
-      "flag": "AI-made artwork on a drawn shirt; needs your cousin's own design or a real mockup before it can sell"
+      "flag": "AI-made artwork on a drawn shirt; needs your cousin's own design or a real mockup before it can sell",
+      "hidden": true
     },
     {
       "id": "cloud-hoodie",
@@ -287,7 +325,8 @@
       ],
       "photos": [],
       "fit": "Unisex regular fit. Take your usual size, or size up for a roomier hoodie.",
-      "flag": "AI-made artwork on a drawn shirt; needs your cousin's own design or a real mockup before it can sell"
+      "flag": "AI-made artwork on a drawn shirt; needs your cousin's own design or a real mockup before it can sell",
+      "hidden": true
     },
     {
       "id": "everyday-tee",
@@ -329,7 +368,8 @@
       ],
       "photos": [],
       "fit": "Relaxed fit with a slightly dropped shoulder. Take your usual size for the intended look, or size down for a closer fit.",
-      "flag": "AI-made artwork on a drawn shirt; needs your cousin's own design or a real mockup before it can sell"
+      "flag": "AI-made artwork on a drawn shirt; needs your cousin's own design or a real mockup before it can sell",
+      "hidden": true
     },
     {
       "id": "cloud-sweatpant",
@@ -374,7 +414,8 @@
         "Ribbed ankle cuff"
       ],
       "photos": [],
-      "flag": "AI-made artwork on a drawn shirt; needs your cousin's own design or a real mockup before it can sell"
+      "flag": "AI-made artwork on a drawn shirt; needs your cousin's own design or a real mockup before it can sell",
+      "hidden": true
     },
     {
       "id": "maison-crew",
@@ -421,44 +462,8 @@
         "FLÒ wordmark across the upper back"
       ],
       "photos": [],
-      "flag": "AI-made artwork on a drawn shirt; needs your cousin's own design or a real mockup before it can sell"
-    },
-    {
-      "id": "champs-longsleeve",
-      "name": "Champs Long Sleeve",
-      "type": "longsleeve",
-      "category": "longsleeves",
-      "price": 44,
-      "badge": "New",
-      "colors": [
-        {
-          "name": "White",
-          "hex": "#f7f7f5"
-        }
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL",
-        "XXL"
-      ],
-      "front": "classic",
-      "back": "none",
-      "lead": "front",
-      "description": "Collegiate pink lettering across the chest with a quiet “Let them talk” underneath. On the back: not here to prove a point or chase attention. Here to compete.",
-      "details": [
-        "Classic cotton long sleeve",
-        "Ribbed cuffs",
-        "Varsity print on the front",
-        "Statement print on the back"
-      ],
-      "photos": [
-        "assets/img/products/champs-ls-front.jpg?v=1",
-        "assets/img/products/champs-ls-back.jpg?v=1"
-      ],
-      "fit": "Classic fit. Take your usual size.",
-      "whiteBg": true
+      "flag": "AI-made artwork on a drawn shirt; needs your cousin's own design or a real mockup before it can sell",
+      "hidden": true
     },
     {
       "id": "lounge-longsleeve",
@@ -500,7 +505,8 @@
         "FLÒ wordmark across the upper back"
       ],
       "photos": [],
-      "flag": "AI-made artwork on a drawn shirt; needs your cousin's own design or a real mockup before it can sell"
+      "flag": "AI-made artwork on a drawn shirt; needs your cousin's own design or a real mockup before it can sell",
+      "hidden": true
     },
     {
       "id": "cloud-short",
@@ -541,7 +547,8 @@
         "7 inch inseam"
       ],
       "photos": [],
-      "flag": "AI-made artwork on a drawn shirt; needs your cousin's own design or a real mockup before it can sell"
+      "flag": "AI-made artwork on a drawn shirt; needs your cousin's own design or a real mockup before it can sell",
+      "hidden": true
     },
     {
       "id": "signature-cap",
@@ -577,7 +584,8 @@
         "Embroidered front"
       ],
       "photos": [],
-      "flag": "AI-made artwork on a drawn shirt; needs your cousin's own design or a real mockup before it can sell"
+      "flag": "AI-made artwork on a drawn shirt; needs your cousin's own design or a real mockup before it can sell",
+      "hidden": true
     },
     {
       "id": "monogram-tote",
@@ -609,7 +617,8 @@
         "Fits a 15 inch laptop"
       ],
       "photos": [],
-      "flag": "AI-made artwork on a drawn shirt; needs your cousin's own design or a real mockup before it can sell"
+      "flag": "AI-made artwork on a drawn shirt; needs your cousin's own design or a real mockup before it can sell",
+      "hidden": true
     }
   ]
 }

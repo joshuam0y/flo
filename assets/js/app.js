@@ -63,10 +63,21 @@
   }
 
   /* ---------- Catalog ---------- */
+  // Menu and footer links to shop sections with nothing in them right now (hoodies before any hoodie is out)
+  function hideEmptyLinks() {
+    const cats = new Set(catalog.products.map(p => p.category));
+    $$('a[href^="shop.html?c="]').forEach(a => {
+      const c = new URL(a.href, location.href).searchParams.get("c");
+      const has = cats.has(c) || cats.has(LEGACY[c]);
+      (a.closest("li") || a).hidden = !has;
+    });
+  }
+
   async function loadCatalog() {
     const res = await fetch("assets/data/products.json?v=" + Date.now());
     catalog = await res.json();
     catalog.products = catalog.products.filter(p => !p.hidden); // hidden products stay in the file for later drops
+    hideEmptyLinks();
     return catalog;
   }
   const findProduct = id => catalog.products.find(p => p.id === id);
@@ -88,7 +99,7 @@
       <div class="card__media${p.whiteBg ? " is-white" : ""}">
         ${art(p, c, first, "is-front")}
         ${hasBack ? art(p, c, second, "is-back") : ""}
-        ${p.flag ? `<span class="card__badge card__badge--concept label">Concept</span>` : p.badge ? `<span class="card__badge label">${p.badge}</span>` : ""}
+        ${p.flag ? `<span class="card__badge card__badge--concept label">${p.badge ? `${p.badge} · ` : ""}Coming soon</span>` : p.badge ? `<span class="card__badge label">${p.badge}</span>` : ""}
       </div>
       <div class="card__info">
         <div>
@@ -315,7 +326,7 @@
     const params = new URLSearchParams(location.search);
     const byCat = cat => catalog.products
       .filter(p => p.category === cat)
-      .sort((a, b) => (a.flag ? 1 : 0) - (b.flag ? 1 : 0)); // ready-to-buy pieces before concepts
+      .sort((a, b) => (a.flag ? 1 : 0) - (b.flag ? 1 : 0)); // ready-to-buy pieces before ones coming soon
     const present = SECTIONS.filter(([cat]) => byCat(cat).length);
     const wanted = LEGACY[params.get("c")] || params.get("c");
     let active = present.some(([cat]) => cat === wanted) ? wanted : "all";
@@ -382,7 +393,7 @@
     root.querySelector(".pdp__name").textContent = p.name;
     root.querySelector(".pdp__price").textContent = money(p.price);
     root.querySelector(".pdp__desc").textContent = p.description;
-    $("#pdp-badge").textContent = p.flag ? "Concept · not final" : p.badge || "flò essentials";
+    $("#pdp-badge").textContent = p.flag ? `${p.badge ? `${p.badge} · ` : ""}Coming soon` : p.badge || "flò essentials";
     $("#pdp-details").innerHTML = `<ul>${p.details.map(d => `<li>${d}</li>`).join("")}</ul>`;
     if (p.fit) $("#pdp-fit").textContent = p.fit;
 
@@ -417,7 +428,7 @@
       add.hidden = true;
       const box = $("#pdp-notify");
       box.innerHTML = notifyMarkup(p.flag
-        ? `This is a concept design and isn't part of the drop yet.`
+        ? `${esc(p.name)} isn't available to order yet. Follow along to hear when it is.`
         : `Drop 001 is coming soon. ${esc(p.name)}, ${money(p.price)}.`);
       box.hidden = false;
       bindNotify(box);
