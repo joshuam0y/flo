@@ -681,3 +681,8 @@ input { font: inherit; }
 }
 /* the drop shadow isolates the photo from the hero colour; blend the whole holder instead */
 .hero__fallback:has(.hero__product) { filter: none; mix-blend-mode: multiply; }
+
+.grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 700px) { .grid--3 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.pdp__shot--solo { grid-column: 1 / -1; aspect-ratio: 5 / 4; }
+@media (max-width: 900px) { .pdp__shot--solo { flex-basis: 100%; aspect-ratio: 4 / 5; } }

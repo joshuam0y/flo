@@ -266,7 +266,10 @@
     const lead = catalog.products[0];
     const grid = $("#bestsellers");
     if (grid) {
-      if (catalog.products.length >= 3) grid.innerHTML = catalog.products.slice(0, 4).map(card).join("");
+      if (catalog.products.length >= 3) {
+        grid.innerHTML = catalog.products.slice(0, 4).map(card).join("");
+        grid.classList.toggle("grid--3", catalog.products.length === 3);
+      }
       else {
         // a small drop: feature the lead piece, both sides, instead of a mostly empty grid
         const c = lead.colors[0];
@@ -334,6 +337,11 @@
 
     const drawGallery = () => {
       const hasBack = p.back !== "none" || p.photos[1];
+      if (!hasBack && p.photos[0]) {
+        // one photo only: show it once, full width, instead of the same shot twice
+        $("#pdp-gallery").innerHTML = `<div class="pdp__shot pdp__shot--solo slot">${art(p, color, "front")}</div>`;
+        return;
+      }
       $("#pdp-gallery").innerHTML = `
         <div class="pdp__shot slot">${art(p, color, p.lead === "back" ? "back" : "front")}</div>
         <div class="pdp__shot slot">${hasBack ? art(p, color, p.lead === "back" ? "front" : "back") : art(p, color, "front")}</div>

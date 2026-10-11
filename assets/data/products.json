@@ -43,6 +43,76 @@
       "fit": "Regular fit. Take your usual size."
     },
     {
+      "id": "over-perfection-tee",
+      "name": "Over Perfection Tee",
+      "type": "tee",
+      "category": "tees",
+      "price": 38,
+      "badge": "New",
+      "colors": [
+        {
+          "name": "Mint",
+          "hex": "#aad7b8"
+        }
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "front": "classic",
+      "back": "none",
+      "lead": "front",
+      "description": "Flow over perfection. The FLÒ mark sits tilted on purpose above a clean serif line, printed across the chest of a soft mint tee.",
+      "details": [
+        "Soft cotton tee",
+        "Regular fit",
+        "FLÒ OVER PERFECTION across the chest",
+        "Plain back"
+      ],
+      "fit": "Regular fit. Take your usual size.",
+      "photos": [
+        "assets/img/products/over-perfection-front.jpg",
+        "assets/img/products/over-perfection-back.jpg"
+      ]
+    },
+    {
+      "id": "flo-essential-tee",
+      "name": "FLÒ Essential Tee",
+      "type": "tee",
+      "category": "tees",
+      "price": 32,
+      "badge": "",
+      "colors": [
+        {
+          "name": "White",
+          "hex": "#f4f3ef"
+        }
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "front": "classic",
+      "back": "none",
+      "lead": "front",
+      "description": "The FLÒ wordmark, small and centred on a clean white tee. The everyday one.",
+      "details": [
+        "Soft cotton tee",
+        "Regular fit",
+        "FLÒ wordmark centred on the chest"
+      ],
+      "fit": "Regular fit. Take your usual size.",
+      "photos": [
+        "assets/img/products/flo-essential-front.jpg"
+      ]
+    },
+    {
       "id": "grand-touring-tee",
       "name": "Grand Touring Tee",
       "type": "tee",
