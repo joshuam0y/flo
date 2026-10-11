@@ -269,9 +269,12 @@
   // Sign-up pop-up: once, a few seconds into a visit. Not on checkout or the account page, not for anyone who already
   // joined, and not again for two weeks after it's closed.
   const POPUP_KEY = "flo-popup";
+  const isHome = () => !!$("#bestsellers");
   function maybePopup() {
     const page = document.body.dataset.page;
     if (page === "checkout" || page === "success" || $("#account") || readWelcome()) return;
+    // config popup: "home" = every time the home page loads until they join; otherwise once, then not for 14 days
+    if (CFG.popup === "home") { if (isHome()) setTimeout(openPopup, 1200); return; }
     let last = 0;
     try { last = +localStorage.getItem(POPUP_KEY) || 0; } catch { /* private mode: show it */ }
     if (Date.now() - last < 14 * 864e5) return;
@@ -616,6 +619,9 @@
   }
 
   /* ---------- Boot ---------- */
+  // config reloadHome: a refresh (not a link someone opened) sends you back to the home page
+  if (CFG.reloadHome && document.documentElement.dataset.reloadHome === "1") location.replace("index.html");
+
   document.addEventListener("DOMContentLoaded", async () => {
     document.body.classList.toggle("is-prelaunch", prelaunch);
     bindChrome();

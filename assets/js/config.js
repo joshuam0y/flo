@@ -23,6 +23,13 @@ window.FLO_CONFIG = {
   // Stripe; keep it the same as WELCOME_PERCENT in worker/wrangler.toml). The offer only shows once sign-ups work.
   welcome: { percent: 20 },
 
+  // The sign-up pop-up. "home": every time the home page loads, until they join (handy while testing).
+  // "occasional": once, a few seconds in, then not again for 14 days after it's closed (gentler for shoppers).
+  popup: "home",
+
+  // Reloading any page except checkout goes back to the home page. Set to false to keep people where they were.
+  reloadHome: true,
+
   // "View my orders" on the account page: Stripe's customer portal login link (Stripe Dashboard, Settings, Billing,
   // Customer portal, turn on the login link and paste it here). Empty: the page says orders come after the drop.
   ordersUrl: "",
