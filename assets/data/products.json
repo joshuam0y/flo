@@ -10,7 +10,7 @@
       "name": "Palm Springs Tee",
       "type": "tee",
       "category": "tees",
-      "price": 25,
+      "price": 24,
       "badge": "Drop 001",
       "colors": [
         {
@@ -195,7 +195,7 @@
       "name": "Over Perfection Tee",
       "type": "tee",
       "category": "tees",
-      "price": 18,
+      "price": 20,
       "badge": "Drop 001",
       "colors": [
         {
@@ -396,7 +396,7 @@
       "name": "Dragon Tee",
       "type": "tee",
       "category": "tees",
-      "price": 34,
+      "price": 30,
       "badge": "Drop 001",
       "flag": "Back design source unknown; confirm he drew the dragon or has a licence to sell it",
       "colors": [
@@ -464,7 +464,7 @@
       "name": "Apparel Crewneck",
       "type": "crew",
       "category": "crewnecks",
-      "price": 44.99,
+      "price": 40,
       "badge": "Drop 001",
       "colors": [
         {
@@ -683,7 +683,7 @@
       "name": "Forward Crewneck",
       "type": "crew",
       "category": "crewnecks",
-      "price": 44.99,
+      "price": 50,
       "badge": "Drop 001",
       "colors": [
         {
