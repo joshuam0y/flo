@@ -266,6 +266,67 @@
     });
   }
 
+  // Sign-up pop-up: once, a few seconds into a visit. Not on checkout or the account page, not for anyone who already
+  // joined, and not again for two weeks after it's closed.
+  const POPUP_KEY = "flo-popup";
+  function maybePopup() {
+    const page = document.body.dataset.page;
+    if (page === "checkout" || page === "success" || $("#account") || readWelcome()) return;
+    let last = 0;
+    try { last = +localStorage.getItem(POPUP_KEY) || 0; } catch { /* private mode: show it */ }
+    if (Date.now() - last < 14 * 864e5) return;
+    setTimeout(openPopup, 6000);
+  }
+
+  function openPopup() {
+    if ($(".popup") || $(".bag.is-open") || $(".menu.is-open")) return;
+    const pct = offer();
+    const pick = catalog.products.find(p => p.photos && p.photos.length);
+    const img = pick ? (pick.lead === "back" && pick.photos[1] ? pick.photos[1] : pick.photos[0]) : "";
+    document.body.insertAdjacentHTML("beforeend", `
+      <div class="popup" role="dialog" aria-modal="true" aria-labelledby="popup-title">
+        <div class="popup__card">
+          <button class="popup__close label" aria-label="Close">✕</button>
+          ${img ? `<div class="popup__img"><img src="${esc(img)}" alt=""></div>` : ""}
+          <div class="popup__body">
+            <p class="label label--mute">The list</p>
+            <h2 class="display popup__title" id="popup-title">${pct ? `${pct}% off <em>your first order.</em>` : `First to <em>know.</em>`}</h2>
+            <p class="popup__lead">${pct ? "Join for early access to drops, restocks and members-only promos." : "Drop 001 is on the way. Be the first to hear when it opens."}</p>
+            ${signupEndpoint
+              ? `<form class="popup__form"><input type="email" required placeholder="Email address" aria-label="Email address"><button class="btn btn--solid" type="submit">${pct ? "Get my code" : "Join the list"}</button></form>
+                 <p class="popup__msg" aria-live="polite"></p>`
+              : `<a class="btn btn--solid" href="${esc(CFG.instagram || "#")}" target="_blank" rel="noopener">Follow for the drop date</a>`}
+            ${signupEndpoint ? `<p class="popup__fine">By joining you agree to get emails from flò about drops and promotions. Unsubscribe anytime. <a class="link-u" href="policies.html#privacy">Privacy</a></p>` : ""}
+          </div>
+        </div>
+      </div>`);
+    const box = $(".popup");
+    const close = () => {
+      try { localStorage.setItem(POPUP_KEY, String(Date.now())); } catch { /* private mode */ }
+      box.remove();
+      removeEventListener("keydown", onKey);
+    };
+    const onKey = e => { if (e.key === "Escape") close(); };
+    addEventListener("keydown", onKey);
+    box.addEventListener("click", e => { if (e.target === box || e.target.closest(".popup__close")) close(); });
+    requestAnimationFrame(() => box.classList.add("is-open"));
+    const form = box.querySelector(".popup__form");
+    if (form) {
+      form.querySelector("input").focus({ preventScroll: true });
+      form.addEventListener("submit", async e => {
+        e.preventDefault();
+        const msg = box.querySelector(".popup__msg");
+        msg.textContent = "Joining…";
+        try {
+          const data = await joinList(form.querySelector("input").value);
+          try { localStorage.setItem(POPUP_KEY, String(Date.now())); } catch { /* private mode */ }
+          form.remove();
+          msg.innerHTML = joinedHtml(data, "You're on the list. We'll email you before the drop.");
+        } catch (err) { msg.textContent = err.message; }
+      });
+    } else box.querySelector(".popup__close").focus({ preventScroll: true });
+  }
+
   // Account page: orders (Stripe's customer portal), the welcome code and how promo codes work
   function renderAccount() {
     const root = $("#account");
@@ -567,6 +628,7 @@
     }
     setAnnounce();
     renderAccount();
+    maybePopup();
     renderHome();
     renderShop();
     renderProduct();

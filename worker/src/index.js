@@ -2,8 +2,9 @@
  *
  *   POST /checkout   bag items -> Stripe Checkout Session -> { url }
  *   POST /webhook    Stripe "checkout.session.completed" -> Printify order
- *   POST /subscribe  email sign-up (saved in the SUBSCRIBERS KV namespace) -> a personal one-time
- *                    code for WELCOME_PERCENT off a first order, created in Stripe
+ *   POST /subscribe  email sign-up (saved in the SUBSCRIBERS KV namespace and added to the Brevo email list
+ *                    for promotions) -> a personal one-time code for WELCOME_PERCENT off a first order,
+ *                    created in Stripe
  *
  * Prices always come from the published products.json, never from the browser,
  * so nobody can edit the bag in devtools and pay $1 for a hoodie.
@@ -197,8 +198,10 @@ async function subscribe(request, env, cors) {
   // one welcome code per email: signing up again shows the same code
   if (saved?.code && saved.expires > now) return json({ ok: true, code: saved.code, percent: saved.percent, expires: saved.expires }, 200, cors);
   if (!env.STRIPE_SECRET_KEY) {
-    if (!env.SUBSCRIBERS) return json({ error: "Sign-ups aren't open yet." }, 503, cors);
-    await env.SUBSCRIBERS.put(key, JSON.stringify({ joined: saved?.joined || new Date().toISOString() }));
+    // no Stripe yet: still build the email list (no welcome code until Stripe is connected)
+    if (!env.SUBSCRIBERS && !env.BREVO_API_KEY) return json({ error: "Sign-ups aren't open yet." }, 503, cors);
+    if (env.SUBSCRIBERS) await env.SUBSCRIBERS.put(key, JSON.stringify({ joined: saved?.joined || new Date().toISOString() }));
+    await addToEmailList(env, key, null);
     return json({ ok: true }, 200, cors);
   }
   const percent = Number(env.WELCOME_PERCENT || 20);
@@ -212,7 +215,27 @@ async function subscribe(request, env, cors) {
   if (env.SUBSCRIBERS) {
     await env.SUBSCRIBERS.put(key, JSON.stringify({ joined: saved?.joined || new Date().toISOString(), code, percent, expires }));
   }
+  await addToEmailList(env, key, { code, percent, expires });
   return json({ ok: true, code, percent, expires }, 200, cors);
+}
+
+// Add a sign-up to the Brevo list you send promotions from, with their welcome code as contact attributes
+// (WELCOME_CODE, WELCOME_PERCENT, WELCOME_EXPIRES) so Brevo's welcome email can include it. Never blocks a sign-up.
+async function addToEmailList(env, email, w) {
+  if (!env.BREVO_API_KEY) return;
+  const send = (attributes) => fetch("https://api.brevo.com/v3/contacts", {
+    method: "POST",
+    headers: { "api-key": env.BREVO_API_KEY, "Content-Type": "application/json", accept: "application/json" },
+    body: JSON.stringify({ email, updateEnabled: true, ...(env.BREVO_LIST_ID ? { listIds: [Number(env.BREVO_LIST_ID)] } : {}), ...(attributes ? { attributes } : {}) })
+  });
+  try {
+    const attrs = w ? { WELCOME_CODE: w.code, WELCOME_PERCENT: w.percent, WELCOME_EXPIRES: new Date(w.expires * 1000).toISOString().slice(0, 10) } : null;
+    let res = await send(attrs);
+    if (res.status === 400 && attrs) res = await send(null);   // attributes not created in Brevo yet: add the contact anyway
+    if (!res.ok) console.error("Brevo", res.status, await res.text());
+  } catch (err) {
+    console.error("Brevo", err);
+  }
 }
 
 // The coupon behind every welcome code, made the first time it's needed
