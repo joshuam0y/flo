@@ -85,7 +85,7 @@
     // graphic pieces lead with the back print; hovering shows the other side
     const [first, second] = p.lead === "back" ? ["back", "front"] : ["front", "back"];
     return `<a class="card reveal" href="product.html?id=${p.id}">
-      <div class="card__media">
+      <div class="card__media${p.whiteBg ? " is-white" : ""}">
         ${art(p, c, first, "is-front")}
         ${hasBack ? art(p, c, second, "is-back") : ""}
         ${p.flag ? `<span class="card__badge card__badge--concept label">Concept</span>` : p.badge ? `<span class="card__badge label">${p.badge}</span>` : ""}
@@ -372,8 +372,8 @@
         return;
       }
       $("#pdp-gallery").innerHTML = `
-        <div class="pdp__shot slot">${art(p, color, p.lead === "back" ? "back" : "front")}</div>
-        <div class="pdp__shot slot">${hasBack ? art(p, color, p.lead === "back" ? "front" : "back") : art(p, color, "front")}</div>
+        <div class="pdp__shot slot${p.whiteBg ? " is-white" : ""}">${art(p, color, p.lead === "back" ? "back" : "front")}</div>
+        <div class="pdp__shot slot${p.whiteBg ? " is-white" : ""}">${hasBack ? art(p, color, p.lead === "back" ? "front" : "back") : art(p, color, "front")}</div>
         ${p.photos.length && !p.photos[2] ? "" : `<div class="pdp__shot pdp__shot--wide slot">${p.photos[2]
           ? `<img class="photo photo--product" src="${p.photos[2]}" alt="${p.name} detail" loading="lazy">`
           : garmentSVG(p.type, color.hex, { front: p.front, back: p.back }, { side: hasBack ? "back" : "front", ink: color.ink })}</div>`}`;

@@ -424,6 +424,43 @@
       "flag": "AI-made artwork on a drawn shirt; needs your cousin's own design or a real mockup before it can sell"
     },
     {
+      "id": "champs-longsleeve",
+      "name": "Champs Long Sleeve",
+      "type": "longsleeve",
+      "category": "longsleeves",
+      "price": 44,
+      "badge": "New",
+      "colors": [
+        {
+          "name": "White",
+          "hex": "#f7f7f5"
+        }
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "front": "classic",
+      "back": "none",
+      "lead": "front",
+      "description": "Collegiate pink lettering across the chest with a quiet “Let them talk” underneath. On the back: not here to prove a point or chase attention. Here to compete.",
+      "details": [
+        "Classic cotton long sleeve",
+        "Ribbed cuffs",
+        "Varsity print on the front",
+        "Statement print on the back"
+      ],
+      "photos": [
+        "assets/img/products/champs-ls-front.jpg?v=1",
+        "assets/img/products/champs-ls-back.jpg?v=1"
+      ],
+      "fit": "Classic fit. Take your usual size.",
+      "whiteBg": true
+    },
+    {
       "id": "lounge-longsleeve",
       "name": "Lounge Long Sleeve",
       "type": "longsleeve",

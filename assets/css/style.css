@@ -694,3 +694,7 @@ input { font: inherit; }
 .shop-sec__head { display: flex; align-items: baseline; gap: 18px; margin-bottom: 24px; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
 .shop-sec__title { font-size: clamp(32px, 4vw, 52px); }
 .shop-sec__all { margin-left: auto; }
+
+/* light garments: keep the mockup's own white ground so a white shirt doesn't vanish */
+.card__media.is-white, .pdp__shot.is-white { background: #fff; }
+.is-white .photo--product { mix-blend-mode: normal; }
