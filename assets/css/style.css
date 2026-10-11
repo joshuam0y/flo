@@ -686,3 +686,5 @@ input { font: inherit; }
 @media (max-width: 700px) { .grid--3 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .pdp__shot--solo { grid-column: 1 / -1; aspect-ratio: 5 / 4; }
 @media (max-width: 900px) { .pdp__shot--solo { flex-basis: 100%; aspect-ratio: 4 / 5; } }
+
+.card__badge--concept { background: var(--ink); color: var(--paper); padding: 5px 8px; }

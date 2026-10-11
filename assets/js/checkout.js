@@ -185,7 +185,7 @@
     const res = await fetch("assets/data/products.json?v=" + Date.now());
     catalog = await res.json();
     catalog.products = catalog.products.filter(p => !p.hidden);
-    items = readBag().filter(i => product(i.id));
+    items = readBag().filter(i => product(i.id) && !product(i.id).flag); // concept pieces can't be bought
     if (!items.length) { location.href = "shop.html"; return; }
 
     $("#co-demo").hidden = live;

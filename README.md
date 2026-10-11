@@ -14,7 +14,7 @@ Customer ──► flò site (GitHub Pages) ──► Checkout worker (Cloudflar
 
 | What | Where |
 | --- | --- |
-| Products, prices, colours, sizes, descriptions | `assets/data/products.json` (add `"hidden": true` to take a product off the site without deleting it) |
+| Products, prices, colours, sizes, descriptions | `assets/data/products.json` (add `"hidden": true` to take a product off the site without deleting it; add `"flag": "reason"` to show it as a Concept that can't be bought, with the reason kept here) |
 | Product photos | add paths to a product's `"photos"` list: `[front, back, lifestyle]` |
 | Homepage photos | drop files in `assets/img` and list them under `photos` in `assets/js/config.js` (slots: hero, editorial, about) |
 | Colours, fonts, spacing | `assets/css/style.css` (tokens at the top) |

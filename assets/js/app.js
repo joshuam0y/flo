@@ -88,7 +88,7 @@
       <div class="card__media">
         ${art(p, c, first, "is-front")}
         ${hasBack ? art(p, c, second, "is-back") : ""}
-        ${p.badge ? `<span class="card__badge label">${p.badge}</span>` : ""}
+        ${p.flag ? `<span class="card__badge card__badge--concept label">Concept</span>` : p.badge ? `<span class="card__badge label">${p.badge}</span>` : ""}
       </div>
       <div class="card__info">
         <div>
@@ -353,7 +353,7 @@
     root.querySelector(".pdp__name").textContent = p.name;
     root.querySelector(".pdp__price").textContent = money(p.price);
     root.querySelector(".pdp__desc").textContent = p.description;
-    $("#pdp-badge").textContent = p.badge || "flò essentials";
+    $("#pdp-badge").textContent = p.flag ? "Concept · not final" : p.badge || "flò essentials";
     $("#pdp-details").innerHTML = `<ul>${p.details.map(d => `<li>${d}</li>`).join("")}</ul>`;
     if (p.fit) $("#pdp-fit").textContent = p.fit;
 
@@ -383,11 +383,13 @@
     });
 
     const add = $("#pdp-add");
-    if (prelaunch) {
-      // before the drop: no bag, just a way to hear when it opens
+    if (prelaunch || p.flag) {
+      // before the drop, or a concept piece: no bag, just a way to hear when it opens
       add.hidden = true;
       const box = $("#pdp-notify");
-      box.innerHTML = notifyMarkup(`Drop 001 is coming soon. ${esc(p.name)}, ${money(p.price)}.`);
+      box.innerHTML = notifyMarkup(p.flag
+        ? `This is a concept design and isn't part of the drop yet.`
+        : `Drop 001 is coming soon. ${esc(p.name)}, ${money(p.price)}.`);
       box.hidden = false;
       bindNotify(box);
     }

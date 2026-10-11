@@ -113,6 +113,41 @@
       ]
     },
     {
+      "id": "dragon-tee",
+      "name": "Dragon Tee",
+      "type": "tee",
+      "category": "tees",
+      "price": 38,
+      "badge": "",
+      "flag": "Design source unknown; confirm he drew it or has a licence to sell it",
+      "colors": [
+        {
+          "name": "White",
+          "hex": "#f4f3ef"
+        }
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "front": "none",
+      "back": "none",
+      "lead": "front",
+      "description": "A red and gold dragon wrapped in brush calligraphy, printed large across the back of a white tee.",
+      "details": [
+        "Soft cotton tee",
+        "Regular fit",
+        "Full back print"
+      ],
+      "fit": "Regular fit. Take your usual size.",
+      "photos": [
+        "assets/img/products/dragon-back.jpg"
+      ]
+    },
+    {
       "id": "grand-touring-tee",
       "name": "Grand Touring Tee",
       "type": "tee",
@@ -157,7 +192,7 @@
       "photos": [],
       "lead": "back",
       "fit": "Relaxed fit with a slightly dropped shoulder. Take your usual size for the intended look, or size down for a closer fit.",
-      "hidden": true
+      "flag": "AI-made artwork on a drawn shirt; needs your cousin's own design or a real mockup before it can sell"
     },
     {
       "id": "cloud-hoodie",
@@ -210,7 +245,7 @@
       ],
       "photos": [],
       "fit": "Unisex regular fit. Take your usual size, or size up for a roomier hoodie.",
-      "hidden": true
+      "flag": "AI-made artwork on a drawn shirt; needs your cousin's own design or a real mockup before it can sell"
     },
     {
       "id": "everyday-tee",
@@ -252,7 +287,7 @@
       ],
       "photos": [],
       "fit": "Relaxed fit with a slightly dropped shoulder. Take your usual size for the intended look, or size down for a closer fit.",
-      "hidden": true
+      "flag": "AI-made artwork on a drawn shirt; needs your cousin's own design or a real mockup before it can sell"
     },
     {
       "id": "cloud-sweatpant",
@@ -297,7 +332,7 @@
         "Ribbed ankle cuff"
       ],
       "photos": [],
-      "hidden": true
+      "flag": "AI-made artwork on a drawn shirt; needs your cousin's own design or a real mockup before it can sell"
     },
     {
       "id": "maison-crew",
@@ -344,7 +379,7 @@
         "FLÒ wordmark across the upper back"
       ],
       "photos": [],
-      "hidden": true
+      "flag": "AI-made artwork on a drawn shirt; needs your cousin's own design or a real mockup before it can sell"
     },
     {
       "id": "lounge-longsleeve",
@@ -386,7 +421,7 @@
         "FLÒ wordmark across the upper back"
       ],
       "photos": [],
-      "hidden": true
+      "flag": "AI-made artwork on a drawn shirt; needs your cousin's own design or a real mockup before it can sell"
     },
     {
       "id": "cloud-short",
@@ -427,7 +462,7 @@
         "7 inch inseam"
       ],
       "photos": [],
-      "hidden": true
+      "flag": "AI-made artwork on a drawn shirt; needs your cousin's own design or a real mockup before it can sell"
     },
     {
       "id": "signature-cap",
@@ -463,7 +498,7 @@
         "Embroidered front"
       ],
       "photos": [],
-      "hidden": true
+      "flag": "AI-made artwork on a drawn shirt; needs your cousin's own design or a real mockup before it can sell"
     },
     {
       "id": "monogram-tote",
@@ -495,7 +530,7 @@
         "Fits a 15 inch laptop"
       ],
       "photos": [],
-      "hidden": true
+      "flag": "AI-made artwork on a drawn shirt; needs your cousin's own design or a real mockup before it can sell"
     }
   ]
 }
