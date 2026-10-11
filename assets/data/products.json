@@ -119,7 +119,7 @@
       "id": "apparel-crew",
       "name": "Apparel Crewneck",
       "type": "crew",
-      "category": "tops",
+      "category": "crewnecks",
       "price": 58,
       "badge": "New",
       "colors": [
@@ -156,7 +156,7 @@
       "id": "forward-crew",
       "name": "Forward Crewneck",
       "type": "crew",
-      "category": "tops",
+      "category": "crewnecks",
       "price": 58,
       "badge": "New",
       "colors": [
@@ -380,7 +380,7 @@
       "id": "maison-crew",
       "name": "Maison Crewneck",
       "type": "crew",
-      "category": "tops",
+      "category": "crewnecks",
       "price": 82,
       "badge": "New",
       "colors": [
@@ -427,7 +427,7 @@
       "id": "lounge-longsleeve",
       "name": "Lounge Long Sleeve",
       "type": "longsleeve",
-      "category": "tops",
+      "category": "longsleeves",
       "price": 58,
       "badge": "",
       "colors": [

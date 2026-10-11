@@ -15,7 +15,7 @@
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="assets/fonts/bodoni-moda-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/jost-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/style.css?v=18">
+<link rel="stylesheet" href="assets/css/style.css?v=19">
 </head>
 <body>
 <div class="announce"><span class="label" id="announce">Free shipping on orders over $75<span class="hide-sm"> &nbsp;·&nbsp; Every piece made to order</span></span></div>
@@ -23,7 +23,9 @@
   <div class="header__left">
     <button class="burger label" data-open-menu aria-label="Open menu"><i></i><span class="hide-sm">Menu</span></button>
     <a class="label hide-sm" href="shop.html">Shop</a>
-    <a class="label hide-sm" href="shop.html?c=tees">Tees</a>
+    <a class="label hide-sm" href="shop.html?c=tees">T-Shirts</a>
+    <a class="label hide-sm" href="shop.html?c=crewnecks">Crewnecks</a>
+    <a class="label hide-sm" href="shop.html?c=hoodies">Hoodies</a>
   </div>
   <a class="wordmark" href="index.html" aria-label="flò home">flò</a>
   <div class="header__right">
@@ -35,7 +37,8 @@
   <button class="menu__close label" data-close-menu>Close ✕</button>
   <ul class="menu__list">
     <li><a href="shop.html">Shop all</a></li>
-    <li><a href="shop.html?c=tees">Tees</a></li>
+    <li><a href="shop.html?c=tees">T-Shirts</a></li>
+    <li><a href="shop.html?c=crewnecks">Crewnecks</a></li>
     <li><a href="shop.html?c=hoodies">Hoodies</a></li>
     <li><a href="shop.html?c=bottoms">Bottoms</a></li>
     <li><a href="shop.html?c=accessories">Accessories</a></li>
@@ -50,21 +53,22 @@
 
 <section class="page-head">
   <p class="label label--mute">Drop 001</p>
-  <h1 class="display">Shop <em class="serif">all</em></h1>
+  <h1 class="display" id="shop-title">Shop <em class="serif">all</em></h1>
 </section>
 <div class="filters">
   <div class="filters__set">
     <button class="label" data-filter="all">All</button>
-    <button class="label" data-filter="tees">Tees</button>
+    <button class="label" data-filter="tees">T-Shirts</button>
+    <button class="label" data-filter="crewnecks">Crewnecks</button>
     <button class="label" data-filter="hoodies">Hoodies</button>
-    <button class="label" data-filter="tops">Crews &amp; long sleeves</button>
+    <button class="label" data-filter="longsleeves">Long Sleeves</button>
     <button class="label" data-filter="bottoms">Bottoms</button>
     <button class="label" data-filter="accessories">Accessories</button>
   </div>
   <span class="label label--mute" id="shop-count"></span>
 </div>
 <section class="section" style="padding-top:40px">
-  <div class="grid" id="shop-grid"></div>
+  <div id="shop-grid"></div>
 </section>
 <section class="section signup">
   <p class="label">The list</p>
@@ -80,11 +84,11 @@
 <footer class="footer">
   <div class="footer__cols">
     <div><p class="label">Shop</p><ul>
-      <li><a href="shop.html?c=tees">Tees</a></li>
+      <li><a href="shop.html?c=tees">T-Shirts</a></li>
+      <li><a href="shop.html?c=crewnecks">Crewnecks</a></li>
       <li><a href="shop.html?c=hoodies">Hoodies</a></li>
-    <li><a href="shop.html?c=hoodies">Hoodies</a></li>
-    <li><a href="shop.html?c=bottoms">Bottoms</a></li>
-    <li><a href="shop.html?c=accessories">Accessories</a></li>
+      <li><a href="shop.html?c=bottoms">Bottoms</a></li>
+      <li><a href="shop.html?c=accessories">Accessories</a></li>
       <li><a href="shop.html">Shop all</a></li></ul></div>
     <div><p class="label">Client services</p><ul>
       <li><a href="about.html#shipping">Shipping</a></li>
@@ -123,8 +127,8 @@
   </div>
 </aside>
 <div class="toast label" id="toast" role="status" aria-live="polite"></div>
-<script src="assets/js/config.js?v=18"></script>
-<script src="assets/js/garments.js?v=18"></script>
-<script src="assets/js/app.js?v=18"></script>
+<script src="assets/js/config.js?v=19"></script>
+<script src="assets/js/garments.js?v=19"></script>
+<script src="assets/js/app.js?v=19"></script>
 </body>
 </html>

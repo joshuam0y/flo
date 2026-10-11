@@ -303,27 +303,56 @@
     });
   }
 
+  const SECTIONS = [
+    ["tees", "T-Shirts"], ["crewnecks", "Crewnecks"], ["hoodies", "Hoodies"],
+    ["longsleeves", "Long Sleeves"], ["bottoms", "Bottoms"], ["accessories", "Accessories"]
+  ];
+  const LEGACY = { tops: "crewnecks", crews: "crewnecks", tshirts: "tees" }; // older links keep working
+
   function renderShop() {
-    const grid = $("#shop-grid");
-    if (!grid) return;
+    const root = $("#shop-grid");
+    if (!root) return;
     const params = new URLSearchParams(location.search);
-    const categories = new Set(catalog.products.map(p => p.category));
-    let active = categories.has(params.get("c")) ? params.get("c") : "all"; // old links (?c=tops) fall back to all
+    const byCat = cat => catalog.products
+      .filter(p => p.category === cat)
+      .sort((a, b) => (a.flag ? 1 : 0) - (b.flag ? 1 : 0)); // ready-to-buy pieces before concepts
+    const present = SECTIONS.filter(([cat]) => byCat(cat).length);
+    const wanted = LEGACY[params.get("c")] || params.get("c");
+    let active = present.some(([cat]) => cat === wanted) ? wanted : "all";
+
+    const section = ([cat, title], withLink) => {
+      const list = byCat(cat);
+      return `<section class="shop-sec" id="${cat}">
+        <div class="shop-sec__head"${active === "all" ? "" : " hidden"}>
+          <h2 class="display shop-sec__title">${title}</h2>
+          <span class="label label--mute">${list.length} piece${list.length === 1 ? "" : "s"}</span>
+          ${withLink ? `<button class="label link-u shop-sec__all" data-jump="${cat}">View all</button>` : ""}
+        </div>
+        <div class="grid">${list.map(card).join("")}</div>
+      </section>`;
+    };
+
     const draw = () => {
-      const list = catalog.products.filter(p => active === "all" || p.category === active);
-      grid.innerHTML = list.map(card).join("");
-      $("#shop-count").textContent = `${list.length} piece${list.length === 1 ? "" : "s"}`;
+      const shown = active === "all" ? present : present.filter(([cat]) => cat === active);
+      root.innerHTML = shown.map(sec => section(sec, active === "all" && present.length > 1)).join("");
+      const total = shown.reduce((n, [cat]) => n + byCat(cat).length, 0);
+      $("#shop-count").textContent = `${total} piece${total === 1 ? "" : "s"}`;
       $$("[data-filter]").forEach(b => {
         b.setAttribute("aria-pressed", b.dataset.filter === active);
-        b.hidden = categories.size < 2 || (b.dataset.filter !== "all" && !categories.has(b.dataset.filter)); // no empty filters
+        b.hidden = b.dataset.filter !== "all" && !present.some(([cat]) => cat === b.dataset.filter);
       });
+      const title = $("#shop-title");
+      if (title) title.innerHTML = active === "all" ? 'Shop <em class="serif">all</em>' : present.find(([c]) => c === active)[1];
       bindReveal();
     };
-    $$("[data-filter]").forEach(b => b.addEventListener("click", () => {
-      active = b.dataset.filter;
-      history.replaceState(null, "", active === "all" ? "shop.html" : `shop.html?c=${active}`);
+    const go = cat => {
+      active = cat;
+      history.replaceState(null, "", cat === "all" ? "shop.html" : `shop.html?c=${cat}`);
       draw();
-    }));
+      scrollTo({ top: 0, behavior: "smooth" });
+    };
+    $$("[data-filter]").forEach(b => b.addEventListener("click", () => go(b.dataset.filter)));
+    root.addEventListener("click", e => { const j = e.target.closest("[data-jump]"); if (j) go(j.dataset.jump); });
     draw();
   }
 
