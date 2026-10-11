@@ -664,3 +664,20 @@ input { font: inherit; }
 .policy b { color: var(--ink); font-weight: 500; }
 .policy ul { margin: 0; padding-left: 20px; display: grid; gap: 10px; }
 .policy__updated { margin-top: 8px; }
+
+/* ---------- Small drop: featured piece ---------- */
+.hero__product { display: block; width: 100%; height: auto; mix-blend-mode: multiply; }
+.feature { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2px; }
+.feature__shot { position: relative; display: block; aspect-ratio: 4 / 5; background: var(--paper-2); overflow: hidden; }
+.feature__shot .label { position: absolute; left: 14px; top: 14px; }
+.feature__info { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr) auto; gap: 24px; align-items: center; padding: 24px 4px 0; }
+.feature__name { font-family: var(--serif); font-weight: 400; font-size: clamp(28px, 3vw, 40px); line-height: 1.05; margin: 6px 0 4px; }
+.feature__price { font-size: 16px; margin: 0; font-variant-numeric: tabular-nums; }
+.feature__desc { color: var(--ink-2); margin: 0; max-width: 520px; }
+.feature__cta { width: auto; }
+@media (max-width: 800px) {
+  .feature__info { grid-template-columns: 1fr; gap: 14px; }
+  .feature__cta { width: 100%; }
+}
+/* the drop shadow isolates the photo from the hero colour; blend the whole holder instead */
+.hero__fallback:has(.hero__product) { filter: none; mix-blend-mode: multiply; }

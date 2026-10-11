@@ -19,13 +19,10 @@ window.FLO_CONFIG = {
   // Set code to "" to hide it.
   launch: { code: "DROP001", offer: "15% off Drop 001" },
 
-  // Homepage and about-page photos. Drop a file in assets/img and add it here,
+  // Homepage and about-page photos (hero, editorial, about). Drop a file in assets/img and add it here,
   // e.g. hero: "assets/img/hero.jpg". Until then each slot shows an illustration.
   photos: {
     hero: "",
-    "tile-hoodies": "",
-    "tile-tees": "",
-    "tile-grand-touring": "",
     editorial: "",
     about: ""
   }

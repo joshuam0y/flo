@@ -6,6 +6,43 @@
   },
   "products": [
     {
+      "id": "palm-springs-tee",
+      "name": "Palm Springs Tee",
+      "type": "tee",
+      "category": "tees",
+      "price": 38,
+      "badge": "Drop 001",
+      "colors": [
+        {
+          "name": "Black",
+          "hex": "#161616",
+          "ink": "white"
+        }
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "front": "classic",
+      "back": "none",
+      "lead": "back",
+      "description": "Two palms and a sun-faded script across the back, the FLÒ mark at the chest. Made for long drives out to the desert.",
+      "details": [
+        "Soft-washed cotton tee",
+        "Regular fit",
+        "Palm Springs graphic on the back",
+        "FLÒ wordmark on the left chest"
+      ],
+      "photos": [
+        "assets/img/products/palm-springs-front.jpg?v=2",
+        "assets/img/products/palm-springs-back.jpg?v=2"
+      ],
+      "fit": "Regular fit. Take your usual size."
+    },
+    {
       "id": "grand-touring-tee",
       "name": "Grand Touring Tee",
       "type": "tee",
@@ -49,7 +86,8 @@
       ],
       "photos": [],
       "lead": "back",
-      "fit": "Relaxed fit with a slightly dropped shoulder. Take your usual size for the intended look, or size down for a closer fit."
+      "fit": "Relaxed fit with a slightly dropped shoulder. Take your usual size for the intended look, or size down for a closer fit.",
+      "hidden": true
     },
     {
       "id": "cloud-hoodie",
@@ -101,44 +139,8 @@
         "FLÒ wordmark across the upper back"
       ],
       "photos": [],
-      "fit": "Unisex regular fit. Take your usual size, or size up for a roomier hoodie."
-    },
-    {
-      "id": "palm-springs-tee",
-      "name": "Palm Springs Tee",
-      "type": "tee",
-      "category": "tees",
-      "price": 38,
-      "badge": "New",
-      "colors": [
-        {
-          "name": "Black",
-          "hex": "#161616",
-          "ink": "white"
-        }
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL",
-        "XXL"
-      ],
-      "front": "classic",
-      "back": "none",
-      "lead": "back",
-      "description": "Two palms and a sun-faded script across the back, the FLÒ mark at the chest. Made for long drives out to the desert.",
-      "details": [
-        "Soft-washed cotton tee",
-        "Regular fit",
-        "Palm Springs graphic on the back",
-        "FLÒ wordmark on the left chest"
-      ],
-      "photos": [
-        "assets/img/products/palm-springs-front.jpg?v=2",
-        "assets/img/products/palm-springs-back.jpg?v=2"
-      ],
-      "fit": "Regular fit. Take your usual size."
+      "fit": "Unisex regular fit. Take your usual size, or size up for a roomier hoodie.",
+      "hidden": true
     },
     {
       "id": "everyday-tee",
@@ -179,7 +181,8 @@
         "FLÒ wordmark across the upper back"
       ],
       "photos": [],
-      "fit": "Relaxed fit with a slightly dropped shoulder. Take your usual size for the intended look, or size down for a closer fit."
+      "fit": "Relaxed fit with a slightly dropped shoulder. Take your usual size for the intended look, or size down for a closer fit.",
+      "hidden": true
     },
     {
       "id": "cloud-sweatpant",

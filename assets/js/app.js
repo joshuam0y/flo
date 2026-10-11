@@ -263,26 +263,40 @@
 
   /* ---------- Pages ---------- */
   function renderHome() {
+    const lead = catalog.products[0];
     const grid = $("#bestsellers");
-    if (grid) grid.innerHTML = catalog.products.slice(0, 4).map(card).join("");
-    const hero = $("#hero-art");
-    if (hero) {
-      const p = findProduct("grand-touring-tee");
-      hero.innerHTML = garmentSVG(p.type, "#e9e2d6", { front: p.front, back: p.back }, { side: "back", label: "Grand Touring Tee, back" });
+    if (grid) {
+      if (catalog.products.length >= 3) grid.innerHTML = catalog.products.slice(0, 4).map(card).join("");
+      else {
+        // a small drop: feature the lead piece, both sides, instead of a mostly empty grid
+        const c = lead.colors[0];
+        const [first, second] = lead.lead === "back" ? ["back", "front"] : ["front", "back"];
+        grid.className = "feature";
+        grid.innerHTML = `
+          <a class="feature__shot" href="product.html?id=${lead.id}">${art(lead, c, first)}<span class="label">${first}</span></a>
+          <a class="feature__shot" href="product.html?id=${lead.id}">${art(lead, c, second)}<span class="label">${second}</span></a>
+          <div class="feature__info">
+            <div><p class="label label--mute">${esc(lead.badge || "")}</p><h3 class="feature__name">${esc(lead.name)}</h3><p class="feature__price">${money(lead.price)}</p></div>
+            <p class="feature__desc">${esc(lead.description)}</p>
+            <a class="btn btn--solid feature__cta" href="product.html?id=${lead.id}">See the tee</a>
+          </div>`;
+      }
     }
-    $$("[data-tile]").forEach(el => {
-      const [id, colorName, side] = el.dataset.tile.split(":");
-      const p = findProduct(id);
-      if (!p) return;
-      const c = p.colors.find(x => x.name === colorName) || p.colors[0];
-      el.insertAdjacentHTML("afterbegin", garmentSVG(p.type, c.hex, { front: p.front, back: p.back }, { side, ink: c.ink, label: p.name }));
-    });
+    const hero = $("#hero-art");
+    if (hero && lead) {
+      const c = lead.colors[0];
+      const side = lead.lead === "back" ? "back" : "front";
+      const photo = side === "back" ? lead.photos[1] : lead.photos[0];
+      hero.innerHTML = photo
+        ? `<img class="hero__product" src="${photo}" alt="${esc(lead.name)}, ${side}">`
+        : garmentSVG(lead.type, c.hex, { front: lead.front, back: lead.back }, { side, ink: c.ink, label: lead.name });
+    }
     $$("[data-art]").forEach(el => {
       const [id, colorName, side] = el.dataset.art.split(":");
-      const p = findProduct(id);
+      const p = findProduct(id) || lead;
       if (!p) return;
       const c = p.colors.find(x => x.name === colorName) || p.colors[0];
-      el.insertAdjacentHTML("afterbegin", garmentSVG(p.type, c.hex, { front: p.front, back: p.back }, { side, label: p.name }));
+      el.insertAdjacentHTML("afterbegin", art(p, c, side || "front"));
     });
   }
 
@@ -296,7 +310,10 @@
       const list = catalog.products.filter(p => active === "all" || p.category === active);
       grid.innerHTML = list.map(card).join("");
       $("#shop-count").textContent = `${list.length} piece${list.length === 1 ? "" : "s"}`;
-      $$("[data-filter]").forEach(b => b.setAttribute("aria-pressed", b.dataset.filter === active));
+      $$("[data-filter]").forEach(b => {
+        b.setAttribute("aria-pressed", b.dataset.filter === active);
+        b.hidden = categories.size < 2 || (b.dataset.filter !== "all" && !categories.has(b.dataset.filter)); // no empty filters
+      });
       bindReveal();
     };
     $$("[data-filter]").forEach(b => b.addEventListener("click", () => {
@@ -376,6 +393,7 @@
     const more = catalog.products.filter(x => x.id !== p.id && x.category === p.category)
       .concat(catalog.products.filter(x => x.category !== p.category)).slice(0, 4);
     $("#pdp-more").innerHTML = more.map(card).join("");
+    $("#pdp-more-section").hidden = !more.length;
 
     drawGallery();
   }

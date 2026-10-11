@@ -16,7 +16,7 @@ Customer ──► flò site (GitHub Pages) ──► Checkout worker (Cloudflar
 | --- | --- |
 | Products, prices, colours, sizes, descriptions | `assets/data/products.json` (add `"hidden": true` to take a product off the site without deleting it) |
 | Product photos | add paths to a product's `"photos"` list: `[front, back, lifestyle]` |
-| Homepage photos | drop files in `assets/img` and list them under `photos` in `assets/js/config.js` (slots: hero, tile-hoodies, tile-tees, tile-grand-touring, editorial, about) |
+| Homepage photos | drop files in `assets/img` and list them under `photos` in `assets/js/config.js` (slots: hero, editorial, about) |
 | Colours, fonts, spacing | `assets/css/style.css` (tokens at the top) |
 | Store mode (pre-launch or live), checkout URL, sign-ups, launch code, photos | `assets/js/config.js` |
 | Shipping, refund, privacy and terms | `policies.html` |
