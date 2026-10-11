@@ -79,47 +79,13 @@
       ]
     },
     {
-      "id": "flo-essential-tee",
-      "name": "FLÒ Essential Tee",
-      "type": "tee",
-      "category": "tees",
-      "price": 32,
-      "badge": "",
-      "colors": [
-        {
-          "name": "White",
-          "hex": "#f4f3ef"
-        }
-      ],
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL",
-        "XXL"
-      ],
-      "front": "classic",
-      "back": "none",
-      "lead": "front",
-      "description": "The FLÒ wordmark, small and centred on a clean white tee. The everyday one.",
-      "details": [
-        "Soft cotton tee",
-        "Regular fit",
-        "FLÒ wordmark centred on the chest"
-      ],
-      "fit": "Regular fit. Take your usual size.",
-      "photos": [
-        "assets/img/products/flo-essential-front.jpg"
-      ]
-    },
-    {
       "id": "dragon-tee",
       "name": "Dragon Tee",
       "type": "tee",
       "category": "tees",
       "price": 38,
       "badge": "",
-      "flag": "Design source unknown; confirm he drew it or has a licence to sell it",
+      "flag": "Back design source unknown; confirm he drew the dragon or has a licence to sell it",
       "colors": [
         {
           "name": "White",
@@ -135,15 +101,17 @@
       ],
       "front": "none",
       "back": "none",
-      "lead": "front",
-      "description": "A red and gold dragon wrapped in brush calligraphy, printed large across the back of a white tee.",
+      "lead": "back",
+      "description": "The FLÒ wordmark small on the chest, and a red and gold dragon wrapped in brush calligraphy printed large across the back.",
       "details": [
         "Soft cotton tee",
         "Regular fit",
+        "FLÒ wordmark centred on the chest",
         "Full back print"
       ],
       "fit": "Regular fit. Take your usual size.",
       "photos": [
+        "assets/img/products/dragon-front.jpg",
         "assets/img/products/dragon-back.jpg"
       ]
     },
