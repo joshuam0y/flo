@@ -2,7 +2,7 @@
   const BAG_KEY = "flo-bag";
   const $ = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
-  const money = n => "$" + n.toFixed(0);
+  const money = n => "$" + (Number.isInteger(n) ? n.toFixed(0) : n.toFixed(2)); // $25, $28.99
   const slug = s => s.toLowerCase().replace(/[^a-z0-9]+/g, "-");
   const skuOf = (id, color, size) => `${id}_${slug(color)}_${slug(size)}`;
 
