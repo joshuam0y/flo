@@ -194,6 +194,15 @@
         "3XL": 36,
         "4XL": 36,
         "5XL": 36
+      },
+      "lifestyle": {
+        "colour": "Black",
+        "photos": [
+          "assets/img/lifestyle/palm-springs-tee-1.jpg?v=1",
+          "assets/img/lifestyle/palm-springs-tee-2.jpg?v=1",
+          "assets/img/lifestyle/palm-springs-tee-3.jpg?v=1",
+          "assets/img/lifestyle/palm-springs-tee-4.jpg?v=1"
+        ]
       }
     },
     {
@@ -201,7 +210,7 @@
       "name": "Go With the FLÒ Tee",
       "type": "tee",
       "category": "tees",
-      "price": 20,
+      "price": 25,
       "badge": "Drop 001",
       "colors": [
         {
@@ -397,10 +406,24 @@
       "whiteBg": true,
       "printify": "6ac132eba1fc024e4b0fb1b8",
       "sizePrices": {
-        "2XL": 27,
-        "3XL": 27,
-        "4XL": 27,
-        "5XL": 27
+        "2XL": 32,
+        "3XL": 32,
+        "4XL": 32,
+        "5XL": 32
+      },
+      "lifestyle": {
+        "colour": "Mint Green",
+        "photos": [
+          "assets/img/lifestyle/over-perfection-tee-5.jpg?v=1",
+          "assets/img/lifestyle/over-perfection-tee-6.jpg?v=1",
+          "assets/img/lifestyle/over-perfection-tee-7.jpg?v=1",
+          "assets/img/lifestyle/over-perfection-tee-8.jpg?v=1",
+          "assets/img/lifestyle/over-perfection-tee-9.jpg?v=1",
+          "assets/img/lifestyle/over-perfection-tee-1.jpg?v=3",
+          "assets/img/lifestyle/over-perfection-tee-2.jpg?v=3",
+          "assets/img/lifestyle/over-perfection-tee-3.jpg?v=3",
+          "assets/img/lifestyle/over-perfection-tee-4.jpg?v=3"
+        ]
       }
     },
     {
@@ -575,7 +598,16 @@
       ],
       "fit": "Regular fit. Take your usual size.",
       "whiteBg": true,
-      "printify": "6acd2645b4b7a98e6a05639e"
+      "printify": "6acd2645b4b7a98e6a05639e",
+      "lifestyle": {
+        "colour": "White",
+        "photos": [
+          "assets/img/lifestyle/summer-vibes-tee-1.jpg?v=3",
+          "assets/img/lifestyle/summer-vibes-tee-2.jpg?v=3",
+          "assets/img/lifestyle/summer-vibes-tee-3.jpg?v=3",
+          "assets/img/lifestyle/summer-vibes-tee-4.jpg?v=3"
+        ]
+      }
     },
     {
       "id": "apparel-crew",
@@ -800,6 +832,15 @@
         "3XL": 49,
         "4XL": 49,
         "5XL": 49
+      },
+      "lifestyle": {
+        "colour": "Black",
+        "photos": [
+          "assets/img/lifestyle/apparel-crew-1.jpg?v=3",
+          "assets/img/lifestyle/apparel-crew-2.jpg?v=3",
+          "assets/img/lifestyle/apparel-crew-3.jpg?v=3",
+          "assets/img/lifestyle/apparel-crew-4.jpg?v=3"
+        ]
       }
     },
     {
@@ -932,7 +973,16 @@
       ],
       "fit": "Relaxed fit. Take your usual size.",
       "whiteBg": true,
-      "printify": "6ac27f66424802d4ea07a45c"
+      "printify": "6ac27f66424802d4ea07a45c",
+      "lifestyle": {
+        "colour": "Sand",
+        "photos": [
+          "assets/img/lifestyle/forward-crew-1.jpg?v=3",
+          "assets/img/lifestyle/forward-crew-2.jpg?v=3",
+          "assets/img/lifestyle/forward-crew-3.jpg?v=3",
+          "assets/img/lifestyle/forward-crew-4.jpg?v=3"
+        ]
+      }
     },
     {
       "id": "champs-longsleeve",
@@ -1138,7 +1188,14 @@
       ],
       "fit": "Classic fit. Take your usual size.",
       "whiteBg": true,
-      "printify": "6acbff615a6821eb4003d559"
+      "printify": "6acbff615a6821eb4003d559",
+      "lifestyle": {
+        "colour": "White",
+        "photos": [
+          "assets/img/lifestyle/champs-longsleeve-1.jpg?v=3",
+          "assets/img/lifestyle/champs-longsleeve-2.jpg?v=3"
+        ]
+      }
     },
     {
       "id": "champs-sweatpant",
