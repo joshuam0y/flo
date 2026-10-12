@@ -14,6 +14,7 @@
   const CFG = window.FLO_CONFIG || {};
   const prelaunch = CFG.mode !== "live";
   const signupEndpoint = CFG.signupUrl || (CFG.checkoutUrl ? CFG.checkoutUrl.replace(/\/checkout$/, "/subscribe") : "");
+  const rewardsEndpoint = signupEndpoint ? signupEndpoint.replace(/\/subscribe$/, "/rewards") : "";
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
   // The welcome code from joining the list, kept on this device so the account page and checkout can show it
@@ -68,6 +69,38 @@
         msg.innerHTML = joinedHtml(data, "You're on the list. We'll email you when the drop opens.");
         form.reset();
       } catch (err) { msg.textContent = err.message; }
+    });
+  }
+
+  // Points aren't kept on this device (they come from past orders, maybe on another device), so
+  // checking them is a quick email lookup, the same no-password pattern as the welcome code.
+  function loyaltyHtml(data) {
+    const pct = data.reward?.percent ?? CFG.loyalty?.percent ?? 15;
+    let html = `<span>${data.points} point${data.points === 1 ? "" : "s"} so far &middot; ${data.toNextReward} to your next ${pct}% off.</span>`;
+    if (data.reward) {
+      html += `<p class="account__code"><b>${esc(data.reward.code)}</b> <button class="label link-u" data-copy="${esc(data.reward.code)}">Copy</button></p>
+        <p class="account__fine">${data.reward.percent}% off, one use, until ${shortDate(data.reward.expires)}.</p>`;
+    }
+    return html;
+  }
+
+  function bindLoyalty(card) {
+    const form = card && card.querySelector(".loyalty__form");
+    if (!form) return;
+    form.addEventListener("submit", async e => {
+      e.preventDefault();
+      const out = card.querySelector(".loyalty__result");
+      out.textContent = "Checking…";
+      try {
+        const res = await fetch(rewardsEndpoint, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email: form.querySelector("input").value })
+        });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok) throw new Error(data.error || "Something went wrong. Please try again.");
+        out.innerHTML = loyaltyHtml(data);
+      } catch (err) { out.textContent = err.message; }
     });
   }
 
@@ -362,12 +395,24 @@
           <p class="label">Promo codes</p>
           <p>Codes go in on the payment page, one per order.${CFG.launch?.code && !prelaunch ? ` Right now: <b>${esc(CFG.launch.code)}</b> for ${esc(CFG.launch.offer)}.` : ""}</p>
         </div>
+        <div class="account__card" id="account-loyalty">
+          <p class="label">My offers</p>
+          ${rewardsEndpoint
+            ? `<p>1 point per dollar on every order. Hit ${CFG.loyalty?.threshold || 100} points and a ${CFG.loyalty?.percent || 15}% off code lands here automatically.</p>
+               <form class="loyalty__form notify__form">
+                 <input type="email" required placeholder="Email address" aria-label="Email address">
+                 <button type="submit">Check</button>
+               </form>
+               <p class="loyalty__result notify__msg" aria-live="polite"></p>`
+            : `<p>Points open once Drop 001 is on sale: 1 point per dollar, with a reward code every ${CFG.loyalty?.threshold || 100} points.</p>`}
+        </div>
       </div>`;
     const box = root.querySelector("#account-rewards .notify");
     if (box) {
       bindNotify(box);
       box.addEventListener("submit", () => setTimeout(function wait() { if (readWelcome()) renderAccount(); else if (box.isConnected) setTimeout(wait, 400); }, 400));
     }
+    bindLoyalty(root.querySelector("#account-loyalty"));
     root.addEventListener("click", e => {
       const c = e.target.closest("[data-copy]");
       if (!c) return;

@@ -26,6 +26,7 @@ export default {
       if (request.method === "POST" && url.pathname === "/checkout") return await checkout(request, env, cors);
       if (request.method === "POST" && url.pathname === "/webhook") return await webhook(request, env);
       if (request.method === "POST" && url.pathname === "/subscribe") return await subscribe(request, env, cors);
+      if (request.method === "POST" && url.pathname === "/rewards") return await rewards(request, env, cors);
       return json({ ok: true, service: "flo-checkout" }, 200, cors);
     } catch (err) {
       console.error(err);
@@ -174,6 +175,11 @@ async function webhook(request, env) {
     await stripe(env, `/payment_intents/${payment.id}`, { method: "POST", body: form });
   }
 
+  // 1 point per dollar actually paid for goods (amount_total is post-discount, and excludes shipping,
+  // which is billed separately from line_items in Stripe Checkout)
+  const dollars = Math.floor(items.data.reduce((s, li) => s + li.amount_total, 0) / 100);
+  if (cust.email) await awardPoints(env, cust.email, dollars);
+
   // Printify holds new orders until they're sent to production. Leave that to a person while testing.
   if (env.PRINTIFY_AUTO_SEND === "true") {
     const send = await fetch(`${PRINTIFY}/shops/${shop}/orders/${created.id}/send_to_production.json`, { method: "POST", headers });
@@ -220,6 +226,60 @@ async function subscribe(request, env, cors) {
   return json({ ok: true, code, percent, expires }, 200, cors);
 }
 
+/* ---------- Loyalty points ---------- */
+
+// Adds points for an order and, on crossing a LOYALTY_THRESHOLD multiple, mints a fresh reward code.
+// Never throws: a points hiccup should never fail an order that already succeeded in Stripe and Printify.
+async function awardPoints(env, email, dollars) {
+  if (!env.SUBSCRIBERS || !dollars) return;
+  try {
+    const key = email.trim().toLowerCase();
+    const raw = await env.SUBSCRIBERS.get(key);
+    let saved = null;
+    try { saved = raw ? JSON.parse(raw) : null; } catch { saved = null; }
+    saved = saved || {};
+
+    const threshold = Number(env.LOYALTY_THRESHOLD || 100);
+    const percent = Number(env.LOYALTY_PERCENT || 15);
+    const points = (saved.points || 0) + dollars;
+    const earned = saved.rewardsEarned || 0;
+    const nowEarned = Math.floor(points / threshold);
+
+    let reward = saved.reward || null;
+    if (nowEarned > earned) {
+      const now = Math.floor(Date.now() / 1000);
+      const expires = now + Number(env.LOYALTY_DAYS || 30) * 86400;
+      const code = `LOYALTY-${randomCode(6)}`;
+      await stripe(env, "/promotion_codes", { method: "POST", body: new URLSearchParams({
+        coupon: await getOrCreateCoupon(env, `flo-loyalty-${percent}`, percent), code, max_redemptions: "1",
+        expires_at: String(expires), "metadata[email]": key
+      }) });
+      reward = { code, percent, expires };
+    }
+    await env.SUBSCRIBERS.put(key, JSON.stringify({ ...saved, points, rewardsEarned: nowEarned, reward }));
+  } catch (err) {
+    console.error("Loyalty points", err);
+  }
+}
+
+// Looks up a shopper's points and any unredeemed reward code by email (no password: same lightweight
+// model as the welcome code). Doesn't reveal whether an email has ever ordered beyond its own points.
+async function rewards(request, env, cors) {
+  const { email } = await request.json().catch(() => ({}));
+  if (typeof email !== "string" || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+    return json({ error: "Please enter a valid email address." }, 400, cors);
+  }
+  if (!env.SUBSCRIBERS) return json({ error: "Rewards aren't set up yet." }, 503, cors);
+  const threshold = Number(env.LOYALTY_THRESHOLD || 100);
+  const now = Math.floor(Date.now() / 1000);
+  const raw = await env.SUBSCRIBERS.get(email.trim().toLowerCase());
+  let saved = null;
+  try { saved = raw ? JSON.parse(raw) : null; } catch { saved = null; }
+  const points = saved?.points || 0;
+  const reward = saved?.reward && saved.reward.expires > now ? saved.reward : null;
+  return json({ points, threshold, toNextReward: threshold - (points % threshold), reward }, 200, cors);
+}
+
 // Add a sign-up to the Brevo list you send promotions from, with their welcome code as contact attributes
 // (WELCOME_CODE, WELCOME_PERCENT, WELCOME_EXPIRES) so Brevo's welcome email can include it. Never blocks a sign-up.
 async function addToEmailList(env, email, w) {
@@ -241,11 +301,16 @@ async function addToEmailList(env, email, w) {
 
 // The coupon behind every welcome code, made the first time it's needed
 async function welcomeCoupon(env, percent) {
-  const id = `flo-welcome-${percent}`;
+  return getOrCreateCoupon(env, `flo-welcome-${percent}`, percent, `Welcome ${percent}% off`);
+}
+
+// A reusable percent-off coupon, made the first time its id is needed (coupons are shared across
+// every promotion code at that percentage; each promotion code is still its own single-use code)
+async function getOrCreateCoupon(env, id, percent, name) {
   try {
     await stripe(env, `/coupons/${id}`, { method: "GET" });
   } catch {
-    await stripe(env, "/coupons", { method: "POST", body: new URLSearchParams({ id, percent_off: String(percent), duration: "once", name: `Welcome ${percent}% off` }) });
+    await stripe(env, "/coupons", { method: "POST", body: new URLSearchParams({ id, percent_off: String(percent), duration: "once", name: name || `${percent}% off` }) });
   }
   return id;
 }
