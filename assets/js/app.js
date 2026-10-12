@@ -495,6 +495,35 @@
     draw();
   }
 
+  // Product schema (JSON-LD) so Google can show price, image and stock directly in search results
+  function injectProductSchema(p, color) {
+    const img = (color.photos && color.photos[0]) || p.photos[0];
+    const data = {
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      name: p.name,
+      description: p.description,
+      image: img ? `https://floshops.com/${img.replace(/^\.?\/*/, "")}` : "https://floshops.com/assets/img/og.jpg",
+      brand: { "@type": "Brand", name: "flò" },
+      offers: {
+        "@type": "Offer",
+        url: `https://floshops.com/product.html?id=${p.id}`,
+        priceCurrency: "USD",
+        price: p.price.toFixed(2),
+        availability: p.flag ? "https://schema.org/PreOrder" : "https://schema.org/InStock",
+        itemCondition: "https://schema.org/NewCondition",
+      },
+    };
+    let tag = document.getElementById("product-schema");
+    if (!tag) {
+      tag = document.createElement("script");
+      tag.type = "application/ld+json";
+      tag.id = "product-schema";
+      document.head.appendChild(tag);
+    }
+    tag.textContent = JSON.stringify(data);
+  }
+
   function renderProduct() {
     const root = $("#pdp");
     if (!root) return;
@@ -521,6 +550,7 @@
     root.querySelector(".pdp__name").textContent = p.name;
     root.querySelector(".pdp__price").textContent = money(p.price);
     root.querySelector(".pdp__desc").textContent = p.description;
+    injectProductSchema(p, color);
     $("#pdp-badge").textContent = p.flag ? `${p.badge ? `${p.badge} · ` : ""}Coming soon` : p.badge || "flò essentials";
     $("#pdp-details").innerHTML = `<ul>${p.details.map(d => `<li>${d}</li>`).join("")}</ul>`;
     if (p.fit) $("#pdp-fit").textContent = p.fit;

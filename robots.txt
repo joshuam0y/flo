@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /checkout.html
+Disallow: /success.html
+Disallow: /account.html
+
+Sitemap: https://floshops.com/sitemap.xml
