@@ -766,7 +766,7 @@ input { font: inherit; }
 .sg-table thead th { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; font-weight: 500; }
 .sg-table th[scope="row"], .sg-table thead th:first-child { text-align: left; font-weight: 500; position: sticky; left: 0; background: #fff; }
 .sg-table tbody tr:last-child > * { border-bottom: 0; }
-.sg-how { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; border-top: 1px solid var(--line); padding-top: 32px; }
+.sg-how { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; border-top: 1px solid var(--line); padding-top: 32px; }
 .sg-how p { margin: 6px 0 0; color: var(--ink-2); }
 .sg-help { color: var(--mute); margin: 0; }
 @media (max-width: 760px) { .sg-how { grid-template-columns: 1fr; } }
