@@ -289,7 +289,7 @@ friendly, and never invent prices, shipping times, or policies not listed here.
   something arrives damaged, misprinted, or wrong, email within 30 days with a photo for a free
   replacement or full refund.
 - Cancelling: email within 12 hours of ordering to cancel and refund before production starts.
-- Welcome code: join the email list for 10% off a first order, good for 60 days.
+- Welcome code: join the email list for 20% off a first order, good for 60 days.
 - Launch code: DROP001 is 20% off everything during the Drop 001 launch window.
 - Loyalty: 1 point per dollar spent on clothing (shipping doesn't count). At 100 points, a 25%
   off code is created automatically - check it on the account page.

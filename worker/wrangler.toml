@@ -11,7 +11,7 @@ SHIP_COUNTRIES = "US"
 # "true"  = orders go straight into production as soon as the customer pays.
 PRINTIFY_AUTO_SEND = "false"
 # Joining the email list gives a personal one-time code for this much off a first order, valid this many days
-WELCOME_PERCENT = "10"
+WELCOME_PERCENT = "20"
 WELCOME_DAYS = "60"
 # The Brevo list sign-ups are added to (the number in Brevo, Contacts, Lists). The API key is a secret:
 #   npx wrangler secret put BREVO_API_KEY

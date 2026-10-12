@@ -26,7 +26,7 @@ window.FLO_CONFIG = {
 
   // Joining the email list gives a personal one-time code for this much off a first order (the worker makes it in
   // Stripe; keep it the same as WELCOME_PERCENT in worker/wrangler.toml). The offer only shows once sign-ups work.
-  welcome: { percent: 10 },
+  welcome: { percent: 20 },
 
   // 1 point per dollar spent on goods. Keep these the same as LOYALTY_THRESHOLD/LOYALTY_PERCENT in
   // worker/wrangler.toml; they're just for the account page's wording, the worker decides the real numbers.
