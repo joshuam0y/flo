@@ -6,7 +6,7 @@
  *                    for promotions) -> a personal one-time code for WELCOME_PERCENT off a first order,
  *                    created in Stripe
  *   POST /rewards    looks up a shopper's loyalty points and any unredeemed reward code, by email
- *   POST /contact    emails a contact-page message straight to the inbox via Brevo
+ *   POST /chat       answers shopper questions with Gemini, grounded only in FLO_FACTS below
  *
  * Prices always come from the published products.json, never from the browser,
  * so nobody can edit the bag in devtools and pay $1 for a hoodie.
@@ -30,6 +30,7 @@ export default {
       if (request.method === "POST" && url.pathname === "/subscribe") return await subscribe(request, env, cors);
       if (request.method === "POST" && url.pathname === "/rewards") return await rewards(request, env, cors);
       if (request.method === "POST" && url.pathname === "/contact") return await contact(request, env, cors);
+      if (request.method === "POST" && url.pathname === "/chat") return await chat(request, env, cors);
       return json({ ok: true, service: "flo-checkout" }, 200, cors);
     } catch (err) {
       console.error(err);
@@ -268,6 +269,83 @@ async function contact(request, env, cors) {
     return json({ error: "Something went wrong. Please try again." }, 502, cors);
   }
   return json({ ok: true }, 200, cors);
+}
+
+/* ---------- AI chat ---------- */
+
+// Everything the chat is allowed to know. Keep this in sync with about.html's FAQ by hand -
+// it's duplicated on purpose so a bad fetch or a parsing slip can never feed the model garbage.
+const FLO_FACTS = `
+You are the shopping assistant on flò's website (a small, made-to-order clothing brand).
+Answer ONLY using the facts below. If something isn't covered here, say you're not sure and
+suggest the contact page (contact.html) instead of guessing. Keep answers short (2-4 sentences),
+friendly, and never invent prices, shipping times, or policies not listed here.
+
+- Shipping: every piece is printed to order, ships within 3-7 business days, then a few more
+  days in transit. Tracking is emailed the moment it ships. US only for now, no international.
+- Fit: tops run slightly oversized. Take your usual size for the intended look, size down for a
+  closer fit.
+- Returns/exchanges: no change-of-mind returns, since nothing is made until it's ordered. If
+  something arrives damaged, misprinted, or wrong, email within 30 days with a photo for a free
+  replacement or full refund.
+- Cancelling: email within 12 hours of ordering to cancel and refund before production starts.
+- Welcome code: join the email list for 10% off a first order, good for 60 days.
+- Launch code: DROP001 is 20% off everything during the Drop 001 launch window.
+- Loyalty: 1 point per dollar spent on clothing (shipping doesn't count). At 100 points, a 25%
+  off code is created automatically - check it on the account page.
+- Codes can't be combined - one per order, whichever the customer prefers.
+- Free shipping on orders over $75.
+- Sign-in on the account page is a one-time email link, no password needed.
+`.trim();
+
+async function chat(request, env, cors) {
+  const { message, history } = await request.json().catch(() => ({}));
+  if (typeof message !== "string" || !message.trim() || message.length > 500) {
+    return json({ error: "Please enter a message." }, 400, cors);
+  }
+  if (!env.GEMINI_API_KEY) return json({ error: "Chat isn't set up yet." }, 503, cors);
+
+  // Keep only the last few turns, and only ever what this request's own caller sent - never
+  // trust a client-supplied "history" to inject new instructions beyond plain chat turns.
+  const turns = (Array.isArray(history) ? history.slice(-6) : [])
+    .filter(h => h && typeof h.text === "string" && (h.role === "user" || h.role === "model"))
+    .map(h => ({ role: h.role, parts: [{ text: h.text.slice(0, 500) }] }));
+  turns.push({ role: "user", parts: [{ text: message.trim() }] });
+
+  // The free tier can stall for a long time under load rather than failing fast, so every call
+  // gets its own hard timeout - better a quick "try again" than a shopper staring at a spinner.
+  const call = () => fetch(
+    `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent?key=${env.GEMINI_API_KEY}`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        systemInstruction: { parts: [{ text: FLO_FACTS }] },
+        contents: turns,
+        generationConfig: { maxOutputTokens: 1024, temperature: 0.4 }
+      }),
+      signal: AbortSignal.timeout(10000)
+    }
+  );
+
+  // The free tier also returns an occasional 503 "high demand" that Google's own error says to
+  // just retry, so one quiet retry here saves the shopper from ever seeing that as a failure.
+  let res, data;
+  try {
+    res = await call();
+    if (res.status === 503) { await new Promise(r => setTimeout(r, 800)); res = await call(); }
+    data = await res.json().catch(() => ({}));
+  } catch (err) {
+    console.error("Gemini", err.name === "TimeoutError" ? "timed out" : err.message);
+    return json({ error: "Our assistant is a little busy right now. Try again in a moment, or use the contact page." }, 502, cors);
+  }
+  if (!res.ok) {
+    console.error("Gemini", res.status, JSON.stringify(data));
+    return json({ error: "Our assistant is a little busy right now. Try again in a moment, or use the contact page." }, 502, cors);
+  }
+  const reply = data.candidates?.[0]?.content?.parts?.[0]?.text;
+  if (!reply) return json({ error: "Something went wrong. Please try again." }, 502, cors);
+  return json({ reply }, 200, cors);
 }
 
 /* ---------- Loyalty points ---------- */

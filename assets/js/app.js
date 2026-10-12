@@ -22,6 +22,7 @@
   const signupEndpoint = CFG.signupUrl || (workerUrl ? `${workerUrl}/subscribe` : "");
   const rewardsEndpoint = workerUrl ? `${workerUrl}/rewards` : "";
   const contactEndpoint = workerUrl ? `${workerUrl}/contact` : "";
+  const chatEndpoint = workerUrl ? `${workerUrl}/chat` : "";
   // Real sign-in (magic link, no password) via Supabase. Only created where the SDK script and config
   // are both present (the account page), so this stays undefined - and harmless - everywhere else.
   const sb = (window.supabase && CFG.supabase && CFG.supabase.url)
@@ -317,6 +318,17 @@
     toastTimer = setTimeout(() => el.classList.remove("is-on"), 3200);
   }
 
+  // Instagram isn't live yet (CFG.instagram is empty) - once it is, this adds it next to TikTok
+  // in the footer automatically, same icon treatment, no HTML edits needed.
+  function addInstagramLink() {
+    if (!CFG.instagram) return;
+    const list = $(".footer__cols .social-link")?.closest("ul");
+    if (!list) return;
+    list.insertAdjacentHTML("beforeend", `
+      <li><a class="social-link" href="${esc(CFG.instagram)}" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg>Instagram</a></li>`);
+  }
+
   function bindChrome() {
     const header = $(".header");
     const onScroll = () => header.classList.toggle("is-scrolled", scrollY > 40);
@@ -409,6 +421,63 @@
         msg.innerHTML = joinedHtml(data, "You're on the list.");
         box.querySelector(".corner-popup__form").hidden = true;
       } catch (err) { msg.textContent = err.message; }
+    });
+  }
+
+  // A small AI assistant, grounded only in flò's own shipping/returns/sizing/discount facts
+  // (see the worker's FLO_FACTS) - never on checkout, so nothing distracts from paying.
+  function bindChat() {
+    if (!chatEndpoint || document.body.dataset.page === "checkout") return;
+    document.body.insertAdjacentHTML("beforeend", `
+      <button class="chat-launcher" type="button" aria-haspopup="dialog" aria-expanded="false">Ask us</button>
+      <div class="chat-panel" role="dialog" aria-label="Chat with flò">
+        <div class="chat-panel__head">
+          <p class="label">Ask flò</p>
+          <button class="chat-panel__close label" aria-label="Close">✕</button>
+        </div>
+        <div class="chat-panel__log"><p class="chat-msg chat-msg--bot">Hey, ask me about shipping, sizing, returns or your discount code.</p></div>
+        <form class="chat-panel__form">
+          <input type="text" required maxlength="500" placeholder="Type a question…" aria-label="Your question">
+          <button type="submit" aria-label="Send">→</button>
+        </form>
+      </div>`);
+    const launcher = $(".chat-launcher"), panel = $(".chat-panel"), log = $(".chat-panel__log"), form = $(".chat-panel__form");
+    const history = [];
+    const addMsg = (cls, text) => {
+      log.insertAdjacentHTML("beforeend", `<p class="chat-msg ${cls}">${esc(text)}</p>`);
+      log.scrollTop = log.scrollHeight;
+    };
+    const toggle = open => {
+      panel.classList.toggle("is-open", open);
+      launcher.setAttribute("aria-expanded", String(open));
+      if (open) form.querySelector("input").focus({ preventScroll: true });
+    };
+    launcher.addEventListener("click", () => toggle(!panel.classList.contains("is-open")));
+    $(".chat-panel__close").addEventListener("click", () => toggle(false));
+    form.addEventListener("submit", async e => {
+      e.preventDefault();
+      const input = form.querySelector("input");
+      const message = input.value.trim();
+      if (!message) return;
+      addMsg("chat-msg--user", message);
+      input.value = "";
+      input.disabled = true;
+      try {
+        const res = await fetch(chatEndpoint, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message, history })
+        });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok) throw new Error(data.error || "Something went wrong. Please try again.");
+        addMsg("chat-msg--bot", data.reply);
+        history.push({ role: "user", text: message }, { role: "model", text: data.reply });
+      } catch (err) {
+        addMsg("chat-msg--error", err.message);
+      } finally {
+        input.disabled = false;
+        input.focus({ preventScroll: true });
+      }
     });
   }
 
@@ -837,6 +906,7 @@
   document.addEventListener("DOMContentLoaded", async () => {
     document.body.classList.toggle("is-prelaunch", prelaunch);
     bindChrome();
+    addInstagramLink();
     fillPhotos();
     try {
       await loadCatalog();
@@ -850,6 +920,7 @@
     // account page picks up the new session without needing a manual refresh.
     if (sb) sb.auth.onAuthStateChange(() => renderAccount());
     bindContactForm();
+    bindChat();
     maybePopup();
     renderHome();
     renderShop();
