@@ -645,7 +645,7 @@
         "assets/img/products/forward-crew-back.jpg?v=3"
       ],
       "fit": "Relaxed fit. Take your usual size.",
-      "flag": "Back text in Printify still reads FLÓ; change it to FLÒ in the Printify editor, then remove this flag"
+      "flag": "Back text in Printify still has the old acute accent; change it to FLÒ in the Printify editor, then remove this flag"
     },
     {
       "id": "champs-longsleeve",
