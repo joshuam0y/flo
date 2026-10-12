@@ -20,7 +20,7 @@ BREVO_LIST_ID = "3"
 # Loyalty: 1 point per dollar spent on goods (shipping doesn't count). Crossing a multiple of
 # LOYALTY_THRESHOLD mints a one-time code for LOYALTY_PERCENT off, valid LOYALTY_DAYS days.
 LOYALTY_THRESHOLD = "100"
-LOYALTY_PERCENT = "25"
+LOYALTY_PERCENT = "10"
 LOYALTY_DAYS = "30"
 
 # Secrets: set these with `npx wrangler secret put NAME`, never commit them:
