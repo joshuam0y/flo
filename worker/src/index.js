@@ -5,6 +5,8 @@
  *   POST /subscribe  email sign-up (saved in the SUBSCRIBERS KV namespace and added to the Brevo email list
  *                    for promotions) -> a personal one-time code for WELCOME_PERCENT off a first order,
  *                    created in Stripe
+ *   POST /rewards    looks up a shopper's loyalty points and any unredeemed reward code, by email
+ *   POST /contact    emails a contact-page message straight to the inbox via Brevo
  *
  * Prices always come from the published products.json, never from the browser,
  * so nobody can edit the bag in devtools and pay $1 for a hoodie.
@@ -27,6 +29,7 @@ export default {
       if (request.method === "POST" && url.pathname === "/webhook") return await webhook(request, env);
       if (request.method === "POST" && url.pathname === "/subscribe") return await subscribe(request, env, cors);
       if (request.method === "POST" && url.pathname === "/rewards") return await rewards(request, env, cors);
+      if (request.method === "POST" && url.pathname === "/contact") return await contact(request, env, cors);
       return json({ ok: true, service: "flo-checkout" }, 200, cors);
     } catch (err) {
       console.error(err);
@@ -227,6 +230,41 @@ async function subscribe(request, env, cors) {
   }
   await addToEmailList(env, key, { code, percent, expires });
   return json({ ok: true, code, percent, expires }, 200, cors);
+}
+
+/* ---------- Contact form ---------- */
+
+// Emails a message straight to the inbox via Brevo, so visitors never have to have a mail app
+// configured. `company` is a honeypot: left blank by people, often filled in by bots.
+async function contact(request, env, cors) {
+  const { email, subject, message, company } = await request.json().catch(() => ({}));
+  if (company) return json({ ok: true }, 200, cors);
+  if (typeof email !== "string" || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email) || email.length > 200) {
+    return json({ error: "Please enter a valid email address." }, 400, cors);
+  }
+  if (typeof message !== "string" || !message.trim() || message.length > 5000) {
+    return json({ error: "Please enter a message." }, 400, cors);
+  }
+  if (!env.BREVO_API_KEY) return json({ error: "The contact form isn't set up yet." }, 503, cors);
+
+  const subj = (typeof subject === "string" ? subject.trim() : "").slice(0, 200) || "New message";
+  const inbox = env.CONTACT_EMAIL || "hello@floshops.com";
+  const res = await fetch("https://api.brevo.com/v3/smtp/email", {
+    method: "POST",
+    headers: { "api-key": env.BREVO_API_KEY, "Content-Type": "application/json", accept: "application/json" },
+    body: JSON.stringify({
+      sender: { email: inbox, name: "flò contact form" },
+      to: [{ email: inbox }],
+      replyTo: { email },
+      subject: `Contact form: ${subj}`,
+      textContent: `From: ${email}\nSubject: ${subj}\n\n${message.trim()}`
+    })
+  });
+  if (!res.ok) {
+    console.error("Brevo contact", res.status, await res.text());
+    return json({ error: "Something went wrong. Please try again." }, 502, cors);
+  }
+  return json({ ok: true }, 200, cors);
 }
 
 /* ---------- Loyalty points ---------- */

@@ -18,6 +18,7 @@
   const prelaunch = CFG.mode !== "live";
   const signupEndpoint = CFG.signupUrl || (CFG.checkoutUrl ? CFG.checkoutUrl.replace(/\/checkout$/, "/subscribe") : "");
   const rewardsEndpoint = signupEndpoint ? signupEndpoint.replace(/\/subscribe$/, "/rewards") : "";
+  const contactEndpoint = signupEndpoint ? signupEndpoint.replace(/\/subscribe$/, "/contact") : "";
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
   // The welcome code from joining the list, kept on this device so the account page and checkout can show it
@@ -104,6 +105,45 @@
         if (!res.ok) throw new Error(data.error || "Something went wrong. Please try again.");
         out.innerHTML = loyaltyHtml(data);
       } catch (err) { out.textContent = err.message; }
+    });
+  }
+
+  // The contact page: a form that emails the inbox directly (via the worker), so nobody's mail
+  // app has to open. Falls back to a plain address if the worker isn't connected yet.
+  function bindContactForm() {
+    const form = $("#contact-form");
+    if (!form) return;
+    const msg = form.querySelector(".contact-form__msg");
+    if (!contactEndpoint) {
+      form.hidden = true;
+      msg.textContent = "Email us directly at hello@floshops.com.";
+      return;
+    }
+    form.addEventListener("submit", async e => {
+      e.preventDefault();
+      const button = form.querySelector("button[type=submit]");
+      button.disabled = true;
+      msg.textContent = "Sending…";
+      try {
+        const res = await fetch(contactEndpoint, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            email: form.email.value,
+            subject: form.subject.value,
+            message: form.message.value,
+            company: form.company.value // honeypot: real visitors never fill this in
+          })
+        });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok) throw new Error(data.error || "Something went wrong. Please try again.");
+        form.reset();
+        msg.textContent = "Thanks, that's sent. We'll reply by email, usually within a day or two.";
+      } catch (err) {
+        msg.textContent = err.message;
+      } finally {
+        button.disabled = false;
+      }
     });
   }
 
@@ -719,6 +759,7 @@
     }
     setAnnounce();
     renderAccount();
+    bindContactForm();
     maybePopup();
     renderHome();
     renderShop();

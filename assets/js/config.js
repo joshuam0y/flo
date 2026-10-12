@@ -18,11 +18,11 @@ window.FLO_CONFIG = {
   // Launch discount shown in the top banner while the store is live. Create the same
   // code in Stripe (Product catalogue, Coupons, then a promotion code) so it works at payment.
   // Set code to "" to hide it.
-  launch: { code: "DROP001", offer: "15% off Drop 001" },
+  launch: { code: "DROP001", offer: "20% off Drop 001" },
 
   // Joining the email list gives a personal one-time code for this much off a first order (the worker makes it in
   // Stripe; keep it the same as WELCOME_PERCENT in worker/wrangler.toml). The offer only shows once sign-ups work.
-  welcome: { percent: 20 },
+  welcome: { percent: 10 },
 
   // 1 point per dollar spent on goods. Keep these the same as LOYALTY_THRESHOLD/LOYALTY_PERCENT in
   // worker/wrangler.toml; they're just for the account page's wording, the worker decides the real numbers.

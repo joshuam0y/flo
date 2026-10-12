@@ -173,6 +173,9 @@ input { font: inherit; }
 .hero {
   position: relative;
   min-height: 94svh;
+  /* Reserves real space for the overlaid header so a long headline can never grow up into the
+     nav, however tall it wraps (short windows, zoomed-in browsers, long product names, etc.) */
+  padding-top: calc(var(--header-h) + 24px);
   background: #b9a58f;
   color: #fff;
   display: flex;
@@ -770,3 +773,22 @@ input { font: inherit; }
 .sg-how p { margin: 6px 0 0; color: var(--ink-2); }
 .sg-help { color: var(--mute); margin: 0; }
 @media (max-width: 760px) { .sg-how { grid-template-columns: 1fr; } }
+
+/* Contact page */
+.contact-form { display: grid; gap: 18px; max-width: 480px; }
+.contact-form__field { display: grid; gap: 6px; }
+.contact-form__field .label { color: var(--ink); }
+.contact-form input, .contact-form textarea {
+  padding: 12px 14px; border: 1px solid var(--line); border-radius: 0; background: #fff;
+  color: var(--ink); font: inherit; font-size: 15px;
+}
+.contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: var(--ink); box-shadow: 0 0 0 1px var(--ink); }
+.contact-form textarea { resize: vertical; min-height: 140px; }
+.contact-form__hp { position: absolute; left: -9999px; }
+.contact-form button {
+  justify-self: start; height: 52px; padding: 0 28px; background: var(--ink); color: var(--paper);
+  font-size: 11px; font-weight: 500; letter-spacing: .22em; text-transform: uppercase;
+}
+.contact-form button:hover { background: var(--oxblood); }
+.contact-form button:disabled { opacity: .6; cursor: default; }
+.contact-form__msg { min-height: 1.2em; }
