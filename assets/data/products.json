@@ -405,10 +405,10 @@
       "lifestyle": {
         "colour": "Mint Green",
         "photos": [
-          "assets/img/lifestyle/over-perfection-tee-1.jpg",
-          "assets/img/lifestyle/over-perfection-tee-2.jpg",
-          "assets/img/lifestyle/over-perfection-tee-3.jpg",
-          "assets/img/lifestyle/over-perfection-tee-4.jpg"
+          "assets/img/lifestyle/over-perfection-tee-1.jpg?v=2",
+          "assets/img/lifestyle/over-perfection-tee-2.jpg?v=2",
+          "assets/img/lifestyle/over-perfection-tee-3.jpg?v=2",
+          "assets/img/lifestyle/over-perfection-tee-4.jpg?v=2"
         ]
       }
     },
@@ -588,10 +588,10 @@
       "lifestyle": {
         "colour": "White",
         "photos": [
-          "assets/img/lifestyle/summer-vibes-tee-1.jpg",
-          "assets/img/lifestyle/summer-vibes-tee-2.jpg",
-          "assets/img/lifestyle/summer-vibes-tee-3.jpg",
-          "assets/img/lifestyle/summer-vibes-tee-4.jpg"
+          "assets/img/lifestyle/summer-vibes-tee-1.jpg?v=2",
+          "assets/img/lifestyle/summer-vibes-tee-2.jpg?v=2",
+          "assets/img/lifestyle/summer-vibes-tee-3.jpg?v=2",
+          "assets/img/lifestyle/summer-vibes-tee-4.jpg?v=2"
         ]
       }
     },
@@ -822,10 +822,10 @@
       "lifestyle": {
         "colour": "Black",
         "photos": [
-          "assets/img/lifestyle/apparel-crew-1.jpg",
-          "assets/img/lifestyle/apparel-crew-2.jpg",
-          "assets/img/lifestyle/apparel-crew-3.jpg",
-          "assets/img/lifestyle/apparel-crew-4.jpg"
+          "assets/img/lifestyle/apparel-crew-1.jpg?v=2",
+          "assets/img/lifestyle/apparel-crew-2.jpg?v=2",
+          "assets/img/lifestyle/apparel-crew-3.jpg?v=2",
+          "assets/img/lifestyle/apparel-crew-4.jpg?v=2"
         ]
       }
     },
@@ -963,10 +963,10 @@
       "lifestyle": {
         "colour": "Sand",
         "photos": [
-          "assets/img/lifestyle/forward-crew-1.jpg",
-          "assets/img/lifestyle/forward-crew-2.jpg",
-          "assets/img/lifestyle/forward-crew-3.jpg",
-          "assets/img/lifestyle/forward-crew-4.jpg"
+          "assets/img/lifestyle/forward-crew-1.jpg?v=2",
+          "assets/img/lifestyle/forward-crew-2.jpg?v=2",
+          "assets/img/lifestyle/forward-crew-3.jpg?v=2",
+          "assets/img/lifestyle/forward-crew-4.jpg?v=2"
         ]
       }
     },
@@ -1178,8 +1178,8 @@
       "lifestyle": {
         "colour": "White",
         "photos": [
-          "assets/img/lifestyle/champs-longsleeve-1.jpg",
-          "assets/img/lifestyle/champs-longsleeve-2.jpg"
+          "assets/img/lifestyle/champs-longsleeve-1.jpg?v=2",
+          "assets/img/lifestyle/champs-longsleeve-2.jpg?v=2"
         ]
       }
     },

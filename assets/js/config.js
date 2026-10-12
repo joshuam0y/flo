@@ -55,7 +55,7 @@ window.FLO_CONFIG = {
   // e.g. hero: "assets/img/hero.jpg". Until then each slot shows an illustration.
   photos: {
     hero: "",
-    editorial: "assets/img/lifestyle/forward-crew-1.jpg",
-    about: "assets/img/lifestyle/over-perfection-tee-3.jpg"
+    editorial: "assets/img/lifestyle/forward-crew-1.jpg?v=2",
+    about: "assets/img/lifestyle/over-perfection-tee-3.jpg?v=2"
   }
 };
