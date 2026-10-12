@@ -10,7 +10,7 @@
       "name": "Palm Springs Tee",
       "type": "tee",
       "category": "tees",
-      "price": 24,
+      "price": 32,
       "badge": "Drop 001",
       "colors": [
         {
@@ -188,7 +188,13 @@
       ],
       "fit": "Regular fit. Take your usual size.",
       "whiteBg": true,
-      "printify": "6ac24858d101e467a00a3f8b"
+      "printify": "6ac24858d101e467a00a3f8b",
+      "sizePrices": {
+        "2XL": 39,
+        "3XL": 39,
+        "4XL": 39,
+        "5XL": 39
+      }
     },
     {
       "id": "over-perfection-tee",
@@ -389,14 +395,20 @@
         "assets/img/products/printify/over-perfection-tee-mint-green-back.jpg"
       ],
       "whiteBg": true,
-      "printify": "6ac132eba1fc024e4b0fb1b8"
+      "printify": "6ac132eba1fc024e4b0fb1b8",
+      "sizePrices": {
+        "2XL": 27,
+        "3XL": 27,
+        "4XL": 27,
+        "5XL": 27
+      }
     },
     {
       "id": "apparel-crew",
       "name": "Apparel Crewneck",
       "type": "crew",
       "category": "crewnecks",
-      "price": 40,
+      "price": 45,
       "badge": "Drop 001",
       "colors": [
         {
@@ -608,7 +620,13 @@
       ],
       "fit": "Classic fit. Take your usual size.",
       "whiteBg": true,
-      "printify": "6acbf5c0b378754520066f4a"
+      "printify": "6acbf5c0b378754520066f4a",
+      "sizePrices": {
+        "2XL": 54,
+        "3XL": 54,
+        "4XL": 54,
+        "5XL": 54
+      }
     },
     {
       "id": "forward-crew",
