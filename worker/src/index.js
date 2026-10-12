@@ -314,8 +314,8 @@ async function chat(request, env, cors) {
 
   // The free tier can stall for a long time under load rather than failing fast, so every call
   // gets its own hard timeout - better a quick "try again" than a shopper staring at a spinner.
-  const call = () => fetch(
-    `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent?key=${env.GEMINI_API_KEY}`,
+  const call = model => fetch(
+    `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${env.GEMINI_API_KEY}`,
     {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -328,20 +328,29 @@ async function chat(request, env, cors) {
     }
   );
 
-  // The free tier also returns a 503 "high demand" that Google's own error says to just retry -
-  // under sustained load that can take a couple of tries, so retry twice with backoff before giving up.
-  let res, data;
-  try {
-    res = await call();
-    for (let wait = 800; res.status === 503 && wait <= 1600; wait *= 2) {
-      await new Promise(r => setTimeout(r, wait));
-      res = await call();
+  // The newest flash model gets hit hardest by everyone, so a 503 "high demand" on it falls
+  // through to lighter/older models with their own, less contested capacity, rather than
+  // retrying the same busy one repeatedly.
+  // Free tier quotas (as low as 20 requests/day on some models) are set per model, so a 429 on
+  // one doesn't mean the next is exhausted too - fall through on that, a 503, or a 404 (a model
+  // name this key can't use at all) rather than giving up on the whole chain.
+  const MODELS = ["gemini-3.8-flash", "gemini-3.7-flash", "gemini-flash-latest", "gemini-flash-lite-latest"];
+  let res = null, data;
+  for (const model of MODELS) {
+    try {
+      res = await call(model);
+      if (res.status !== 503 && res.status !== 429 && res.status !== 404) break;
+    } catch (err) {
+      // A timeout or network error on this model: move on and try the next one instead of
+      // failing the whole request over one bad attempt.
+      console.error("Gemini", model, err.name === "TimeoutError" ? "timed out" : err.message);
+      res = null;
     }
-    data = await res.json().catch(() => ({}));
-  } catch (err) {
-    console.error("Gemini", err.name === "TimeoutError" ? "timed out" : err.message);
+  }
+  if (!res) {
     return json({ error: "Our assistant is a little busy right now. Try again in a moment, or use the contact page." }, 502, cors);
   }
+  data = await res.json().catch(() => ({}));
   if (!res.ok) {
     console.error("Gemini", res.status, JSON.stringify(data));
     return json({ error: "Our assistant is a little busy right now. Try again in a moment, or use the contact page." }, 502, cors);
