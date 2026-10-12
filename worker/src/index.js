@@ -245,9 +245,12 @@ async function contact(request, env, cors) {
   if (typeof message !== "string" || !message.trim() || message.length > 5000) {
     return json({ error: "Please enter a message." }, 400, cors);
   }
+  if (typeof subject !== "string" || !subject.trim() || subject.length > 200) {
+    return json({ error: "Please enter a subject." }, 400, cors);
+  }
   if (!env.BREVO_API_KEY) return json({ error: "The contact form isn't set up yet." }, 503, cors);
 
-  const subj = (typeof subject === "string" ? subject.trim() : "").slice(0, 200) || "New message";
+  const subj = subject.trim();
   const inbox = env.CONTACT_EMAIL || "hello@floshops.com";
   const res = await fetch("https://api.brevo.com/v3/smtp/email", {
     method: "POST",
