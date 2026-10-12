@@ -949,6 +949,88 @@
       "printify": "6acbff615a6821eb4003d559"
     },
     {
+      "id": "champs-sweatpant",
+      "name": "Champs Sweatpant",
+      "type": "pant",
+      "category": "bottoms",
+      "price": 55,
+      "badge": "Drop 001",
+      "colors": [
+        {
+          "name": "Ivory",
+          "hex": "#f2e5dc",
+          "photos": [
+            "assets/img/products/printify/champs-sweatpant-ivory-front.jpg",
+            "assets/img/products/printify/champs-sweatpant-ivory-back.jpg"
+          ]
+        },
+        {
+          "name": "Blue Jean",
+          "hex": "#6f859c",
+          "photos": [
+            "assets/img/products/printify/champs-sweatpant-blue-jean-front.jpg",
+            "assets/img/products/printify/champs-sweatpant-blue-jean-back.jpg"
+          ]
+        },
+        {
+          "name": "Espresso",
+          "hex": "#7b604f",
+          "photos": [
+            "assets/img/products/printify/champs-sweatpant-espresso-front.jpg",
+            "assets/img/products/printify/champs-sweatpant-espresso-back.jpg"
+          ]
+        },
+        {
+          "name": "Hydrangea",
+          "hex": "#add1ec",
+          "photos": [
+            "assets/img/products/printify/champs-sweatpant-hydrangea-front.jpg",
+            "assets/img/products/printify/champs-sweatpant-hydrangea-back.jpg"
+          ]
+        },
+        {
+          "name": "Neon Violet",
+          "hex": "#e9b5fa",
+          "photos": [
+            "assets/img/products/printify/champs-sweatpant-neon-violet-front.jpg",
+            "assets/img/products/printify/champs-sweatpant-neon-violet-back.jpg"
+          ]
+        },
+        {
+          "name": "Peachy",
+          "hex": "#f4c3b1",
+          "photos": [
+            "assets/img/products/printify/champs-sweatpant-peachy-front.jpg",
+            "assets/img/products/printify/champs-sweatpant-peachy-back.jpg"
+          ]
+        }
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "2XL"
+      ],
+      "front": "classic",
+      "back": "none",
+      "lead": "front",
+      "description": "Garment-dyed fleece joggers with a soft, broken-in feel. A small FLÒSTATE CHAMPS mark sits on the left thigh. Made for slow mornings and long drives.",
+      "details": [
+        "Comfort Colors garment-dyed fleece",
+        "Relaxed fit with elastic cuffs",
+        "Drawstring waist and side pockets",
+        "FLÒSTATE CHAMPS print on the left thigh"
+      ],
+      "photos": [
+        "assets/img/products/printify/champs-sweatpant-ivory-front.jpg",
+        "assets/img/products/printify/champs-sweatpant-ivory-back.jpg"
+      ],
+      "fit": "Relaxed fit. Take your usual size.",
+      "whiteBg": true,
+      "printify": "6acc463ed111f9cb2b087aa0"
+    },
+    {
       "id": "grand-touring-tee",
       "name": "Grand Touring Tee",
       "type": "tee",
