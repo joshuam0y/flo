@@ -26,7 +26,7 @@ window.FLO_CONFIG = {
 
   // 1 point per dollar spent on goods. Keep these the same as LOYALTY_THRESHOLD/LOYALTY_PERCENT in
   // worker/wrangler.toml; they're just for the account page's wording, the worker decides the real numbers.
-  loyalty: { threshold: 100, percent: 15 },
+  loyalty: { threshold: 100, percent: 25 },
 
   // The sign-up pop-up. "home": every time the home page loads, until they join (handy while testing).
   // "occasional": once, a few seconds in, then not again for 14 days after it's closed (gentler for shoppers).
