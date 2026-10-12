@@ -31,6 +31,7 @@ export default {
       if (request.method === "POST" && url.pathname === "/rewards") return await rewards(request, env, cors);
       if (request.method === "POST" && url.pathname === "/contact") return await contact(request, env, cors);
       if (request.method === "POST" && url.pathname === "/chat") return await chat(request, env, cors);
+      if (request.method === "POST" && url.pathname === "/orders") return await orders(request, env, cors);
       return json({ ok: true, service: "flo-checkout" }, 200, cors);
     } catch (err) {
       console.error(err);
@@ -269,6 +270,47 @@ async function contact(request, env, cors) {
     return json({ error: "Something went wrong. Please try again." }, 502, cors);
   }
   return json({ ok: true }, 200, cors);
+}
+
+/* ---------- Order history ---------- */
+
+// Shows a signed-in shopper their own past orders in-page, instead of sending them to Stripe's
+// customer portal. The accessToken proves who they are (verified against Supabase itself, never
+// trusted as-is) - only that verified email's orders are ever looked up, never a client-supplied one.
+async function orders(request, env, cors) {
+  const { accessToken } = await request.json().catch(() => ({}));
+  if (typeof accessToken !== "string" || !accessToken) {
+    return json({ error: "Please sign in first." }, 401, cors);
+  }
+  if (!env.SUPABASE_URL || !env.SUPABASE_ANON_KEY) return json({ error: "Sign-in isn't set up yet." }, 503, cors);
+
+  const who = await fetch(`${env.SUPABASE_URL}/auth/v1/user`, {
+    headers: { Authorization: `Bearer ${accessToken}`, apikey: env.SUPABASE_ANON_KEY }
+  });
+  if (!who.ok) return json({ error: "Your session expired. Please sign in again." }, 401, cors);
+  const user = await who.json();
+  const email = user.email;
+  if (!email) return json({ error: "Your session expired. Please sign in again." }, 401, cors);
+
+  const customers = await stripe(env, `/customers?email=${encodeURIComponent(email)}&limit=5`, { method: "GET" });
+  if (!customers.data.length) return json({ orders: [] }, 200, cors);
+
+  // A shopper can end up with more than one Stripe customer record (one per checkout, pre-portal-login),
+  // so pull invoices for all of them and merge, rather than just the first.
+  const lists = await Promise.all(
+    customers.data.map(c => stripe(env, `/invoices?customer=${c.id}&status=paid&limit=10`, { method: "GET" }))
+  );
+  const list = lists.flatMap(l => l.data)
+    .sort((a, b) => b.created - a.created)
+    .slice(0, 10)
+    .map(inv => ({
+      number: inv.number,
+      date: inv.created,
+      total: inv.amount_paid / 100,
+      items: inv.lines.data.map(li => ({ name: li.description, qty: li.quantity })),
+      receiptUrl: inv.hosted_invoice_url
+    }));
+  return json({ orders: list }, 200, cors);
 }
 
 /* ---------- AI chat ---------- */

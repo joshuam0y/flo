@@ -23,6 +23,7 @@
   const rewardsEndpoint = workerUrl ? `${workerUrl}/rewards` : "";
   const contactEndpoint = workerUrl ? `${workerUrl}/contact` : "";
   const chatEndpoint = workerUrl ? `${workerUrl}/chat` : "";
+  const ordersEndpoint = workerUrl ? `${workerUrl}/orders` : "";
   // Real sign-in (magic link, no password) via Supabase. Only created where the SDK script and config
   // are both present (the account page), so this stays undefined - and harmless - everywhere else.
   const sb = (window.supabase && CFG.supabase && CFG.supabase.url)
@@ -551,12 +552,15 @@
              <p class="account__signin-msg notify__msg" aria-live="polite">Sign in once and this page remembers you on any device &mdash; no password.</p>`}
       </div>` : ""}
       <div class="account__grid">
-        <div class="account__card">
+        <div class="account__card" id="account-orders">
           <p class="label">Your orders</p>
-          ${CFG.ordersUrl
+          ${user
+            ? `<p class="orders__list">Loading your orders…</p>`
+            : CFG.ordersUrl
             ? `<p>Sign in with the email you ordered with. Stripe, our payment provider, emails you a one-time code, then shows every order and receipt. No password needed.</p>
                <a class="btn btn--solid" href="${esc(CFG.ordersUrl)}" target="_blank" rel="noopener">View my orders</a>`
             : `<p>Your orders will show up here once Drop 001 is on sale. Every order also comes with an email receipt and tracking.</p>`}
+          ${user && CFG.ordersUrl ? `<p class="account__fine"><a class="link-u" href="${esc(CFG.ordersUrl)}" target="_blank" rel="noopener">Full receipts &amp; invoices</a></p>` : ""}
         </div>
         <div class="account__card" id="account-rewards">
           <p class="label">Rewards</p>
@@ -591,6 +595,7 @@
     }
     if (user) loadLoyaltyFor(root.querySelector("#account-loyalty"), user.email);
     else bindLoyalty(root.querySelector("#account-loyalty"));
+    if (user) loadOrders(root.querySelector("#account-orders"));
     bindSignIn(root);
     root.addEventListener("click", e => {
       const c = e.target.closest("[data-copy]");
@@ -601,6 +606,36 @@
 
   // Magic-link sign-in (Supabase): no password, just a one-time email link. Safe to call on any page -
   // it no-ops unless #account-signin is actually on the page.
+  // Real order history, in-page, for a signed-in shopper - no redirect to Stripe's portal needed
+  // for the common case of just checking what you ordered.
+  async function loadOrders(card) {
+    const out = card?.querySelector(".orders__list");
+    if (!out || !ordersEndpoint || !sb) return;
+    try {
+      const { data: { session } } = await sb.auth.getSession();
+      if (!session) { out.textContent = "Sign in to see your orders."; return; }
+      const res = await fetch(ordersEndpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ accessToken: session.access_token })
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(data.error || "Something went wrong. Please try again.");
+      if (!data.orders.length) { out.textContent = "No orders yet."; return; }
+      out.outerHTML = `<div class="orders__list">${data.orders.map(o => `
+        <div class="orders__item">
+          <div class="orders__item-head">
+            <span>${new Date(o.date * 1000).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}</span>
+            <span>${money(o.total)}</span>
+          </div>
+          <p class="account__fine">${o.items.map(i => esc(i.name) + (i.qty > 1 ? ` &times;${i.qty}` : "")).join(", ")}</p>
+          ${o.receiptUrl ? `<a class="label link-u" href="${esc(o.receiptUrl)}" target="_blank" rel="noopener">Receipt</a>` : ""}
+        </div>`).join("")}</div>`;
+    } catch (err) {
+      out.textContent = err.message;
+    }
+  }
+
   function bindSignIn(root) {
     const box = root.querySelector("#account-signin");
     if (!box) return;

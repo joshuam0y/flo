@@ -721,6 +721,10 @@ input { font: inherit; }
 .account__signin p { margin: 0; color: var(--ink-2); }
 .account__signin .notify__form { max-width: 420px; }
 .account__signin [data-signout] { color: var(--ink); }
+.orders__list { display: grid; gap: 14px; }
+.orders__item { display: grid; gap: 4px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+.orders__item:last-child { border-bottom: 0; padding-bottom: 0; }
+.orders__item-head { display: flex; justify-content: space-between; color: var(--ink); font-weight: 500; }
 .notify__msg .code, .signup__msg .code { letter-spacing: .1em; }
 .signup__offer { color: var(--paper) !important; font-size: 17px; margin-top: -16px !important; }
 
