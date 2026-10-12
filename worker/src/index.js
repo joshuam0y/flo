@@ -54,7 +54,7 @@ async function checkout(request, env, cors) {
   }
 
   // in whole cents, so prices like $44.99 add up exactly (the free-shipping check depends on it)
-  const subtotalCents = lines.reduce((s, l) => s + Math.round(l.product.price * 100) * l.qty, 0);
+  const subtotalCents = lines.reduce((s, l) => s + Math.round(unitPrice(l) * 100) * l.qty, 0);
   // Standard shipping only, matching shipping_method 1 in the Printify order below
   const { flatRate, freeOver } = catalog.shipping;
   const shipping = subtotalCents >= Math.round(freeOver * 100) ? 0 : flatRate;
@@ -84,7 +84,7 @@ async function checkout(request, env, cors) {
     const p = `line_items[${i}]`;
     form.set(`${p}[quantity]`, String(l.qty));
     form.set(`${p}[price_data][currency]`, currency);
-    form.set(`${p}[price_data][unit_amount]`, String(Math.round(l.product.price * 100)));
+    form.set(`${p}[price_data][unit_amount]`, String(Math.round(unitPrice(l) * 100)));
     form.set(`${p}[price_data][product_data][name]`, `${l.product.name}, ${l.color.name} / ${l.size}`);
     form.set(`${p}[price_data][product_data][metadata][sku]`, l.sku);
   });
@@ -93,6 +93,9 @@ async function checkout(request, env, cors) {
   if (!res.url) return json({ error: "Could not start checkout." }, 502, cors);
   return json({ url: res.url }, 200, cors);
 }
+
+// "sizePrices": { "2XL": 60 } in products.json overrides the price for that size
+const unitPrice = l => (l.product.sizePrices && l.size in l.product.sizePrices ? l.product.sizePrices[l.size] : l.product.price);
 
 function resolveSku(catalog, sku) {
   if (typeof sku !== "string") return null;
