@@ -3,8 +3,8 @@ main = "src/index.js"
 compatibility_date = "2026-09-01"
 
 [vars]
-SITE_URL = "https://www.floshops.com"
-CATALOG_URL = "https://www.floshops.com/assets/data/products.json"
+SITE_URL = "https://floshops.com"
+CATALOG_URL = "https://floshops.com/assets/data/products.json"
 ALLOWED_ORIGINS = "https://floshops.com,https://www.floshops.com"
 SHIP_COUNTRIES = "US"
 # "false" = orders wait in Printify "On hold" until you press Send to production (safer while testing).
