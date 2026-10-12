@@ -571,12 +571,14 @@
     const root = $("#account");
     if (!root) return;
     const w = readWelcome(), pct = offer();
-    const session = sb ? (await sb.auth.getSession()).data.session : null;
+    // Sign-in stays off entirely during prelaunch - not ready for real visitors to create
+    // accounts yet, same as checkout staying off until mode is "live".
+    const session = (sb && !prelaunch) ? (await sb.auth.getSession()).data.session : null;
     const user = session?.user || null;
     root.innerHTML = `
       <p class="label label--mute">Your account</p>
       <h1 class="display account__title">${user ? `Hi, <em>${esc(user.email)}</em>` : `Orders &amp; <em>rewards</em>`}</h1>
-      ${sb ? `
+      ${(sb && !prelaunch) ? `
       <div class="account__signin" id="account-signin">
         ${user
           ? `<p>Signed in as <b>${esc(user.email)}</b> &middot; <button class="label link-u" data-signout>Sign out</button></p>`
