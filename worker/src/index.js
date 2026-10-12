@@ -328,12 +328,15 @@ async function chat(request, env, cors) {
     }
   );
 
-  // The free tier also returns an occasional 503 "high demand" that Google's own error says to
-  // just retry, so one quiet retry here saves the shopper from ever seeing that as a failure.
+  // The free tier also returns a 503 "high demand" that Google's own error says to just retry -
+  // under sustained load that can take a couple of tries, so retry twice with backoff before giving up.
   let res, data;
   try {
     res = await call();
-    if (res.status === 503) { await new Promise(r => setTimeout(r, 800)); res = await call(); }
+    for (let wait = 800; res.status === 503 && wait <= 1600; wait *= 2) {
+      await new Promise(r => setTimeout(r, wait));
+      res = await call();
+    }
     data = await res.json().catch(() => ({}));
   } catch (err) {
     console.error("Gemini", err.name === "TimeoutError" ? "timed out" : err.message);
