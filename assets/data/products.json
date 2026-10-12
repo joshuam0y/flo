@@ -1028,7 +1028,10 @@
       ],
       "fit": "Relaxed fit. Take your usual size.",
       "whiteBg": true,
-      "printify": "6acc463ed111f9cb2b087aa0"
+      "printify": "6acc463ed111f9cb2b087aa0",
+      "sizePrices": {
+        "2XL": 60
+      }
     },
     {
       "id": "grand-touring-tee",

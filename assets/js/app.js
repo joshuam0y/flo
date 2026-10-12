@@ -4,6 +4,9 @@
   const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
   // every price and total with cents ($25.00, $44.99); sums are done in whole cents so they never drift
   const money = n => "$" + (Math.round(Number(n) * 100) / 100).toFixed(2);
+  // Some products cost more in bigger sizes: "sizePrices": { "2XL": 60 } overrides "price" for that size
+  const priceFor = (p, size) => (p.sizePrices && size in p.sizePrices ? p.sizePrices[size] : p.price);
+  const fromPrice = p => (p.sizePrices ? `From ${money(Math.min(p.price, ...Object.values(p.sizePrices)))}` : money(p.price));
   const cents = n => Math.round(Number(n) * 100);
   const slug = s => s.toLowerCase().replace(/[^a-z0-9]+/g, "-");
   const skuOf = (id, color, size) => `${id}_${slug(color)}_${slug(size)}`;
@@ -127,7 +130,7 @@
           <div class="card__meta">${p.colors.length} colour${p.colors.length > 1 ? "s" : ""}</div>
           <div class="dots">${p.colors.map(x => `<i style="background:${x.hex}" title="${x.name}"></i>`).join("")}</div>
         </div>
-        <div class="card__price">${money(p.price)}</div>
+        <div class="card__price">${fromPrice(p)}</div>
       </div>
     </a>`;
   }
@@ -152,7 +155,7 @@
   function totals(items) {
     const sub = items.reduce((sum, i) => {
       const p = findProduct(i.id);
-      return p ? sum + cents(p.price) * i.qty : sum;
+      return p ? sum + cents(priceFor(p, i.size)) * i.qty : sum;
     }, 0);
     const { flatRate, freeOver } = catalog.shipping;
     const ship = sub === 0 || sub >= cents(freeOver) ? 0 : cents(flatRate);
@@ -184,7 +187,7 @@
             </div>
             <div><button class="line__remove" data-remove="${i.sku}">Remove</button></div>
           </div>
-          <div class="card__price">${money(p.price * i.qty)}</div>
+          <div class="card__price">${money(priceFor(p, i.size) * i.qty)}</div>
         </div>`;
       }).join("");
     }
@@ -418,7 +421,7 @@
           <a class="feature__shot" href="product.html?id=${lead.id}">${art(lead, c, first)}<span class="label">${first}</span></a>
           <a class="feature__shot" href="product.html?id=${lead.id}">${art(lead, c, second)}<span class="label">${second}</span></a>
           <div class="feature__info">
-            <div><p class="label label--mute">${esc(lead.badge || "")}</p><h3 class="feature__name">${esc(lead.name)}</h3><p class="feature__price">${money(lead.price)}</p></div>
+            <div><p class="label label--mute">${esc(lead.badge || "")}</p><h3 class="feature__name">${esc(lead.name)}</h3><p class="feature__price">${fromPrice(lead)}</p></div>
             <p class="feature__desc">${esc(lead.description)}</p>
             <a class="btn btn--solid feature__cta" href="product.html?id=${lead.id}">See the tee</a>
           </div>`;
@@ -548,7 +551,7 @@
     };
 
     root.querySelector(".pdp__name").textContent = p.name;
-    root.querySelector(".pdp__price").textContent = money(p.price);
+    root.querySelector(".pdp__price").textContent = size ? money(priceFor(p, size)) : fromPrice(p);
     root.querySelector(".pdp__desc").textContent = p.description;
     injectProductSchema(p, color);
     $("#pdp-badge").textContent = p.flag ? `${p.badge ? `${p.badge} · ` : ""}Coming soon` : p.badge || "flò essentials";
@@ -590,7 +593,8 @@
       if (!b) return;
       size = b.dataset.size;
       $$(".size", sizes).forEach(s => s.setAttribute("aria-pressed", s === b));
-      $("#pdp-add").textContent = `Add to bag · ${money(p.price)}`;
+      $("#pdp-add").textContent = `Add to bag · ${money(priceFor(p, size))}`;
+      root.querySelector(".pdp__price").textContent = money(priceFor(p, size));
     });
 
     const add = $("#pdp-add");
@@ -600,11 +604,11 @@
       const box = $("#pdp-notify");
       box.innerHTML = notifyMarkup(p.flag
         ? `${esc(p.name)} isn't available to order yet. Follow along to hear when it is.`
-        : `Drop 001 is coming soon. ${esc(p.name)}, ${money(p.price)}.`);
+        : `Drop 001 is coming soon. ${esc(p.name)}, ${fromPrice(p).replace("From", "from")}.`);
       box.hidden = false;
       bindNotify(box);
     }
-    add.textContent = size ? `Add to bag · ${money(p.price)}` : "Select a size";
+    add.textContent = size ? `Add to bag · ${money(priceFor(p, size))}` : "Select a size";
     add.addEventListener("click", () => {
       if (!size) { toast("Please choose a size."); return; }
       addToBag(p.id, color.name, size);

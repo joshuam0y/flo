@@ -9,6 +9,7 @@
 
   const $ = s => document.querySelector(s);
   const money = n => "$" + (Math.round(Number(n) * 100) / 100).toFixed(2);
+  const priceFor = (p, size) => (p.sizePrices && size in p.sizePrices ? p.sizePrices[size] : p.price);
   const cents = n => Math.round(Number(n) * 100);   // money math in whole cents, so $44.99 sums never drift
   const live = !!(window.FLO_CONFIG && window.FLO_CONFIG.checkoutUrl);
 
@@ -27,7 +28,7 @@
   }
 
   function totals() {
-    const sub = items.reduce((n, i) => n + cents(product(i.id).price) * i.qty, 0);
+    const sub = items.reduce((n, i) => n + cents(priceFor(product(i.id), i.size)) * i.qty, 0);
     const off = discount ? Math.round(sub * discount.rate) : 0;
     const ship = cents(shipOptions(sub / 100).find(o => o.id === shipChoice).price);
     return { subtotal: sub / 100, off: off / 100, ship: ship / 100, total: (sub - off + ship) / 100 };
@@ -48,7 +49,7 @@
       return `<div class="co-line">
         <div class="co-line__img">${thumb(p, i.color)}<span class="co-qty">${i.qty}</span></div>
         <div><div class="line__name">${p.name}</div><div class="line__meta">${i.color} · ${i.size}</div></div>
-        <div class="card__price">${money(p.price * i.qty)}</div>
+        <div class="card__price">${money(priceFor(p, i.size) * i.qty)}</div>
       </div>`;
     }).join("");
 
@@ -168,7 +169,7 @@
       },
       method: shipOptions(t.subtotal).find(o => o.id === shipChoice),
       card: "•••• " + form.card.value.replace(/\D/g, "").slice(-4),
-      items: items.map(i => ({ ...i, name: product(i.id).name, price: product(i.id).price })),
+      items: items.map(i => ({ ...i, name: product(i.id).name, price: priceFor(product(i.id), i.size) })),
       totals: t,
       discount: discount && discount.code,
       demo: true
