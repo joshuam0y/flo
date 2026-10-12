@@ -804,6 +804,12 @@ input { font: inherit; }
 .chat-msg--user { justify-self: end; background: var(--ink); color: var(--paper); }
 .chat-msg--bot { justify-self: start; background: var(--paper-2); color: var(--ink); }
 .chat-msg--error { justify-self: start; background: var(--paper-2); color: var(--mute); font-size: 13px; }
+.chat-msg--typing { display: flex; gap: 4px; align-items: center; padding: 12px; }
+.chat-msg--typing span { width: 6px; height: 6px; border-radius: 50%; background: var(--mute); animation: chat-typing 1.1s infinite ease-in-out; }
+.chat-msg--typing span:nth-child(2) { animation-delay: .15s; }
+.chat-msg--typing span:nth-child(3) { animation-delay: .3s; }
+@keyframes chat-typing { 0%, 60%, 100% { opacity: .3; transform: translateY(0); } 30% { opacity: 1; transform: translateY(-3px); } }
+@media (prefers-reduced-motion: reduce) { .chat-msg--typing span { animation: none; opacity: .6; } }
 .chat-panel__form { display: flex; border-top: 1px solid var(--line); }
 .chat-panel__form input { flex: 1; min-width: 0; height: 48px; padding: 0 14px; border: 0; background: transparent; color: var(--ink); font-size: 14px; }
 .chat-panel__form input:focus { outline: none; }

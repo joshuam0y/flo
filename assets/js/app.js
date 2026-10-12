@@ -492,6 +492,10 @@
       addMsg("chat-msg--user", message);
       input.value = "";
       input.disabled = true;
+      // A free-tier fallback chain can take a while under load, so show it's thinking rather
+      // than leaving the panel looking frozen.
+      log.insertAdjacentHTML("beforeend", `<p class="chat-msg chat-msg--bot chat-msg--typing" aria-live="polite"><span></span><span></span><span></span></p>`);
+      log.scrollTop = log.scrollHeight;
       try {
         const res = await fetch(chatEndpoint, {
           method: "POST",
@@ -500,9 +504,11 @@
         });
         const data = await res.json().catch(() => ({}));
         if (!res.ok) throw new Error(data.error || "Something went wrong. Please try again.");
+        $(".chat-msg--typing", log)?.remove();
         addMsg("chat-msg--bot", data.reply);
         history.push({ role: "user", text: message }, { role: "model", text: data.reply });
       } catch (err) {
+        $(".chat-msg--typing", log)?.remove();
         addMsg("chat-msg--error", err.message);
       } finally {
         input.disabled = false;
