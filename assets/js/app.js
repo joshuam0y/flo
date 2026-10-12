@@ -557,6 +557,10 @@
     $("#pdp-badge").textContent = p.flag ? `${p.badge ? `${p.badge} · ` : ""}Coming soon` : p.badge || "flò essentials";
     $("#pdp-details").innerHTML = `<ul>${p.details.map(d => `<li>${d}</li>`).join("")}</ul>`;
     if (p.fit) $("#pdp-fit").textContent = p.fit;
+    const sg = $("#pdp-sizeguide");
+    if (sg) sg.href = `size-guide.html#${p.id}`; // opens this product's chart
+    const sg2 = $("#pdp-sizeguide-2");
+    if (sg2) sg2.href = `size-guide.html#${p.id}`;
 
     const swatches = $("#pdp-swatches");
     swatches.innerHTML = p.colors.map(c =>
