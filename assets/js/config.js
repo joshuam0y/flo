@@ -32,9 +32,10 @@ window.FLO_CONFIG = {
   // worker/wrangler.toml; they're just for the account page's wording, the worker decides the real numbers.
   loyalty: { threshold: 100, percent: 25 },
 
-  // The sign-up pop-up. "home": every time the home page loads, until they join (handy while testing).
-  // "occasional": once, a few seconds in, then not again for 14 days after it's closed (gentler for shoppers).
-  popup: "home",
+  // The sign-up pop-up. "corner": a small card that hovers bottom-right, not blocking the page (what's live now).
+  // "occasional": the full takeover pop-up instead, once, then not for 14 days. "home": full pop-up every home
+  // load, only useful while testing.
+  popup: "corner",
 
   // Reloading any page except checkout goes back to the home page. Set to false to keep people where they were.
   reloadHome: true,

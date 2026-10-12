@@ -354,12 +354,48 @@
   function maybePopup() {
     const page = document.body.dataset.page;
     if (page === "checkout" || page === "success" || $("#account") || readWelcome()) return;
-    // config popup: "home" = every time the home page loads until they join; otherwise once, then not for 14 days
+    // config popup: "home" = full pop-up every home load (testing); "corner" = a small, non-blocking
+    // bottom-corner card instead of a takeover; anything else = the full pop-up once, then not for 14 days
     if (CFG.popup === "home") { if (isHome()) setTimeout(openPopup, 1200); return; }
     let last = 0;
     try { last = +localStorage.getItem(POPUP_KEY) || 0; } catch { /* private mode: show it */ }
     if (Date.now() - last < 14 * 864e5) return;
-    setTimeout(openPopup, 6000);
+    setTimeout(CFG.popup === "corner" ? openCornerPopup : openPopup, 6000);
+  }
+
+  // The gentler alternative to the full pop-up: a small card that hovers in the corner instead of
+  // blocking the page, so browsing isn't interrupted. Same list, same welcome code, lower pressure.
+  function openCornerPopup() {
+    if (!signupEndpoint || $(".corner-popup") || $(".popup") || $(".bag.is-open") || $(".menu.is-open")) return;
+    const pct = offer();
+    document.body.insertAdjacentHTML("beforeend", `
+      <div class="corner-popup" role="dialog" aria-labelledby="corner-popup-title">
+        <button class="corner-popup__close label" aria-label="Close">✕</button>
+        <h2 class="corner-popup__title" id="corner-popup-title">${pct ? `${pct}% off <em>your first order</em>` : `First to <em>know</em>`}</h2>
+        <p class="corner-popup__lead">${pct ? "Join the list for your code." : "Be the first to hear when Drop 001 opens."}</p>
+        <form class="corner-popup__form">
+          <input type="email" required placeholder="Email address" aria-label="Email address">
+          <button type="submit">${pct ? "Get code" : "Join"}</button>
+        </form>
+        <p class="corner-popup__msg" aria-live="polite"></p>
+      </div>`);
+    const box = $(".corner-popup");
+    const close = () => {
+      try { localStorage.setItem(POPUP_KEY, String(Date.now())); } catch { /* private mode */ }
+      box.remove();
+    };
+    box.querySelector(".corner-popup__close").addEventListener("click", close);
+    requestAnimationFrame(() => box.classList.add("is-open"));
+    box.querySelector(".corner-popup__form").addEventListener("submit", async e => {
+      e.preventDefault();
+      const msg = box.querySelector(".corner-popup__msg");
+      msg.textContent = "Joining…";
+      try {
+        const data = await joinList(box.querySelector("input[type=email]").value);
+        msg.innerHTML = joinedHtml(data, "You're on the list.");
+        box.querySelector(".corner-popup__form").hidden = true;
+      } catch (err) { msg.textContent = err.message; }
+    });
   }
 
   function openPopup() {
