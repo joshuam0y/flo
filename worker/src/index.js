@@ -453,7 +453,10 @@ async function rewards(request, env, cors) {
   try { saved = raw ? JSON.parse(raw) : null; } catch { saved = null; }
   const points = saved?.points || 0;
   const reward = saved?.reward && saved.reward.expires > now ? saved.reward : null;
-  return json({ points, threshold, toNextReward: threshold - (points % threshold), reward }, 200, cors);
+  // The original welcome code, so a signed-in shopper sees it on any device, not just the one
+  // they joined from (that copy only lives in that browser's localStorage).
+  const welcome = saved?.code && saved.expires > now ? { code: saved.code, percent: saved.percent, expires: saved.expires } : null;
+  return json({ points, threshold, toNextReward: threshold - (points % threshold), reward, welcome }, 200, cors);
 }
 
 // Add a sign-up to the Brevo list you send promotions from, with their welcome code as contact attributes

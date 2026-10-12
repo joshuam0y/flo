@@ -127,6 +127,35 @@
     } catch (err) { out.textContent = err.message; }
   }
 
+  // Signed in: one /rewards call fills both the welcome code and the loyalty points, so the
+  // welcome code shows up on any device now, not just the one it was issued on.
+  async function loadAccountRewards(root, email) {
+    const rewardsCard = root.querySelector("#account-rewards");
+    const loyaltyCard = root.querySelector("#account-loyalty");
+    const rewardsOut = rewardsCard?.querySelector(".rewards__body");
+    const loyaltyOut = loyaltyCard?.querySelector(".loyalty__result");
+    try {
+      const res = await fetch(rewardsEndpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email })
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(data.error || "Something went wrong. Please try again.");
+      if (rewardsOut) {
+        rewardsOut.outerHTML = data.welcome
+          ? `<p>Your ${data.welcome.percent}% off first-order code:</p>
+             <p class="account__code"><b>${esc(data.welcome.code)}</b> <button class="label link-u" data-copy="${esc(data.welcome.code)}">Copy</button></p>
+             <p class="account__fine">Enter it on the payment page. One use, first order only, until ${shortDate(data.welcome.expires)}.</p>`
+          : `<p>No welcome code on this account &mdash; those are for first-time sign-ups only.</p>`;
+      }
+      if (loyaltyOut) loyaltyOut.innerHTML = loyaltyHtml(data);
+    } catch (err) {
+      if (rewardsOut) rewardsOut.textContent = err.message;
+      if (loyaltyOut) loyaltyOut.textContent = err.message;
+    }
+  }
+
   // The contact page: a form that emails the inbox directly (via the worker), so nobody's mail
   // app has to open. Falls back to a plain address if the worker isn't connected yet.
   function bindContactForm() {
@@ -564,7 +593,9 @@
         </div>
         <div class="account__card" id="account-rewards">
           <p class="label">Rewards</p>
-          ${w
+          ${user
+            ? `<p class="rewards__body">Loading…</p>`
+            : w
             ? `<p>Your ${w.percent}% off first-order code:</p>
                <p class="account__code"><b>${esc(w.code)}</b> <button class="label link-u" data-copy="${esc(w.code)}">Copy</button></p>
                <p class="account__fine">Enter it on the payment page. One use, first order only, until ${shortDate(w.expires)}.</p>`
@@ -593,7 +624,7 @@
       bindNotify(box);
       box.addEventListener("submit", () => setTimeout(function wait() { if (readWelcome()) renderAccount(); else if (box.isConnected) setTimeout(wait, 400); }, 400));
     }
-    if (user) loadLoyaltyFor(root.querySelector("#account-loyalty"), user.email);
+    if (user) loadAccountRewards(root, user.email);
     else bindLoyalty(root.querySelector("#account-loyalty"));
     if (user) loadOrders(root.querySelector("#account-orders"));
     bindSignIn(root);
