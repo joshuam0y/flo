@@ -10,9 +10,10 @@ window.FLO_CONFIG = {
   checkoutUrl: "", // e.g. "https://flo-checkout.yourname.workers.dev/checkout"
 
   // Where email sign-ups go. Leave empty to use the checkout worker's /subscribe.
-  // With neither set, the "notify me" spots point people to Instagram instead.
+  // With neither set, the "notify me" spots point people to TikTok instead.
   signupUrl: "", // e.g. "https://flo-checkout.yourname.workers.dev/subscribe"
-  instagram: "https://www.instagram.com/jomohoops/",
+  tiktok: "https://www.tiktok.com/@www.floshops.com",
+  instagram: "", // add the brand's Instagram here once it exists
 
   // Launch discount shown in the top banner while the store is live. Create the same
   // code in Stripe (Product catalogue, Coupons, then a promotion code) so it works at payment.

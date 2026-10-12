@@ -42,11 +42,11 @@
     return `You're in. Your ${data.percent}% off code for your first order: <b class="code">${esc(data.code)}</b> (until ${shortDate(data.expires)}). It's saved on this device and on your <a class="link-u" href="account.html">account page</a>.`;
   }
 
-  // A sign-up form wired to the list, or a pointer to Instagram while sign-ups aren't connected
+  // A sign-up form wired to the list, or a pointer to TikTok while sign-ups aren't connected
   function notifyMarkup(lead) {
     if (offer() && !/% off/.test(lead)) lead += ` Join the list for ${offer()}% off your first order.`;
     if (!signupEndpoint) {
-      return `<p>${lead}</p><a class="btn btn--solid" href="${esc(CFG.instagram || "#")}" target="_blank" rel="noopener">Follow for the drop date</a>`;
+      return `<p>${lead}</p><a class="btn btn--solid" href="${esc(CFG.tiktok || CFG.instagram || "#")}" target="_blank" rel="noopener">Follow for the drop date</a>`;
     }
     return `<p>${lead}</p>
       <form class="notify__form">
@@ -248,11 +248,11 @@
       if (e.key === "Escape") { closeBag(); menu.classList.remove("is-open"); }
     });
 
-    // The email list: sign-ups go to the worker's /subscribe, or to Instagram until that's connected
+    // The email list: sign-ups go to the worker's /subscribe, or to TikTok until that's connected
     $$(".signup__form").forEach(form => {
       const msg = form.nextElementSibling;
       if (!signupEndpoint) {
-        form.outerHTML = `<a class="btn btn--white" href="${esc(CFG.instagram || "#")}" target="_blank" rel="noopener">Follow for the drop date</a>`;
+        form.outerHTML = `<a class="btn btn--white" href="${esc(CFG.tiktok || CFG.instagram || "#")}" target="_blank" rel="noopener">Follow for the drop date</a>`;
         return;
       }
       if (offer()) form.insertAdjacentHTML("beforebegin", `<p class="signup__offer">Join the list and get ${offer()}% off your first order.</p>`);
@@ -300,7 +300,7 @@
             ${signupEndpoint
               ? `<form class="popup__form"><input type="email" required placeholder="Email address" aria-label="Email address"><button class="btn btn--solid" type="submit">${pct ? "Get my code" : "Join the list"}</button></form>
                  <p class="popup__msg" aria-live="polite"></p>`
-              : `<a class="btn btn--solid" href="${esc(CFG.instagram || "#")}" target="_blank" rel="noopener">Follow for the drop date</a>`}
+              : `<a class="btn btn--solid" href="${esc(CFG.tiktok || CFG.instagram || "#")}" target="_blank" rel="noopener">Follow for the drop date</a>`}
             ${signupEndpoint ? `<p class="popup__fine">By joining you agree to get emails from flò about drops and promotions. Unsubscribe anytime. <a class="link-u" href="policies.html#privacy">Privacy</a></p>` : ""}
           </div>
         </div>
@@ -356,7 +356,7 @@
                <p class="account__fine">Enter it on the payment page. One use, first order only, until ${shortDate(w.expires)}.</p>`
             : pct
             ? `<div class="notify">${notifyMarkup(`Join the list and get ${pct}% off your first order. Your code shows up here right away.`)}</div>`
-            : `<p>Rewards open with Drop 001.</p><a class="btn btn--solid" href="${esc(CFG.instagram || "#")}" target="_blank" rel="noopener">Follow for the drop date</a>`}
+            : `<p>Rewards open with Drop 001.</p><a class="btn btn--solid" href="${esc(CFG.tiktok || CFG.instagram || "#")}" target="_blank" rel="noopener">Follow for the drop date</a>`}
         </div>
         <div class="account__card">
           <p class="label">Promo codes</p>
