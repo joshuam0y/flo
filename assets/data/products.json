@@ -620,7 +620,43 @@
       "colors": [
         {
           "name": "Sand",
-          "hex": "#d6c6ae"
+          "hex": "#DCD2BE",
+          "photos": [
+            "assets/img/products/printify/forward-crew-sand-front.jpg",
+            "assets/img/products/printify/forward-crew-sand-back.jpg"
+          ]
+        },
+        {
+          "name": "Red",
+          "hex": "#C62A32",
+          "photos": [
+            "assets/img/products/printify/forward-crew-red-front.jpg",
+            "assets/img/products/printify/forward-crew-red-back.jpg"
+          ]
+        },
+        {
+          "name": "Sky",
+          "hex": "#8BCDEA",
+          "photos": [
+            "assets/img/products/printify/forward-crew-sky-front.jpg",
+            "assets/img/products/printify/forward-crew-sky-back.jpg"
+          ]
+        },
+        {
+          "name": "White",
+          "hex": "#ffffff",
+          "photos": [
+            "assets/img/products/printify/forward-crew-white-front.jpg",
+            "assets/img/products/printify/forward-crew-white-back.jpg"
+          ]
+        },
+        {
+          "name": "Navy",
+          "hex": "#1a2237",
+          "photos": [
+            "assets/img/products/printify/forward-crew-navy-front.jpg",
+            "assets/img/products/printify/forward-crew-navy-back.jpg"
+          ]
         }
       ],
       "sizes": [
@@ -628,7 +664,9 @@
         "M",
         "L",
         "XL",
-        "XXL"
+        "2XL",
+        "3XL",
+        "4XL"
       ],
       "front": "classic",
       "back": "none",
@@ -641,11 +679,12 @@
         "Large FLÒ wordmark on the back"
       ],
       "photos": [
-        "assets/img/products/forward-crew-front.jpg?v=1",
-        "assets/img/products/forward-crew-back.jpg?v=3"
+        "assets/img/products/printify/forward-crew-sand-front.jpg",
+        "assets/img/products/printify/forward-crew-sand-back.jpg"
       ],
       "fit": "Relaxed fit. Take your usual size.",
-      "flag": "Back text in Printify still has the old acute accent; change it to FLÒ in the Printify editor, then remove this flag"
+      "whiteBg": true,
+      "printify": "6ac27f66424802d4ea07a45c"
     },
     {
       "id": "champs-longsleeve",
