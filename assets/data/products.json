@@ -10,7 +10,7 @@
       "name": "Palm Springs Tee",
       "type": "tee",
       "category": "tees",
-      "price": 32,
+      "price": 29,
       "badge": "Drop 001",
       "colors": [
         {
@@ -190,10 +190,10 @@
       "whiteBg": true,
       "printify": "6ac24858d101e467a00a3f8b",
       "sizePrices": {
-        "2XL": 39,
-        "3XL": 39,
-        "4XL": 39,
-        "5XL": 39
+        "2XL": 36,
+        "3XL": 36,
+        "4XL": 36,
+        "5XL": 36
       }
     },
     {
@@ -408,7 +408,7 @@
       "name": "Apparel Crewneck",
       "type": "crew",
       "category": "crewnecks",
-      "price": 45,
+      "price": 39,
       "badge": "Drop 001",
       "colors": [
         {
@@ -622,10 +622,10 @@
       "whiteBg": true,
       "printify": "6acbf5c0b378754520066f4a",
       "sizePrices": {
-        "2XL": 54,
-        "3XL": 54,
-        "4XL": 54,
-        "5XL": 54
+        "2XL": 49,
+        "3XL": 49,
+        "4XL": 49,
+        "5XL": 49
       }
     },
     {
