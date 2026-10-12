@@ -198,7 +198,7 @@
     },
     {
       "id": "over-perfection-tee",
-      "name": "Over Perfection Tee",
+      "name": "Go With the FLÒ Tee",
       "type": "tee",
       "category": "tees",
       "price": 20,
@@ -382,12 +382,12 @@
       "front": "classic",
       "back": "none",
       "lead": "front",
-      "description": "Flow over perfection. The FLÒ mark sits tilted on purpose above a clean serif line, printed across the chest of a soft mint tee.",
+      "description": "Quiet, minimal type: a small FLÒ over the heart, and “go with the FLÒ” across the back in a slender serif. Soft, lightweight cotton for every day.",
       "details": [
-        "Soft cotton tee",
+        "Soft-washed cotton tee",
         "Regular fit",
-        "FLÒ OVER PERFECTION across the chest",
-        "Plain back"
+        "Small FLÒ on the left chest",
+        "“go with the FLÒ” printed on the back"
       ],
       "fit": "Regular fit. Take your usual size.",
       "photos": [
@@ -402,6 +402,180 @@
         "4XL": 27,
         "5XL": 27
       }
+    },
+    {
+      "id": "summer-vibes-tee",
+      "name": "Summer Vibes Tee",
+      "type": "tee",
+      "category": "tees",
+      "price": 29,
+      "sizePrices": {
+        "2XL": 36,
+        "3XL": 36,
+        "4XL": 36,
+        "5XL": 36
+      },
+      "badge": "New",
+      "colors": [
+        {
+          "name": "White",
+          "hex": "#ffffff",
+          "photos": [
+            "assets/img/products/printify/summer-vibes-tee-white-front.jpg",
+            "assets/img/products/printify/summer-vibes-tee-white-back.jpg"
+          ]
+        },
+        {
+          "name": "Charcoal",
+          "hex": "#585559",
+          "photos": [
+            "assets/img/products/printify/summer-vibes-tee-charcoal-front.jpg",
+            "assets/img/products/printify/summer-vibes-tee-charcoal-back.jpg"
+          ]
+        },
+        {
+          "name": "Coral Silk",
+          "hex": "#e67376",
+          "photos": [
+            "assets/img/products/printify/summer-vibes-tee-coral-silk-front.jpg",
+            "assets/img/products/printify/summer-vibes-tee-coral-silk-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL"
+          ]
+        },
+        {
+          "name": "Mint Green",
+          "hex": "#b1e0c0",
+          "photos": [
+            "assets/img/products/printify/summer-vibes-tee-mint-green-front.jpg",
+            "assets/img/products/printify/summer-vibes-tee-mint-green-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL"
+          ]
+        },
+        {
+          "name": "Carolina Blue",
+          "hex": "#7BA4DB",
+          "photos": [
+            "assets/img/products/printify/summer-vibes-tee-carolina-blue-front.jpg",
+            "assets/img/products/printify/summer-vibes-tee-carolina-blue-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL"
+          ]
+        },
+        {
+          "name": "Light Pink",
+          "hex": "#FEE0EB",
+          "photos": [
+            "assets/img/products/printify/summer-vibes-tee-light-pink-front.jpg",
+            "assets/img/products/printify/summer-vibes-tee-light-pink-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL"
+          ]
+        },
+        {
+          "name": "Light Blue",
+          "hex": "#d6e6f7",
+          "photos": [
+            "assets/img/products/printify/summer-vibes-tee-light-blue-front.jpg",
+            "assets/img/products/printify/summer-vibes-tee-light-blue-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL",
+            "4XL"
+          ]
+        },
+        {
+          "name": "Sand",
+          "hex": "#DCD2BE",
+          "photos": [
+            "assets/img/products/printify/summer-vibes-tee-sand-front.jpg",
+            "assets/img/products/printify/summer-vibes-tee-sand-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL"
+          ]
+        },
+        {
+          "name": "Natural",
+          "hex": "#FFF6E3",
+          "photos": [
+            "assets/img/products/printify/summer-vibes-tee-natural-front.jpg",
+            "assets/img/products/printify/summer-vibes-tee-natural-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL",
+            "4XL"
+          ]
+        }
+      ],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "2XL",
+        "3XL",
+        "4XL",
+        "5XL"
+      ],
+      "front": "classic",
+      "back": "none",
+      "lead": "back",
+      "description": "Palm trees, a warm sunset and the shoreline across the back, with the arched FLÒ Apparel mark on the front. Lightweight, breathable cotton made for summer.",
+      "details": [
+        "Soft, lightweight cotton tee",
+        "Regular fit",
+        "FLÒ Apparel mark on the front",
+        "Sunset beach graphic on the back"
+      ],
+      "photos": [
+        "assets/img/products/printify/summer-vibes-tee-white-front.jpg",
+        "assets/img/products/printify/summer-vibes-tee-white-back.jpg"
+      ],
+      "fit": "Regular fit. Take your usual size.",
+      "whiteBg": true,
+      "printify": "6acd2645b4b7a98e6a05639e"
     },
     {
       "id": "apparel-crew",
