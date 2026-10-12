@@ -159,7 +159,7 @@
     await new Promise(r => setTimeout(r, 1400));
     const t = totals();
     const order = {
-      number: "FLO-" + Math.random().toString(36).slice(2, 8).toUpperCase(),
+      number: "FLÒ-" + Math.random().toString(36).slice(2, 8).toUpperCase(),
       placed: new Date().toISOString(),
       email: form.email.value,
       ship: {
@@ -177,7 +177,7 @@
       localStorage.setItem(ORDER_KEY, JSON.stringify(order));
       localStorage.setItem(BAG_KEY, "[]");
     } catch { /* private mode: the confirmation page falls back to a generic message */ }
-    location.href = `success.html?order=${order.number}`;
+    location.href = `success.html?order=${encodeURIComponent(order.number)}`;
   }
 
   /* ---------- Boot ---------- */
