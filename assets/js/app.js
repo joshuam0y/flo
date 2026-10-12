@@ -886,6 +886,10 @@
         ${p.photos.length && !p.photos[2] ? "" : `<div class="pdp__shot pdp__shot--wide slot">${p.photos[2]
           ? `<img class="photo photo--product" src="${p.photos[2]}" alt="${p.name} detail" loading="lazy">`
           : garmentSVG(p.type, color.hex, { front: p.front, back: p.back }, { side: hasBack ? "back" : "front", ink: color.ink })}</div>`}`;
+      // on-model photos, shown with the colour they were shot in
+      const life = p.lifestyle && p.lifestyle.colour === color.name ? p.lifestyle.photos : [];
+      if (life.length) $("#pdp-gallery").insertAdjacentHTML("beforeend", life.map((src, i) =>
+        `<div class="pdp__shot pdp__shot--life slot"><img class="photo" src="${src}" alt="${esc(p.name)} worn, photo ${i + 1}" loading="lazy"></div>`).join(""));
     };
 
     root.querySelector(".pdp__name").textContent = p.name;
