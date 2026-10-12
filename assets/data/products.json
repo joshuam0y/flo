@@ -627,6 +627,38 @@
           ]
         },
         {
+          "name": "Dark Heather",
+          "hex": "#454545",
+          "photos": [
+            "assets/img/products/printify/forward-crew-dark-heather-front.jpg",
+            "assets/img/products/printify/forward-crew-dark-heather-back.jpg"
+          ]
+        },
+        {
+          "name": "Military Green",
+          "hex": "#62664C",
+          "photos": [
+            "assets/img/products/printify/forward-crew-military-green-front.jpg",
+            "assets/img/products/printify/forward-crew-military-green-back.jpg"
+          ]
+        },
+        {
+          "name": "Paragon",
+          "hex": "#948794",
+          "photos": [
+            "assets/img/products/printify/forward-crew-paragon-front.jpg",
+            "assets/img/products/printify/forward-crew-paragon-back.jpg"
+          ]
+        },
+        {
+          "name": "Pink Lemonade",
+          "hex": "#f04e98",
+          "photos": [
+            "assets/img/products/printify/forward-crew-pink-lemonade-front.jpg",
+            "assets/img/products/printify/forward-crew-pink-lemonade-back.jpg"
+          ]
+        },
+        {
           "name": "Red",
           "hex": "#C62A32",
           "photos": [
@@ -643,11 +675,35 @@
           ]
         },
         {
+          "name": "Royal",
+          "hex": "#084f97",
+          "photos": [
+            "assets/img/products/printify/forward-crew-royal-front.jpg",
+            "assets/img/products/printify/forward-crew-royal-back.jpg"
+          ]
+        },
+        {
+          "name": "Charcoal",
+          "hex": "#585559",
+          "photos": [
+            "assets/img/products/printify/forward-crew-charcoal-front.jpg",
+            "assets/img/products/printify/forward-crew-charcoal-back.jpg"
+          ]
+        },
+        {
           "name": "White",
           "hex": "#ffffff",
           "photos": [
             "assets/img/products/printify/forward-crew-white-front.jpg",
             "assets/img/products/printify/forward-crew-white-back.jpg"
+          ]
+        },
+        {
+          "name": "Stone Blue",
+          "hex": "#7F909C",
+          "photos": [
+            "assets/img/products/printify/forward-crew-stone-blue-front.jpg",
+            "assets/img/products/printify/forward-crew-stone-blue-back.jpg"
           ]
         },
         {
@@ -711,6 +767,21 @@
           ]
         },
         {
+          "name": "Irish Green",
+          "hex": "#279436",
+          "photos": [
+            "assets/img/products/printify/champs-longsleeve-irish-green-front.jpg",
+            "assets/img/products/printify/champs-longsleeve-irish-green-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL"
+          ]
+        },
+        {
           "name": "Light Blue",
           "hex": "#d6e6f7",
           "photos": [
@@ -745,6 +816,14 @@
           ]
         },
         {
+          "name": "Navy",
+          "hex": "#1a2237",
+          "photos": [
+            "assets/img/products/printify/champs-longsleeve-navy-front.jpg",
+            "assets/img/products/printify/champs-longsleeve-navy-back.jpg"
+          ]
+        },
+        {
           "name": "Sport Grey",
           "hex": "#CACACA",
           "photos": [
@@ -766,6 +845,63 @@
           "photos": [
             "assets/img/products/printify/champs-longsleeve-royal-front.jpg",
             "assets/img/products/printify/champs-longsleeve-royal-back.jpg"
+          ]
+        },
+        {
+          "name": "Forest Green",
+          "hex": "#223b26",
+          "photos": [
+            "assets/img/products/printify/champs-longsleeve-forest-green-front.jpg",
+            "assets/img/products/printify/champs-longsleeve-forest-green-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL",
+            "4XL"
+          ]
+        },
+        {
+          "name": "Ash",
+          "hex": "#F6F6F6",
+          "photos": [
+            "assets/img/products/printify/champs-longsleeve-ash-front.jpg",
+            "assets/img/products/printify/champs-longsleeve-ash-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL",
+            "4XL"
+          ]
+        },
+        {
+          "name": "Dark Heather",
+          "hex": "#454545",
+          "photos": [
+            "assets/img/products/printify/champs-longsleeve-dark-heather-front.jpg",
+            "assets/img/products/printify/champs-longsleeve-dark-heather-back.jpg"
+          ]
+        },
+        {
+          "name": "Purple",
+          "hex": "#3C214E",
+          "photos": [
+            "assets/img/products/printify/champs-longsleeve-purple-front.jpg",
+            "assets/img/products/printify/champs-longsleeve-purple-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL"
           ]
         },
         {
