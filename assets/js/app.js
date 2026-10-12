@@ -16,9 +16,12 @@
   /* ---------- Store mode ---------- */
   const CFG = window.FLO_CONFIG || {};
   const prelaunch = CFG.mode !== "live";
-  const signupEndpoint = CFG.signupUrl || (CFG.checkoutUrl ? CFG.checkoutUrl.replace(/\/checkout$/, "/subscribe") : "");
-  const rewardsEndpoint = signupEndpoint ? signupEndpoint.replace(/\/subscribe$/, "/rewards") : "";
-  const contactEndpoint = signupEndpoint ? signupEndpoint.replace(/\/subscribe$/, "/contact") : "";
+  // The worker's base URL. Signups, rewards and contact all work off this directly, so they're live
+  // even while checkoutUrl is still empty (prelaunch only needs to gate Add to bag, nothing else).
+  const workerUrl = CFG.workerUrl || (CFG.checkoutUrl ? CFG.checkoutUrl.replace(/\/checkout$/, "") : "");
+  const signupEndpoint = CFG.signupUrl || (workerUrl ? `${workerUrl}/subscribe` : "");
+  const rewardsEndpoint = workerUrl ? `${workerUrl}/rewards` : "";
+  const contactEndpoint = workerUrl ? `${workerUrl}/contact` : "";
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
   // The welcome code from joining the list, kept on this device so the account page and checkout can show it

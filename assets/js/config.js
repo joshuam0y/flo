@@ -5,12 +5,16 @@ window.FLO_CONFIG = {
   // "live":      Add to bag and checkout are on (connect the checkout worker first, see README).
   mode: "prelaunch",
 
-  // Once the checkout worker is deployed (see README), paste its URL here and the
-  // bag's Checkout button starts taking real payments.
+  // The checkout worker's base URL. Powers sign-ups, loyalty and the contact form right away,
+  // even in prelaunch - only the "live" mode above (and checkoutUrl below) gates actual buying.
+  workerUrl: "https://flo-checkout.joshuamoy.workers.dev",
+
+  // Once you're ready to take real payments, paste "<workerUrl>/checkout" here and switch mode
+  // to "live" above - that's what turns on Add to bag.
   checkoutUrl: "", // e.g. "https://flo-checkout.yourname.workers.dev/checkout"
 
-  // Where email sign-ups go. Leave empty to use the checkout worker's /subscribe.
-  // With neither set, the "notify me" spots point people to TikTok instead.
+  // Where email sign-ups go. Leave empty to use workerUrl's /subscribe.
+  // With neither workerUrl nor signupUrl set, the "notify me" spots point people to TikTok instead.
   signupUrl: "", // e.g. "https://flo-checkout.yourname.workers.dev/subscribe"
   tiktok: "https://www.tiktok.com/@www.floshops.com",
   instagram: "", // add the brand's Instagram here once it exists
