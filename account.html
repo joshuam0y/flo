@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://flo-checkout.joshuamoy.workers.dev; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://flo-checkout.joshuamoy.workers.dev https://oalacuocbuirfkpzjkwc.supabase.co; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Orders &amp; rewards | flò</title>
 <meta name="description" content="Your flò orders, your first-order code and promo codes.">
@@ -17,7 +17,7 @@
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="assets/fonts/bodoni-moda-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/jost-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/style.css?v=30">
+<link rel="stylesheet" href="assets/css/style.css?v=31">
 </head>
 <body>
 <div class="announce"><span class="label" id="announce">Free shipping on orders over $75<span class="hide-sm"> &nbsp;·&nbsp; Every piece made to order</span></span></div>
@@ -109,8 +109,9 @@
 <script id="flo-reload-home">/* reloading a page goes back to the home page (config reloadHome) */
   try { var nav = performance.getEntriesByType("navigation")[0]; if (nav && nav.type === "reload" && sessionStorage.getItem("flo-no-reload-home") !== "1") document.documentElement.dataset.reloadHome = "1"; } catch (e) {}
 </script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="assets/js/config.js?v=27"></script>
 <script src="assets/js/garments.js?v=26"></script>
-<script src="assets/js/app.js?v=31"></script>
+<script src="assets/js/app.js?v=32"></script>
 </body>
 </html>

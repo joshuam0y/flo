@@ -1,0 +1,41 @@
+name: Site health check
+
+on:
+  schedule:
+    - cron: "0 13 * * *" # once a day, ~9am US Eastern
+  workflow_dispatch: {}
+
+jobs:
+  health:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Homepage loads over HTTPS
+        run: |
+          code=$(curl -s -o /dev/null -w "%{http_code}" https://floshops.com/)
+          echo "HTTP $code"
+          test "$code" = "200"
+
+      - name: Checkout worker is up
+        run: |
+          code=$(curl -s -o /dev/null -w "%{http_code}" https://flo-checkout.joshuamoy.workers.dev/)
+          echo "HTTP $code"
+          test "$code" = "200"
+
+      - name: Catalog is reachable from the live domain (what checkout actually uses)
+        run: |
+          code=$(curl -s -o /dev/null -w "%{http_code}" https://floshops.com/assets/data/products.json)
+          echo "HTTP $code"
+          test "$code" = "200"
+
+      - name: GitHub Pages certificate is approved
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          state=$(gh api repos/${{ github.repository }}/pages -q '.https_certificate.state')
+          echo "Certificate state: $state"
+          test "$state" = "approved"
+
+      - name: No broken local links, images, or product photos
+        run: python3 tools/check-links.py

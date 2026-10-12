@@ -44,6 +44,13 @@ window.FLO_CONFIG = {
   // Customer portal, turn on the login link and paste it here). Empty: the page says orders come after the drop.
   ordersUrl: "https://billing.stripe.com/p/login/test_6oU9AV0km4c45OT5N943S00",
 
+  // Real sign-in (magic link, no password) via Supabase. Both values are safe to be public - never put
+  // the service_role key here or anywhere client-side, only the anon/publishable one.
+  supabase: {
+    url: "https://oalacuocbuirfkpzjkwc.supabase.co",
+    anonKey: "sb_publishable_mq7cVbKYJUum3r9bFVPnZQ_X5SR29b3"
+  },
+
   // Homepage and about-page photos (hero, editorial, about). Drop a file in assets/img and add it here,
   // e.g. hero: "assets/img/hero.jpg". Until then each slot shows an illustration.
   photos: {
