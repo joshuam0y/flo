@@ -201,7 +201,7 @@
       "name": "Go With the FLÒ Tee",
       "type": "tee",
       "category": "tees",
-      "price": 20,
+      "price": 25,
       "badge": "Drop 001",
       "colors": [
         {
@@ -397,10 +397,10 @@
       "whiteBg": true,
       "printify": "6ac132eba1fc024e4b0fb1b8",
       "sizePrices": {
-        "2XL": 27,
-        "3XL": 27,
-        "4XL": 27,
-        "5XL": 27
+        "2XL": 32,
+        "3XL": 32,
+        "4XL": 32,
+        "5XL": 32
       }
     },
     {
