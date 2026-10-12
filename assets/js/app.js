@@ -803,6 +803,37 @@
     tag.textContent = JSON.stringify(data);
   }
 
+  /* ---------- Navigation: built from the catalog so it always matches what's for sale ---------- */
+  function renderNav() {
+    const live = catalog.products.filter(p => !p.hidden);
+    const count = cat => live.filter(p => p.category === cat).length;
+    // header: drop category links that have nothing in them
+    $$('.header__left a[href*="shop.html?c="]').forEach(a => {
+      const cat = new URLSearchParams(a.getAttribute("href").split("?")[1]).get("c");
+      if (!count(LEGACY[cat] || cat)) a.remove();
+    });
+    const list = $(".menu__list");
+    if (list) {
+      const cats = SECTIONS.filter(([c]) => count(c));
+      list.innerHTML = [
+        `<li><a href="shop.html">Shop all <small>${live.length}</small></a></li>`,
+        ...cats.map(([c, t]) => `<li><a href="shop.html?c=${c}">${t} <small>${count(c)}</small></a></li>`),
+        `<li class="menu__minor"><a href="size-guide.html">Size guide</a></li>`,
+        `<li class="menu__minor"><a href="account.html">Account</a></li>`,
+        `<li class="menu__minor"><a href="about.html">The house</a></li>`
+      ].join("");
+    }
+    const aside = $(".menu__aside");
+    if (aside) {
+      aside.innerHTML = `<p class="label">Every piece</p><div class="menu__products">${live.map(p => {
+        const c = p.colors[0];
+        return `<a class="menu__product" href="product.html?id=${p.id}">
+          <span class="menu__thumb${p.whiteBg ? " is-white" : ""}">${art(p, c, p.lead === "back" ? "back" : "front")}</span>
+          <span><span class="menu__pname">${esc(p.name)}</span><span class="menu__pprice">${fromPrice(p)}</span></span></a>`;
+      }).join("")}</div>`;
+    }
+  }
+
   function renderProduct() {
     const root = $("#pdp");
     if (!root) return;
@@ -827,6 +858,12 @@
     };
 
     root.querySelector(".pdp__name").textContent = p.name;
+    // breadcrumb: Shop › Category › Product
+    const sec = SECTIONS.find(([c]) => c === p.category);
+    const badge = $("#pdp-badge");
+    if (badge && !$(".crumbs")) badge.insertAdjacentHTML("beforebegin", `<nav class="crumbs label" aria-label="You are here">
+      <a href="shop.html">Shop</a>${sec ? ` <span aria-hidden="true">›</span> <a href="shop.html?c=${sec[0]}">${sec[1]}</a>` : ""}
+      <span aria-hidden="true">›</span> <span aria-current="page">${esc(p.name)}</span></nav>`);
     root.querySelector(".pdp__price").textContent = size ? money(priceFor(p, size)) : fromPrice(p);
     root.querySelector(".pdp__desc").textContent = p.description;
     injectProductSchema(p, color);
@@ -958,6 +995,7 @@
     bindChat();
     maybePopup();
     renderHome();
+    renderNav();
     renderShop();
     renderProduct();
     renderSuccess();
