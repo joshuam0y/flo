@@ -194,6 +194,15 @@
         "3XL": 36,
         "4XL": 36,
         "5XL": 36
+      },
+      "lifestyle": {
+        "colour": "Black",
+        "photos": [
+          "assets/img/lifestyle/palm-springs-tee-1.jpg?v=1",
+          "assets/img/lifestyle/palm-springs-tee-2.jpg?v=1",
+          "assets/img/lifestyle/palm-springs-tee-3.jpg?v=1",
+          "assets/img/lifestyle/palm-springs-tee-4.jpg?v=1"
+        ]
       }
     },
     {

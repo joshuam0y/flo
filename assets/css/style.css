@@ -876,3 +876,6 @@ input { font: inherit; }
 .pdp__shot--life { padding: 0; aspect-ratio: 4 / 5; }
 .pdp__shot--life .photo { object-fit: cover; }
 @media (max-width: 760px) { .pdp__shot--life { padding: 0; } }
+
+/* hero photo: keep the shirt in frame on wide screens */
+.hero__img { object-position: 70% 30%; }
