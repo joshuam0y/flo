@@ -633,19 +633,19 @@
       "front": "classic",
       "back": "none",
       "lead": "back",
-      "description": "FORWARD set small at the chest. On the back, a silver race car in red livery runs across a distressed No. 001.",
+      "description": "FORWARD set small at the chest, and a big serif FLÒ across the upper back. Clean, quiet, easy to wear with anything.",
       "details": [
         "Soft, garment-washed fleece",
         "Relaxed fit, dropped shoulder",
         "Small wordmark on the chest",
-        "Full race graphic on the back"
+        "Large FLÒ wordmark on the back"
       ],
       "photos": [
         "assets/img/products/forward-crew-front.jpg?v=1",
-        "assets/img/products/forward-crew-back.jpg?v=2"
+        "assets/img/products/forward-crew-back.jpg?v=3"
       ],
       "fit": "Relaxed fit. Take your usual size.",
-      "flag": "Back shown is the trademark-safe replacement for the 911 art; update the back print in Printify to match before it can sell"
+      "flag": "Back text in Printify still reads FLÓ; change it to FLÒ in the Printify editor, then remove this flag"
     },
     {
       "id": "champs-longsleeve",
