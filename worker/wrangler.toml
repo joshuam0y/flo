@@ -15,7 +15,7 @@ WELCOME_PERCENT = "20"
 WELCOME_DAYS = "60"
 # The Brevo list sign-ups are added to (the number in Brevo, Contacts, Lists). The API key is a secret:
 #   npx wrangler secret put BREVO_API_KEY
-# BREVO_LIST_ID = "2"
+BREVO_LIST_ID = "3"
 
 # Secrets: set these with `npx wrangler secret put NAME`, never commit them:
 #   STRIPE_SECRET_KEY        sk_live_... (or sk_test_... while testing)
