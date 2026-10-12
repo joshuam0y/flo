@@ -436,7 +436,7 @@ input { font: inherit; }
 .pdp__desc { color: var(--ink-2); margin: 24px 0 32px; max-width: 460px; }
 .opt { margin-bottom: 26px; }
 .opt__head { display: flex; justify-content: space-between; margin-bottom: 12px; }
-.swatches { display: flex; gap: 10px; }
+.swatches { display: flex; flex-wrap: wrap; gap: 10px; }
 .swatch { width: 28px; height: 28px; border-radius: 50%; border: 1px solid rgba(0,0,0,.15); outline-offset: 3px; }
 .swatch[aria-pressed="true"] { outline: 1px solid var(--ink); }
 .sizes { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; }
@@ -453,7 +453,7 @@ input { font: inherit; }
 .acc details > div { padding: 0 0 20px; color: var(--ink-2); font-size: 14px; }
 .acc ul { margin: 0; padding-left: 18px; }
 @media (max-width: 900px) {
-  .pdp { grid-template-columns: 1fr; }
+  .pdp { grid-template-columns: minmax(0, 1fr); }
   .pdp__info { position: static; }
 }
 
