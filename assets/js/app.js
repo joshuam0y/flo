@@ -230,6 +230,19 @@
   }
   const findProduct = id => catalog.products.find(p => p.id === id);
 
+  // Recently viewed: kept on this device only, newest first, so a product page can show what
+  // someone was just looking at without any account or server round trip.
+  const RECENT_KEY = "flo-recent";
+  function recordRecentlyViewed(id) {
+    let ids = [];
+    try { ids = JSON.parse(localStorage.getItem(RECENT_KEY)) || []; } catch { /* private mode */ }
+    ids = [id, ...ids.filter(x => x !== id)].slice(0, 10);
+    try { localStorage.setItem(RECENT_KEY, JSON.stringify(ids)); } catch { /* private mode */ }
+  }
+  function readRecentlyViewed() {
+    try { return JSON.parse(localStorage.getItem(RECENT_KEY)) || []; } catch { return []; }
+  }
+
   function art(p, color, side, className) {
     const set = (color && color.photos) || p.photos; // Printify colours carry their own mockups
     const photo = side === "back" ? set[1] : set[0];
@@ -1045,6 +1058,14 @@
       .concat(catalog.products.filter(x => x.category !== p.category)).slice(0, 4);
     $("#pdp-more").innerHTML = more.map(card).join("");
     $("#pdp-more-section").hidden = !more.length;
+
+    const recentSection = $("#pdp-recent-section");
+    if (recentSection) {
+      const recent = readRecentlyViewed().filter(id => id !== p.id).map(findProduct).filter(Boolean).slice(0, 4);
+      $("#pdp-recent").innerHTML = recent.map(card).join("");
+      recentSection.hidden = !recent.length;
+    }
+    recordRecentlyViewed(p.id);
 
     drawGallery();
   }
