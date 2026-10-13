@@ -17,7 +17,7 @@ window.FLO_CONFIG = {
   // With neither workerUrl nor signupUrl set, the "notify me" spots point people to TikTok instead.
   signupUrl: "", // e.g. "https://flo-checkout.yourname.workers.dev/subscribe"
   tiktok: "https://www.tiktok.com/@flo_shops",
-  instagram: "", // add the brand's Instagram here once it exists
+  instagram: "https://www.instagram.com/flo_shops/",
 
   // Launch discount shown in the top banner while the store is live. Create the same
   // code in Stripe (Product catalogue, Coupons, then a promotion code) so it works at payment.
