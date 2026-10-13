@@ -325,6 +325,8 @@
     $("#bag-free").textContent = t.subtotal > 0 && left > 0
       ? `${money(left)} away from free shipping`
       : t.subtotal > 0 ? "You've unlocked free shipping" : `Free shipping over ${money(catalog.shipping.freeOver)}`;
+    const bar = $("#bag-free-bar");
+    if (bar) bar.style.width = `${Math.max(0, Math.min(100, catalog.shipping.freeOver ? (t.subtotal / catalog.shipping.freeOver) * 100 : 0))}%`;
   }
 
   function changeQty(sku, delta) {

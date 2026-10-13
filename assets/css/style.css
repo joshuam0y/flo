@@ -491,6 +491,8 @@ input { font: inherit; }
 .bag__foot { padding: 24px; border-top: 1px solid var(--line); display: grid; gap: 14px; }
 .bag__row { display: flex; justify-content: space-between; }
 .bag__fine { color: var(--mute); font-size: 12px; text-align: center; }
+.bag__progress { height: 3px; background: var(--line); margin: 10px 0 6px; overflow: hidden; }
+.bag__progress span { display: block; height: 100%; width: 0; background: var(--ink); transition: width .35s ease; }
 
 /* ---------- Toast ---------- */
 .toast {
