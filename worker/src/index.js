@@ -7,6 +7,10 @@
  *                    created in Stripe
  *   POST /rewards    looks up a shopper's loyalty points and any unredeemed reward code, by email
  *   POST /chat       answers shopper questions with Gemini, grounded only in FLO_FACTS below
+ *   POST /auth/request  emails a one-time sign-in link (our own, via Brevo - no third-party auth vendor)
+ *   POST /auth/verify   exchanges that link's token for a session token
+ *   POST /auth/signout  invalidates a session token
+ *   POST /orders     a signed-in shopper's past orders, by session token
  *
  * Prices always come from the published products.json, never from the browser,
  * so nobody can edit the bag in devtools and pay $1 for a hoodie.
@@ -32,6 +36,9 @@ export default {
       if (request.method === "POST" && url.pathname === "/contact") return await contact(request, env, cors);
       if (request.method === "POST" && url.pathname === "/chat") return await chat(request, env, cors);
       if (request.method === "POST" && url.pathname === "/orders") return await orders(request, env, cors);
+      if (request.method === "POST" && url.pathname === "/auth/request") return await authRequest(request, env, cors);
+      if (request.method === "POST" && url.pathname === "/auth/verify") return await authVerify(request, env, cors);
+      if (request.method === "POST" && url.pathname === "/auth/signout") return await authSignOut(request, env, cors);
       return json({ ok: true, service: "flo-checkout" }, 200, cors);
     } catch (err) {
       console.error(err);
@@ -196,6 +203,101 @@ async function webhook(request, env) {
   return new Response("ok");
 }
 
+/* ---------- Sign-in (magic link, no password) ---------- */
+
+// Our own magic-link flow instead of a third-party auth service: a one-time token emailed via
+// Brevo (already set up and working), verified here, never exposing any other vendor's domain or
+// branding to shoppers. Tokens and sessions both live in the SUBSCRIBERS KV namespace, prefixed
+// so they never collide with the email sign-up records that namespace already stores.
+async function authRequest(request, env, cors) {
+  const { email } = await request.json().catch(() => ({}));
+  if (typeof email !== "string" || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email) || email.length > 200) {
+    return json({ error: "Please enter a valid email address." }, 400, cors);
+  }
+  if (!env.SUBSCRIBERS || !env.BREVO_API_KEY) return json({ error: "Sign-in isn't set up yet." }, 503, cors);
+  const key = email.trim().toLowerCase();
+
+  // One email per minute per address, so the form can't be used to spam an inbox. Still reports
+  // success either way - never reveal whether a request was actually rate-limited or not.
+  const rateKey = `authrate:${key}`;
+  const limited = await env.SUBSCRIBERS.get(rateKey);
+  if (!limited) {
+    await env.SUBSCRIBERS.put(rateKey, "1", { expirationTtl: 60 });
+    const token = randomToken();
+    await env.SUBSCRIBERS.put(`authtoken:${token}`, JSON.stringify({ email: key }), { expirationTtl: 900 });
+    await sendSignInEmail(env, key, token);
+  }
+  return json({ ok: true }, 200, cors);
+}
+
+async function authVerify(request, env, cors) {
+  const { token } = await request.json().catch(() => ({}));
+  if (typeof token !== "string" || !token || !env.SUBSCRIBERS) {
+    return json({ error: "That sign-in link was invalid or expired. Request a fresh one." }, 401, cors);
+  }
+  const tokenKey = `authtoken:${token}`;
+  const raw = await env.SUBSCRIBERS.get(tokenKey);
+  if (!raw) return json({ error: "That sign-in link was invalid or expired. Request a fresh one." }, 401, cors);
+  await env.SUBSCRIBERS.delete(tokenKey);   // single use
+  let email;
+  try { email = JSON.parse(raw).email; } catch { email = null; }
+  if (!email) return json({ error: "That sign-in link was invalid or expired. Request a fresh one." }, 401, cors);
+
+  const sessionToken = randomToken();
+  await env.SUBSCRIBERS.put(`session:${sessionToken}`, JSON.stringify({ email }), { expirationTtl: 60 * 86400 });
+  return json({ ok: true, sessionToken, email }, 200, cors);
+}
+
+async function authSignOut(request, env, cors) {
+  const { sessionToken } = await request.json().catch(() => ({}));
+  if (typeof sessionToken === "string" && sessionToken && env.SUBSCRIBERS) {
+    await env.SUBSCRIBERS.delete(`session:${sessionToken}`);
+  }
+  return json({ ok: true }, 200, cors);
+}
+
+// Looks up who a session token belongs to, or null if it's missing, expired, or was never issued -
+// callers treat null as "not signed in", never trusting a client-supplied email directly.
+async function sessionEmail(env, sessionToken) {
+  if (typeof sessionToken !== "string" || !sessionToken || !env.SUBSCRIBERS) return null;
+  const raw = await env.SUBSCRIBERS.get(`session:${sessionToken}`);
+  if (!raw) return null;
+  try { return JSON.parse(raw).email || null; } catch { return null; }
+}
+
+function randomToken() {
+  return [...crypto.getRandomValues(new Uint8Array(32))].map(b => b.toString(16).padStart(2, "0")).join("");
+}
+
+async function sendSignInEmail(env, email, token) {
+  const link = `${env.SITE_URL}/account.html?token=${token}`;
+  const html = `<!doctype html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Sign in to flò</title></head>
+<body style="margin:0;padding:0;background-color:#faf8f4;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;color:#161513;">
+<table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background-color:#faf8f4;margin:0;padding:32px 16px;"><tr><td align="center">
+<table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width:480px;background:#ffffff;border:1px solid #e2ddd4;border-radius:12px;overflow:hidden;">
+<tr><td style="padding:32px 32px 16px 32px;text-align:center;"><div style="display:inline-block;background:#161513;color:#ffffff;font-size:28px;font-style:italic;font-family:Georgia,serif;padding:16px 28px;border-radius:8px;">flò</div></td></tr>
+<tr><td style="padding:16px 32px 0 32px;text-align:center;"><h1 style="margin:0;font-size:22px;line-height:1.3;font-weight:600;color:#161513;">Sign in to flò</h1></td></tr>
+<tr><td style="padding:12px 32px 0 32px;text-align:center;"><p style="margin:0;font-size:14px;line-height:1.7;color:#45423d;">Use the button below to sign in, no password needed.</p></td></tr>
+<tr><td style="padding:24px 32px 8px 32px;text-align:center;"><a href="${link}" style="display:inline-block;background:#161513;color:#faf8f4;text-decoration:none;font-size:14px;font-weight:600;line-height:1;padding:14px 28px;border-radius:999px;">Sign in</a></td></tr>
+<tr><td style="padding:12px 32px 0 32px;text-align:center;"><p style="margin:0;font-size:12px;line-height:1.7;color:#86817a;">This link only works once, and expires in 15 minutes. If it's expired, just request a fresh one.</p></td></tr>
+<tr><td style="padding:24px 32px 0 32px;"><div style="height:1px;background:#e2ddd4;"></div></td></tr>
+<tr><td style="padding:20px 32px 0 32px;"><p style="margin:0;font-size:12px;line-height:1.7;color:#45423d;">If the button doesn't work, copy and paste this link into your browser:</p></td></tr>
+<tr><td style="padding:8px 32px 0 32px;"><p style="margin:0;word-break:break-all;font-size:11px;line-height:1.7;color:#6b4f3a;"><a href="${link}" style="color:#6b4f3a;text-decoration:none;">${link}</a></p></td></tr>
+<tr><td style="padding:28px 32px 32px 32px;text-align:center;"><p style="margin:0;font-size:11px;line-height:1.7;color:#86817a;">flò &middot; maison de confort</p></td></tr>
+</table></td></tr></table></body></html>`;
+  const res = await fetch("https://api.brevo.com/v3/smtp/email", {
+    method: "POST",
+    headers: { "api-key": env.BREVO_API_KEY, "Content-Type": "application/json", accept: "application/json" },
+    body: JSON.stringify({
+      sender: { email: "hello@floshops.com", name: "flò" },
+      to: [{ email }],
+      subject: "Sign in to flò",
+      htmlContent: html
+    })
+  });
+  if (!res.ok) console.error("Brevo sign-in email", res.status, await res.text());
+}
+
 /* ---------- Email sign-up ---------- */
 
 async function subscribe(request, env, cors) {
@@ -275,21 +377,11 @@ async function contact(request, env, cors) {
 /* ---------- Order history ---------- */
 
 // Shows a signed-in shopper their own past orders in-page, instead of sending them to Stripe's
-// customer portal. The accessToken proves who they are (verified against Supabase itself, never
-// trusted as-is) - only that verified email's orders are ever looked up, never a client-supplied one.
+// customer portal. The sessionToken proves who they are (looked up in KV, never trusted as-is) -
+// only that verified email's orders are ever looked up, never a client-supplied one.
 async function orders(request, env, cors) {
-  const { accessToken } = await request.json().catch(() => ({}));
-  if (typeof accessToken !== "string" || !accessToken) {
-    return json({ error: "Please sign in first." }, 401, cors);
-  }
-  if (!env.SUPABASE_URL || !env.SUPABASE_ANON_KEY) return json({ error: "Sign-in isn't set up yet." }, 503, cors);
-
-  const who = await fetch(`${env.SUPABASE_URL}/auth/v1/user`, {
-    headers: { Authorization: `Bearer ${accessToken}`, apikey: env.SUPABASE_ANON_KEY }
-  });
-  if (!who.ok) return json({ error: "Your session expired. Please sign in again." }, 401, cors);
-  const user = await who.json();
-  const email = user.email;
+  const { sessionToken } = await request.json().catch(() => ({}));
+  const email = await sessionEmail(env, sessionToken);
   if (!email) return json({ error: "Your session expired. Please sign in again." }, 401, cors);
 
   const customers = await stripe(env, `/customers?email=${encodeURIComponent(email)}&limit=5`, { method: "GET" });

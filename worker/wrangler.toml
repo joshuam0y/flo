@@ -23,11 +23,6 @@ LOYALTY_THRESHOLD = "100"
 LOYALTY_PERCENT = "10"
 LOYALTY_DAYS = "30"
 
-# Verifies a signed-in shopper's session (magic link) before showing them their own orders.
-# Both values are the public ones from account.html's config.js, never the service_role key.
-SUPABASE_URL = "https://oalacuocbuirfkpzjkwc.supabase.co"
-SUPABASE_ANON_KEY = "sb_publishable_mq7cVbKYJUum3r9bFVPnZQ_X5SR29b3"
-
 # Secrets: set these with `npx wrangler secret put NAME`, never commit them:
 #   STRIPE_SECRET_KEY        sk_live_... (or sk_test_... while testing)
 #   STRIPE_WEBHOOK_SECRET    whsec_...

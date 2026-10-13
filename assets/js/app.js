@@ -24,11 +24,20 @@
   const contactEndpoint = workerUrl ? `${workerUrl}/contact` : "";
   const chatEndpoint = workerUrl ? `${workerUrl}/chat` : "";
   const ordersEndpoint = workerUrl ? `${workerUrl}/orders` : "";
-  // Real sign-in (magic link, no password) via Supabase. Only created where the SDK script and config
-  // are both present (the account page), so this stays undefined - and harmless - everywhere else.
-  const sb = (window.supabase && CFG.supabase && CFG.supabase.url)
-    ? window.supabase.createClient(CFG.supabase.url, CFG.supabase.anonKey)
-    : null;
+  const authRequestEndpoint = workerUrl ? `${workerUrl}/auth/request` : "";
+  const authVerifyEndpoint = workerUrl ? `${workerUrl}/auth/verify` : "";
+  const authSignOutEndpoint = workerUrl ? `${workerUrl}/auth/signout` : "";
+  // Real sign-in (magic link, no password): our own, through the worker and Brevo - no third-party
+  // auth vendor, so nothing but flò ever shows up in the browser or the email. Off entirely during
+  // prelaunch, same as checkout staying off until mode is "live".
+  const authEnabled = !prelaunch && !!authRequestEndpoint;
+  const SESSION_KEY = "flo-session";
+  function getSession() {
+    try { return JSON.parse(localStorage.getItem(SESSION_KEY)); } catch { return null; }
+  }
+  function setSession(session) {
+    try { session ? localStorage.setItem(SESSION_KEY, JSON.stringify(session)) : localStorage.removeItem(SESSION_KEY); } catch { /* private mode */ }
+  }
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
   // The welcome code from joining the list, kept on this device so the account page and checkout can show it
@@ -566,59 +575,68 @@
     } else box.querySelector(".popup__close").focus({ preventScroll: true });
   }
 
-  // Finishes a magic-link sign-in using the emailed token_hash instead of Supabase's default
-  // confirmation link. The default link ties the session to a code_verifier saved in whichever
-  // browser requested it, so clicking the email from a different browser or app (very common)
-  // fails. token_hash + verifyOtp has no such tie, so it works no matter where the link is opened.
+  // Finishes a magic-link sign-in: the token in the URL (emailed via Brevo, our own, no third-party
+  // auth vendor) is exchanged here for a session token, then stored on this device.
   async function completeMagicLink() {
-    if (!sb) return;
+    if (!authEnabled) return;
     const params = new URLSearchParams(location.search);
-    const token_hash = params.get("token_hash");
-    const type = params.get("type");
-    if (!token_hash || !type) return;
-    await sb.auth.verifyOtp({ token_hash, type });
-    params.delete("token_hash");
-    params.delete("type");
+    const token = params.get("token");
+    if (!token) return;
+    try {
+      const res = await fetch(authVerifyEndpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ token })
+      });
+      const data = await res.json().catch(() => ({}));
+      if (res.ok && data.sessionToken) setSession({ sessionToken: data.sessionToken, email: data.email });
+    } catch { /* network hiccup: they stay signed out and can request a fresh link */ }
+    params.delete("token");
     const query = params.toString();
     history.replaceState(null, "", location.pathname + (query ? `?${query}` : "") + location.hash);
   }
 
-  // Account page: orders (Stripe's customer portal), the welcome code and how promo codes work
+  // Account page: a clear signed-in/out status bar up top, then orders (Stripe's customer portal),
+  // the welcome code and how promo codes work.
   async function renderAccount() {
     const root = $("#account");
     if (!root) return;
     const w = readWelcome(), pct = offer();
     // Sign-in stays off entirely during prelaunch - not ready for real visitors to create
     // accounts yet, same as checkout staying off until mode is "live".
-    const session = (sb && !prelaunch) ? (await sb.auth.getSession()).data.session : null;
-    const user = session?.user || null;
+    const session = authEnabled ? getSession() : null;
+    const email = session?.email || null;
     root.innerHTML = `
       <p class="label label--mute">Your account</p>
-      <h1 class="display account__title">${user ? `Hi, <em>${esc(user.email)}</em>` : `Orders &amp; <em>rewards</em>`}</h1>
-      ${(sb && !prelaunch) ? `
-      <div class="account__signin" id="account-signin">
-        ${user
-          ? `<p>Signed in as <b>${esc(user.email)}</b> &middot; <button class="label link-u" data-signout>Sign out</button></p>`
-          : `<form class="account__signin-form notify__form">
-               <input type="email" required placeholder="Email address" aria-label="Email address">
-               <button type="submit">Send magic link</button>
-             </form>
-             <p class="account__signin-msg notify__msg" aria-live="polite">Sign in once and this page remembers you on any device &mdash; no password.</p>`}
-      </div>` : ""}
+      <h1 class="display account__title">Orders &amp; <em>rewards</em></h1>
+      ${authEnabled ? (
+        email
+          ? `<div class="account__status account__status--in" id="account-signin">
+               <p class="account__status-who"><span class="account__status-dot" aria-hidden="true"></span>Signed in as <b>${esc(email)}</b></p>
+               <button class="label link-u" data-signout>Sign out</button>
+             </div>`
+          : `<div class="account__status account__status--out" id="account-signin">
+               <form class="account__signin-form notify__form">
+                 <input type="email" required placeholder="Email address" aria-label="Email address">
+                 <button type="submit">Send magic link</button>
+               </form>
+               <p class="account__signin-msg account__fine" aria-live="polite">Sign in once and this page remembers you on any device, no password.</p>
+             </div>`
+      ) : ""}
       <div class="account__grid">
         <div class="account__card" id="account-orders">
           <p class="label">Your orders</p>
-          ${user
+          ${email
             ? `<p class="orders__list">Loading your orders…</p>`
             : CFG.ordersUrl
             ? `<p>Sign in with the email you ordered with. Stripe, our payment provider, emails you a one-time code, then shows every order and receipt. No password needed.</p>
                <a class="btn btn--solid" href="${esc(CFG.ordersUrl)}" target="_blank" rel="noopener">View my orders</a>`
             : `<p>Your orders will show up here once Drop 001 is on sale. Every order also comes with an email receipt and tracking.</p>`}
-          ${user && CFG.ordersUrl ? `<p class="account__fine"><a class="link-u" href="${esc(CFG.ordersUrl)}" target="_blank" rel="noopener">Full receipts &amp; invoices</a></p>` : ""}
+          ${email && CFG.ordersUrl ? `<p class="account__fine"><a class="link-u" href="${esc(CFG.ordersUrl)}" target="_blank" rel="noopener">Full receipts &amp; invoices</a></p>` : ""}
         </div>
         <div class="account__card" id="account-rewards">
           <p class="label">Rewards</p>
-          ${user
+          ${email
             ? `<p class="rewards__body">Loading…</p>`
             : w
             ? `<p>Your ${w.percent}% off first-order code:</p>
@@ -636,11 +654,11 @@
           <p class="label">My offers</p>
           ${rewardsEndpoint
             ? `<p>1 point per dollar on every order. Hit ${CFG.loyalty?.threshold || 100} points and a ${CFG.loyalty?.percent || 15}% off code lands here automatically.</p>
-               ${user ? "" : `<form class="loyalty__form notify__form">
+               ${email ? "" : `<form class="loyalty__form notify__form">
                  <input type="email" required placeholder="Email address" aria-label="Email address">
                  <button type="submit">Check</button>
                </form>`}
-               <p class="loyalty__result notify__msg" aria-live="polite">${user ? "Checking…" : ""}</p>`
+               <p class="loyalty__result notify__msg" aria-live="polite">${email ? "Checking…" : ""}</p>`
             : `<p>Points open once Drop 001 is on sale: 1 point per dollar, with a reward code every ${CFG.loyalty?.threshold || 100} points.</p>`}
         </div>
       </div>`;
@@ -649,9 +667,9 @@
       bindNotify(box);
       box.addEventListener("submit", () => setTimeout(function wait() { if (readWelcome()) renderAccount(); else if (box.isConnected) setTimeout(wait, 400); }, 400));
     }
-    if (user) loadAccountRewards(root, user.email);
+    if (email) loadAccountRewards(root, email);
     else bindLoyalty(root.querySelector("#account-loyalty"));
-    if (user) loadOrders(root.querySelector("#account-orders"));
+    if (email) loadOrders(root.querySelector("#account-orders"));
     bindSignIn(root);
     root.addEventListener("click", e => {
       const c = e.target.closest("[data-copy]");
@@ -660,20 +678,18 @@
     });
   }
 
-  // Magic-link sign-in (Supabase): no password, just a one-time email link. Safe to call on any page -
-  // it no-ops unless #account-signin is actually on the page.
+  // Magic-link sign-in: no password, just a one-time email link, entirely our own (worker + Brevo).
   // Real order history, in-page, for a signed-in shopper - no redirect to Stripe's portal needed
   // for the common case of just checking what you ordered.
   async function loadOrders(card) {
     const out = card?.querySelector(".orders__list");
-    if (!out || !ordersEndpoint || !sb) return;
+    const session = getSession();
+    if (!out || !ordersEndpoint || !session) return;
     try {
-      const { data: { session } } = await sb.auth.getSession();
-      if (!session) { out.textContent = "Sign in to see your orders."; return; }
       const res = await fetch(ordersEndpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ accessToken: session.access_token })
+        body: JSON.stringify({ sessionToken: session.sessionToken })
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(data.error || "Something went wrong. Please try again.");
@@ -696,7 +712,21 @@
     const box = root.querySelector("#account-signin");
     if (!box) return;
     const signOut = box.querySelector("[data-signout]");
-    if (signOut) { signOut.addEventListener("click", async () => { await sb.auth.signOut(); renderAccount(); }); return; }
+    if (signOut) {
+      signOut.addEventListener("click", async () => {
+        const session = getSession();
+        setSession(null);
+        renderAccount();
+        if (session && authSignOutEndpoint) {
+          fetch(authSignOutEndpoint, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ sessionToken: session.sessionToken })
+          }).catch(() => {});
+        }
+      });
+      return;
+    }
     const form = box.querySelector(".account__signin-form");
     if (!form) return;
     form.addEventListener("submit", async e => {
@@ -704,9 +734,17 @@
       const msg = box.querySelector(".account__signin-msg");
       const email = form.querySelector("input").value;
       msg.textContent = "Sending…";
-      const { error } = await sb.auth.signInWithOtp({ email, options: { emailRedirectTo: location.href.split("#")[0] } });
-      msg.textContent = error ? error.message : `Check ${email} for a sign-in link.`;
-      if (!error) form.reset();
+      try {
+        const res = await fetch(authRequestEndpoint, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email })
+        });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok) throw new Error(data.error || "Something went wrong. Please try again.");
+        msg.textContent = `Check ${email} for a sign-in link.`;
+        form.reset();
+      } catch (err) { msg.textContent = err.message; }
     });
   }
 
@@ -1049,9 +1087,6 @@
     setAnnounce();
     await completeMagicLink();
     renderAccount();
-    // Completing a magic-link sign-in fires this after the redirect lands back here; re-render so the
-    // account page picks up the new session without needing a manual refresh.
-    if (sb) sb.auth.onAuthStateChange(() => renderAccount());
     bindContactForm();
     bindChat();
     maybePopup();
