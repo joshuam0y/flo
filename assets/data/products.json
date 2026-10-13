@@ -424,7 +424,8 @@
           "assets/img/lifestyle/over-perfection-tee-3.jpg?v=3",
           "assets/img/lifestyle/over-perfection-tee-4.jpg?v=3"
         ]
-      }
+      },
+      "hidden": true
     },
     {
       "id": "summer-vibes-tee",
@@ -608,6 +609,522 @@
           "assets/img/lifestyle/summer-vibes-tee-4.jpg?v=3"
         ]
       }
+    },
+    {
+      "id": "california-malibu-tee",
+      "name": "California Malibu Tee",
+      "type": "tee",
+      "category": "tees",
+      "price": 29,
+      "sizePrices": {
+        "2XL": 36,
+        "3XL": 36,
+        "4XL": 36,
+        "5XL": 36
+      },
+      "badge": "New",
+      "front": "classic",
+      "back": "none",
+      "lead": "back",
+      "fit": "Regular fit. Take your usual size.",
+      "description": "A vintage California Malibu palm across the back in warm sunset colours, with a small version of the same mark on the chest. Lightweight, breathable cotton made for beach days.",
+      "details": [
+        "Soft, lightweight cotton tee",
+        "Regular fit",
+        "Small Malibu palm mark on the chest",
+        "Large California Malibu graphic on the back",
+        "FLÒ printed at the neck"
+      ],
+      "photos": [
+        "assets/img/products/printify/california-malibu-tee-white-front.jpg",
+        "assets/img/products/printify/california-malibu-tee-white-back.jpg"
+      ],
+      "colors": [
+        {
+          "name": "White",
+          "hex": "#ffffff",
+          "photos": [
+            "assets/img/products/printify/california-malibu-tee-white-front.jpg",
+            "assets/img/products/printify/california-malibu-tee-white-back.jpg"
+          ]
+        },
+        {
+          "name": "Pistachio",
+          "hex": "#D3D590",
+          "photos": [
+            "assets/img/products/printify/california-malibu-tee-pistachio-front.jpg",
+            "assets/img/products/printify/california-malibu-tee-pistachio-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL"
+          ]
+        },
+        {
+          "name": "Mint Green",
+          "hex": "#b1e0c0",
+          "photos": [
+            "assets/img/products/printify/california-malibu-tee-mint-green-front.jpg",
+            "assets/img/products/printify/california-malibu-tee-mint-green-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL"
+          ]
+        },
+        {
+          "name": "Sage",
+          "hex": "#a4b09e",
+          "photos": [
+            "assets/img/products/printify/california-malibu-tee-sage-front.jpg",
+            "assets/img/products/printify/california-malibu-tee-sage-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL"
+          ]
+        },
+        {
+          "name": "Carolina Blue",
+          "hex": "#7BA4DB",
+          "photos": [
+            "assets/img/products/printify/california-malibu-tee-carolina-blue-front.jpg",
+            "assets/img/products/printify/california-malibu-tee-carolina-blue-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL"
+          ]
+        },
+        {
+          "name": "Light Pink",
+          "hex": "#FEE0EB",
+          "photos": [
+            "assets/img/products/printify/california-malibu-tee-light-pink-front.jpg",
+            "assets/img/products/printify/california-malibu-tee-light-pink-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL"
+          ]
+        },
+        {
+          "name": "Light Blue",
+          "hex": "#d6e6f7",
+          "photos": [
+            "assets/img/products/printify/california-malibu-tee-light-blue-front.jpg",
+            "assets/img/products/printify/california-malibu-tee-light-blue-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL",
+            "4XL"
+          ]
+        },
+        {
+          "name": "Heather Irish Green",
+          "hex": "#6DEDA5",
+          "photos": [
+            "assets/img/products/printify/california-malibu-tee-heather-irish-green-front.jpg",
+            "assets/img/products/printify/california-malibu-tee-heather-irish-green-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL",
+            "4XL"
+          ]
+        },
+        {
+          "name": "Heather Indigo",
+          "hex": "#6a798e",
+          "photos": [
+            "assets/img/products/printify/california-malibu-tee-heather-indigo-front.jpg",
+            "assets/img/products/printify/california-malibu-tee-heather-indigo-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL",
+            "4XL"
+          ]
+        },
+        {
+          "name": "Heather Military Green",
+          "hex": "#828067",
+          "photos": [
+            "assets/img/products/printify/california-malibu-tee-heather-military-green-front.jpg",
+            "assets/img/products/printify/california-malibu-tee-heather-military-green-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL",
+            "4XL"
+          ]
+        },
+        {
+          "name": "Sand",
+          "hex": "#DCD2BE",
+          "photos": [
+            "assets/img/products/printify/california-malibu-tee-sand-front.jpg",
+            "assets/img/products/printify/california-malibu-tee-sand-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL"
+          ]
+        },
+        {
+          "name": "Military Green",
+          "hex": "#62664C",
+          "photos": [
+            "assets/img/products/printify/california-malibu-tee-military-green-front.jpg",
+            "assets/img/products/printify/california-malibu-tee-military-green-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL",
+            "4XL"
+          ]
+        },
+        {
+          "name": "Dark Chocolate",
+          "hex": "#31221D",
+          "photos": [
+            "assets/img/products/printify/california-malibu-tee-dark-chocolate-front.jpg",
+            "assets/img/products/printify/california-malibu-tee-dark-chocolate-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL",
+            "4XL"
+          ]
+        },
+        {
+          "name": "Natural",
+          "hex": "#FFF6E3",
+          "photos": [
+            "assets/img/products/printify/california-malibu-tee-natural-front.jpg",
+            "assets/img/products/printify/california-malibu-tee-natural-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL",
+            "4XL"
+          ]
+        }
+      ],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "2XL",
+        "3XL",
+        "4XL",
+        "5XL"
+      ],
+      "whiteBg": true,
+      "printify": "6acd98f487c401878d0fd4d8"
+    },
+    {
+      "id": "georgia-oranges-tee",
+      "name": "Georgia Oranges Tee",
+      "type": "tee",
+      "category": "tees",
+      "price": 29,
+      "sizePrices": {
+        "2XL": 36,
+        "3XL": 36,
+        "4XL": 36,
+        "5XL": 36
+      },
+      "badge": "New",
+      "front": "classic",
+      "back": "none",
+      "lead": "back",
+      "fit": "Regular fit. Take your usual size.",
+      "description": "A cluster of ripe Georgia oranges and leaves across the back, with the FLÒ mark on the chest. Lightweight, breathable cotton for warm Southern days.",
+      "details": [
+        "Soft, lightweight cotton tee",
+        "Regular fit",
+        "FLÒ mark on the chest",
+        "Georgia oranges graphic on the back"
+      ],
+      "photos": [
+        "assets/img/products/printify/georgia-oranges-tee-white-front.jpg",
+        "assets/img/products/printify/georgia-oranges-tee-white-back.jpg"
+      ],
+      "colors": [
+        {
+          "name": "White",
+          "hex": "#ffffff",
+          "photos": [
+            "assets/img/products/printify/georgia-oranges-tee-white-front.jpg",
+            "assets/img/products/printify/georgia-oranges-tee-white-back.jpg"
+          ]
+        },
+        {
+          "name": "Black",
+          "hex": "#000000",
+          "photos": [
+            "assets/img/products/printify/georgia-oranges-tee-black-front.jpg",
+            "assets/img/products/printify/georgia-oranges-tee-black-back.jpg"
+          ]
+        },
+        {
+          "name": "Heather Navy",
+          "hex": "#424753",
+          "photos": [
+            "assets/img/products/printify/georgia-oranges-tee-heather-navy-front.jpg",
+            "assets/img/products/printify/georgia-oranges-tee-heather-navy-back.jpg"
+          ]
+        },
+        {
+          "name": "Pistachio",
+          "hex": "#D3D590",
+          "photos": [
+            "assets/img/products/printify/georgia-oranges-tee-pistachio-front.jpg",
+            "assets/img/products/printify/georgia-oranges-tee-pistachio-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL"
+          ]
+        },
+        {
+          "name": "Mint Green",
+          "hex": "#b1e0c0",
+          "photos": [
+            "assets/img/products/printify/georgia-oranges-tee-mint-green-front.jpg",
+            "assets/img/products/printify/georgia-oranges-tee-mint-green-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL"
+          ]
+        },
+        {
+          "name": "Kelly Green",
+          "hex": "#009660",
+          "photos": [
+            "assets/img/products/printify/georgia-oranges-tee-kelly-green-front.jpg",
+            "assets/img/products/printify/georgia-oranges-tee-kelly-green-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL"
+          ]
+        },
+        {
+          "name": "Tropical Blue",
+          "hex": "#0097A9",
+          "photos": [
+            "assets/img/products/printify/georgia-oranges-tee-tropical-blue-front.jpg",
+            "assets/img/products/printify/georgia-oranges-tee-tropical-blue-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL"
+          ]
+        },
+        {
+          "name": "Cornsilk",
+          "hex": "#F7EF8F",
+          "photos": [
+            "assets/img/products/printify/georgia-oranges-tee-cornsilk-front.jpg",
+            "assets/img/products/printify/georgia-oranges-tee-cornsilk-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL"
+          ]
+        },
+        {
+          "name": "Ice Grey",
+          "hex": "#D7D6D3",
+          "photos": [
+            "assets/img/products/printify/georgia-oranges-tee-ice-grey-front.jpg",
+            "assets/img/products/printify/georgia-oranges-tee-ice-grey-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL"
+          ]
+        },
+        {
+          "name": "Heather Indigo",
+          "hex": "#6a798e",
+          "photos": [
+            "assets/img/products/printify/georgia-oranges-tee-heather-indigo-front.jpg",
+            "assets/img/products/printify/georgia-oranges-tee-heather-indigo-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL",
+            "4XL"
+          ]
+        },
+        {
+          "name": "Heather Military Green",
+          "hex": "#828067",
+          "photos": [
+            "assets/img/products/printify/georgia-oranges-tee-heather-military-green-front.jpg",
+            "assets/img/products/printify/georgia-oranges-tee-heather-military-green-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL",
+            "4XL"
+          ]
+        },
+        {
+          "name": "Sand",
+          "hex": "#DCD2BE",
+          "photos": [
+            "assets/img/products/printify/georgia-oranges-tee-sand-front.jpg",
+            "assets/img/products/printify/georgia-oranges-tee-sand-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL"
+          ]
+        },
+        {
+          "name": "Dark Chocolate",
+          "hex": "#31221D",
+          "photos": [
+            "assets/img/products/printify/georgia-oranges-tee-dark-chocolate-front.jpg",
+            "assets/img/products/printify/georgia-oranges-tee-dark-chocolate-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL",
+            "4XL"
+          ]
+        },
+        {
+          "name": "Natural",
+          "hex": "#FFF6E3",
+          "photos": [
+            "assets/img/products/printify/georgia-oranges-tee-natural-front.jpg",
+            "assets/img/products/printify/georgia-oranges-tee-natural-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL",
+            "4XL"
+          ]
+        }
+      ],
+      "sizes": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "2XL",
+        "3XL",
+        "4XL",
+        "5XL"
+      ],
+      "whiteBg": true,
+      "printify": "6acd908687c401878d0fcd35"
     },
     {
       "id": "apparel-crew",
@@ -1686,565 +2203,6 @@
       "photos": [],
       "flag": "AI-made artwork on a drawn shirt; needs your cousin's own design or a real mockup before it can sell",
       "hidden": true
-    },
-    {
-      "id": "california-malibu-tee",
-      "name": "California Malibu Tee",
-      "type": "tee",
-      "category": "tees",
-      "price": 29,
-      "badge": "Drop 001",
-      "sizes": [
-        "XS",
-        "S",
-        "M",
-        "L",
-        "XL",
-        "2XL",
-        "3XL",
-        "4XL",
-        "5XL"
-      ],
-      "front": "classic",
-      "back": "none",
-      "lead": "back",
-      "description": "Two palms and warm coastal color across the back, the FLÒ mark at the chest. Made for salt air and late afternoon light.",
-      "details": [
-        "Soft-washed cotton tee",
-        "Regular fit",
-        "California Malibu graphic on the back",
-        "FLÒ wordmark on the left chest"
-      ],
-      "photos": [
-        "assets/img/products/printify/california-malibu-tee-carolina-blue-front.jpg",
-        "assets/img/products/printify/california-malibu-tee-carolina-blue-back.jpg"
-      ],
-      "fit": "Regular fit. Take your usual size.",
-      "whiteBg": true,
-      "printify": "6acd98f487c401878d0fd4d8",
-      "sizePrices": {
-        "2XL": 36,
-        "3XL": 36,
-        "4XL": 36,
-        "5XL": 36
-      },
-      "colors": [
-        {
-          "name": "Carolina Blue",
-          "hex": "#7BA4DB",
-          "photos": [
-            "assets/img/products/printify/california-malibu-tee-carolina-blue-front.jpg",
-            "assets/img/products/printify/california-malibu-tee-carolina-blue-back.jpg"
-          ],
-          "sizes": [
-            "S",
-            "M",
-            "L",
-            "XL",
-            "2XL",
-            "3XL"
-          ]
-        },
-        {
-          "name": "Dark Chocolate",
-          "hex": "#31221D",
-          "photos": [
-            "assets/img/products/printify/california-malibu-tee-dark-chocolate-front.jpg",
-            "assets/img/products/printify/california-malibu-tee-dark-chocolate-back.jpg"
-          ],
-          "sizes": [
-            "S",
-            "M",
-            "L",
-            "XL",
-            "2XL",
-            "3XL",
-            "4XL"
-          ]
-        },
-        {
-          "name": "Heather Indigo",
-          "hex": "#6a798e",
-          "photos": [
-            "assets/img/products/printify/california-malibu-tee-heather-indigo-front.jpg",
-            "assets/img/products/printify/california-malibu-tee-heather-indigo-back.jpg"
-          ],
-          "sizes": [
-            "S",
-            "M",
-            "L",
-            "XL",
-            "2XL",
-            "3XL",
-            "4XL"
-          ]
-        },
-        {
-          "name": "Heather Irish Green",
-          "hex": "#5e8c61",
-          "photos": [
-            "assets/img/products/printify/california-malibu-tee-heather-irish-green-front.jpg",
-            "assets/img/products/printify/california-malibu-tee-heather-irish-green-back.jpg"
-          ],
-          "sizes": [
-            "S",
-            "M",
-            "L",
-            "XL",
-            "2XL",
-            "3XL",
-            "4XL"
-          ]
-        },
-        {
-          "name": "Heather Military Green",
-          "hex": "#6b6f54",
-          "photos": [
-            "assets/img/products/printify/california-malibu-tee-heather-military-green-front.jpg",
-            "assets/img/products/printify/california-malibu-tee-heather-military-green-back.jpg"
-          ],
-          "sizes": [
-            "S",
-            "M",
-            "L",
-            "XL",
-            "2XL",
-            "3XL",
-            "4XL"
-          ]
-        },
-        {
-          "name": "Light Blue",
-          "hex": "#d6e6f7",
-          "photos": [
-            "assets/img/products/printify/california-malibu-tee-light-blue-front.jpg",
-            "assets/img/products/printify/california-malibu-tee-light-blue-back.jpg"
-          ],
-          "sizes": [
-            "S",
-            "M",
-            "L",
-            "XL",
-            "2XL",
-            "3XL",
-            "4XL"
-          ]
-        },
-        {
-          "name": "Light Pink",
-          "hex": "#FEE0EB",
-          "photos": [
-            "assets/img/products/printify/california-malibu-tee-light-pink-front.jpg",
-            "assets/img/products/printify/california-malibu-tee-light-pink-back.jpg"
-          ],
-          "sizes": [
-            "S",
-            "M",
-            "L",
-            "XL",
-            "2XL",
-            "3XL"
-          ]
-        },
-        {
-          "name": "Military Green",
-          "hex": "#62664C",
-          "photos": [
-            "assets/img/products/printify/california-malibu-tee-military-green-front.jpg",
-            "assets/img/products/printify/california-malibu-tee-military-green-back.jpg"
-          ],
-          "sizes": [
-            "S",
-            "M",
-            "L",
-            "XL",
-            "2XL",
-            "3XL",
-            "4XL"
-          ]
-        },
-        {
-          "name": "Mint Green",
-          "hex": "#b1e0c0",
-          "photos": [
-            "assets/img/products/printify/california-malibu-tee-mint-green-front.jpg",
-            "assets/img/products/printify/california-malibu-tee-mint-green-back.jpg"
-          ],
-          "sizes": [
-            "S",
-            "M",
-            "L",
-            "XL",
-            "2XL",
-            "3XL"
-          ]
-        },
-        {
-          "name": "Natural",
-          "hex": "#FFF6E3",
-          "photos": [
-            "assets/img/products/printify/california-malibu-tee-natural-front.jpg",
-            "assets/img/products/printify/california-malibu-tee-natural-back.jpg"
-          ],
-          "sizes": [
-            "S",
-            "M",
-            "L",
-            "XL",
-            "2XL",
-            "3XL",
-            "4XL"
-          ]
-        },
-        {
-          "name": "Pistachio",
-          "hex": "#D3D590",
-          "photos": [
-            "assets/img/products/printify/california-malibu-tee-pistachio-front.jpg",
-            "assets/img/products/printify/california-malibu-tee-pistachio-back.jpg"
-          ],
-          "sizes": [
-            "S",
-            "M",
-            "L",
-            "XL",
-            "2XL",
-            "3XL"
-          ]
-        },
-        {
-          "name": "Sage",
-          "hex": "#a9ae98",
-          "photos": [
-            "assets/img/products/printify/california-malibu-tee-sage-front.jpg",
-            "assets/img/products/printify/california-malibu-tee-sage-back.jpg"
-          ],
-          "sizes": [
-            "S",
-            "M",
-            "L",
-            "XL",
-            "2XL",
-            "3XL"
-          ]
-        },
-        {
-          "name": "Sand",
-          "hex": "#DCD2BE",
-          "photos": [
-            "assets/img/products/printify/california-malibu-tee-sand-front.jpg",
-            "assets/img/products/printify/california-malibu-tee-sand-back.jpg"
-          ],
-          "sizes": [
-            "S",
-            "M",
-            "L",
-            "XL",
-            "2XL",
-            "3XL"
-          ]
-        },
-        {
-          "name": "White",
-          "hex": "#ffffff",
-          "photos": [
-            "assets/img/products/printify/california-malibu-tee-white-front.jpg",
-            "assets/img/products/printify/california-malibu-tee-white-back.jpg"
-          ],
-          "sizes": [
-            "XS",
-            "S",
-            "M",
-            "L",
-            "XL",
-            "2XL",
-            "3XL",
-            "4XL",
-            "5XL"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "georgia-oranges-tee",
-      "name": "Georgia Oranges Tee",
-      "type": "tee",
-      "category": "tees",
-      "price": 29,
-      "badge": "Drop 001",
-      "sizes": [
-        "XS",
-        "S",
-        "M",
-        "L",
-        "XL",
-        "2XL",
-        "3XL",
-        "4XL",
-        "5XL"
-      ],
-      "front": "classic",
-      "back": "none",
-      "lead": "back",
-      "description": "A hand-drawn orange cluster across the back, the FLÒ mark at the chest. Soft, Southern, made to order.",
-      "details": [
-        "Soft-washed cotton tee",
-        "Regular fit",
-        "Georgia Oranges graphic on the back",
-        "FLÒ wordmark on the left chest"
-      ],
-      "photos": [
-        "assets/img/products/printify/georgia-oranges-tee-black-front.jpg",
-        "assets/img/products/printify/georgia-oranges-tee-black-back.jpg"
-      ],
-      "fit": "Regular fit. Take your usual size.",
-      "whiteBg": true,
-      "printify": "6acd908687c401878d0fcd35",
-      "sizePrices": {
-        "2XL": 36,
-        "3XL": 36,
-        "4XL": 36,
-        "5XL": 36
-      },
-      "colors": [
-        {
-          "name": "Black",
-          "hex": "#000000",
-          "photos": [
-            "assets/img/products/printify/georgia-oranges-tee-black-front.jpg",
-            "assets/img/products/printify/georgia-oranges-tee-black-back.jpg"
-          ],
-          "sizes": [
-            "XS",
-            "S",
-            "M",
-            "L",
-            "XL",
-            "2XL",
-            "3XL",
-            "4XL",
-            "5XL"
-          ]
-        },
-        {
-          "name": "Cornsilk",
-          "hex": "#FFF8DC",
-          "photos": [
-            "assets/img/products/printify/georgia-oranges-tee-cornsilk-front.jpg",
-            "assets/img/products/printify/georgia-oranges-tee-cornsilk-back.jpg"
-          ],
-          "sizes": [
-            "S",
-            "M",
-            "L",
-            "XL",
-            "2XL",
-            "3XL"
-          ]
-        },
-        {
-          "name": "Dark Chocolate",
-          "hex": "#31221D",
-          "photos": [
-            "assets/img/products/printify/georgia-oranges-tee-dark-chocolate-front.jpg",
-            "assets/img/products/printify/georgia-oranges-tee-dark-chocolate-back.jpg"
-          ],
-          "sizes": [
-            "S",
-            "M",
-            "L",
-            "XL",
-            "2XL",
-            "3XL",
-            "4XL"
-          ]
-        },
-        {
-          "name": "Heather Indigo",
-          "hex": "#6a798e",
-          "photos": [
-            "assets/img/products/printify/georgia-oranges-tee-heather-indigo-front.jpg",
-            "assets/img/products/printify/georgia-oranges-tee-heather-indigo-back.jpg"
-          ],
-          "sizes": [
-            "S",
-            "M",
-            "L",
-            "XL",
-            "2XL",
-            "3XL",
-            "4XL"
-          ]
-        },
-        {
-          "name": "Heather Military Green",
-          "hex": "#6b6f54",
-          "photos": [
-            "assets/img/products/printify/georgia-oranges-tee-heather-military-green-front.jpg",
-            "assets/img/products/printify/georgia-oranges-tee-heather-military-green-back.jpg"
-          ],
-          "sizes": [
-            "S",
-            "M",
-            "L",
-            "XL",
-            "2XL",
-            "3XL",
-            "4XL"
-          ]
-        },
-        {
-          "name": "Heather Navy",
-          "hex": "#424753",
-          "photos": [
-            "assets/img/products/printify/georgia-oranges-tee-heather-navy-front.jpg",
-            "assets/img/products/printify/georgia-oranges-tee-heather-navy-back.jpg"
-          ],
-          "sizes": [
-            "XS",
-            "S",
-            "M",
-            "L",
-            "XL",
-            "2XL",
-            "3XL",
-            "4XL",
-            "5XL"
-          ]
-        },
-        {
-          "name": "Ice Grey",
-          "hex": "#D7D6D3",
-          "photos": [
-            "assets/img/products/printify/georgia-oranges-tee-ice-grey-front.jpg",
-            "assets/img/products/printify/georgia-oranges-tee-ice-grey-back.jpg"
-          ],
-          "sizes": [
-            "S",
-            "M",
-            "L",
-            "XL",
-            "2XL",
-            "3XL"
-          ]
-        },
-        {
-          "name": "Kelly Green",
-          "hex": "#4CBB17",
-          "photos": [
-            "assets/img/products/printify/georgia-oranges-tee-kelly-green-front.jpg",
-            "assets/img/products/printify/georgia-oranges-tee-kelly-green-back.jpg"
-          ],
-          "sizes": [
-            "S",
-            "M",
-            "L",
-            "XL",
-            "2XL",
-            "3XL"
-          ]
-        },
-        {
-          "name": "Mint Green",
-          "hex": "#b1e0c0",
-          "photos": [
-            "assets/img/products/printify/georgia-oranges-tee-mint-green-front.jpg",
-            "assets/img/products/printify/georgia-oranges-tee-mint-green-back.jpg"
-          ],
-          "sizes": [
-            "S",
-            "M",
-            "L",
-            "XL",
-            "2XL",
-            "3XL"
-          ]
-        },
-        {
-          "name": "Natural",
-          "hex": "#FFF6E3",
-          "photos": [
-            "assets/img/products/printify/georgia-oranges-tee-natural-front.jpg",
-            "assets/img/products/printify/georgia-oranges-tee-natural-back.jpg"
-          ],
-          "sizes": [
-            "S",
-            "M",
-            "L",
-            "XL",
-            "2XL",
-            "3XL",
-            "4XL"
-          ]
-        },
-        {
-          "name": "Pistachio",
-          "hex": "#D3D590",
-          "photos": [
-            "assets/img/products/printify/georgia-oranges-tee-pistachio-front.jpg",
-            "assets/img/products/printify/georgia-oranges-tee-pistachio-back.jpg"
-          ],
-          "sizes": [
-            "S",
-            "M",
-            "L",
-            "XL",
-            "2XL",
-            "3XL"
-          ]
-        },
-        {
-          "name": "Sand",
-          "hex": "#DCD2BE",
-          "photos": [
-            "assets/img/products/printify/georgia-oranges-tee-sand-front.jpg",
-            "assets/img/products/printify/georgia-oranges-tee-sand-back.jpg"
-          ],
-          "sizes": [
-            "S",
-            "M",
-            "L",
-            "XL",
-            "2XL",
-            "3XL"
-          ]
-        },
-        {
-          "name": "Tropical Blue",
-          "hex": "#0097A9",
-          "photos": [
-            "assets/img/products/printify/georgia-oranges-tee-tropical-blue-front.jpg",
-            "assets/img/products/printify/georgia-oranges-tee-tropical-blue-back.jpg"
-          ],
-          "sizes": [
-            "S",
-            "M",
-            "L",
-            "XL",
-            "2XL",
-            "3XL"
-          ]
-        },
-        {
-          "name": "White",
-          "hex": "#ffffff",
-          "photos": [
-            "assets/img/products/printify/georgia-oranges-tee-white-front.jpg",
-            "assets/img/products/printify/georgia-oranges-tee-white-back.jpg"
-          ],
-          "sizes": [
-            "XS",
-            "S",
-            "M",
-            "L",
-            "XL",
-            "2XL",
-            "3XL",
-            "4XL",
-            "5XL"
-          ]
-        }
-      ]
     }
   ]
 }
