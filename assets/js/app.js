@@ -643,7 +643,11 @@
         </div>
         <div class="account__card">
           <p class="label">Promo codes</p>
-          <p>Codes go in on the payment page, one per order.${CFG.launch?.code && !prelaunch ? ` Right now: <b>${esc(CFG.launch.code)}</b> for ${esc(CFG.launch.offer)}.` : ""}</p>
+          <p>Codes go in on the payment page, one per order.</p>
+          ${CFG.launch?.code && !prelaunch
+            ? `<p class="account__code"><b>${esc(CFG.launch.code)}</b> <button class="label link-u" data-copy="${esc(CFG.launch.code)}">Copy</button></p>
+               <p class="account__fine">${esc(CFG.launch.offer)}.</p>`
+            : ""}
         </div>
         <div class="account__card" id="account-loyalty">
           <p class="label">My offers</p>
