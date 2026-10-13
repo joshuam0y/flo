@@ -416,9 +416,13 @@
   const isHome = () => !!$("#bestsellers");
   function maybePopup() {
     const page = document.body.dataset.page;
-    if (page === "checkout" || page === "success" || $("#account") || readWelcome()) return;
-    // config popup: "home" = full pop-up every home load (testing); "corner" = a small, non-blocking
-    // bottom-corner card instead of a takeover; anything else = the full pop-up once, then not for 14 days
+    if (page === "checkout" || page === "success" || $("#account")) return;
+    // config popup: "always" = the full-screen pop-up on every page load, every visitor, even
+    // someone already on the list; "home" = full pop-up every home load (testing); "corner" = a
+    // small, non-blocking bottom-corner card instead of a takeover; anything else = the full
+    // pop-up once, then not for 14 days
+    if (CFG.popup === "always") { setTimeout(openPopup, 1000); return; }
+    if (readWelcome()) return;
     if (CFG.popup === "home") { if (isHome()) setTimeout(openPopup, 1200); return; }
     let last = 0;
     try { last = +localStorage.getItem(POPUP_KEY) || 0; } catch { /* private mode: show it */ }

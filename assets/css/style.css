@@ -750,12 +750,12 @@ input { font: inherit; }
 /* ---------- Sign-up pop-up ---------- */
 .popup { position: fixed; inset: 0; z-index: 95; display: grid; place-items: center; padding: 16px; background: rgba(18, 17, 16, .5); opacity: 0; transition: opacity .3s ease; }
 .popup.is-open { opacity: 1; }
-.popup__card { position: relative; width: min(860px, 100%); max-height: calc(100svh - 32px); overflow: auto; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); background: var(--paper); color: var(--ink); transform: translateY(12px); transition: transform .35s cubic-bezier(.2, .7, .1, 1); }
+.popup__card { position: relative; width: calc(100vw - 32px); height: calc(100svh - 32px); max-width: none; overflow: auto; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); background: var(--paper); color: var(--ink); transform: translateY(12px); transition: transform .35s cubic-bezier(.2, .7, .1, 1); }
 .popup.is-open .popup__card { transform: none; }
 .popup__img { background: var(--paper-2); display: grid; place-items: center; min-height: 100%; }
 .popup__img img { width: 100%; height: 100%; object-fit: contain; mix-blend-mode: multiply; padding: 8%; }
-.popup__body { padding: 52px 40px 36px; display: grid; gap: 16px; align-content: center; }
-.popup__title { font-size: clamp(36px, 4.6vw, 54px); line-height: 1; }
+.popup__body { padding: 52px 56px; display: grid; gap: 20px; align-content: center; }
+.popup__title { font-size: clamp(44px, 6vw, 84px); line-height: 1; }
 .popup__title em { font-style: italic; }
 .popup__lead { margin: 0; color: var(--ink-2); }
 .popup__form { display: grid; gap: 10px; }
@@ -768,7 +768,7 @@ input { font: inherit; }
 .popup__close { position: absolute; top: 14px; right: 16px; z-index: 1; padding: 6px; }
 @media (max-width: 700px) {
   .popup { align-items: end; padding: 0; }
-  .popup__card { grid-template-columns: 1fr; max-height: 92svh; }
+  .popup__card { width: 100vw; grid-template-columns: 1fr; max-height: 92svh; }
   .popup__img { max-height: 32svh; }
   .popup__img img { max-height: 32svh; padding: 4%; }
   .popup__body { padding: 28px var(--gutter) 28px; }
