@@ -566,6 +566,23 @@
     } else box.querySelector(".popup__close").focus({ preventScroll: true });
   }
 
+  // Finishes a magic-link sign-in using the emailed token_hash instead of Supabase's default
+  // confirmation link. The default link ties the session to a code_verifier saved in whichever
+  // browser requested it, so clicking the email from a different browser or app (very common)
+  // fails. token_hash + verifyOtp has no such tie, so it works no matter where the link is opened.
+  async function completeMagicLink() {
+    if (!sb) return;
+    const params = new URLSearchParams(location.search);
+    const token_hash = params.get("token_hash");
+    const type = params.get("type");
+    if (!token_hash || !type) return;
+    await sb.auth.verifyOtp({ token_hash, type });
+    params.delete("token_hash");
+    params.delete("type");
+    const query = params.toString();
+    history.replaceState(null, "", location.pathname + (query ? `?${query}` : "") + location.hash);
+  }
+
   // Account page: orders (Stripe's customer portal), the welcome code and how promo codes work
   async function renderAccount() {
     const root = $("#account");
@@ -1030,6 +1047,7 @@
       return;
     }
     setAnnounce();
+    await completeMagicLink();
     renderAccount();
     // Completing a magic-link sign-in fires this after the redirect lands back here; re-render so the
     // account page picks up the new session without needing a manual refresh.
