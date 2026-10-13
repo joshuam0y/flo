@@ -464,7 +464,7 @@
   function bindChat() {
     if (!chatEndpoint || document.body.dataset.page === "checkout") return;
     document.body.insertAdjacentHTML("beforeend", `
-      <button class="chat-launcher" type="button" aria-haspopup="dialog" aria-expanded="false">Ask us</button>
+      <button class="chat-launcher" type="button" aria-haspopup="dialog" aria-expanded="false" aria-label="Chat with us"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v8A2.5 2.5 0 0 1 17.5 16H9l-4.5 4V5.5Z"/></svg></button>
       <div class="chat-panel" role="dialog" aria-label="Chat with flò">
         <div class="chat-panel__head">
           <p class="label">Ask flò</p>

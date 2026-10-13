@@ -710,7 +710,12 @@ input { font: inherit; }
 .account__title { font-size: clamp(48px, 8vw, 96px); }
 .account__title em { font-style: italic; }
 .account__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 4px; }
-@media (max-width: 760px) { .account__grid { grid-template-columns: 1fr; } }
+@media (max-width: 760px) {
+  .account__grid { grid-template-columns: 1fr; }
+  /* The fixed chat button sits in the same corner as this first card on short phone screens,
+     covering its text with no scrolling needed - inset just this card to clear it. */
+  .account__grid .account__card:first-child { padding-left: 84px; }
+}
 .account__card { background: #fff; border: 1px solid var(--line); padding: 28px; display: grid; gap: 14px; align-content: start; }
 .account__card p { margin: 0; color: var(--ink-2); }
 .account__card .label { color: var(--ink); }
@@ -791,10 +796,9 @@ input { font: inherit; }
 
 /* ---------- AI chat widget ---------- */
 .chat-launcher {
-  position: fixed; left: 20px; bottom: 20px; z-index: 90; height: 48px; padding: 0 18px;
-  background: var(--ink); color: var(--paper); border-radius: 999px; font-size: 12px; font-weight: 500;
-  letter-spacing: .1em; text-transform: uppercase; display: flex; align-items: center; gap: 8px;
-  box-shadow: 0 10px 30px rgba(18, 17, 16, .22);
+  position: fixed; left: 20px; bottom: 20px; z-index: 90; width: 52px; height: 52px; padding: 0;
+  background: var(--ink); color: var(--paper); border-radius: 50%; display: flex; align-items: center;
+  justify-content: center; box-shadow: 0 10px 30px rgba(18, 17, 16, .22);
 }
 .chat-launcher:hover { background: var(--oxblood); }
 .chat-panel {
