@@ -598,10 +598,12 @@
     const root = $("#account");
     if (!root) return;
     const pct = offer();
-    // Sign-in stays off entirely until config.js's signIn.enabled is turned on. Deliberately not
-    // using the locally-saved welcome code here: once sign-in is on, this page only ever shows
-    // personal info (orders, codes, points) after a real sign-in, never just from this browser's
-    // storage - that's what makes "signed in" vs "signed out" an actual, meaningful distinction.
+    // Only used to adjust wording below (already on the list or not) - never to show the actual
+    // code. Sign-in stays off entirely until config.js's signIn.enabled is turned on. Deliberately
+    // not using the locally-saved welcome code to reveal anything here: once sign-in is on, this
+    // page only ever shows personal info (orders, codes, points) after a real sign-in, never just
+    // from this browser's storage - that's what makes "signed in" vs "signed out" meaningful.
+    const onList = !!readWelcome();
     const session = authEnabled ? getSession() : null;
     const email = session?.email || null;
     root.innerHTML = `
@@ -636,7 +638,7 @@
           ${email
             ? `<p class="rewards__body">Loading…</p>`
             : authEnabled
-            ? `<p>Sign in above to see your welcome code.</p>${pct ? `<p class="account__fine">Not on the list yet? <a class="link-u" href="index.html#signup">Join for ${pct}% off your first order</a>.</p>` : ""}`
+            ? `<p>Sign in above to see your welcome code.</p>${!onList && pct ? `<p class="account__fine">Not on the list yet? <a class="link-u" href="index.html#signup">Join for ${pct}% off your first order</a>.</p>` : ""}`
             : pct
             ? `<div class="notify">${notifyMarkup(`Join the list and get ${pct}% off your first order. Your code shows up here right away.`)}</div>`
             : `<p>Rewards open with Drop 001.</p><a class="btn btn--solid" href="${esc(CFG.tiktok || CFG.instagram || "#")}" target="_blank" rel="noopener">Follow for the drop date</a>`}
