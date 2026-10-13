@@ -432,12 +432,36 @@ friendly, and never invent prices, shipping times, or policies not listed here.
 - Sign-in on the account page is a one-time email link, no password needed.
 `.trim();
 
+// Live, real product knowledge for the chat, built fresh from the same published catalog
+// everyone sees - never typed by hand like FLO_FACTS, so it can't drift out of date or get
+// a product wrong. Hidden products are left out on purpose, same as they're hidden on the site.
+async function catalogSummary(env) {
+  try {
+    const catalog = await (await fetch(env.CATALOG_URL, { cf: { cacheTtl: 60 } })).json();
+    const lines = catalog.products
+      .filter(p => !p.hidden)
+      .map(p => {
+        const prices = p.sizePrices ? [p.price, ...Object.values(p.sizePrices)] : [p.price];
+        const lo = Math.min(...prices), hi = Math.max(...prices);
+        const price = lo === hi ? `$${lo}` : `$${lo}-$${hi}`;
+        const colors = (p.colors || []).map(c => c.name).join(", ") || "n/a";
+        return `- ${p.name} (${price}): ${p.description || ""} Colors: ${colors}.`;
+      });
+    if (!lines.length) return "";
+    return `\n\nCurrent catalog (only mention items on this list, never a product not listed here):\n${lines.join("\n")}`;
+  } catch {
+    return "";   // catalog fetch failed: chat still works fine with just the facts above
+  }
+}
+
 async function chat(request, env, cors) {
   const { message, history } = await request.json().catch(() => ({}));
   if (typeof message !== "string" || !message.trim() || message.length > 500) {
     return json({ error: "Please enter a message." }, 400, cors);
   }
   if (!env.GEMINI_API_KEY) return json({ error: "Chat isn't set up yet." }, 503, cors);
+
+  const facts = FLO_FACTS + await catalogSummary(env);
 
   // Keep only the last few turns, and only ever what this request's own caller sent - never
   // trust a client-supplied "history" to inject new instructions beyond plain chat turns.
@@ -454,7 +478,7 @@ async function chat(request, env, cors) {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        systemInstruction: { parts: [{ text: FLO_FACTS }] },
+        systemInstruction: { parts: [{ text: facts }] },
         contents: turns,
         generationConfig: { maxOutputTokens: 1024, temperature: 0.4 }
       }),
