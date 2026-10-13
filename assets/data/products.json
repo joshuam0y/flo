@@ -848,7 +848,7 @@
       "name": "Forward Crewneck",
       "type": "crew",
       "category": "crewnecks",
-      "price": 50,
+      "price": 37,
       "badge": "Drop 001",
       "colors": [
         {
@@ -982,6 +982,11 @@
           "assets/img/lifestyle/forward-crew-3.jpg?v=3",
           "assets/img/lifestyle/forward-crew-4.jpg?v=3"
         ]
+      },
+      "sizePrices": {
+        "2XL": 46,
+        "3XL": 46,
+        "4XL": 46
       }
     },
     {
@@ -1195,6 +1200,12 @@
           "assets/img/lifestyle/champs-longsleeve-1.jpg?v=3",
           "assets/img/lifestyle/champs-longsleeve-2.jpg?v=3"
         ]
+      },
+      "sizePrices": {
+        "2XL": 33,
+        "3XL": 33,
+        "4XL": 33,
+        "5XL": 33
       }
     },
     {
