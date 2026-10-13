@@ -28,9 +28,10 @@
   const authVerifyEndpoint = workerUrl ? `${workerUrl}/auth/verify` : "";
   const authSignOutEndpoint = workerUrl ? `${workerUrl}/auth/signout` : "";
   // Real sign-in (magic link, no password): our own, through the worker and Brevo - no third-party
-  // auth vendor, so nothing but flò ever shows up in the browser or the email. Off entirely during
-  // prelaunch, same as checkout staying off until mode is "live".
-  const authEnabled = !prelaunch && !!authRequestEndpoint;
+  // auth vendor, so nothing but flò ever shows up in the browser or the email. Gated by its own
+  // config flag, independent of prelaunch/checkout, so it can be tested live without also turning
+  // on Add to bag.
+  const authEnabled = !!CFG.signIn?.enabled && !!authRequestEndpoint;
   const SESSION_KEY = "flo-session";
   function getSession() {
     try { return JSON.parse(localStorage.getItem(SESSION_KEY)); } catch { return null; }
@@ -602,8 +603,7 @@
     const root = $("#account");
     if (!root) return;
     const w = readWelcome(), pct = offer();
-    // Sign-in stays off entirely during prelaunch - not ready for real visitors to create
-    // accounts yet, same as checkout staying off until mode is "live".
+    // Sign-in stays off entirely until config.js's signIn.enabled is turned on.
     const session = authEnabled ? getSession() : null;
     const email = session?.email || null;
     root.innerHTML = `

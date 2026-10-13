@@ -46,6 +46,9 @@ window.FLO_CONFIG = {
 
   // Real sign-in (magic link, no password). Our own, through workerUrl's /auth/request and
   // /auth/verify - no third-party auth vendor, so nothing but flò ever shows in the browser or email.
+  // Separate from "mode" above on purpose: flip this on to test the real thing (go to account.html,
+  // sign in with your own email, confirm the link works) without also turning on Add to bag.
+  signIn: { enabled: false },
 
   // Homepage and about-page photos (hero, editorial, about). Drop a file in assets/img and add it here,
   // e.g. hero: "assets/img/hero.jpg". Until then each slot shows an illustration.
