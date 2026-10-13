@@ -16,7 +16,7 @@ window.FLO_CONFIG = {
   // Where email sign-ups go. Leave empty to use workerUrl's /subscribe.
   // With neither workerUrl nor signupUrl set, the "notify me" spots point people to TikTok instead.
   signupUrl: "", // e.g. "https://flo-checkout.yourname.workers.dev/subscribe"
-  tiktok: "https://www.tiktok.com/@www.floshops.com",
+  tiktok: "https://www.tiktok.com/@flo_shops",
   instagram: "", // add the brand's Instagram here once it exists
 
   // Launch discount shown in the top banner while the store is live. Create the same
