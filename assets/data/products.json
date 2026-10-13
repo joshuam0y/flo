@@ -198,10 +198,10 @@
       "lifestyle": {
         "colour": "Black",
         "photos": [
-          "assets/img/lifestyle/palm-springs-tee-1.jpg?v=1",
-          "assets/img/lifestyle/palm-springs-tee-2.jpg?v=1",
-          "assets/img/lifestyle/palm-springs-tee-3.jpg?v=1",
-          "assets/img/lifestyle/palm-springs-tee-4.jpg?v=1"
+          "assets/img/lifestyle/palm-springs-tee-1.webp?v=1",
+          "assets/img/lifestyle/palm-springs-tee-2.webp?v=1",
+          "assets/img/lifestyle/palm-springs-tee-3.webp?v=1",
+          "assets/img/lifestyle/palm-springs-tee-4.webp?v=1"
         ]
       }
     },
@@ -414,15 +414,15 @@
       "lifestyle": {
         "colour": "Mint Green",
         "photos": [
-          "assets/img/lifestyle/over-perfection-tee-5.jpg?v=1",
-          "assets/img/lifestyle/over-perfection-tee-6.jpg?v=1",
-          "assets/img/lifestyle/over-perfection-tee-7.jpg?v=1",
-          "assets/img/lifestyle/over-perfection-tee-8.jpg?v=1",
-          "assets/img/lifestyle/over-perfection-tee-9.jpg?v=1",
-          "assets/img/lifestyle/over-perfection-tee-1.jpg?v=3",
-          "assets/img/lifestyle/over-perfection-tee-2.jpg?v=3",
-          "assets/img/lifestyle/over-perfection-tee-3.jpg?v=3",
-          "assets/img/lifestyle/over-perfection-tee-4.jpg?v=3"
+          "assets/img/lifestyle/over-perfection-tee-5.webp?v=1",
+          "assets/img/lifestyle/over-perfection-tee-6.webp?v=1",
+          "assets/img/lifestyle/over-perfection-tee-7.webp?v=1",
+          "assets/img/lifestyle/over-perfection-tee-8.webp?v=1",
+          "assets/img/lifestyle/over-perfection-tee-9.webp?v=1",
+          "assets/img/lifestyle/over-perfection-tee-1.webp?v=3",
+          "assets/img/lifestyle/over-perfection-tee-2.webp?v=3",
+          "assets/img/lifestyle/over-perfection-tee-3.webp?v=3",
+          "assets/img/lifestyle/over-perfection-tee-4.webp?v=3"
         ]
       },
       "hidden": true
@@ -603,10 +603,10 @@
       "lifestyle": {
         "colour": "White",
         "photos": [
-          "assets/img/lifestyle/summer-vibes-tee-1.jpg?v=3",
-          "assets/img/lifestyle/summer-vibes-tee-2.jpg?v=3",
-          "assets/img/lifestyle/summer-vibes-tee-3.jpg?v=3",
-          "assets/img/lifestyle/summer-vibes-tee-4.jpg?v=3"
+          "assets/img/lifestyle/summer-vibes-tee-1.webp?v=3",
+          "assets/img/lifestyle/summer-vibes-tee-2.webp?v=3",
+          "assets/img/lifestyle/summer-vibes-tee-3.webp?v=3",
+          "assets/img/lifestyle/summer-vibes-tee-4.webp?v=3"
         ]
       }
     },
@@ -1353,10 +1353,10 @@
       "lifestyle": {
         "colour": "Black",
         "photos": [
-          "assets/img/lifestyle/apparel-crew-1.jpg?v=3",
-          "assets/img/lifestyle/apparel-crew-2.jpg?v=3",
-          "assets/img/lifestyle/apparel-crew-3.jpg?v=3",
-          "assets/img/lifestyle/apparel-crew-4.jpg?v=3"
+          "assets/img/lifestyle/apparel-crew-1.webp?v=3",
+          "assets/img/lifestyle/apparel-crew-2.webp?v=3",
+          "assets/img/lifestyle/apparel-crew-3.webp?v=3",
+          "assets/img/lifestyle/apparel-crew-4.webp?v=3"
         ]
       }
     },
@@ -1494,10 +1494,10 @@
       "lifestyle": {
         "colour": "Sand",
         "photos": [
-          "assets/img/lifestyle/forward-crew-1.jpg?v=3",
-          "assets/img/lifestyle/forward-crew-2.jpg?v=3",
-          "assets/img/lifestyle/forward-crew-3.jpg?v=3",
-          "assets/img/lifestyle/forward-crew-4.jpg?v=3"
+          "assets/img/lifestyle/forward-crew-1.webp?v=3",
+          "assets/img/lifestyle/forward-crew-2.webp?v=3",
+          "assets/img/lifestyle/forward-crew-3.webp?v=3",
+          "assets/img/lifestyle/forward-crew-4.webp?v=3"
         ]
       },
       "sizePrices": {
@@ -1714,8 +1714,8 @@
       "lifestyle": {
         "colour": "White",
         "photos": [
-          "assets/img/lifestyle/champs-longsleeve-1.jpg?v=3",
-          "assets/img/lifestyle/champs-longsleeve-2.jpg?v=3"
+          "assets/img/lifestyle/champs-longsleeve-1.webp?v=3",
+          "assets/img/lifestyle/champs-longsleeve-2.webp?v=3"
         ]
       },
       "sizePrices": {
