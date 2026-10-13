@@ -117,11 +117,6 @@
     });
   }
 
-  // Signed-in visitors skip the email form entirely - their points load straight away.
-  async function loadLoyaltyFor(card, email) {
-    if (card) await fetchLoyalty(card, email);
-  }
-
   async function fetchLoyalty(card, email) {
     const out = card.querySelector(".loyalty__result");
     out.textContent = "Checking…";
@@ -602,8 +597,11 @@
   async function renderAccount() {
     const root = $("#account");
     if (!root) return;
-    const w = readWelcome(), pct = offer();
-    // Sign-in stays off entirely until config.js's signIn.enabled is turned on.
+    const pct = offer();
+    // Sign-in stays off entirely until config.js's signIn.enabled is turned on. Deliberately not
+    // using the locally-saved welcome code here: once sign-in is on, this page only ever shows
+    // personal info (orders, codes, points) after a real sign-in, never just from this browser's
+    // storage - that's what makes "signed in" vs "signed out" an actual, meaningful distinction.
     const session = authEnabled ? getSession() : null;
     const email = session?.email || null;
     root.innerHTML = `
@@ -620,7 +618,7 @@
                  <input type="email" required placeholder="Email address" aria-label="Email address">
                  <button type="submit">Send magic link</button>
                </form>
-               <p class="account__signin-msg account__fine" aria-live="polite">Sign in once and this page remembers you on any device, no password.</p>
+               <p class="account__signin-msg account__fine" aria-live="polite">Sign in to see your orders, welcome code and points below, no password.</p>
              </div>`
       ) : ""}
       <div class="account__grid">
@@ -628,20 +626,17 @@
           <p class="label">Your orders</p>
           ${email
             ? `<p class="orders__list">Loading your orders…</p>`
-            : CFG.ordersUrl
-            ? `<p>Sign in with the email you ordered with. Stripe, our payment provider, emails you a one-time code, then shows every order and receipt. No password needed.</p>
-               <a class="btn btn--solid" href="${esc(CFG.ordersUrl)}" target="_blank" rel="noopener">View my orders</a>`
+            : authEnabled
+            ? `<p>Sign in above to see your order history and receipts.</p>`
             : `<p>Your orders will show up here once Drop 001 is on sale. Every order also comes with an email receipt and tracking.</p>`}
-          ${email && CFG.ordersUrl ? `<p class="account__fine"><a class="link-u" href="${esc(CFG.ordersUrl)}" target="_blank" rel="noopener">Full receipts &amp; invoices</a></p>` : ""}
+          ${CFG.ordersUrl ? `<p class="account__fine"><a class="link-u" href="${esc(CFG.ordersUrl)}" target="_blank" rel="noopener">Or look up an order directly through Stripe</a></p>` : ""}
         </div>
         <div class="account__card" id="account-rewards">
           <p class="label">Rewards</p>
           ${email
             ? `<p class="rewards__body">Loading…</p>`
-            : w
-            ? `<p>Your ${w.percent}% off first-order code:</p>
-               <p class="account__code"><b>${esc(w.code)}</b> <button class="label link-u" data-copy="${esc(w.code)}">Copy</button></p>
-               <p class="account__fine">Enter it on the payment page. One use, first order only, until ${shortDate(w.expires)}.</p>`
+            : authEnabled
+            ? `<p>Sign in above to see your welcome code.</p>${pct ? `<p class="account__fine">Not on the list yet? <a class="link-u" href="index.html#signup">Join for ${pct}% off your first order</a>.</p>` : ""}`
             : pct
             ? `<div class="notify">${notifyMarkup(`Join the list and get ${pct}% off your first order. Your code shows up here right away.`)}</div>`
             : `<p>Rewards open with Drop 001.</p><a class="btn btn--solid" href="${esc(CFG.tiktok || CFG.instagram || "#")}" target="_blank" rel="noopener">Follow for the drop date</a>`}
@@ -652,24 +647,28 @@
         </div>
         <div class="account__card" id="account-loyalty">
           <p class="label">My offers</p>
-          ${rewardsEndpoint
+          ${email
+            ? `<p class="loyalty__result">Loading…</p>`
+            : authEnabled
+            ? `<p>Sign in above to see your points balance.</p>`
+            : rewardsEndpoint
             ? `<p>1 point per dollar on every order. Hit ${CFG.loyalty?.threshold || 100} points and a ${CFG.loyalty?.percent || 15}% off code lands here automatically.</p>
-               ${email ? "" : `<form class="loyalty__form notify__form">
+               <form class="loyalty__form notify__form">
                  <input type="email" required placeholder="Email address" aria-label="Email address">
                  <button type="submit">Check</button>
-               </form>`}
-               <p class="loyalty__result notify__msg" aria-live="polite">${email ? "Checking…" : ""}</p>`
+               </form>
+               <p class="loyalty__result notify__msg" aria-live="polite"></p>`
             : `<p>Points open once Drop 001 is on sale: 1 point per dollar, with a reward code every ${CFG.loyalty?.threshold || 100} points.</p>`}
         </div>
       </div>`;
     const box = root.querySelector("#account-rewards .notify");
-    if (box) {
-      bindNotify(box);
-      box.addEventListener("submit", () => setTimeout(function wait() { if (readWelcome()) renderAccount(); else if (box.isConnected) setTimeout(wait, 400); }, 400));
+    if (box) bindNotify(box);
+    if (email) {
+      loadAccountRewards(root, email);
+      loadOrders(root.querySelector("#account-orders"));
+    } else if (!authEnabled) {
+      bindLoyalty(root.querySelector("#account-loyalty"));
     }
-    if (email) loadAccountRewards(root, email);
-    else bindLoyalty(root.querySelector("#account-loyalty"));
-    if (email) loadOrders(root.querySelector("#account-orders"));
     bindSignIn(root);
     root.addEventListener("click", e => {
       const c = e.target.closest("[data-copy]");
