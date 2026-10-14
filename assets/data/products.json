@@ -17,24 +17,24 @@
           "name": "Black",
           "hex": "#000000",
           "photos": [
-            "assets/img/products/printify/palm-springs-tee-black-front.jpg",
-            "assets/img/products/printify/palm-springs-tee-black-back.jpg"
+            "assets/img/products/printify/palm-springs-tee-black-front.webp",
+            "assets/img/products/printify/palm-springs-tee-black-back.webp"
           ]
         },
         {
           "name": "Charcoal",
           "hex": "#585559",
           "photos": [
-            "assets/img/products/printify/palm-springs-tee-charcoal-front.jpg",
-            "assets/img/products/printify/palm-springs-tee-charcoal-back.jpg"
+            "assets/img/products/printify/palm-springs-tee-charcoal-front.webp",
+            "assets/img/products/printify/palm-springs-tee-charcoal-back.webp"
           ]
         },
         {
           "name": "Mint Green",
           "hex": "#b1e0c0",
           "photos": [
-            "assets/img/products/printify/palm-springs-tee-mint-green-front.jpg",
-            "assets/img/products/printify/palm-springs-tee-mint-green-back.jpg"
+            "assets/img/products/printify/palm-springs-tee-mint-green-front.webp",
+            "assets/img/products/printify/palm-springs-tee-mint-green-back.webp"
           ],
           "sizes": [
             "S",
@@ -49,8 +49,8 @@
           "name": "Jade Dome",
           "hex": "#19998A",
           "photos": [
-            "assets/img/products/printify/palm-springs-tee-jade-dome-front.jpg",
-            "assets/img/products/printify/palm-springs-tee-jade-dome-back.jpg"
+            "assets/img/products/printify/palm-springs-tee-jade-dome-front.webp",
+            "assets/img/products/printify/palm-springs-tee-jade-dome-back.webp"
           ],
           "sizes": [
             "S",
@@ -65,8 +65,8 @@
           "name": "Tropical Blue",
           "hex": "#0097A9",
           "photos": [
-            "assets/img/products/printify/palm-springs-tee-tropical-blue-front.jpg",
-            "assets/img/products/printify/palm-springs-tee-tropical-blue-back.jpg"
+            "assets/img/products/printify/palm-springs-tee-tropical-blue-front.webp",
+            "assets/img/products/printify/palm-springs-tee-tropical-blue-back.webp"
           ],
           "sizes": [
             "S",
@@ -81,8 +81,8 @@
           "name": "Ice Grey",
           "hex": "#D7D6D3",
           "photos": [
-            "assets/img/products/printify/palm-springs-tee-ice-grey-front.jpg",
-            "assets/img/products/printify/palm-springs-tee-ice-grey-back.jpg"
+            "assets/img/products/printify/palm-springs-tee-ice-grey-front.webp",
+            "assets/img/products/printify/palm-springs-tee-ice-grey-back.webp"
           ],
           "sizes": [
             "S",
@@ -97,8 +97,8 @@
           "name": "Heather Indigo",
           "hex": "#6a798e",
           "photos": [
-            "assets/img/products/printify/palm-springs-tee-heather-indigo-front.jpg",
-            "assets/img/products/printify/palm-springs-tee-heather-indigo-back.jpg"
+            "assets/img/products/printify/palm-springs-tee-heather-indigo-front.webp",
+            "assets/img/products/printify/palm-springs-tee-heather-indigo-back.webp"
           ],
           "sizes": [
             "S",
@@ -114,8 +114,8 @@
           "name": "Sand",
           "hex": "#DCD2BE",
           "photos": [
-            "assets/img/products/printify/palm-springs-tee-sand-front.jpg",
-            "assets/img/products/printify/palm-springs-tee-sand-back.jpg"
+            "assets/img/products/printify/palm-springs-tee-sand-front.webp",
+            "assets/img/products/printify/palm-springs-tee-sand-back.webp"
           ],
           "sizes": [
             "S",
@@ -130,8 +130,8 @@
           "name": "Dark Chocolate",
           "hex": "#31221D",
           "photos": [
-            "assets/img/products/printify/palm-springs-tee-dark-chocolate-front.jpg",
-            "assets/img/products/printify/palm-springs-tee-dark-chocolate-back.jpg"
+            "assets/img/products/printify/palm-springs-tee-dark-chocolate-front.webp",
+            "assets/img/products/printify/palm-springs-tee-dark-chocolate-back.webp"
           ],
           "sizes": [
             "S",
@@ -147,8 +147,8 @@
           "name": "Natural",
           "hex": "#FFF6E3",
           "photos": [
-            "assets/img/products/printify/palm-springs-tee-natural-front.jpg",
-            "assets/img/products/printify/palm-springs-tee-natural-back.jpg"
+            "assets/img/products/printify/palm-springs-tee-natural-front.webp",
+            "assets/img/products/printify/palm-springs-tee-natural-back.webp"
           ],
           "sizes": [
             "S",
@@ -183,8 +183,8 @@
         "FLÒ wordmark on the left chest"
       ],
       "photos": [
-        "assets/img/products/printify/palm-springs-tee-black-front.jpg",
-        "assets/img/products/printify/palm-springs-tee-black-back.jpg"
+        "assets/img/products/printify/palm-springs-tee-black-front.webp",
+        "assets/img/products/printify/palm-springs-tee-black-back.webp"
       ],
       "fit": "Regular fit. Take your usual size.",
       "whiteBg": true,
@@ -217,8 +217,8 @@
           "name": "Mint Green",
           "hex": "#b1e0c0",
           "photos": [
-            "assets/img/products/printify/over-perfection-tee-mint-green-front.jpg",
-            "assets/img/products/printify/over-perfection-tee-mint-green-back.jpg"
+            "assets/img/products/printify/over-perfection-tee-mint-green-front.webp",
+            "assets/img/products/printify/over-perfection-tee-mint-green-back.webp"
           ],
           "sizes": [
             "S",
@@ -233,40 +233,40 @@
           "name": "White",
           "hex": "#ffffff",
           "photos": [
-            "assets/img/products/printify/over-perfection-tee-white-front.jpg",
-            "assets/img/products/printify/over-perfection-tee-white-back.jpg"
+            "assets/img/products/printify/over-perfection-tee-white-front.webp",
+            "assets/img/products/printify/over-perfection-tee-white-back.webp"
           ]
         },
         {
           "name": "Red",
           "hex": "#C62A32",
           "photos": [
-            "assets/img/products/printify/over-perfection-tee-red-front.jpg",
-            "assets/img/products/printify/over-perfection-tee-red-back.jpg"
+            "assets/img/products/printify/over-perfection-tee-red-front.webp",
+            "assets/img/products/printify/over-perfection-tee-red-back.webp"
           ]
         },
         {
           "name": "Heather Navy",
           "hex": "#424753",
           "photos": [
-            "assets/img/products/printify/over-perfection-tee-heather-navy-front.jpg",
-            "assets/img/products/printify/over-perfection-tee-heather-navy-back.jpg"
+            "assets/img/products/printify/over-perfection-tee-heather-navy-front.webp",
+            "assets/img/products/printify/over-perfection-tee-heather-navy-back.webp"
           ]
         },
         {
           "name": "Navy",
           "hex": "#1a2237",
           "photos": [
-            "assets/img/products/printify/over-perfection-tee-navy-front.jpg",
-            "assets/img/products/printify/over-perfection-tee-navy-back.jpg"
+            "assets/img/products/printify/over-perfection-tee-navy-front.webp",
+            "assets/img/products/printify/over-perfection-tee-navy-back.webp"
           ]
         },
         {
           "name": "Pistachio",
           "hex": "#D3D590",
           "photos": [
-            "assets/img/products/printify/over-perfection-tee-pistachio-front.jpg",
-            "assets/img/products/printify/over-perfection-tee-pistachio-back.jpg"
+            "assets/img/products/printify/over-perfection-tee-pistachio-front.webp",
+            "assets/img/products/printify/over-perfection-tee-pistachio-back.webp"
           ],
           "sizes": [
             "S",
@@ -281,8 +281,8 @@
           "name": "Light Blue",
           "hex": "#d6e6f7",
           "photos": [
-            "assets/img/products/printify/over-perfection-tee-light-blue-front.jpg",
-            "assets/img/products/printify/over-perfection-tee-light-blue-back.jpg"
+            "assets/img/products/printify/over-perfection-tee-light-blue-front.webp",
+            "assets/img/products/printify/over-perfection-tee-light-blue-back.webp"
           ],
           "sizes": [
             "S",
@@ -298,8 +298,8 @@
           "name": "Maroon",
           "hex": "#642838",
           "photos": [
-            "assets/img/products/printify/over-perfection-tee-maroon-front.jpg",
-            "assets/img/products/printify/over-perfection-tee-maroon-back.jpg"
+            "assets/img/products/printify/over-perfection-tee-maroon-front.webp",
+            "assets/img/products/printify/over-perfection-tee-maroon-back.webp"
           ],
           "sizes": [
             "S",
@@ -314,8 +314,8 @@
           "name": "Indigo Blue",
           "hex": "#476579",
           "photos": [
-            "assets/img/products/printify/over-perfection-tee-indigo-blue-front.jpg",
-            "assets/img/products/printify/over-perfection-tee-indigo-blue-back.jpg"
+            "assets/img/products/printify/over-perfection-tee-indigo-blue-front.webp",
+            "assets/img/products/printify/over-perfection-tee-indigo-blue-back.webp"
           ],
           "sizes": [
             "S",
@@ -330,8 +330,8 @@
           "name": "Heather Indigo",
           "hex": "#6a798e",
           "photos": [
-            "assets/img/products/printify/over-perfection-tee-heather-indigo-front.jpg",
-            "assets/img/products/printify/over-perfection-tee-heather-indigo-back.jpg"
+            "assets/img/products/printify/over-perfection-tee-heather-indigo-front.webp",
+            "assets/img/products/printify/over-perfection-tee-heather-indigo-back.webp"
           ],
           "sizes": [
             "S",
@@ -347,8 +347,8 @@
           "name": "Sand",
           "hex": "#DCD2BE",
           "photos": [
-            "assets/img/products/printify/over-perfection-tee-sand-front.jpg",
-            "assets/img/products/printify/over-perfection-tee-sand-back.jpg"
+            "assets/img/products/printify/over-perfection-tee-sand-front.webp",
+            "assets/img/products/printify/over-perfection-tee-sand-back.webp"
           ],
           "sizes": [
             "S",
@@ -363,8 +363,8 @@
           "name": "Natural",
           "hex": "#FFF6E3",
           "photos": [
-            "assets/img/products/printify/over-perfection-tee-natural-front.jpg",
-            "assets/img/products/printify/over-perfection-tee-natural-back.jpg"
+            "assets/img/products/printify/over-perfection-tee-natural-front.webp",
+            "assets/img/products/printify/over-perfection-tee-natural-back.webp"
           ],
           "sizes": [
             "S",
@@ -400,8 +400,8 @@
       ],
       "fit": "Regular fit. Take your usual size.",
       "photos": [
-        "assets/img/products/printify/over-perfection-tee-mint-green-front.jpg",
-        "assets/img/products/printify/over-perfection-tee-mint-green-back.jpg"
+        "assets/img/products/printify/over-perfection-tee-mint-green-front.webp",
+        "assets/img/products/printify/over-perfection-tee-mint-green-back.webp"
       ],
       "whiteBg": true,
       "printify": "6ac132eba1fc024e4b0fb1b8",
@@ -445,24 +445,24 @@
           "name": "White",
           "hex": "#ffffff",
           "photos": [
-            "assets/img/products/printify/summer-vibes-tee-white-front.jpg",
-            "assets/img/products/printify/summer-vibes-tee-white-back.jpg"
+            "assets/img/products/printify/summer-vibes-tee-white-front.webp",
+            "assets/img/products/printify/summer-vibes-tee-white-back.webp"
           ]
         },
         {
           "name": "Charcoal",
           "hex": "#585559",
           "photos": [
-            "assets/img/products/printify/summer-vibes-tee-charcoal-front.jpg",
-            "assets/img/products/printify/summer-vibes-tee-charcoal-back.jpg"
+            "assets/img/products/printify/summer-vibes-tee-charcoal-front.webp",
+            "assets/img/products/printify/summer-vibes-tee-charcoal-back.webp"
           ]
         },
         {
           "name": "Coral Silk",
           "hex": "#e67376",
           "photos": [
-            "assets/img/products/printify/summer-vibes-tee-coral-silk-front.jpg",
-            "assets/img/products/printify/summer-vibes-tee-coral-silk-back.jpg"
+            "assets/img/products/printify/summer-vibes-tee-coral-silk-front.webp",
+            "assets/img/products/printify/summer-vibes-tee-coral-silk-back.webp"
           ],
           "sizes": [
             "S",
@@ -477,8 +477,8 @@
           "name": "Mint Green",
           "hex": "#b1e0c0",
           "photos": [
-            "assets/img/products/printify/summer-vibes-tee-mint-green-front.jpg",
-            "assets/img/products/printify/summer-vibes-tee-mint-green-back.jpg"
+            "assets/img/products/printify/summer-vibes-tee-mint-green-front.webp",
+            "assets/img/products/printify/summer-vibes-tee-mint-green-back.webp"
           ],
           "sizes": [
             "S",
@@ -493,8 +493,8 @@
           "name": "Carolina Blue",
           "hex": "#7BA4DB",
           "photos": [
-            "assets/img/products/printify/summer-vibes-tee-carolina-blue-front.jpg",
-            "assets/img/products/printify/summer-vibes-tee-carolina-blue-back.jpg"
+            "assets/img/products/printify/summer-vibes-tee-carolina-blue-front.webp",
+            "assets/img/products/printify/summer-vibes-tee-carolina-blue-back.webp"
           ],
           "sizes": [
             "S",
@@ -509,8 +509,8 @@
           "name": "Light Pink",
           "hex": "#FEE0EB",
           "photos": [
-            "assets/img/products/printify/summer-vibes-tee-light-pink-front.jpg",
-            "assets/img/products/printify/summer-vibes-tee-light-pink-back.jpg"
+            "assets/img/products/printify/summer-vibes-tee-light-pink-front.webp",
+            "assets/img/products/printify/summer-vibes-tee-light-pink-back.webp"
           ],
           "sizes": [
             "S",
@@ -525,8 +525,8 @@
           "name": "Light Blue",
           "hex": "#d6e6f7",
           "photos": [
-            "assets/img/products/printify/summer-vibes-tee-light-blue-front.jpg",
-            "assets/img/products/printify/summer-vibes-tee-light-blue-back.jpg"
+            "assets/img/products/printify/summer-vibes-tee-light-blue-front.webp",
+            "assets/img/products/printify/summer-vibes-tee-light-blue-back.webp"
           ],
           "sizes": [
             "S",
@@ -542,8 +542,8 @@
           "name": "Sand",
           "hex": "#DCD2BE",
           "photos": [
-            "assets/img/products/printify/summer-vibes-tee-sand-front.jpg",
-            "assets/img/products/printify/summer-vibes-tee-sand-back.jpg"
+            "assets/img/products/printify/summer-vibes-tee-sand-front.webp",
+            "assets/img/products/printify/summer-vibes-tee-sand-back.webp"
           ],
           "sizes": [
             "S",
@@ -558,8 +558,8 @@
           "name": "Natural",
           "hex": "#FFF6E3",
           "photos": [
-            "assets/img/products/printify/summer-vibes-tee-natural-front.jpg",
-            "assets/img/products/printify/summer-vibes-tee-natural-back.jpg"
+            "assets/img/products/printify/summer-vibes-tee-natural-front.webp",
+            "assets/img/products/printify/summer-vibes-tee-natural-back.webp"
           ],
           "sizes": [
             "S",
@@ -594,8 +594,8 @@
         "Sunset beach graphic on the back"
       ],
       "photos": [
-        "assets/img/products/printify/summer-vibes-tee-white-front.jpg",
-        "assets/img/products/printify/summer-vibes-tee-white-back.jpg"
+        "assets/img/products/printify/summer-vibes-tee-white-front.webp",
+        "assets/img/products/printify/summer-vibes-tee-white-back.webp"
       ],
       "fit": "Regular fit. Take your usual size.",
       "whiteBg": true,
@@ -636,24 +636,24 @@
         "FLÒ printed at the neck"
       ],
       "photos": [
-        "assets/img/products/printify/california-malibu-tee-white-front.jpg",
-        "assets/img/products/printify/california-malibu-tee-white-back.jpg"
+        "assets/img/products/printify/california-malibu-tee-white-front.webp",
+        "assets/img/products/printify/california-malibu-tee-white-back.webp"
       ],
       "colors": [
         {
           "name": "White",
           "hex": "#ffffff",
           "photos": [
-            "assets/img/products/printify/california-malibu-tee-white-front.jpg",
-            "assets/img/products/printify/california-malibu-tee-white-back.jpg"
+            "assets/img/products/printify/california-malibu-tee-white-front.webp",
+            "assets/img/products/printify/california-malibu-tee-white-back.webp"
           ]
         },
         {
           "name": "Pistachio",
           "hex": "#D3D590",
           "photos": [
-            "assets/img/products/printify/california-malibu-tee-pistachio-front.jpg",
-            "assets/img/products/printify/california-malibu-tee-pistachio-back.jpg"
+            "assets/img/products/printify/california-malibu-tee-pistachio-front.webp",
+            "assets/img/products/printify/california-malibu-tee-pistachio-back.webp"
           ],
           "sizes": [
             "S",
@@ -668,8 +668,8 @@
           "name": "Mint Green",
           "hex": "#b1e0c0",
           "photos": [
-            "assets/img/products/printify/california-malibu-tee-mint-green-front.jpg",
-            "assets/img/products/printify/california-malibu-tee-mint-green-back.jpg"
+            "assets/img/products/printify/california-malibu-tee-mint-green-front.webp",
+            "assets/img/products/printify/california-malibu-tee-mint-green-back.webp"
           ],
           "sizes": [
             "S",
@@ -684,8 +684,8 @@
           "name": "Sage",
           "hex": "#a4b09e",
           "photos": [
-            "assets/img/products/printify/california-malibu-tee-sage-front.jpg",
-            "assets/img/products/printify/california-malibu-tee-sage-back.jpg"
+            "assets/img/products/printify/california-malibu-tee-sage-front.webp",
+            "assets/img/products/printify/california-malibu-tee-sage-back.webp"
           ],
           "sizes": [
             "S",
@@ -700,8 +700,8 @@
           "name": "Carolina Blue",
           "hex": "#7BA4DB",
           "photos": [
-            "assets/img/products/printify/california-malibu-tee-carolina-blue-front.jpg",
-            "assets/img/products/printify/california-malibu-tee-carolina-blue-back.jpg"
+            "assets/img/products/printify/california-malibu-tee-carolina-blue-front.webp",
+            "assets/img/products/printify/california-malibu-tee-carolina-blue-back.webp"
           ],
           "sizes": [
             "S",
@@ -716,8 +716,8 @@
           "name": "Light Pink",
           "hex": "#FEE0EB",
           "photos": [
-            "assets/img/products/printify/california-malibu-tee-light-pink-front.jpg",
-            "assets/img/products/printify/california-malibu-tee-light-pink-back.jpg"
+            "assets/img/products/printify/california-malibu-tee-light-pink-front.webp",
+            "assets/img/products/printify/california-malibu-tee-light-pink-back.webp"
           ],
           "sizes": [
             "S",
@@ -732,8 +732,8 @@
           "name": "Light Blue",
           "hex": "#d6e6f7",
           "photos": [
-            "assets/img/products/printify/california-malibu-tee-light-blue-front.jpg",
-            "assets/img/products/printify/california-malibu-tee-light-blue-back.jpg"
+            "assets/img/products/printify/california-malibu-tee-light-blue-front.webp",
+            "assets/img/products/printify/california-malibu-tee-light-blue-back.webp"
           ],
           "sizes": [
             "S",
@@ -749,8 +749,8 @@
           "name": "Heather Irish Green",
           "hex": "#6DEDA5",
           "photos": [
-            "assets/img/products/printify/california-malibu-tee-heather-irish-green-front.jpg",
-            "assets/img/products/printify/california-malibu-tee-heather-irish-green-back.jpg"
+            "assets/img/products/printify/california-malibu-tee-heather-irish-green-front.webp",
+            "assets/img/products/printify/california-malibu-tee-heather-irish-green-back.webp"
           ],
           "sizes": [
             "S",
@@ -766,8 +766,8 @@
           "name": "Heather Indigo",
           "hex": "#6a798e",
           "photos": [
-            "assets/img/products/printify/california-malibu-tee-heather-indigo-front.jpg",
-            "assets/img/products/printify/california-malibu-tee-heather-indigo-back.jpg"
+            "assets/img/products/printify/california-malibu-tee-heather-indigo-front.webp",
+            "assets/img/products/printify/california-malibu-tee-heather-indigo-back.webp"
           ],
           "sizes": [
             "S",
@@ -783,8 +783,8 @@
           "name": "Heather Military Green",
           "hex": "#828067",
           "photos": [
-            "assets/img/products/printify/california-malibu-tee-heather-military-green-front.jpg",
-            "assets/img/products/printify/california-malibu-tee-heather-military-green-back.jpg"
+            "assets/img/products/printify/california-malibu-tee-heather-military-green-front.webp",
+            "assets/img/products/printify/california-malibu-tee-heather-military-green-back.webp"
           ],
           "sizes": [
             "S",
@@ -800,8 +800,8 @@
           "name": "Sand",
           "hex": "#DCD2BE",
           "photos": [
-            "assets/img/products/printify/california-malibu-tee-sand-front.jpg",
-            "assets/img/products/printify/california-malibu-tee-sand-back.jpg"
+            "assets/img/products/printify/california-malibu-tee-sand-front.webp",
+            "assets/img/products/printify/california-malibu-tee-sand-back.webp"
           ],
           "sizes": [
             "S",
@@ -816,8 +816,8 @@
           "name": "Military Green",
           "hex": "#62664C",
           "photos": [
-            "assets/img/products/printify/california-malibu-tee-military-green-front.jpg",
-            "assets/img/products/printify/california-malibu-tee-military-green-back.jpg"
+            "assets/img/products/printify/california-malibu-tee-military-green-front.webp",
+            "assets/img/products/printify/california-malibu-tee-military-green-back.webp"
           ],
           "sizes": [
             "S",
@@ -833,8 +833,8 @@
           "name": "Dark Chocolate",
           "hex": "#31221D",
           "photos": [
-            "assets/img/products/printify/california-malibu-tee-dark-chocolate-front.jpg",
-            "assets/img/products/printify/california-malibu-tee-dark-chocolate-back.jpg"
+            "assets/img/products/printify/california-malibu-tee-dark-chocolate-front.webp",
+            "assets/img/products/printify/california-malibu-tee-dark-chocolate-back.webp"
           ],
           "sizes": [
             "S",
@@ -850,8 +850,8 @@
           "name": "Natural",
           "hex": "#FFF6E3",
           "photos": [
-            "assets/img/products/printify/california-malibu-tee-natural-front.jpg",
-            "assets/img/products/printify/california-malibu-tee-natural-back.jpg"
+            "assets/img/products/printify/california-malibu-tee-natural-front.webp",
+            "assets/img/products/printify/california-malibu-tee-natural-back.webp"
           ],
           "sizes": [
             "S",
@@ -903,40 +903,40 @@
         "Georgia oranges graphic on the back"
       ],
       "photos": [
-        "assets/img/products/printify/georgia-oranges-tee-white-front.jpg",
-        "assets/img/products/printify/georgia-oranges-tee-white-back.jpg"
+        "assets/img/products/printify/georgia-oranges-tee-white-front.webp",
+        "assets/img/products/printify/georgia-oranges-tee-white-back.webp"
       ],
       "colors": [
         {
           "name": "White",
           "hex": "#ffffff",
           "photos": [
-            "assets/img/products/printify/georgia-oranges-tee-white-front.jpg",
-            "assets/img/products/printify/georgia-oranges-tee-white-back.jpg"
+            "assets/img/products/printify/georgia-oranges-tee-white-front.webp",
+            "assets/img/products/printify/georgia-oranges-tee-white-back.webp"
           ]
         },
         {
           "name": "Black",
           "hex": "#000000",
           "photos": [
-            "assets/img/products/printify/georgia-oranges-tee-black-front.jpg",
-            "assets/img/products/printify/georgia-oranges-tee-black-back.jpg"
+            "assets/img/products/printify/georgia-oranges-tee-black-front.webp",
+            "assets/img/products/printify/georgia-oranges-tee-black-back.webp"
           ]
         },
         {
           "name": "Heather Navy",
           "hex": "#424753",
           "photos": [
-            "assets/img/products/printify/georgia-oranges-tee-heather-navy-front.jpg",
-            "assets/img/products/printify/georgia-oranges-tee-heather-navy-back.jpg"
+            "assets/img/products/printify/georgia-oranges-tee-heather-navy-front.webp",
+            "assets/img/products/printify/georgia-oranges-tee-heather-navy-back.webp"
           ]
         },
         {
           "name": "Pistachio",
           "hex": "#D3D590",
           "photos": [
-            "assets/img/products/printify/georgia-oranges-tee-pistachio-front.jpg",
-            "assets/img/products/printify/georgia-oranges-tee-pistachio-back.jpg"
+            "assets/img/products/printify/georgia-oranges-tee-pistachio-front.webp",
+            "assets/img/products/printify/georgia-oranges-tee-pistachio-back.webp"
           ],
           "sizes": [
             "S",
@@ -951,8 +951,8 @@
           "name": "Mint Green",
           "hex": "#b1e0c0",
           "photos": [
-            "assets/img/products/printify/georgia-oranges-tee-mint-green-front.jpg",
-            "assets/img/products/printify/georgia-oranges-tee-mint-green-back.jpg"
+            "assets/img/products/printify/georgia-oranges-tee-mint-green-front.webp",
+            "assets/img/products/printify/georgia-oranges-tee-mint-green-back.webp"
           ],
           "sizes": [
             "S",
@@ -967,8 +967,8 @@
           "name": "Kelly Green",
           "hex": "#009660",
           "photos": [
-            "assets/img/products/printify/georgia-oranges-tee-kelly-green-front.jpg",
-            "assets/img/products/printify/georgia-oranges-tee-kelly-green-back.jpg"
+            "assets/img/products/printify/georgia-oranges-tee-kelly-green-front.webp",
+            "assets/img/products/printify/georgia-oranges-tee-kelly-green-back.webp"
           ],
           "sizes": [
             "S",
@@ -983,8 +983,8 @@
           "name": "Tropical Blue",
           "hex": "#0097A9",
           "photos": [
-            "assets/img/products/printify/georgia-oranges-tee-tropical-blue-front.jpg",
-            "assets/img/products/printify/georgia-oranges-tee-tropical-blue-back.jpg"
+            "assets/img/products/printify/georgia-oranges-tee-tropical-blue-front.webp",
+            "assets/img/products/printify/georgia-oranges-tee-tropical-blue-back.webp"
           ],
           "sizes": [
             "S",
@@ -999,8 +999,8 @@
           "name": "Cornsilk",
           "hex": "#F7EF8F",
           "photos": [
-            "assets/img/products/printify/georgia-oranges-tee-cornsilk-front.jpg",
-            "assets/img/products/printify/georgia-oranges-tee-cornsilk-back.jpg"
+            "assets/img/products/printify/georgia-oranges-tee-cornsilk-front.webp",
+            "assets/img/products/printify/georgia-oranges-tee-cornsilk-back.webp"
           ],
           "sizes": [
             "S",
@@ -1015,8 +1015,8 @@
           "name": "Ice Grey",
           "hex": "#D7D6D3",
           "photos": [
-            "assets/img/products/printify/georgia-oranges-tee-ice-grey-front.jpg",
-            "assets/img/products/printify/georgia-oranges-tee-ice-grey-back.jpg"
+            "assets/img/products/printify/georgia-oranges-tee-ice-grey-front.webp",
+            "assets/img/products/printify/georgia-oranges-tee-ice-grey-back.webp"
           ],
           "sizes": [
             "S",
@@ -1031,8 +1031,8 @@
           "name": "Heather Indigo",
           "hex": "#6a798e",
           "photos": [
-            "assets/img/products/printify/georgia-oranges-tee-heather-indigo-front.jpg",
-            "assets/img/products/printify/georgia-oranges-tee-heather-indigo-back.jpg"
+            "assets/img/products/printify/georgia-oranges-tee-heather-indigo-front.webp",
+            "assets/img/products/printify/georgia-oranges-tee-heather-indigo-back.webp"
           ],
           "sizes": [
             "S",
@@ -1048,8 +1048,8 @@
           "name": "Heather Military Green",
           "hex": "#828067",
           "photos": [
-            "assets/img/products/printify/georgia-oranges-tee-heather-military-green-front.jpg",
-            "assets/img/products/printify/georgia-oranges-tee-heather-military-green-back.jpg"
+            "assets/img/products/printify/georgia-oranges-tee-heather-military-green-front.webp",
+            "assets/img/products/printify/georgia-oranges-tee-heather-military-green-back.webp"
           ],
           "sizes": [
             "S",
@@ -1065,8 +1065,8 @@
           "name": "Sand",
           "hex": "#DCD2BE",
           "photos": [
-            "assets/img/products/printify/georgia-oranges-tee-sand-front.jpg",
-            "assets/img/products/printify/georgia-oranges-tee-sand-back.jpg"
+            "assets/img/products/printify/georgia-oranges-tee-sand-front.webp",
+            "assets/img/products/printify/georgia-oranges-tee-sand-back.webp"
           ],
           "sizes": [
             "S",
@@ -1081,8 +1081,8 @@
           "name": "Dark Chocolate",
           "hex": "#31221D",
           "photos": [
-            "assets/img/products/printify/georgia-oranges-tee-dark-chocolate-front.jpg",
-            "assets/img/products/printify/georgia-oranges-tee-dark-chocolate-back.jpg"
+            "assets/img/products/printify/georgia-oranges-tee-dark-chocolate-front.webp",
+            "assets/img/products/printify/georgia-oranges-tee-dark-chocolate-back.webp"
           ],
           "sizes": [
             "S",
@@ -1098,8 +1098,8 @@
           "name": "Natural",
           "hex": "#FFF6E3",
           "photos": [
-            "assets/img/products/printify/georgia-oranges-tee-natural-front.jpg",
-            "assets/img/products/printify/georgia-oranges-tee-natural-back.jpg"
+            "assets/img/products/printify/georgia-oranges-tee-natural-front.webp",
+            "assets/img/products/printify/georgia-oranges-tee-natural-back.webp"
           ],
           "sizes": [
             "S",
@@ -1138,16 +1138,16 @@
           "name": "Black",
           "hex": "#000000",
           "photos": [
-            "assets/img/products/printify/apparel-crew-black-front.jpg",
-            "assets/img/products/printify/apparel-crew-black-back.jpg"
+            "assets/img/products/printify/apparel-crew-black-front.webp",
+            "assets/img/products/printify/apparel-crew-black-back.webp"
           ]
         },
         {
           "name": "Light Pink",
           "hex": "#FEE0EB",
           "photos": [
-            "assets/img/products/printify/apparel-crew-light-pink-front.jpg",
-            "assets/img/products/printify/apparel-crew-light-pink-back.jpg"
+            "assets/img/products/printify/apparel-crew-light-pink-front.webp",
+            "assets/img/products/printify/apparel-crew-light-pink-back.webp"
           ],
           "sizes": [
             "S",
@@ -1162,16 +1162,16 @@
           "name": "Orange",
           "hex": "#EA5F22",
           "photos": [
-            "assets/img/products/printify/apparel-crew-orange-front.jpg",
-            "assets/img/products/printify/apparel-crew-orange-back.jpg"
+            "assets/img/products/printify/apparel-crew-orange-front.webp",
+            "assets/img/products/printify/apparel-crew-orange-back.webp"
           ]
         },
         {
           "name": "Military Green",
           "hex": "#62664C",
           "photos": [
-            "assets/img/products/printify/apparel-crew-military-green-front.jpg",
-            "assets/img/products/printify/apparel-crew-military-green-back.jpg"
+            "assets/img/products/printify/apparel-crew-military-green-front.webp",
+            "assets/img/products/printify/apparel-crew-military-green-back.webp"
           ],
           "sizes": [
             "S",
@@ -1186,8 +1186,8 @@
           "name": "Purple",
           "hex": "#3C214E",
           "photos": [
-            "assets/img/products/printify/apparel-crew-purple-front.jpg",
-            "assets/img/products/printify/apparel-crew-purple-back.jpg"
+            "assets/img/products/printify/apparel-crew-purple-front.webp",
+            "assets/img/products/printify/apparel-crew-purple-back.webp"
           ],
           "sizes": [
             "S",
@@ -1202,24 +1202,24 @@
           "name": "Heliconia",
           "hex": "#DF5086",
           "photos": [
-            "assets/img/products/printify/apparel-crew-heliconia-front.jpg",
-            "assets/img/products/printify/apparel-crew-heliconia-back.jpg"
+            "assets/img/products/printify/apparel-crew-heliconia-front.webp",
+            "assets/img/products/printify/apparel-crew-heliconia-back.webp"
           ]
         },
         {
           "name": "Sport Grey",
           "hex": "#CACACA",
           "photos": [
-            "assets/img/products/printify/apparel-crew-sport-grey-front.jpg",
-            "assets/img/products/printify/apparel-crew-sport-grey-back.jpg"
+            "assets/img/products/printify/apparel-crew-sport-grey-front.webp",
+            "assets/img/products/printify/apparel-crew-sport-grey-back.webp"
           ]
         },
         {
           "name": "Cherry Red",
           "hex": "#B41A29",
           "photos": [
-            "assets/img/products/printify/apparel-crew-cherry-red-front.jpg",
-            "assets/img/products/printify/apparel-crew-cherry-red-back.jpg"
+            "assets/img/products/printify/apparel-crew-cherry-red-front.webp",
+            "assets/img/products/printify/apparel-crew-cherry-red-back.webp"
           ],
           "sizes": [
             "S",
@@ -1234,16 +1234,16 @@
           "name": "Safety Green",
           "hex": "#F2FB00",
           "photos": [
-            "assets/img/products/printify/apparel-crew-safety-green-front.jpg",
-            "assets/img/products/printify/apparel-crew-safety-green-back.jpg"
+            "assets/img/products/printify/apparel-crew-safety-green-front.webp",
+            "assets/img/products/printify/apparel-crew-safety-green-back.webp"
           ]
         },
         {
           "name": "Indigo Blue",
           "hex": "#476579",
           "photos": [
-            "assets/img/products/printify/apparel-crew-indigo-blue-front.jpg",
-            "assets/img/products/printify/apparel-crew-indigo-blue-back.jpg"
+            "assets/img/products/printify/apparel-crew-indigo-blue-front.webp",
+            "assets/img/products/printify/apparel-crew-indigo-blue-back.webp"
           ],
           "sizes": [
             "S",
@@ -1258,8 +1258,8 @@
           "name": "Cardinal Red",
           "hex": "#911a30",
           "photos": [
-            "assets/img/products/printify/apparel-crew-cardinal-red-front.jpg",
-            "assets/img/products/printify/apparel-crew-cardinal-red-back.jpg"
+            "assets/img/products/printify/apparel-crew-cardinal-red-front.webp",
+            "assets/img/products/printify/apparel-crew-cardinal-red-back.webp"
           ],
           "sizes": [
             "S",
@@ -1274,8 +1274,8 @@
           "name": "Heather Sport Royal",
           "hex": "#435DBF",
           "photos": [
-            "assets/img/products/printify/apparel-crew-heather-sport-royal-front.jpg",
-            "assets/img/products/printify/apparel-crew-heather-sport-royal-back.jpg"
+            "assets/img/products/printify/apparel-crew-heather-sport-royal-front.webp",
+            "assets/img/products/printify/apparel-crew-heather-sport-royal-back.webp"
           ],
           "sizes": [
             "S",
@@ -1290,8 +1290,8 @@
           "name": "Heather Sport Dark Maroon",
           "hex": "#552C2B",
           "photos": [
-            "assets/img/products/printify/apparel-crew-heather-sport-dark-maroon-front.jpg",
-            "assets/img/products/printify/apparel-crew-heather-sport-dark-maroon-back.jpg"
+            "assets/img/products/printify/apparel-crew-heather-sport-dark-maroon-front.webp",
+            "assets/img/products/printify/apparel-crew-heather-sport-dark-maroon-back.webp"
           ],
           "sizes": [
             "S",
@@ -1306,8 +1306,8 @@
           "name": "Safety Pink",
           "hex": "#FF8E9D",
           "photos": [
-            "assets/img/products/printify/apparel-crew-safety-pink-front.jpg",
-            "assets/img/products/printify/apparel-crew-safety-pink-back.jpg"
+            "assets/img/products/printify/apparel-crew-safety-pink-front.webp",
+            "assets/img/products/printify/apparel-crew-safety-pink-back.webp"
           ],
           "sizes": [
             "S",
@@ -1338,8 +1338,8 @@
         "Arched Apparel mark on the back"
       ],
       "photos": [
-        "assets/img/products/printify/apparel-crew-black-front.jpg",
-        "assets/img/products/printify/apparel-crew-black-back.jpg"
+        "assets/img/products/printify/apparel-crew-black-front.webp",
+        "assets/img/products/printify/apparel-crew-black-back.webp"
       ],
       "fit": "Classic fit. Take your usual size.",
       "whiteBg": true,
@@ -1372,96 +1372,96 @@
           "name": "Sand",
           "hex": "#DCD2BE",
           "photos": [
-            "assets/img/products/printify/forward-crew-sand-front.jpg",
-            "assets/img/products/printify/forward-crew-sand-back.jpg"
+            "assets/img/products/printify/forward-crew-sand-front.webp",
+            "assets/img/products/printify/forward-crew-sand-back.webp"
           ]
         },
         {
           "name": "Dark Heather",
           "hex": "#454545",
           "photos": [
-            "assets/img/products/printify/forward-crew-dark-heather-front.jpg",
-            "assets/img/products/printify/forward-crew-dark-heather-back.jpg"
+            "assets/img/products/printify/forward-crew-dark-heather-front.webp",
+            "assets/img/products/printify/forward-crew-dark-heather-back.webp"
           ]
         },
         {
           "name": "Military Green",
           "hex": "#62664C",
           "photos": [
-            "assets/img/products/printify/forward-crew-military-green-front.jpg",
-            "assets/img/products/printify/forward-crew-military-green-back.jpg"
+            "assets/img/products/printify/forward-crew-military-green-front.webp",
+            "assets/img/products/printify/forward-crew-military-green-back.webp"
           ]
         },
         {
           "name": "Paragon",
           "hex": "#948794",
           "photos": [
-            "assets/img/products/printify/forward-crew-paragon-front.jpg",
-            "assets/img/products/printify/forward-crew-paragon-back.jpg"
+            "assets/img/products/printify/forward-crew-paragon-front.webp",
+            "assets/img/products/printify/forward-crew-paragon-back.webp"
           ]
         },
         {
           "name": "Pink Lemonade",
           "hex": "#f04e98",
           "photos": [
-            "assets/img/products/printify/forward-crew-pink-lemonade-front.jpg",
-            "assets/img/products/printify/forward-crew-pink-lemonade-back.jpg"
+            "assets/img/products/printify/forward-crew-pink-lemonade-front.webp",
+            "assets/img/products/printify/forward-crew-pink-lemonade-back.webp"
           ]
         },
         {
           "name": "Red",
           "hex": "#C62A32",
           "photos": [
-            "assets/img/products/printify/forward-crew-red-front.jpg",
-            "assets/img/products/printify/forward-crew-red-back.jpg"
+            "assets/img/products/printify/forward-crew-red-front.webp",
+            "assets/img/products/printify/forward-crew-red-back.webp"
           ]
         },
         {
           "name": "Sky",
           "hex": "#8BCDEA",
           "photos": [
-            "assets/img/products/printify/forward-crew-sky-front.jpg",
-            "assets/img/products/printify/forward-crew-sky-back.jpg"
+            "assets/img/products/printify/forward-crew-sky-front.webp",
+            "assets/img/products/printify/forward-crew-sky-back.webp"
           ]
         },
         {
           "name": "Royal",
           "hex": "#084f97",
           "photos": [
-            "assets/img/products/printify/forward-crew-royal-front.jpg",
-            "assets/img/products/printify/forward-crew-royal-back.jpg"
+            "assets/img/products/printify/forward-crew-royal-front.webp",
+            "assets/img/products/printify/forward-crew-royal-back.webp"
           ]
         },
         {
           "name": "Charcoal",
           "hex": "#585559",
           "photos": [
-            "assets/img/products/printify/forward-crew-charcoal-front.jpg",
-            "assets/img/products/printify/forward-crew-charcoal-back.jpg"
+            "assets/img/products/printify/forward-crew-charcoal-front.webp",
+            "assets/img/products/printify/forward-crew-charcoal-back.webp"
           ]
         },
         {
           "name": "White",
           "hex": "#ffffff",
           "photos": [
-            "assets/img/products/printify/forward-crew-white-front.jpg",
-            "assets/img/products/printify/forward-crew-white-back.jpg"
+            "assets/img/products/printify/forward-crew-white-front.webp",
+            "assets/img/products/printify/forward-crew-white-back.webp"
           ]
         },
         {
           "name": "Stone Blue",
           "hex": "#7F909C",
           "photos": [
-            "assets/img/products/printify/forward-crew-stone-blue-front.jpg",
-            "assets/img/products/printify/forward-crew-stone-blue-back.jpg"
+            "assets/img/products/printify/forward-crew-stone-blue-front.webp",
+            "assets/img/products/printify/forward-crew-stone-blue-back.webp"
           ]
         },
         {
           "name": "Navy",
           "hex": "#1a2237",
           "photos": [
-            "assets/img/products/printify/forward-crew-navy-front.jpg",
-            "assets/img/products/printify/forward-crew-navy-back.jpg"
+            "assets/img/products/printify/forward-crew-navy-front.webp",
+            "assets/img/products/printify/forward-crew-navy-back.webp"
           ]
         }
       ],
@@ -1485,8 +1485,8 @@
         "Large FLÒ wordmark on the back"
       ],
       "photos": [
-        "assets/img/products/printify/forward-crew-sand-front.jpg",
-        "assets/img/products/printify/forward-crew-sand-back.jpg"
+        "assets/img/products/printify/forward-crew-sand-front.webp",
+        "assets/img/products/printify/forward-crew-sand-back.webp"
       ],
       "fit": "Relaxed fit. Take your usual size.",
       "whiteBg": true,
@@ -1518,24 +1518,24 @@
           "name": "White",
           "hex": "#ffffff",
           "photos": [
-            "assets/img/products/printify/champs-longsleeve-white-front.jpg",
-            "assets/img/products/printify/champs-longsleeve-white-back.jpg"
+            "assets/img/products/printify/champs-longsleeve-white-front.webp",
+            "assets/img/products/printify/champs-longsleeve-white-back.webp"
           ]
         },
         {
           "name": "Red",
           "hex": "#C62A32",
           "photos": [
-            "assets/img/products/printify/champs-longsleeve-red-front.jpg",
-            "assets/img/products/printify/champs-longsleeve-red-back.jpg"
+            "assets/img/products/printify/champs-longsleeve-red-front.webp",
+            "assets/img/products/printify/champs-longsleeve-red-back.webp"
           ]
         },
         {
           "name": "Irish Green",
           "hex": "#279436",
           "photos": [
-            "assets/img/products/printify/champs-longsleeve-irish-green-front.jpg",
-            "assets/img/products/printify/champs-longsleeve-irish-green-back.jpg"
+            "assets/img/products/printify/champs-longsleeve-irish-green-front.webp",
+            "assets/img/products/printify/champs-longsleeve-irish-green-back.webp"
           ],
           "sizes": [
             "S",
@@ -1549,8 +1549,8 @@
           "name": "Light Blue",
           "hex": "#d6e6f7",
           "photos": [
-            "assets/img/products/printify/champs-longsleeve-light-blue-front.jpg",
-            "assets/img/products/printify/champs-longsleeve-light-blue-back.jpg"
+            "assets/img/products/printify/champs-longsleeve-light-blue-front.webp",
+            "assets/img/products/printify/champs-longsleeve-light-blue-back.webp"
           ],
           "sizes": [
             "S",
@@ -1566,8 +1566,8 @@
           "name": "Light Pink",
           "hex": "#FEE0EB",
           "photos": [
-            "assets/img/products/printify/champs-longsleeve-light-pink-front.jpg",
-            "assets/img/products/printify/champs-longsleeve-light-pink-back.jpg"
+            "assets/img/products/printify/champs-longsleeve-light-pink-front.webp",
+            "assets/img/products/printify/champs-longsleeve-light-pink-back.webp"
           ],
           "sizes": [
             "S",
@@ -1583,16 +1583,16 @@
           "name": "Navy",
           "hex": "#1a2237",
           "photos": [
-            "assets/img/products/printify/champs-longsleeve-navy-front.jpg",
-            "assets/img/products/printify/champs-longsleeve-navy-back.jpg"
+            "assets/img/products/printify/champs-longsleeve-navy-front.webp",
+            "assets/img/products/printify/champs-longsleeve-navy-back.webp"
           ]
         },
         {
           "name": "Sport Grey",
           "hex": "#CACACA",
           "photos": [
-            "assets/img/products/printify/champs-longsleeve-sport-grey-front.jpg",
-            "assets/img/products/printify/champs-longsleeve-sport-grey-back.jpg"
+            "assets/img/products/printify/champs-longsleeve-sport-grey-front.webp",
+            "assets/img/products/printify/champs-longsleeve-sport-grey-back.webp"
           ],
           "sizes": [
             "S",
@@ -1607,16 +1607,16 @@
           "name": "Royal",
           "hex": "#084f97",
           "photos": [
-            "assets/img/products/printify/champs-longsleeve-royal-front.jpg",
-            "assets/img/products/printify/champs-longsleeve-royal-back.jpg"
+            "assets/img/products/printify/champs-longsleeve-royal-front.webp",
+            "assets/img/products/printify/champs-longsleeve-royal-back.webp"
           ]
         },
         {
           "name": "Forest Green",
           "hex": "#223b26",
           "photos": [
-            "assets/img/products/printify/champs-longsleeve-forest-green-front.jpg",
-            "assets/img/products/printify/champs-longsleeve-forest-green-back.jpg"
+            "assets/img/products/printify/champs-longsleeve-forest-green-front.webp",
+            "assets/img/products/printify/champs-longsleeve-forest-green-back.webp"
           ],
           "sizes": [
             "S",
@@ -1632,8 +1632,8 @@
           "name": "Ash",
           "hex": "#F6F6F6",
           "photos": [
-            "assets/img/products/printify/champs-longsleeve-ash-front.jpg",
-            "assets/img/products/printify/champs-longsleeve-ash-back.jpg"
+            "assets/img/products/printify/champs-longsleeve-ash-front.webp",
+            "assets/img/products/printify/champs-longsleeve-ash-back.webp"
           ],
           "sizes": [
             "S",
@@ -1649,16 +1649,16 @@
           "name": "Dark Heather",
           "hex": "#454545",
           "photos": [
-            "assets/img/products/printify/champs-longsleeve-dark-heather-front.jpg",
-            "assets/img/products/printify/champs-longsleeve-dark-heather-back.jpg"
+            "assets/img/products/printify/champs-longsleeve-dark-heather-front.webp",
+            "assets/img/products/printify/champs-longsleeve-dark-heather-back.webp"
           ]
         },
         {
           "name": "Purple",
           "hex": "#3C214E",
           "photos": [
-            "assets/img/products/printify/champs-longsleeve-purple-front.jpg",
-            "assets/img/products/printify/champs-longsleeve-purple-back.jpg"
+            "assets/img/products/printify/champs-longsleeve-purple-front.webp",
+            "assets/img/products/printify/champs-longsleeve-purple-back.webp"
           ],
           "sizes": [
             "S",
@@ -1672,8 +1672,8 @@
           "name": "Carolina Blue",
           "hex": "#7BA4DB",
           "photos": [
-            "assets/img/products/printify/champs-longsleeve-carolina-blue-front.jpg",
-            "assets/img/products/printify/champs-longsleeve-carolina-blue-back.jpg"
+            "assets/img/products/printify/champs-longsleeve-carolina-blue-front.webp",
+            "assets/img/products/printify/champs-longsleeve-carolina-blue-back.webp"
           ],
           "sizes": [
             "S",
@@ -1705,8 +1705,8 @@
         "Statement print on the back"
       ],
       "photos": [
-        "assets/img/products/printify/champs-longsleeve-white-front.jpg",
-        "assets/img/products/printify/champs-longsleeve-white-back.jpg"
+        "assets/img/products/printify/champs-longsleeve-white-front.webp",
+        "assets/img/products/printify/champs-longsleeve-white-back.webp"
       ],
       "fit": "Classic fit. Take your usual size.",
       "whiteBg": true,
@@ -1737,48 +1737,48 @@
           "name": "Ivory",
           "hex": "#f2e5dc",
           "photos": [
-            "assets/img/products/printify/champs-sweatpant-ivory-front.jpg",
-            "assets/img/products/printify/champs-sweatpant-ivory-back.jpg"
+            "assets/img/products/printify/champs-sweatpant-ivory-front.webp",
+            "assets/img/products/printify/champs-sweatpant-ivory-back.webp"
           ]
         },
         {
           "name": "Blue Jean",
           "hex": "#6f859c",
           "photos": [
-            "assets/img/products/printify/champs-sweatpant-blue-jean-front.jpg",
-            "assets/img/products/printify/champs-sweatpant-blue-jean-back.jpg"
+            "assets/img/products/printify/champs-sweatpant-blue-jean-front.webp",
+            "assets/img/products/printify/champs-sweatpant-blue-jean-back.webp"
           ]
         },
         {
           "name": "Espresso",
           "hex": "#7b604f",
           "photos": [
-            "assets/img/products/printify/champs-sweatpant-espresso-front.jpg",
-            "assets/img/products/printify/champs-sweatpant-espresso-back.jpg"
+            "assets/img/products/printify/champs-sweatpant-espresso-front.webp",
+            "assets/img/products/printify/champs-sweatpant-espresso-back.webp"
           ]
         },
         {
           "name": "Hydrangea",
           "hex": "#add1ec",
           "photos": [
-            "assets/img/products/printify/champs-sweatpant-hydrangea-front.jpg",
-            "assets/img/products/printify/champs-sweatpant-hydrangea-back.jpg"
+            "assets/img/products/printify/champs-sweatpant-hydrangea-front.webp",
+            "assets/img/products/printify/champs-sweatpant-hydrangea-back.webp"
           ]
         },
         {
           "name": "Neon Violet",
           "hex": "#e9b5fa",
           "photos": [
-            "assets/img/products/printify/champs-sweatpant-neon-violet-front.jpg",
-            "assets/img/products/printify/champs-sweatpant-neon-violet-back.jpg"
+            "assets/img/products/printify/champs-sweatpant-neon-violet-front.webp",
+            "assets/img/products/printify/champs-sweatpant-neon-violet-back.webp"
           ]
         },
         {
           "name": "Peachy",
           "hex": "#f4c3b1",
           "photos": [
-            "assets/img/products/printify/champs-sweatpant-peachy-front.jpg",
-            "assets/img/products/printify/champs-sweatpant-peachy-back.jpg"
+            "assets/img/products/printify/champs-sweatpant-peachy-front.webp",
+            "assets/img/products/printify/champs-sweatpant-peachy-back.webp"
           ]
         }
       ],
@@ -1800,8 +1800,8 @@
         "FLÒSTATE CHAMPS print on the left thigh"
       ],
       "photos": [
-        "assets/img/products/printify/champs-sweatpant-ivory-front.jpg",
-        "assets/img/products/printify/champs-sweatpant-ivory-back.jpg"
+        "assets/img/products/printify/champs-sweatpant-ivory-front.webp",
+        "assets/img/products/printify/champs-sweatpant-ivory-back.webp"
       ],
       "fit": "Relaxed fit. Take your usual size.",
       "whiteBg": true,
