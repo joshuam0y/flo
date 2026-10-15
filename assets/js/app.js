@@ -4,9 +4,11 @@
   const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
   // every price and total with cents ($25.00, $44.99); sums are done in whole cents so they never drift
   const money = n => "$" + (Math.round(Number(n) * 100) / 100).toFixed(2);
+  // Shop and product pages show whole dollars, rounded up ($24.99 shows as $25); the bag and checkout keep exact cents
+  const shown = n => "$" + Math.ceil(Math.round(Number(n) * 100) / 100);
   // Some products cost more in bigger sizes: "sizePrices": { "2XL": 60 } overrides "price" for that size
   const priceFor = (p, size) => (p.sizePrices && size in p.sizePrices ? p.sizePrices[size] : p.price);
-  const fromPrice = p => (p.sizePrices ? `From ${money(Math.min(p.price, ...Object.values(p.sizePrices)))}` : money(p.price));
+  const fromPrice = p => (p.sizePrices ? `From ${shown(Math.min(p.price, ...Object.values(p.sizePrices)))}` : shown(p.price));
   const cents = n => Math.round(Number(n) * 100);
   const slug = s => s.toLowerCase().replace(/[^a-z0-9]+/g, "-");
   const skuOf = (id, color, size) => `${id}_${slug(color)}_${slug(size)}`;
@@ -990,7 +992,7 @@
     if (badge && !$(".crumbs")) badge.insertAdjacentHTML("beforebegin", `<nav class="crumbs label" aria-label="You are here">
       <a href="shop.html">Shop</a>${sec ? ` <span aria-hidden="true">›</span> <a href="shop.html?c=${sec[0]}">${sec[1]}</a>` : ""}
       <span aria-hidden="true">›</span> <span aria-current="page">${esc(p.name)}</span></nav>`);
-    root.querySelector(".pdp__price").textContent = size ? money(priceFor(p, size)) : fromPrice(p);
+    root.querySelector(".pdp__price").textContent = size ? shown(priceFor(p, size)) : fromPrice(p);
     root.querySelector(".pdp__desc").textContent = p.description;
     injectProductSchema(p, color);
     $("#pdp-badge").textContent = p.flag ? `${p.badge ? `${p.badge} · ` : ""}Coming soon` : p.badge || "flò essentials";
@@ -1036,8 +1038,8 @@
       if (!b) return;
       size = b.dataset.size;
       $$(".size", sizes).forEach(s => s.setAttribute("aria-pressed", s === b));
-      $("#pdp-add").textContent = `Add to bag · ${money(priceFor(p, size))}`;
-      root.querySelector(".pdp__price").textContent = money(priceFor(p, size));
+      $("#pdp-add").textContent = `Add to bag · ${shown(priceFor(p, size))}`;
+      root.querySelector(".pdp__price").textContent = shown(priceFor(p, size));
     });
 
     const add = $("#pdp-add");
@@ -1051,7 +1053,7 @@
       box.hidden = false;
       bindNotify(box);
     }
-    add.textContent = size ? `Add to bag · ${money(priceFor(p, size))}` : "Select a size";
+    add.textContent = size ? `Add to bag · ${shown(priceFor(p, size))}` : "Select a size";
     add.addEventListener("click", () => {
       if (!size) { toast("Please choose a size."); return; }
       addToBag(p.id, color.name, size);
