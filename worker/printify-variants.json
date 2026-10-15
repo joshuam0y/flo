@@ -623,6 +623,30 @@
   "product_id": "6ac132eba1fc024e4b0fb1b8",
   "variant_id": 66202
  },
+ "summer-vibes-tee_mint-green_s": {
+  "product_id": "6acd2645b4b7a98e6a05639e",
+  "variant_id": 68759
+ },
+ "summer-vibes-tee_mint-green_m": {
+  "product_id": "6acd2645b4b7a98e6a05639e",
+  "variant_id": 68767
+ },
+ "summer-vibes-tee_mint-green_l": {
+  "product_id": "6acd2645b4b7a98e6a05639e",
+  "variant_id": 68773
+ },
+ "summer-vibes-tee_mint-green_xl": {
+  "product_id": "6acd2645b4b7a98e6a05639e",
+  "variant_id": 68779
+ },
+ "summer-vibes-tee_mint-green_2xl": {
+  "product_id": "6acd2645b4b7a98e6a05639e",
+  "variant_id": 68785
+ },
+ "summer-vibes-tee_mint-green_3xl": {
+  "product_id": "6acd2645b4b7a98e6a05639e",
+  "variant_id": 68791
+ },
  "summer-vibes-tee_white_xs": {
   "product_id": "6acd2645b4b7a98e6a05639e",
   "variant_id": 67829
@@ -718,30 +742,6 @@
  "summer-vibes-tee_coral-silk_3xl": {
   "product_id": "6acd2645b4b7a98e6a05639e",
   "variant_id": 68788
- },
- "summer-vibes-tee_mint-green_s": {
-  "product_id": "6acd2645b4b7a98e6a05639e",
-  "variant_id": 68759
- },
- "summer-vibes-tee_mint-green_m": {
-  "product_id": "6acd2645b4b7a98e6a05639e",
-  "variant_id": 68767
- },
- "summer-vibes-tee_mint-green_l": {
-  "product_id": "6acd2645b4b7a98e6a05639e",
-  "variant_id": 68773
- },
- "summer-vibes-tee_mint-green_xl": {
-  "product_id": "6acd2645b4b7a98e6a05639e",
-  "variant_id": 68779
- },
- "summer-vibes-tee_mint-green_2xl": {
-  "product_id": "6acd2645b4b7a98e6a05639e",
-  "variant_id": 68785
- },
- "summer-vibes-tee_mint-green_3xl": {
-  "product_id": "6acd2645b4b7a98e6a05639e",
-  "variant_id": 68791
  },
  "summer-vibes-tee_carolina-blue_s": {
   "product_id": "6acd2645b4b7a98e6a05639e",
@@ -2814,5 +2814,81 @@
  "turks-caicos-tee_natural_4xl": {
   "product_id": "6acd908687c401878d0fcd35",
   "variant_id": 66202
+ },
+ "aruba-tee_coral-silk_s": {
+  "product_id": "6ad16019e1630eaee406edcc",
+  "variant_id": 68756
+ },
+ "aruba-tee_coral-silk_m": {
+  "product_id": "6ad16019e1630eaee406edcc",
+  "variant_id": 68764
+ },
+ "aruba-tee_coral-silk_l": {
+  "product_id": "6ad16019e1630eaee406edcc",
+  "variant_id": 68770
+ },
+ "aruba-tee_coral-silk_xl": {
+  "product_id": "6ad16019e1630eaee406edcc",
+  "variant_id": 68776
+ },
+ "aruba-tee_coral-silk_2xl": {
+  "product_id": "6ad16019e1630eaee406edcc",
+  "variant_id": 68782
+ },
+ "aruba-tee_coral-silk_3xl": {
+  "product_id": "6ad16019e1630eaee406edcc",
+  "variant_id": 68788
+ },
+ "aruba-tee_white_l": {
+  "product_id": "6ad16019e1630eaee406edcc",
+  "variant_id": 38191
+ },
+ "aruba-tee_mint-green_s": {
+  "product_id": "6ad16019e1630eaee406edcc",
+  "variant_id": 68759
+ },
+ "aruba-tee_mint-green_m": {
+  "product_id": "6ad16019e1630eaee406edcc",
+  "variant_id": 68767
+ },
+ "aruba-tee_mint-green_l": {
+  "product_id": "6ad16019e1630eaee406edcc",
+  "variant_id": 68773
+ },
+ "aruba-tee_mint-green_xl": {
+  "product_id": "6ad16019e1630eaee406edcc",
+  "variant_id": 68779
+ },
+ "aruba-tee_mint-green_2xl": {
+  "product_id": "6ad16019e1630eaee406edcc",
+  "variant_id": 68785
+ },
+ "aruba-tee_mint-green_3xl": {
+  "product_id": "6ad16019e1630eaee406edcc",
+  "variant_id": 68791
+ },
+ "aruba-tee_light-pink_s": {
+  "product_id": "6ad16019e1630eaee406edcc",
+  "variant_id": 105221
+ },
+ "aruba-tee_light-pink_m": {
+  "product_id": "6ad16019e1630eaee406edcc",
+  "variant_id": 105222
+ },
+ "aruba-tee_light-pink_l": {
+  "product_id": "6ad16019e1630eaee406edcc",
+  "variant_id": 105223
+ },
+ "aruba-tee_light-pink_xl": {
+  "product_id": "6ad16019e1630eaee406edcc",
+  "variant_id": 105224
+ },
+ "aruba-tee_light-pink_2xl": {
+  "product_id": "6ad16019e1630eaee406edcc",
+  "variant_id": 105225
+ },
+ "aruba-tee_light-pink_3xl": {
+  "product_id": "6ad16019e1630eaee406edcc",
+  "variant_id": 105226
  }
 }

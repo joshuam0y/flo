@@ -1130,6 +1130,89 @@
       "printify": "6acd908687c401878d0fcd35"
     },
     {
+      "id": "aruba-tee",
+      "name": "Aruba Tee",
+      "type": "tee",
+      "category": "tees",
+      "price": 24.99,
+      "sizePrices": {
+        "2XL": 36,
+        "3XL": 36
+      },
+      "badge": "New",
+      "colors": [
+        {
+          "name": "Coral Silk",
+          "hex": "#e67376",
+          "photos": [
+            "assets/img/products/printify/aruba-tee-coral-silk-front.webp",
+            "assets/img/products/printify/aruba-tee-coral-silk-back.webp",
+            "assets/img/products/printify/aruba-tee-coral-silk-collar.webp",
+            "assets/img/products/printify/aruba-tee-coral-silk-folded.webp"
+          ]
+        },
+        {
+          "name": "White",
+          "hex": "#ffffff",
+          "photos": [
+            "assets/img/products/printify/aruba-tee-white-front.webp",
+            "assets/img/products/printify/aruba-tee-white-back.webp",
+            "assets/img/products/printify/aruba-tee-white-collar.webp",
+            "assets/img/products/printify/aruba-tee-white-folded.webp"
+          ],
+          "sizes": [
+            "L"
+          ]
+        },
+        {
+          "name": "Mint Green",
+          "hex": "#b1e0c0",
+          "photos": [
+            "assets/img/products/printify/aruba-tee-mint-green-front.webp",
+            "assets/img/products/printify/aruba-tee-mint-green-back.webp",
+            "assets/img/products/printify/aruba-tee-mint-green-collar.webp",
+            "assets/img/products/printify/aruba-tee-mint-green-folded.webp"
+          ]
+        },
+        {
+          "name": "Light Pink",
+          "hex": "#FEE0EB",
+          "photos": [
+            "assets/img/products/printify/aruba-tee-light-pink-front.webp",
+            "assets/img/products/printify/aruba-tee-light-pink-back.webp",
+            "assets/img/products/printify/aruba-tee-light-pink-collar.webp",
+            "assets/img/products/printify/aruba-tee-light-pink-folded.webp"
+          ]
+        }
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "2XL",
+        "3XL"
+      ],
+      "front": "classic",
+      "back": "none",
+      "lead": "front",
+      "description": "Aruba across the chest over a sunset beach with palm trees, and One Happy Island on the back. Lightweight, breathable ring-spun cotton for beach days.",
+      "details": [
+        "Soft, lightweight cotton tee",
+        "Regular fit",
+        "Aruba beach graphic on the front",
+        "One Happy Island on the back",
+        "FLÒ printed at the neck"
+      ],
+      "photos": [
+        "assets/img/products/printify/aruba-tee-coral-silk-front.webp",
+        "assets/img/products/printify/aruba-tee-coral-silk-back.webp"
+      ],
+      "fit": "Regular fit. Take your usual size.",
+      "whiteBg": true,
+      "printify": "6ad16019e1630eaee406edcc"
+    },
+    {
       "id": "apparel-crew",
       "name": "Apparel Crewneck",
       "type": "crew",
