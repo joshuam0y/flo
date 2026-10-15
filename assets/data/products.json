@@ -879,8 +879,8 @@
       "printify": "6acd98f487c401878d0fd4d8"
     },
     {
-      "id": "georgia-oranges-tee",
-      "name": "Georgia Oranges Tee",
+      "id": "turks-caicos-tee",
+      "name": "Turks and Caicos Tee",
       "type": "tee",
       "category": "tees",
       "price": 29,
@@ -895,48 +895,65 @@
       "back": "none",
       "lead": "back",
       "fit": "Regular fit. Take your usual size.",
-      "description": "A cluster of ripe Georgia oranges and leaves across the back, with the FLÒ mark on the chest. Lightweight, breathable cotton for warm Southern days.",
+      "description": "A sunny Turks and Caicos beach across the back, with palm trees, turquoise water, hibiscus and a sailboat on the horizon, plus a small version on the chest. Lightweight, breathable cotton for island days.",
       "details": [
         "Soft, lightweight cotton tee",
         "Regular fit",
-        "FLÒ mark on the chest",
-        "Georgia oranges graphic on the back"
+        "Small Turks and Caicos mark on the chest",
+        "Large beach graphic on the back",
+        "FLÒ printed at the neck"
       ],
       "photos": [
-        "assets/img/products/printify/georgia-oranges-tee-white-front.webp",
-        "assets/img/products/printify/georgia-oranges-tee-white-back.webp"
+        "assets/img/products/printify/turks-caicos-tee-sand-front.jpg",
+        "assets/img/products/printify/turks-caicos-tee-sand-back.jpg"
       ],
       "colors": [
+        {
+          "name": "Sand",
+          "hex": "#DCD2BE",
+          "photos": [
+            "assets/img/products/printify/turks-caicos-tee-sand-front.jpg",
+            "assets/img/products/printify/turks-caicos-tee-sand-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL"
+          ]
+        },
         {
           "name": "White",
           "hex": "#ffffff",
           "photos": [
-            "assets/img/products/printify/georgia-oranges-tee-white-front.webp",
-            "assets/img/products/printify/georgia-oranges-tee-white-back.webp"
+            "assets/img/products/printify/turks-caicos-tee-white-front.jpg",
+            "assets/img/products/printify/turks-caicos-tee-white-back.jpg"
           ]
         },
         {
           "name": "Black",
           "hex": "#000000",
           "photos": [
-            "assets/img/products/printify/georgia-oranges-tee-black-front.webp",
-            "assets/img/products/printify/georgia-oranges-tee-black-back.webp"
+            "assets/img/products/printify/turks-caicos-tee-black-front.jpg",
+            "assets/img/products/printify/turks-caicos-tee-black-back.jpg"
           ]
         },
         {
           "name": "Heather Navy",
           "hex": "#424753",
           "photos": [
-            "assets/img/products/printify/georgia-oranges-tee-heather-navy-front.webp",
-            "assets/img/products/printify/georgia-oranges-tee-heather-navy-back.webp"
+            "assets/img/products/printify/turks-caicos-tee-heather-navy-front.jpg",
+            "assets/img/products/printify/turks-caicos-tee-heather-navy-back.jpg"
           ]
         },
         {
           "name": "Pistachio",
           "hex": "#D3D590",
           "photos": [
-            "assets/img/products/printify/georgia-oranges-tee-pistachio-front.webp",
-            "assets/img/products/printify/georgia-oranges-tee-pistachio-back.webp"
+            "assets/img/products/printify/turks-caicos-tee-pistachio-front.jpg",
+            "assets/img/products/printify/turks-caicos-tee-pistachio-back.jpg"
           ],
           "sizes": [
             "S",
@@ -951,8 +968,8 @@
           "name": "Mint Green",
           "hex": "#b1e0c0",
           "photos": [
-            "assets/img/products/printify/georgia-oranges-tee-mint-green-front.webp",
-            "assets/img/products/printify/georgia-oranges-tee-mint-green-back.webp"
+            "assets/img/products/printify/turks-caicos-tee-mint-green-front.jpg",
+            "assets/img/products/printify/turks-caicos-tee-mint-green-back.jpg"
           ],
           "sizes": [
             "S",
@@ -967,8 +984,8 @@
           "name": "Kelly Green",
           "hex": "#009660",
           "photos": [
-            "assets/img/products/printify/georgia-oranges-tee-kelly-green-front.webp",
-            "assets/img/products/printify/georgia-oranges-tee-kelly-green-back.webp"
+            "assets/img/products/printify/turks-caicos-tee-kelly-green-front.jpg",
+            "assets/img/products/printify/turks-caicos-tee-kelly-green-back.jpg"
           ],
           "sizes": [
             "S",
@@ -983,8 +1000,8 @@
           "name": "Tropical Blue",
           "hex": "#0097A9",
           "photos": [
-            "assets/img/products/printify/georgia-oranges-tee-tropical-blue-front.webp",
-            "assets/img/products/printify/georgia-oranges-tee-tropical-blue-back.webp"
+            "assets/img/products/printify/turks-caicos-tee-tropical-blue-front.jpg",
+            "assets/img/products/printify/turks-caicos-tee-tropical-blue-back.jpg"
           ],
           "sizes": [
             "S",
@@ -999,8 +1016,8 @@
           "name": "Cornsilk",
           "hex": "#F7EF8F",
           "photos": [
-            "assets/img/products/printify/georgia-oranges-tee-cornsilk-front.webp",
-            "assets/img/products/printify/georgia-oranges-tee-cornsilk-back.webp"
+            "assets/img/products/printify/turks-caicos-tee-cornsilk-front.jpg",
+            "assets/img/products/printify/turks-caicos-tee-cornsilk-back.jpg"
           ],
           "sizes": [
             "S",
@@ -1015,8 +1032,8 @@
           "name": "Ice Grey",
           "hex": "#D7D6D3",
           "photos": [
-            "assets/img/products/printify/georgia-oranges-tee-ice-grey-front.webp",
-            "assets/img/products/printify/georgia-oranges-tee-ice-grey-back.webp"
+            "assets/img/products/printify/turks-caicos-tee-ice-grey-front.jpg",
+            "assets/img/products/printify/turks-caicos-tee-ice-grey-back.jpg"
           ],
           "sizes": [
             "S",
@@ -1031,8 +1048,8 @@
           "name": "Heather Indigo",
           "hex": "#6a798e",
           "photos": [
-            "assets/img/products/printify/georgia-oranges-tee-heather-indigo-front.webp",
-            "assets/img/products/printify/georgia-oranges-tee-heather-indigo-back.webp"
+            "assets/img/products/printify/turks-caicos-tee-heather-indigo-front.jpg",
+            "assets/img/products/printify/turks-caicos-tee-heather-indigo-back.jpg"
           ],
           "sizes": [
             "S",
@@ -1048,8 +1065,8 @@
           "name": "Heather Military Green",
           "hex": "#828067",
           "photos": [
-            "assets/img/products/printify/georgia-oranges-tee-heather-military-green-front.webp",
-            "assets/img/products/printify/georgia-oranges-tee-heather-military-green-back.webp"
+            "assets/img/products/printify/turks-caicos-tee-heather-military-green-front.jpg",
+            "assets/img/products/printify/turks-caicos-tee-heather-military-green-back.jpg"
           ],
           "sizes": [
             "S",
@@ -1062,27 +1079,11 @@
           ]
         },
         {
-          "name": "Sand",
-          "hex": "#DCD2BE",
-          "photos": [
-            "assets/img/products/printify/georgia-oranges-tee-sand-front.webp",
-            "assets/img/products/printify/georgia-oranges-tee-sand-back.webp"
-          ],
-          "sizes": [
-            "S",
-            "M",
-            "L",
-            "XL",
-            "2XL",
-            "3XL"
-          ]
-        },
-        {
           "name": "Dark Chocolate",
           "hex": "#31221D",
           "photos": [
-            "assets/img/products/printify/georgia-oranges-tee-dark-chocolate-front.webp",
-            "assets/img/products/printify/georgia-oranges-tee-dark-chocolate-back.webp"
+            "assets/img/products/printify/turks-caicos-tee-dark-chocolate-front.jpg",
+            "assets/img/products/printify/turks-caicos-tee-dark-chocolate-back.jpg"
           ],
           "sizes": [
             "S",
@@ -1098,8 +1099,8 @@
           "name": "Natural",
           "hex": "#FFF6E3",
           "photos": [
-            "assets/img/products/printify/georgia-oranges-tee-natural-front.webp",
-            "assets/img/products/printify/georgia-oranges-tee-natural-back.webp"
+            "assets/img/products/printify/turks-caicos-tee-natural-front.jpg",
+            "assets/img/products/printify/turks-caicos-tee-natural-back.jpg"
           ],
           "sizes": [
             "S",
