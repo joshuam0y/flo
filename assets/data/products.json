@@ -1142,13 +1142,13 @@
       "badge": "New",
       "colors": [
         {
-          "name": "Coral Silk",
-          "hex": "#e67376",
+          "name": "Light Pink",
+          "hex": "#FEE0EB",
           "photos": [
-            "assets/img/products/printify/aruba-tee-coral-silk-front.webp",
-            "assets/img/products/printify/aruba-tee-coral-silk-back.webp",
-            "assets/img/products/printify/aruba-tee-coral-silk-collar.webp",
-            "assets/img/products/printify/aruba-tee-coral-silk-folded.webp"
+            "assets/img/products/printify/aruba-tee-light-pink-front.webp",
+            "assets/img/products/printify/aruba-tee-light-pink-back.webp",
+            "assets/img/products/printify/aruba-tee-light-pink-collar.webp",
+            "assets/img/products/printify/aruba-tee-light-pink-folded.webp"
           ]
         },
         {
@@ -1162,26 +1162,6 @@
           ],
           "sizes": [
             "L"
-          ]
-        },
-        {
-          "name": "Mint Green",
-          "hex": "#b1e0c0",
-          "photos": [
-            "assets/img/products/printify/aruba-tee-mint-green-front.webp",
-            "assets/img/products/printify/aruba-tee-mint-green-back.webp",
-            "assets/img/products/printify/aruba-tee-mint-green-collar.webp",
-            "assets/img/products/printify/aruba-tee-mint-green-folded.webp"
-          ]
-        },
-        {
-          "name": "Light Pink",
-          "hex": "#FEE0EB",
-          "photos": [
-            "assets/img/products/printify/aruba-tee-light-pink-front.webp",
-            "assets/img/products/printify/aruba-tee-light-pink-back.webp",
-            "assets/img/products/printify/aruba-tee-light-pink-collar.webp",
-            "assets/img/products/printify/aruba-tee-light-pink-folded.webp"
           ]
         }
       ],
@@ -1205,8 +1185,8 @@
         "FLÒ printed at the neck"
       ],
       "photos": [
-        "assets/img/products/printify/aruba-tee-coral-silk-front.webp",
-        "assets/img/products/printify/aruba-tee-coral-silk-back.webp"
+        "assets/img/products/printify/aruba-tee-light-pink-front.webp",
+        "assets/img/products/printify/aruba-tee-light-pink-back.webp"
       ],
       "fit": "Regular fit. Take your usual size.",
       "whiteBg": true,
