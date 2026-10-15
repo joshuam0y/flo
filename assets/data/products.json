@@ -10,7 +10,7 @@
       "name": "Palm Springs Tee",
       "type": "tee",
       "category": "tees",
-      "price": 29,
+      "price": 24,
       "badge": "Drop 001",
       "colors": [
         {
@@ -210,7 +210,7 @@
       "name": "Go With the FLÒ Tee",
       "type": "tee",
       "category": "tees",
-      "price": 25,
+      "price": 24,
       "badge": "Drop 001",
       "colors": [
         {
@@ -432,7 +432,7 @@
       "name": "Summer Vibes Tee",
       "type": "tee",
       "category": "tees",
-      "price": 29,
+      "price": 24,
       "sizePrices": {
         "2XL": 36,
         "3XL": 36,
@@ -615,7 +615,7 @@
       "name": "California Malibu Tee",
       "type": "tee",
       "category": "tees",
-      "price": 29,
+      "price": 24,
       "sizePrices": {
         "2XL": 36,
         "3XL": 36,
@@ -883,7 +883,7 @@
       "name": "Turks and Caicos Tee",
       "type": "tee",
       "category": "tees",
-      "price": 29,
+      "price": 24,
       "sizePrices": {
         "2XL": 36,
         "3XL": 36,
