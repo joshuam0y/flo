@@ -225,7 +225,7 @@
     // No manual cache-busting here on purpose - GitHub Pages already sends a 10-minute max-age
     // plus an ETag, so the browser can skip a full re-download across page loads in one visit and
     // still pick up a real catalog change within 10 minutes (or instantly via a 304 revalidation).
-    const res = await fetch("assets/data/products.json");
+    const res = await fetch("assets/data/products.json", { cache: "no-cache" }); // always check for catalog changes
     catalog = await res.json();
     catalog.products = catalog.products.filter(p => !p.hidden); // hidden products stay in the file for later drops
     hideEmptyLinks();
