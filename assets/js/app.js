@@ -979,6 +979,10 @@
         ${p.photos.length && !p.photos[2] ? "" : `<div class="pdp__shot pdp__shot--wide slot">${p.photos[2]
           ? `<img class="photo photo--product" src="${p.photos[2]}" alt="${p.name} detail" loading="lazy">`
           : garmentSVG(p.type, color.hex, { front: p.front, back: p.back }, { side: hasBack ? "back" : "front", ink: color.ink })}</div>`}`;
+      // extra Printify shots for this colour (collar close-up, folded), after its front and back
+      const extra = (color.photos || []).slice(2);
+      if (extra.length) $("#pdp-gallery").insertAdjacentHTML("beforeend", extra.map((src, i) =>
+        `<div class="pdp__shot slot is-white"><img class="photo photo--product" src="${src}" alt="${esc(p.name)} in ${esc(color.name)}, detail ${i + 1}" loading="lazy"></div>`).join(""));
       // on-model photos, shown with the colour they were shot in
       const life = p.lifestyle && p.lifestyle.colour === color.name ? p.lifestyle.photos : [];
       if (life.length) $("#pdp-gallery").insertAdjacentHTML("beforeend", life.map((src, i) =>
