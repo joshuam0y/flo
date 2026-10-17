@@ -203,6 +203,15 @@
           "assets/img/lifestyle/palm-springs-tee-3.webp?v=1",
           "assets/img/lifestyle/palm-springs-tee-4.webp?v=1"
         ]
+      },
+      "postcard": {
+        "place": "Palm Springs",
+        "region": "California",
+        "code": "PSP",
+        "coords": "33.8303° N · 116.5453° W",
+        "colour": "Black",
+        "tint": "#ecc9b0",
+        "note": "Ninety-eight in the shade and nobody is in a hurry. The pool is warm, the palms are taller than you remember. Wish you were here."
       }
     },
     {
@@ -610,6 +619,15 @@
           "assets/img/lifestyle/summer-vibes-tee-3.webp?v=3",
           "assets/img/lifestyle/summer-vibes-tee-4.webp?v=3"
         ]
+      },
+      "postcard": {
+        "place": "Anywhere warm",
+        "region": "No fixed address",
+        "code": "SUN",
+        "coords": "Lat. unknown · Long. sunny",
+        "colour": "Mint Green",
+        "tint": "#f3c9b4",
+        "note": "No particular place this time. Just a palm, a shoreline and a long golden hour, wherever you happen to be."
       }
     },
     {
@@ -878,7 +896,16 @@
         "5XL"
       ],
       "whiteBg": true,
-      "printify": "6acd98f487c401878d0fd4d8"
+      "printify": "6acd98f487c401878d0fd4d8",
+      "postcard": {
+        "place": "Malibu",
+        "region": "California",
+        "code": "LAX",
+        "coords": "34.0259° N · 118.7798° W",
+        "colour": "Carolina Blue",
+        "tint": "#f0dcb6",
+        "note": "Salt in the air and the sun on the PCH all afternoon. Sending a little of the West Coast your way."
+      }
     },
     {
       "id": "turks-caicos-tee",
@@ -1127,7 +1154,16 @@
         "5XL"
       ],
       "whiteBg": true,
-      "printify": "6acd908687c401878d0fcd35"
+      "printify": "6acd908687c401878d0fcd35",
+      "postcard": {
+        "place": "Turks and Caicos",
+        "region": "British West Indies",
+        "code": "PLS",
+        "coords": "21.6940° N · 71.7979° W",
+        "colour": "Sand",
+        "tint": "#d3ebec",
+        "note": "The water really is that colour, every single day. Back when the tan fades, not before."
+      }
     },
     {
       "id": "aruba-tee",
@@ -1190,7 +1226,16 @@
       ],
       "fit": "Regular fit. Take your usual size.",
       "whiteBg": true,
-      "printify": "6ad16019e1630eaee406edcc"
+      "printify": "6ad16019e1630eaee406edcc",
+      "postcard": {
+        "place": "Aruba",
+        "region": "Dutch Caribbean",
+        "code": "AUA",
+        "coords": "12.5211° N · 69.9683° W",
+        "colour": "Light Pink",
+        "tint": "#fcebcf",
+        "note": "One happy island, exactly as promised. Trade winds, warm sand, long golden evenings. Don't wait up."
+      }
     },
     {
       "id": "apparel-crew",

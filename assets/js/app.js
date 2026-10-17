@@ -222,10 +222,9 @@
   }
 
   async function loadCatalog() {
-    // No manual cache-busting here on purpose - GitHub Pages already sends a 10-minute max-age
-    // plus an ETag, so the browser can skip a full re-download across page loads in one visit and
-    // still pick up a real catalog change within 10 minutes (or instantly via a 304 revalidation).
-    const res = await fetch("assets/data/products.json", { cache: "no-cache" }); // always check for catalog changes
+    // no-cache: the browser asks GitHub Pages every time (a cheap 304 when nothing changed), so a
+    // catalog change shows on the next page load instead of up to 10 minutes later
+    const res = await fetch("assets/data/products.json", { cache: "no-cache" });
     catalog = await res.json();
     catalog.products = catalog.products.filter(p => !p.hidden); // hidden products stay in the file for later drops
     hideEmptyLinks();
@@ -843,6 +842,70 @@
     });
   }
 
+  /* ---------- Postcards: the travel tees, each drawn as a postcard (products with a "postcard" block) ---------- */
+  const postcardItems = () => catalog.products.filter(p => p.postcard).map(p => {
+    const pc = p.postcard;
+    const color = p.colors.find(c => c.name === pc.colour) || p.colors[0];
+    const photos = color.photos || p.photos;
+    return { p, pc, color, face: (p.lead === "back" ? photos[1] : photos[0]) || photos[0], front: photos[0] };
+  });
+
+  function postmark(id, pc) {
+    const top = `${pc.place} · ${pc.code}`.toUpperCase();
+    return `<svg class="pc__postmark" viewBox="0 0 200 110" aria-hidden="true">
+      <g fill="none" stroke="currentColor">
+        <path d="M2 34c12-7 24 7 36 0s24 7 36 0M2 50c12-7 24 7 36 0s24 7 36 0M2 66c12-7 24 7 36 0s24 7 36 0M2 82c12-7 24 7 36 0s24 7 36 0" stroke-width="1.6"/>
+        <circle cx="140" cy="55" r="46" stroke-width="2"/><circle cx="140" cy="55" r="33" stroke-width="1"/>
+      </g>
+      <defs><path id="${id}-t" d="M100 55a40 40 0 0 1 80 0"/><path id="${id}-b" d="M98 55a42 42 0 0 0 84 0"/></defs>
+      <text font-size="9.5" letter-spacing="1.6" fill="currentColor"><textPath href="#${id}-t" startOffset="50%" text-anchor="middle">${esc(top)}</textPath></text>
+      <text font-size="8.5" letter-spacing="1.6" fill="currentColor"><textPath href="#${id}-b" startOffset="50%" text-anchor="middle" dominant-baseline="hanging">DROP 001 · 2026</textPath></text>
+      <text x="140" y="60" font-size="15" font-style="italic" font-family="Bodoni Moda, Georgia, serif" text-anchor="middle" fill="currentColor">flò</text>
+    </svg>`;
+  }
+
+  function renderPostcards() {
+    const items = postcardItems();
+    const list = $("#postcards");
+    if (list) {
+      list.innerHTML = items.map(({ p, pc, color, face, front }) => `
+        <article class="pc" style="--tint:${esc(pc.tint)}">
+          <a class="pc__face" href="product.html?id=${p.id}" aria-label="${esc(p.name)}">
+            <p class="pc__greeting"><small class="label">Greetings from</small>${esc(pc.place)}</p>
+            <img src="${face}" alt="${esc(p.name)} in ${esc(color.name)}" loading="lazy">
+          </a>
+          <div class="pc__back">
+            <div class="pc__msg">
+              <p class="label label--mute">${esc(pc.region)}</p>
+              <p class="pc__note">${esc(pc.note)}</p>
+              <p class="pc__sign">x, flò</p>
+            </div>
+            <div class="pc__addr">
+              <div class="pc__corner">
+                ${postmark("pm-" + p.id, pc)}
+                <div class="pc__stamp" style="--tint:${esc(pc.tint)}"><div class="pc__stamp-in">
+                  <img src="${front}" alt="" loading="lazy"><span>${esc(pc.code)}</span><b>${money(p.price)}</b>
+                </div></div>
+              </div>
+              <p class="pc__line pc__name">${esc(p.name)}</p>
+              <p class="pc__line label label--mute">${esc(pc.coords)}</p>
+              <p class="pc__line">${fromPrice(p)} · ${p.colors.length} colour${p.colors.length === 1 ? "" : "s"}</p>
+              <a class="btn btn--solid pc__cta" href="product.html?id=${p.id}">See the tee</a>
+            </div>
+          </div>
+        </article>`).join("");
+    }
+    const stack = $("#pc-stack");
+    if (stack) {
+      stack.innerHTML = items.map(({ p, pc, color, face }) => `
+        <span class="pc-mini" style="--tint:${esc(pc.tint)}">
+          <span class="pc-mini__greeting"><small class="label">Greetings from</small>${esc(pc.place)}</span>
+          <img src="${face}" alt="" loading="lazy">
+        </span>`).join("");
+      stack.closest("section").hidden = !items.length;
+    }
+  }
+
   const SECTIONS = [
     ["tees", "T-Shirts"], ["crewnecks", "Crewnecks"], ["hoodies", "Hoodies"],
     ["longsleeves", "Long Sleeves"], ["bottoms", "Bottoms"], ["accessories", "Accessories"]
@@ -940,6 +1003,7 @@
       list.innerHTML = [
         `<li><a href="shop.html">Shop all <small>${live.length}</small></a></li>`,
         ...cats.map(([c, t]) => `<li><a href="shop.html?c=${c}">${t} <small>${count(c)}</small></a></li>`),
+        ...(live.some(p => p.postcard) ? [`<li><a href="postcards.html">Postcards <small>${live.filter(p => p.postcard).length}</small></a></li>`] : []),
         `<li class="menu__minor"><a href="size-guide.html">Size guide</a></li>`,
         `<li class="menu__minor"><a href="account.html">Account</a></li>`,
         `<li class="menu__minor"><a href="about.html">The house</a></li>`
@@ -1133,6 +1197,7 @@
     renderHome();
     renderNav();
     renderShop();
+    renderPostcards();
     renderProduct();
     renderSuccess();
     renderBag();
