@@ -1959,7 +1959,8 @@
       ],
       "fit": "Regular fit. Take your usual size.",
       "whiteBg": true,
-      "printify": "6ad2d4a43f1400f6ad05275e"
+      "printify": "6ad2d4a43f1400f6ad05275e",
+      "hidden": true
     },
     {
       "id": "grand-touring-tee",
