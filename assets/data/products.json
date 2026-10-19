@@ -437,8 +437,8 @@
       "hidden": true
     },
     {
-      "id": "summer-vibes-tee",
-      "name": "Summer Vibes Tee",
+      "id": "tsigrado-beach-tee",
+      "name": "Tsigrado Beach Tee",
       "type": "tee",
       "category": "tees",
       "price": 24.99,
@@ -454,10 +454,10 @@
           "name": "Mint Green",
           "hex": "#b1e0c0",
           "photos": [
-            "assets/img/products/printify/summer-vibes-tee-mint-green-front.webp",
-            "assets/img/products/printify/summer-vibes-tee-mint-green-back.webp",
-            "assets/img/products/printify/summer-vibes-tee-mint-green-collar.webp",
-            "assets/img/products/printify/summer-vibes-tee-mint-green-folded.webp"
+            "assets/img/products/printify/tsigrado-beach-tee-mint-green-front.webp",
+            "assets/img/products/printify/tsigrado-beach-tee-mint-green-back.webp",
+            "assets/img/products/printify/tsigrado-beach-tee-mint-green-collar.webp",
+            "assets/img/products/printify/tsigrado-beach-tee-mint-green-folded.webp"
           ],
           "sizes": [
             "S",
@@ -472,24 +472,24 @@
           "name": "White",
           "hex": "#ffffff",
           "photos": [
-            "assets/img/products/printify/summer-vibes-tee-white-front.webp",
-            "assets/img/products/printify/summer-vibes-tee-white-back.webp"
+            "assets/img/products/printify/tsigrado-beach-tee-white-front.webp",
+            "assets/img/products/printify/tsigrado-beach-tee-white-back.webp"
           ]
         },
         {
           "name": "Charcoal",
           "hex": "#585559",
           "photos": [
-            "assets/img/products/printify/summer-vibes-tee-charcoal-front.webp",
-            "assets/img/products/printify/summer-vibes-tee-charcoal-back.webp"
+            "assets/img/products/printify/tsigrado-beach-tee-charcoal-front.webp",
+            "assets/img/products/printify/tsigrado-beach-tee-charcoal-back.webp"
           ]
         },
         {
           "name": "Coral Silk",
           "hex": "#e67376",
           "photos": [
-            "assets/img/products/printify/summer-vibes-tee-coral-silk-front.webp",
-            "assets/img/products/printify/summer-vibes-tee-coral-silk-back.webp"
+            "assets/img/products/printify/tsigrado-beach-tee-coral-silk-front.webp",
+            "assets/img/products/printify/tsigrado-beach-tee-coral-silk-back.webp"
           ],
           "sizes": [
             "S",
@@ -504,8 +504,8 @@
           "name": "Carolina Blue",
           "hex": "#7BA4DB",
           "photos": [
-            "assets/img/products/printify/summer-vibes-tee-carolina-blue-front.webp",
-            "assets/img/products/printify/summer-vibes-tee-carolina-blue-back.webp"
+            "assets/img/products/printify/tsigrado-beach-tee-carolina-blue-front.webp",
+            "assets/img/products/printify/tsigrado-beach-tee-carolina-blue-back.webp"
           ],
           "sizes": [
             "S",
@@ -520,8 +520,8 @@
           "name": "Light Pink",
           "hex": "#FEE0EB",
           "photos": [
-            "assets/img/products/printify/summer-vibes-tee-light-pink-front.webp",
-            "assets/img/products/printify/summer-vibes-tee-light-pink-back.webp"
+            "assets/img/products/printify/tsigrado-beach-tee-light-pink-front.webp",
+            "assets/img/products/printify/tsigrado-beach-tee-light-pink-back.webp"
           ],
           "sizes": [
             "S",
@@ -536,8 +536,8 @@
           "name": "Light Blue",
           "hex": "#d6e6f7",
           "photos": [
-            "assets/img/products/printify/summer-vibes-tee-light-blue-front.webp",
-            "assets/img/products/printify/summer-vibes-tee-light-blue-back.webp"
+            "assets/img/products/printify/tsigrado-beach-tee-light-blue-front.webp",
+            "assets/img/products/printify/tsigrado-beach-tee-light-blue-back.webp"
           ],
           "sizes": [
             "S",
@@ -553,8 +553,8 @@
           "name": "Sand",
           "hex": "#DCD2BE",
           "photos": [
-            "assets/img/products/printify/summer-vibes-tee-sand-front.webp",
-            "assets/img/products/printify/summer-vibes-tee-sand-back.webp"
+            "assets/img/products/printify/tsigrado-beach-tee-sand-front.webp",
+            "assets/img/products/printify/tsigrado-beach-tee-sand-back.webp"
           ],
           "sizes": [
             "S",
@@ -569,8 +569,8 @@
           "name": "Natural",
           "hex": "#FFF6E3",
           "photos": [
-            "assets/img/products/printify/summer-vibes-tee-natural-front.webp",
-            "assets/img/products/printify/summer-vibes-tee-natural-back.webp"
+            "assets/img/products/printify/tsigrado-beach-tee-natural-front.webp",
+            "assets/img/products/printify/tsigrado-beach-tee-natural-back.webp"
           ],
           "sizes": [
             "S",
@@ -597,38 +597,29 @@
       "front": "classic",
       "back": "none",
       "lead": "back",
-      "description": "Palm trees, a warm sunset and the shoreline across the back, with a small version of the same beach on the chest. Lightweight, breathable cotton made for summer.",
+      "description": "Tsigrado Beach on Milos, Greece across the back: white cliffs, a wooden stair down to a turquoise cove and the Aegean beyond, with Milos, Greece written small on the chest. Lightweight, breathable cotton for long summer days.",
       "details": [
         "Soft, lightweight cotton tee",
         "Regular fit",
-        "Small sunset beach mark on the chest",
-        "Sunset beach graphic on the back",
+        "Milos, Greece on the chest",
+        "Tsigrado Beach graphic on the back",
         "FLÒ printed at the neck"
       ],
       "photos": [
-        "assets/img/products/printify/summer-vibes-tee-mint-green-front.webp",
-        "assets/img/products/printify/summer-vibes-tee-mint-green-back.webp"
+        "assets/img/products/printify/tsigrado-beach-tee-mint-green-front.webp",
+        "assets/img/products/printify/tsigrado-beach-tee-mint-green-back.webp"
       ],
       "fit": "Regular fit. Take your usual size.",
       "whiteBg": true,
       "printify": "6acd2645b4b7a98e6a05639e",
-      "lifestyle": {
-        "colour": "White",
-        "photos": [
-          "assets/img/lifestyle/summer-vibes-tee-1.webp?v=3",
-          "assets/img/lifestyle/summer-vibes-tee-2.webp?v=3",
-          "assets/img/lifestyle/summer-vibes-tee-3.webp?v=3",
-          "assets/img/lifestyle/summer-vibes-tee-4.webp?v=3"
-        ]
-      },
       "postcard": {
-        "place": "Anywhere warm",
-        "region": "No fixed address",
-        "code": "SUN",
-        "coords": "Lat. unknown · Long. sunny",
+        "place": "Milos",
+        "region": "Greece",
+        "code": "MLO",
+        "coords": "36.7270° N · 24.4450° E",
         "colour": "Mint Green",
-        "tint": "#f3c9b4",
-        "note": "No particular place this time. Just a palm, a shoreline and a long golden hour, wherever you happen to be."
+        "tint": "#cfe3ec",
+        "note": "Climbed down the old wooden stairs at Tsigrado and found the clearest water in the Aegean. Sun until nine. Wish you were here."
       }
     },
     {
