@@ -54,8 +54,8 @@ window.FLO_CONFIG = {
   // Homepage and about-page photos (hero, editorial, about). Drop a file in assets/img and add it here,
   // e.g. hero: "assets/img/hero.jpg". Until then each slot shows an illustration.
   photos: {
-    hero: "assets/img/lifestyle/palm-springs-tee-2.webp?v=1",
-    editorial: "assets/img/lifestyle/forward-crew-1.webp?v=3",
-    about: "assets/img/lifestyle/apparel-crew-1.webp?v=3"
+    hero: "",
+    editorial: "",
+    about: ""
   }
 };

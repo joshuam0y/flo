@@ -195,15 +195,6 @@
         "4XL": 36,
         "5XL": 36
       },
-      "lifestyle": {
-        "colour": "Black",
-        "photos": [
-          "assets/img/lifestyle/palm-springs-tee-1.webp?v=1",
-          "assets/img/lifestyle/palm-springs-tee-2.webp?v=1",
-          "assets/img/lifestyle/palm-springs-tee-3.webp?v=1",
-          "assets/img/lifestyle/palm-springs-tee-4.webp?v=1"
-        ]
-      },
       "postcard": {
         "place": "Palm Springs",
         "region": "California",
@@ -419,20 +410,6 @@
         "3XL": 32,
         "4XL": 32,
         "5XL": 32
-      },
-      "lifestyle": {
-        "colour": "Mint Green",
-        "photos": [
-          "assets/img/lifestyle/over-perfection-tee-5.webp?v=1",
-          "assets/img/lifestyle/over-perfection-tee-6.webp?v=1",
-          "assets/img/lifestyle/over-perfection-tee-7.webp?v=1",
-          "assets/img/lifestyle/over-perfection-tee-8.webp?v=1",
-          "assets/img/lifestyle/over-perfection-tee-9.webp?v=1",
-          "assets/img/lifestyle/over-perfection-tee-1.webp?v=3",
-          "assets/img/lifestyle/over-perfection-tee-2.webp?v=3",
-          "assets/img/lifestyle/over-perfection-tee-3.webp?v=3",
-          "assets/img/lifestyle/over-perfection-tee-4.webp?v=3"
-        ]
       },
       "hidden": true
     },
@@ -1426,15 +1403,6 @@
         "3XL": 49,
         "4XL": 49,
         "5XL": 49
-      },
-      "lifestyle": {
-        "colour": "Black",
-        "photos": [
-          "assets/img/lifestyle/apparel-crew-1.webp?v=3",
-          "assets/img/lifestyle/apparel-crew-2.webp?v=3",
-          "assets/img/lifestyle/apparel-crew-3.webp?v=3",
-          "assets/img/lifestyle/apparel-crew-4.webp?v=3"
-        ]
       }
     },
     {
@@ -1568,15 +1536,6 @@
       "fit": "Relaxed fit. Take your usual size.",
       "whiteBg": true,
       "printify": "6ac27f66424802d4ea07a45c",
-      "lifestyle": {
-        "colour": "Sand",
-        "photos": [
-          "assets/img/lifestyle/forward-crew-1.webp?v=3",
-          "assets/img/lifestyle/forward-crew-2.webp?v=3",
-          "assets/img/lifestyle/forward-crew-3.webp?v=3",
-          "assets/img/lifestyle/forward-crew-4.webp?v=3"
-        ]
-      },
       "sizePrices": {
         "2XL": 46,
         "3XL": 46,
@@ -1788,13 +1747,6 @@
       "fit": "Classic fit. Take your usual size.",
       "whiteBg": true,
       "printify": "6acbff615a6821eb4003d559",
-      "lifestyle": {
-        "colour": "White",
-        "photos": [
-          "assets/img/lifestyle/champs-longsleeve-1.webp?v=3",
-          "assets/img/lifestyle/champs-longsleeve-2.webp?v=3"
-        ]
-      },
       "sizePrices": {
         "2XL": 33,
         "3XL": 33,
