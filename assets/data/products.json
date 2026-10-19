@@ -925,25 +925,25 @@
       "back": "none",
       "lead": "back",
       "fit": "Regular fit. Take your usual size.",
-      "description": "A sunny Turks and Caicos beach across the back, with palm trees, turquoise water, hibiscus and a sailboat on the horizon, plus a small version on the chest. Lightweight, breathable cotton for island days.",
+      "description": "Palm trees, a turquoise lagoon and a glowing sunset framed in tropical flowers across the back, with a small version of the same scene on the chest. Lightweight, breathable ring-spun cotton for island days.",
       "details": [
         "Soft, lightweight cotton tee",
         "Regular fit",
         "Small Turks and Caicos mark on the chest",
-        "Large beach graphic on the back",
+        "Large Turks and Caicos beach graphic on the back",
         "FLÒ printed at the neck"
       ],
       "photos": [
-        "assets/img/products/printify/turks-caicos-tee-sand-front.jpg",
-        "assets/img/products/printify/turks-caicos-tee-sand-back.jpg"
+        "assets/img/products/printify/turks-caicos-tee-mint-green-front.jpg",
+        "assets/img/products/printify/turks-caicos-tee-mint-green-back.jpg"
       ],
       "colors": [
         {
-          "name": "Sand",
-          "hex": "#DCD2BE",
+          "name": "Mint Green",
+          "hex": "#b1e0c0",
           "photos": [
-            "assets/img/products/printify/turks-caicos-tee-sand-front.jpg",
-            "assets/img/products/printify/turks-caicos-tee-sand-back.jpg"
+            "assets/img/products/printify/turks-caicos-tee-mint-green-front.jpg",
+            "assets/img/products/printify/turks-caicos-tee-mint-green-back.jpg"
           ],
           "sizes": [
             "S",
@@ -963,27 +963,19 @@
           ]
         },
         {
-          "name": "Black",
-          "hex": "#000000",
+          "name": "Navy",
+          "hex": "#1a2237",
           "photos": [
-            "assets/img/products/printify/turks-caicos-tee-black-front.jpg",
-            "assets/img/products/printify/turks-caicos-tee-black-back.jpg"
+            "assets/img/products/printify/turks-caicos-tee-navy-front.jpg",
+            "assets/img/products/printify/turks-caicos-tee-navy-back.jpg"
           ]
         },
         {
-          "name": "Heather Navy",
-          "hex": "#424753",
+          "name": "Coral Silk",
+          "hex": "#e67376",
           "photos": [
-            "assets/img/products/printify/turks-caicos-tee-heather-navy-front.jpg",
-            "assets/img/products/printify/turks-caicos-tee-heather-navy-back.jpg"
-          ]
-        },
-        {
-          "name": "Pistachio",
-          "hex": "#D3D590",
-          "photos": [
-            "assets/img/products/printify/turks-caicos-tee-pistachio-front.jpg",
-            "assets/img/products/printify/turks-caicos-tee-pistachio-back.jpg"
+            "assets/img/products/printify/turks-caicos-tee-coral-silk-front.jpg",
+            "assets/img/products/printify/turks-caicos-tee-coral-silk-back.jpg"
           ],
           "sizes": [
             "S",
@@ -995,11 +987,11 @@
           ]
         },
         {
-          "name": "Mint Green",
-          "hex": "#b1e0c0",
+          "name": "Heather Heliconia",
+          "hex": "#fa74a6",
           "photos": [
-            "assets/img/products/printify/turks-caicos-tee-mint-green-front.jpg",
-            "assets/img/products/printify/turks-caicos-tee-mint-green-back.jpg"
+            "assets/img/products/printify/turks-caicos-tee-heather-heliconia-front.jpg",
+            "assets/img/products/printify/turks-caicos-tee-heather-heliconia-back.jpg"
           ],
           "sizes": [
             "S",
@@ -1011,11 +1003,59 @@
           ]
         },
         {
-          "name": "Kelly Green",
-          "hex": "#009660",
+          "name": "Forest Green",
+          "hex": "#223b26",
           "photos": [
-            "assets/img/products/printify/turks-caicos-tee-kelly-green-front.jpg",
-            "assets/img/products/printify/turks-caicos-tee-kelly-green-back.jpg"
+            "assets/img/products/printify/turks-caicos-tee-forest-green-front.jpg",
+            "assets/img/products/printify/turks-caicos-tee-forest-green-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL"
+          ]
+        },
+        {
+          "name": "Carolina Blue",
+          "hex": "#7BA4DB",
+          "photos": [
+            "assets/img/products/printify/turks-caicos-tee-carolina-blue-front.jpg",
+            "assets/img/products/printify/turks-caicos-tee-carolina-blue-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL"
+          ]
+        },
+        {
+          "name": "Light Pink",
+          "hex": "#FEE0EB",
+          "photos": [
+            "assets/img/products/printify/turks-caicos-tee-light-pink-front.jpg",
+            "assets/img/products/printify/turks-caicos-tee-light-pink-back.jpg"
+          ],
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL",
+            "2XL",
+            "3XL"
+          ]
+        },
+        {
+          "name": "Stone Blue",
+          "hex": "#7F909C",
+          "photos": [
+            "assets/img/products/printify/turks-caicos-tee-stone-blue-front.jpg",
+            "assets/img/products/printify/turks-caicos-tee-stone-blue-back.jpg"
           ],
           "sizes": [
             "S",
@@ -1043,77 +1083,11 @@
           ]
         },
         {
-          "name": "Cornsilk",
-          "hex": "#F7EF8F",
+          "name": "Light Blue",
+          "hex": "#d6e6f7",
           "photos": [
-            "assets/img/products/printify/turks-caicos-tee-cornsilk-front.jpg",
-            "assets/img/products/printify/turks-caicos-tee-cornsilk-back.jpg"
-          ],
-          "sizes": [
-            "S",
-            "M",
-            "L",
-            "XL",
-            "2XL",
-            "3XL"
-          ]
-        },
-        {
-          "name": "Ice Grey",
-          "hex": "#D7D6D3",
-          "photos": [
-            "assets/img/products/printify/turks-caicos-tee-ice-grey-front.jpg",
-            "assets/img/products/printify/turks-caicos-tee-ice-grey-back.jpg"
-          ],
-          "sizes": [
-            "S",
-            "M",
-            "L",
-            "XL",
-            "2XL",
-            "3XL"
-          ]
-        },
-        {
-          "name": "Heather Indigo",
-          "hex": "#6a798e",
-          "photos": [
-            "assets/img/products/printify/turks-caicos-tee-heather-indigo-front.jpg",
-            "assets/img/products/printify/turks-caicos-tee-heather-indigo-back.jpg"
-          ],
-          "sizes": [
-            "S",
-            "M",
-            "L",
-            "XL",
-            "2XL",
-            "3XL",
-            "4XL"
-          ]
-        },
-        {
-          "name": "Heather Military Green",
-          "hex": "#828067",
-          "photos": [
-            "assets/img/products/printify/turks-caicos-tee-heather-military-green-front.jpg",
-            "assets/img/products/printify/turks-caicos-tee-heather-military-green-back.jpg"
-          ],
-          "sizes": [
-            "S",
-            "M",
-            "L",
-            "XL",
-            "2XL",
-            "3XL",
-            "4XL"
-          ]
-        },
-        {
-          "name": "Dark Chocolate",
-          "hex": "#31221D",
-          "photos": [
-            "assets/img/products/printify/turks-caicos-tee-dark-chocolate-front.jpg",
-            "assets/img/products/printify/turks-caicos-tee-dark-chocolate-back.jpg"
+            "assets/img/products/printify/turks-caicos-tee-light-blue-front.jpg",
+            "assets/img/products/printify/turks-caicos-tee-light-blue-back.jpg"
           ],
           "sizes": [
             "S",
@@ -1155,13 +1129,13 @@
         "5XL"
       ],
       "whiteBg": true,
-      "printify": "6acd908687c401878d0fcd35",
+      "printify": "6ad575276cb4e2658608cfe4",
       "postcard": {
         "place": "Turks and Caicos",
         "region": "British West Indies",
         "code": "PLS",
         "coords": "21.6940° N · 71.7979° W",
-        "colour": "Sand",
+        "colour": "Navy",
         "tint": "#d3ebec",
         "note": "The water really is that colour, every single day. Back when the tan fades, not before."
       }
@@ -1921,6 +1895,80 @@
       "sizePrices": {
         "2XL": 60
       }
+    },
+    {
+      "id": "island-sunset-short",
+      "name": "Island Sunset Shorts",
+      "type": "short",
+      "category": "bottoms",
+      "price": 34.99,
+      "sizePrices": {
+        "3XL": 38.99,
+        "4XL": 38.99
+      },
+      "badge": "New",
+      "colors": [
+        {
+          "name": "Black",
+          "hex": "#0e0e0e",
+          "photos": [
+            "assets/img/products/printify/island-sunset-short-black-front.jpg"
+          ]
+        },
+        {
+          "name": "Graphite",
+          "hex": "#646368",
+          "photos": [
+            "assets/img/products/printify/island-sunset-short-graphite-front.jpg"
+          ]
+        },
+        {
+          "name": "Navy",
+          "hex": "#2d324b",
+          "photos": [
+            "assets/img/products/printify/island-sunset-short-navy-front.jpg"
+          ]
+        },
+        {
+          "name": "Royal",
+          "hex": "#445caf",
+          "photos": [
+            "assets/img/products/printify/island-sunset-short-royal-front.jpg"
+          ]
+        },
+        {
+          "name": "White",
+          "hex": "#ffffff",
+          "photos": [
+            "assets/img/products/printify/island-sunset-short-white-front.jpg"
+          ]
+        }
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "2XL",
+        "3XL",
+        "4XL"
+      ],
+      "front": "classic",
+      "back": "none",
+      "lead": "front",
+      "description": "Light athletic shorts with a Turks and Caicos beach scene, palms, turquoise water and tropical flowers, on the lower leg. Moisture-wicking with a 7-inch inseam, made for warm days and long walks by the water.",
+      "details": [
+        "Lightweight athletic fabric",
+        "7-inch inseam",
+        "Elastic waistband",
+        "Turks and Caicos beach graphic on the leg"
+      ],
+      "photos": [
+        "assets/img/products/printify/island-sunset-short-black-front.jpg"
+      ],
+      "fit": "Regular fit. Take your usual size.",
+      "whiteBg": true,
+      "printify": "6ad2d4a43f1400f6ad05275e"
     },
     {
       "id": "grand-touring-tee",
