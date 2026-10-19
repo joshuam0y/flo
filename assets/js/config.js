@@ -56,6 +56,6 @@ window.FLO_CONFIG = {
   photos: {
     hero: "assets/img/lifestyle/palm-springs-tee-2.webp?v=1",
     editorial: "assets/img/lifestyle/forward-crew-1.webp?v=3",
-    about: "assets/img/lifestyle/summer-vibes-tee-3.webp?v=3"
+    about: "assets/img/lifestyle/apparel-crew-1.webp?v=3"
   }
 };
