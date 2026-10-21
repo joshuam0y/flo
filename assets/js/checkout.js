@@ -195,7 +195,7 @@
     // remind them of their welcome code from joining the list (entered on Stripe's payment page)
     try {
       const w = JSON.parse(localStorage.getItem("flo-welcome"));
-      if (live && w && w.expires * 1000 > Date.now()) $("#code-msg").textContent = `Your ${w.percent}% off first-order code is ${w.code}: enter it on the payment page.`;
+      if (live && w && w.v === 2 && w.expires * 1000 > Date.now()) $("#code-msg").textContent = `Your ${w.percent}% off first-order code is ${w.code}: enter it on the payment page.`;
     } catch { /* nothing saved */ }
     $("#pay-sec").hidden = live;
 
