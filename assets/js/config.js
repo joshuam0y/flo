@@ -3,7 +3,7 @@ window.FLO_CONFIG = {
   // "prelaunch": shoppers can browse, but instead of Add to bag they get a "notify me" sign-up,
   //              and the bag and checkout are switched off.
   // "live":      Add to bag and checkout are on (connect the checkout worker first, see README).
-  mode: "prelaunch",
+  mode: "live",
 
   // The checkout worker's base URL. Powers sign-ups, loyalty and the contact form right away,
   // even in prelaunch - only the "live" mode above (and checkoutUrl below) gates actual buying.
@@ -11,7 +11,7 @@ window.FLO_CONFIG = {
 
   // Once you're ready to take real payments, paste "<workerUrl>/checkout" here and switch mode
   // to "live" above - that's what turns on Add to bag.
-  checkoutUrl: "", // e.g. "https://flo-checkout.yourname.workers.dev/checkout"
+  checkoutUrl: "https://flo-checkout.joshuamoy.workers.dev/checkout",
 
   // Where email sign-ups go. Leave empty to use workerUrl's /subscribe.
   // With neither workerUrl nor signupUrl set, the "notify me" spots point people to TikTok instead.
@@ -43,7 +43,7 @@ window.FLO_CONFIG = {
 
   // "View my orders" on the account page: Stripe's customer portal login link (Stripe Dashboard, Settings, Billing,
   // Customer portal, turn on the login link and paste it here). Empty: the page says orders come after the drop.
-  ordersUrl: "https://billing.stripe.com/p/login/test_6oU9AV0km4c45OT5N943S00",
+  ordersUrl: "https://billing.stripe.com/p/login/9B6cN6acp92b5Kl0r10kE00",
 
   // Real sign-in (magic link, no password). Our own, through workerUrl's /auth/request and
   // /auth/verify - no third-party auth vendor, so nothing but flò ever shows in the browser or email.
