@@ -312,8 +312,15 @@ async function subscribe(request, env, cors) {
     const raw = await env.SUBSCRIBERS.get(key);
     try { saved = raw ? JSON.parse(raw) : null; } catch { saved = { joined: raw }; }   // early sign-ups stored just a date
   }
-  // one welcome code per email: signing up again shows the same code
-  if (saved?.code && saved.expires > now) return json({ ok: true, code: saved.code, percent: saved.percent, expires: saved.expires }, 200, cors);
+  // one welcome code per email: signing up again shows the same code, as long as Stripe still knows it.
+  // Codes made while the worker used a test key (or that were deleted in Stripe) don't exist in live mode,
+  // so those are replaced with a fresh one below. If the check itself fails, keep the saved code.
+  if (saved?.code && saved.expires > now) {
+    const known = env.STRIPE_SECRET_KEY
+      ? await stripe(env, `/promotion_codes?code=${encodeURIComponent(saved.code)}&active=true&limit=1`, { method: "GET" }).catch(() => null)
+      : null;
+    if (!known || known.data.length) return json({ ok: true, code: saved.code, percent: saved.percent, expires: saved.expires }, 200, cors);
+  }
   if (!env.STRIPE_SECRET_KEY) {
     // no Stripe yet: still build the email list (no welcome code until Stripe is connected)
     if (!env.SUBSCRIBERS && !env.BREVO_API_KEY) return json({ error: "Sign-ups aren't open yet." }, 503, cors);
