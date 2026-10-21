@@ -43,8 +43,10 @@
 
   // The welcome code from joining the list, kept on this device so the account page and checkout can show it
   const WELCOME_KEY = "flo-welcome";
+  // v: 2 marks codes made once the store went live. Codes saved earlier (no v) came from Stripe test mode, don't
+  // work at checkout, and are ignored, so the visitor is asked to join again and gets a working one.
   const readWelcome = () => {
-    try { const w = JSON.parse(localStorage.getItem(WELCOME_KEY)); return w && w.expires * 1000 > Date.now() ? w : null; } catch { return null; }
+    try { const w = JSON.parse(localStorage.getItem(WELCOME_KEY)); return w && w.v === 2 && w.expires * 1000 > Date.now() ? w : null; } catch { return null; }
   };
   // the first-order discount for joining, shown only once sign-ups really work
   const offer = () => (CFG.welcome && signupEndpoint ? CFG.welcome.percent : 0);
@@ -57,7 +59,7 @@
     });
     const data = await res.json().catch(() => ({}));
     if (!res.ok) throw new Error(data.error || "Something went wrong. Please try again.");
-    if (data.code) { try { localStorage.setItem(WELCOME_KEY, JSON.stringify({ code: data.code, percent: data.percent, expires: data.expires })); } catch { /* private mode */ } }
+    if (data.code) { try { localStorage.setItem(WELCOME_KEY, JSON.stringify({ v: 2, code: data.code, percent: data.percent, expires: data.expires })); } catch { /* private mode */ } }
     return data;
   }
 
