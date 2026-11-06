@@ -22,7 +22,8 @@ window.FLO_CONFIG = {
   // Launch discount shown in the top banner while the store is live. Create the same
   // code in Stripe (Product catalogue, Coupons, then a promotion code) so it works at payment.
   // Set code to "" to hide it.
-  launch: { code: "DROP001", offer: "10% off Drop 001" },
+  // code is empty until DROP001 exists in Stripe (Product catalogue → Coupons → promotion codes); put "DROP001" back then
+  launch: { code: "", offer: "10% off Drop 001" },
 
   // Joining the email list gives a personal one-time code for this much off a first order (the worker makes it in
   // Stripe; keep it the same as WELCOME_PERCENT in worker/wrangler.toml). The offer only shows once sign-ups work.
