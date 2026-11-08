@@ -1,7 +1,7 @@
 /* Flat garment illustrations. They stand in for product photography until real
    photos are added to a product's "photos" list in products.json. */
 (function () {
-  const BRAND = "flò";
+  const BRAND = "FLÒ";
   let uid = 0;
 
   const SHAPES = {
