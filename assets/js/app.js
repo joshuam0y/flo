@@ -28,7 +28,7 @@
   const authVerifyEndpoint = workerUrl ? `${workerUrl}/auth/verify` : "";
   const authSignOutEndpoint = workerUrl ? `${workerUrl}/auth/signout` : "";
   // Real sign-in (magic link, no password): our own, through the worker and Brevo - no third-party
-  // auth vendor, so nothing but flò ever shows up in the browser or the email. Gated by its own
+  // auth vendor, so nothing but FLÒ ever shows up in the browser or the email. Gated by its own
   // config flag, independent of prelaunch/checkout, so it can be tested live without also turning
   // on Add to bag.
   const authEnabled = !!CFG.signIn?.enabled && !!authRequestEndpoint;
@@ -483,15 +483,15 @@
     });
   }
 
-  // A small AI assistant, grounded only in flò's own shipping/returns/sizing/discount facts
+  // A small AI assistant, grounded only in FLÒ's own shipping/returns/sizing/discount facts
   // (see the worker's FLO_FACTS) - never on checkout, so nothing distracts from paying.
   function bindChat() {
     if (!chatEndpoint || document.body.dataset.page === "checkout") return;
     document.body.insertAdjacentHTML("beforeend", `
       <button class="chat-launcher" type="button" aria-haspopup="dialog" aria-expanded="false" aria-label="Chat with us"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v8A2.5 2.5 0 0 1 17.5 16H9l-4.5 4V5.5Z"/></svg></button>
-      <div class="chat-panel" role="dialog" aria-label="Chat with flò">
+      <div class="chat-panel" role="dialog" aria-label="Chat with FLÒ">
         <div class="chat-panel__head">
-          <p class="label">Ask flò</p>
+          <p class="label">Ask FLÒ</p>
           <button class="chat-panel__close label" aria-label="Close">✕</button>
         </div>
         <div class="chat-panel__log"><p class="chat-msg chat-msg--bot">Hey, ask me about shipping, sizing, returns or your discount code.</p></div>
@@ -564,7 +564,7 @@
               ? `<form class="popup__form"><input type="email" required placeholder="Email address" aria-label="Email address"><button class="btn btn--solid" type="submit">${pct ? "Get my code" : "Join the list"}</button></form>
                  <p class="popup__msg" aria-live="polite"></p>`
               : `<a class="btn btn--solid" href="${esc(CFG.tiktok || CFG.instagram || "#")}" target="_blank" rel="noopener">Follow for the drop date</a>`}
-            ${signupEndpoint ? `<p class="popup__fine">By joining you agree to get emails from flò about drops and promotions. Unsubscribe anytime. <a class="link-u" href="policies.html#privacy">Privacy</a></p>` : ""}
+            ${signupEndpoint ? `<p class="popup__fine">By joining you agree to get emails from FLÒ about drops and promotions. Unsubscribe anytime. <a class="link-u" href="policies.html#privacy">Privacy</a></p>` : ""}
           </div>
         </div>
       </div>`);
@@ -862,7 +862,7 @@
       <defs><path id="${id}-t" d="M100 55a40 40 0 0 1 80 0"/><path id="${id}-b" d="M98 55a42 42 0 0 0 84 0"/></defs>
       <text font-size="9.5" letter-spacing="1.6" fill="currentColor"><textPath href="#${id}-t" startOffset="50%" text-anchor="middle">${esc(top)}</textPath></text>
       <text font-size="8.5" letter-spacing="1.6" fill="currentColor"><textPath href="#${id}-b" startOffset="50%" text-anchor="middle" dominant-baseline="hanging">DROP 001 · 2026</textPath></text>
-      <text x="140" y="60" font-size="15" font-style="italic" font-family="Bodoni Moda, Georgia, serif" text-anchor="middle" fill="currentColor">flò</text>
+      <text x="140" y="60" font-size="15" font-style="italic" font-family="Bodoni Moda, Georgia, serif" text-anchor="middle" fill="currentColor">FLÒ</text>
     </svg>`;
   }
 
@@ -880,7 +880,7 @@
             <div class="pc__msg">
               <p class="label label--mute">${esc(pc.region)}</p>
               <p class="pc__note">${esc(pc.note)}</p>
-              <p class="pc__sign">x, flò</p>
+              <p class="pc__sign">x, FLÒ</p>
             </div>
             <div class="pc__addr">
               <div class="pc__corner">
@@ -970,7 +970,7 @@
       name: p.name,
       description: p.description,
       image: img ? `https://floshops.com/${img.replace(/^\.?\/*/, "")}` : "https://floshops.com/assets/img/og.jpg",
-      brand: { "@type": "Brand", name: "flò" },
+      brand: { "@type": "Brand", name: "FLÒ" },
       offers: {
         "@type": "Offer",
         url: `https://floshops.com/product.html?id=${p.id}`,
@@ -1026,7 +1026,7 @@
     const root = $("#pdp");
     if (!root) return;
     const p = findProduct(new URLSearchParams(location.search).get("id")) || catalog.products[0];
-    document.title = `${p.name} | flò`;
+    document.title = `${p.name} | FLÒ`;
     let color = p.colors[0];
     let size = p.sizes.length === 1 ? p.sizes[0] : null;
 
@@ -1063,7 +1063,7 @@
     root.querySelector(".pdp__price").textContent = size ? money(priceFor(p, size)) : fromPrice(p);
     root.querySelector(".pdp__desc").textContent = p.description;
     injectProductSchema(p, color);
-    $("#pdp-badge").textContent = p.flag ? `${p.badge ? `${p.badge} · ` : ""}Coming soon` : p.badge || "flò essentials";
+    $("#pdp-badge").textContent = p.flag ? `${p.badge ? `${p.badge} · ` : ""}Coming soon` : p.badge || "FLÒ essentials";
     $("#pdp-details").innerHTML = `<ul>${p.details.map(d => `<li>${d}</li>`).join("")}</ul>`;
     if (p.fit) $("#pdp-fit").textContent = p.fit;
     const sg = $("#pdp-sizeguide");

@@ -47,7 +47,7 @@ window.FLO_CONFIG = {
   ordersUrl: "https://billing.stripe.com/p/login/9B6cN6acp92b5Kl0r10kE00",
 
   // Real sign-in (magic link, no password). Our own, through workerUrl's /auth/request and
-  // /auth/verify - no third-party auth vendor, so nothing but flò ever shows in the browser or email.
+  // /auth/verify - no third-party auth vendor, so nothing but FLÒ ever shows in the browser or email.
   // Separate from "mode" above on purpose: flip this on to test the real thing (go to account.html,
   // sign in with your own email, confirm the link works) without also turning on Add to bag.
   signIn: { enabled: false },
