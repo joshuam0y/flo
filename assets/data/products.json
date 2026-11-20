@@ -450,7 +450,9 @@
           "hex": "#ffffff",
           "photos": [
             "assets/img/products/printify/tsigrado-beach-tee-white-front.webp",
-            "assets/img/products/printify/tsigrado-beach-tee-white-back.webp"
+            "assets/img/products/printify/tsigrado-beach-tee-white-back.webp",
+            "assets/img/products/printify/tsigrado-beach-tee-white-collar.webp",
+            "assets/img/products/printify/tsigrado-beach-tee-white-folded.webp"
           ]
         },
         {
@@ -458,7 +460,9 @@
           "hex": "#585559",
           "photos": [
             "assets/img/products/printify/tsigrado-beach-tee-charcoal-front.webp",
-            "assets/img/products/printify/tsigrado-beach-tee-charcoal-back.webp"
+            "assets/img/products/printify/tsigrado-beach-tee-charcoal-back.webp",
+            "assets/img/products/printify/tsigrado-beach-tee-charcoal-collar.webp",
+            "assets/img/products/printify/tsigrado-beach-tee-charcoal-folded.webp"
           ]
         },
         {
@@ -466,7 +470,9 @@
           "hex": "#e67376",
           "photos": [
             "assets/img/products/printify/tsigrado-beach-tee-coral-silk-front.webp",
-            "assets/img/products/printify/tsigrado-beach-tee-coral-silk-back.webp"
+            "assets/img/products/printify/tsigrado-beach-tee-coral-silk-back.webp",
+            "assets/img/products/printify/tsigrado-beach-tee-coral-silk-collar.webp",
+            "assets/img/products/printify/tsigrado-beach-tee-coral-silk-folded.webp"
           ],
           "sizes": [
             "S",
@@ -482,7 +488,9 @@
           "hex": "#7BA4DB",
           "photos": [
             "assets/img/products/printify/tsigrado-beach-tee-carolina-blue-front.webp",
-            "assets/img/products/printify/tsigrado-beach-tee-carolina-blue-back.webp"
+            "assets/img/products/printify/tsigrado-beach-tee-carolina-blue-back.webp",
+            "assets/img/products/printify/tsigrado-beach-tee-carolina-blue-collar.webp",
+            "assets/img/products/printify/tsigrado-beach-tee-carolina-blue-folded.webp"
           ],
           "sizes": [
             "S",
@@ -498,7 +506,9 @@
           "hex": "#FEE0EB",
           "photos": [
             "assets/img/products/printify/tsigrado-beach-tee-light-pink-front.webp",
-            "assets/img/products/printify/tsigrado-beach-tee-light-pink-back.webp"
+            "assets/img/products/printify/tsigrado-beach-tee-light-pink-back.webp",
+            "assets/img/products/printify/tsigrado-beach-tee-light-pink-collar.webp",
+            "assets/img/products/printify/tsigrado-beach-tee-light-pink-folded.webp"
           ],
           "sizes": [
             "S",
@@ -514,7 +524,9 @@
           "hex": "#d6e6f7",
           "photos": [
             "assets/img/products/printify/tsigrado-beach-tee-light-blue-front.webp",
-            "assets/img/products/printify/tsigrado-beach-tee-light-blue-back.webp"
+            "assets/img/products/printify/tsigrado-beach-tee-light-blue-back.webp",
+            "assets/img/products/printify/tsigrado-beach-tee-light-blue-collar.webp",
+            "assets/img/products/printify/tsigrado-beach-tee-light-blue-folded.webp"
           ],
           "sizes": [
             "S",
@@ -531,7 +543,9 @@
           "hex": "#DCD2BE",
           "photos": [
             "assets/img/products/printify/tsigrado-beach-tee-sand-front.webp",
-            "assets/img/products/printify/tsigrado-beach-tee-sand-back.webp"
+            "assets/img/products/printify/tsigrado-beach-tee-sand-back.webp",
+            "assets/img/products/printify/tsigrado-beach-tee-sand-collar.webp",
+            "assets/img/products/printify/tsigrado-beach-tee-sand-folded.webp"
           ],
           "sizes": [
             "S",
@@ -547,7 +561,9 @@
           "hex": "#FFF6E3",
           "photos": [
             "assets/img/products/printify/tsigrado-beach-tee-natural-front.webp",
-            "assets/img/products/printify/tsigrado-beach-tee-natural-back.webp"
+            "assets/img/products/printify/tsigrado-beach-tee-natural-back.webp",
+            "assets/img/products/printify/tsigrado-beach-tee-natural-collar.webp",
+            "assets/img/products/printify/tsigrado-beach-tee-natural-folded.webp"
           ],
           "sizes": [
             "S",
