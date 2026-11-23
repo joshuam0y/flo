@@ -66,7 +66,7 @@
   const shortDate = sec => new Date(sec * 1000).toLocaleDateString("en-US", { month: "short", day: "numeric" });
   function joinedHtml(data, fallback) {
     if (!data.code) return esc(fallback);
-    return `You're in. Your ${data.percent}% off code for your first order: <b class="code">${esc(data.code)}</b> (until ${shortDate(data.expires)}). It's saved on this device.`;
+    return `You're in. Your ${data.percent}% off code for your first order: <b class="code">${esc(data.code)}</b> (until ${shortDate(data.expires)}). It's saved on this device${data.emailed ? " and we've emailed it to you" : ""}.`;
   }
 
   // A sign-up form wired to the list, or a pointer to TikTok while sign-ups aren't connected
