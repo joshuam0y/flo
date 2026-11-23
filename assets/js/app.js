@@ -630,6 +630,26 @@
     const onList = !!readWelcome();
     const session = authEnabled ? getSession() : null;
     const email = session?.email || null;
+    // Until the store opens there are no orders or points to show, so the Account page is just the sign-up
+    if (prelaunch && !authEnabled) {
+      root.innerHTML = `
+        <p class="label label--mute">Early access</p>
+        <h1 class="display account__title">Opens <em>Dec 11</em></h1>
+        <div class="account__grid" style="grid-template-columns:1fr">
+          <div class="account__card" id="account-rewards">
+            <p class="label">Join the list</p>
+            <div class="notify">${notifyMarkup(pct ? `Get ${pct}% off your first order. Your code shows up here right away.` : "We'll email you when the drop opens.")}</div>
+          </div>
+        </div>`;
+      const early = root.querySelector("#account-rewards .notify");
+      if (early) bindNotify(early);
+      root.addEventListener("click", e => {
+        const c = e.target.closest("[data-copy]");
+        if (!c) return;
+        navigator.clipboard?.writeText(c.dataset.copy).then(() => toast("Code copied"), () => toast(c.dataset.copy));
+      });
+      return;
+    }
     root.innerHTML = `
       <p class="label label--mute">Your account</p>
       <h1 class="display account__title">Orders &amp; <em>rewards</em></h1>
