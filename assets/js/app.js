@@ -633,6 +633,7 @@
     // Until the store opens there are no orders or points to show, so the Account page is just the sign-up
     if (prelaunch && !authEnabled) {
       const saved = readWelcome();
+      document.title = "Early access | FLÒ";
       root.innerHTML = `
         <p class="label label--mute">Early access</p>
         <h1 class="display account__title">Opens <em>Dec 11</em></h1>
@@ -1050,7 +1051,9 @@
   function renderProduct() {
     const root = $("#pdp");
     if (!root) return;
-    const p = findProduct(new URLSearchParams(location.search).get("id")) || catalog.products[0];
+    const p = findProduct(new URLSearchParams(location.search).get("id"));
+    // a link to a product that is hidden or gone goes to the shop, instead of quietly showing a different product
+    if (!p) { location.replace("shop.html"); return; }
     document.title = `${p.name} | FLÒ`;
     let color = p.colors[0];
     let size = p.sizes.length === 1 ? p.sizes[0] : null;
