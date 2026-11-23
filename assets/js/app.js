@@ -66,7 +66,7 @@
   const shortDate = sec => new Date(sec * 1000).toLocaleDateString("en-US", { month: "short", day: "numeric" });
   function joinedHtml(data, fallback) {
     if (!data.code) return esc(fallback);
-    return `You're in. Your ${data.percent}% off code for your first order: <b class="code">${esc(data.code)}</b> (until ${shortDate(data.expires)}). It's saved on this device and on your <a class="link-u" href="account.html">account page</a>.`;
+    return `You're in. Your ${data.percent}% off code for your first order: <b class="code">${esc(data.code)}</b> (until ${shortDate(data.expires)}). It's saved on this device.`;
   }
 
   // A sign-up form wired to the list, or a pointer to TikTok while sign-ups aren't connected
@@ -632,13 +632,18 @@
     const email = session?.email || null;
     // Until the store opens there are no orders or points to show, so the Account page is just the sign-up
     if (prelaunch && !authEnabled) {
+      const saved = readWelcome();
       root.innerHTML = `
         <p class="label label--mute">Early access</p>
         <h1 class="display account__title">Opens <em>Dec 11</em></h1>
         <div class="account__grid" style="grid-template-columns:1fr">
           <div class="account__card" id="account-rewards">
             <p class="label">Join the list</p>
-            <div class="notify">${notifyMarkup(pct ? `Get ${pct}% off your first order. Your code shows up here right away.` : "We'll email you when the drop opens.")}</div>
+            ${saved
+              ? `<p>You're on the list. Your ${saved.percent}% off code for your first order:</p>
+                 <p class="account__code"><b>${esc(saved.code)}</b> <button class="label link-u" data-copy="${esc(saved.code)}">Copy</button></p>
+                 <p class="account__fine">One use, until ${shortDate(saved.expires)}. Saved on this device. The store opens Dec 11.</p>`
+              : `<div class="notify">${notifyMarkup(pct ? `Get ${pct}% off your first order. Your code shows up here right away.` : "We'll email you when the drop opens.")}</div>`}
           </div>
         </div>`;
       const early = root.querySelector("#account-rewards .notify");

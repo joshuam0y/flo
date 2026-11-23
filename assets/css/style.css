@@ -800,13 +800,15 @@ input { font: inherit; }
 
 /* ---------- AI chat widget ---------- */
 .chat-launcher {
-  position: fixed; left: 20px; bottom: 20px; z-index: 90; width: 52px; height: 52px; padding: 0;
+  position: fixed; right: 20px; bottom: calc(20px + env(safe-area-inset-bottom, 0px)); z-index: 55; width: 52px; height: 52px; padding: 0;
   background: var(--ink); color: var(--paper); border-radius: 50%; display: flex; align-items: center;
   justify-content: center; box-shadow: 0 10px 30px rgba(18, 17, 16, .22);
 }
 .chat-launcher:hover { background: var(--oxblood); }
+/* the corner sign-up card lives bottom-right too: tuck the chat button away while it is up */
+body:has(.corner-popup) .chat-launcher { display: none; }
 .chat-panel {
-  position: fixed; left: 20px; bottom: 80px; z-index: 90; width: min(340px, calc(100vw - 40px));
+  position: fixed; right: 20px; bottom: calc(80px + env(safe-area-inset-bottom, 0px)); z-index: 55; width: min(340px, calc(100vw - 40px));
   height: min(440px, calc(100vh - 140px)); background: var(--paper); color: var(--ink);
   box-shadow: 0 12px 40px rgba(18, 17, 16, .22); display: none; grid-template-rows: auto 1fr auto;
   opacity: 0; transform: translateY(16px); transition: opacity .25s ease, transform .3s cubic-bezier(.2, .7, .1, 1);
