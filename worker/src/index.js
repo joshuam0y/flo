@@ -307,6 +307,14 @@ async function subscribe(request, env, cors) {
   }
   const key = email.trim().toLowerCase();
   const now = Math.floor(Date.now() / 1000);
+  // At most 8 sign-up attempts per connection per hour, so the form cannot be used to mail strangers or mint codes in bulk
+  if (env.SUBSCRIBERS) {
+    const ip = request.headers.get("CF-Connecting-IP") || "unknown";
+    const rlKey = `signuprl:${ip}`;
+    const tries = Number(await env.SUBSCRIBERS.get(rlKey)) || 0;
+    if (tries >= 8) return json({ error: "Too many sign-ups from this connection. Please try again in an hour." }, 429, cors);
+    await env.SUBSCRIBERS.put(rlKey, String(tries + 1), { expirationTtl: 3600 });
+  }
   let saved = null;
   if (env.SUBSCRIBERS) {
     const raw = await env.SUBSCRIBERS.get(key);
@@ -556,6 +564,7 @@ async function awardPoints(env, email, dollars) {
         expires_at: String(expires), "metadata[email]": key
       }) });
       reward = { code, percent, expires };
+      await sendCodeEmail(env, key, reward, "loyalty");
     }
     await env.SUBSCRIBERS.put(key, JSON.stringify({ ...saved, points, rewardsEarned: nowEarned, reward }));
   } catch (err) {
@@ -566,11 +575,15 @@ async function awardPoints(env, email, dollars) {
 // Looks up a shopper's points and any unredeemed reward code by email (no password: same lightweight
 // model as the welcome code). Doesn't reveal whether an email has ever ordered beyond its own points.
 async function rewards(request, env, cors) {
-  const { email } = await request.json().catch(() => ({}));
+  const { email, sessionToken } = await request.json().catch(() => ({}));
   if (typeof email !== "string" || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
     return json({ error: "Please enter a valid email address." }, 400, cors);
   }
   if (!env.SUBSCRIBERS) return json({ error: "Rewards aren't set up yet." }, 503, cors);
+  // Points are fine to look up by email, but discount codes only go to the signed-in owner of that email
+  // (anyone can type any email here, so without this a stranger could read someone else's codes)
+  const verified = sessionToken ? await sessionEmail(env, sessionToken) : null;
+  const signedIn = !!verified && verified === email.trim().toLowerCase();
   const threshold = Number(env.LOYALTY_THRESHOLD || 100);
   const now = Math.floor(Date.now() / 1000);
   const raw = await env.SUBSCRIBERS.get(email.trim().toLowerCase());
@@ -581,7 +594,7 @@ async function rewards(request, env, cors) {
   // The original welcome code, so a signed-in shopper sees it on any device, not just the one
   // they joined from (that copy only lives in that browser's localStorage).
   const welcome = saved?.code && saved.expires > now ? { code: saved.code, percent: saved.percent, expires: saved.expires } : null;
-  return json({ points, threshold, toNextReward: threshold - (points % threshold), reward, welcome }, 200, cors);
+  return json({ points, threshold, toNextReward: threshold - (points % threshold), reward: signedIn ? reward : null, welcome: signedIn ? welcome : null, signedIn }, 200, cors);
 }
 
 // Add a sign-up to the Brevo list you send promotions from, with their welcome code as contact attributes
@@ -605,8 +618,15 @@ async function addToEmailList(env, email, w) {
 
 // Emails the new sign-up their welcome code, so they have it outside this browser. Only runs when a code is first
 // made (signing up again shows the saved code and sends nothing). Never blocks or fails a sign-up.
-async function sendWelcomeEmail(env, email, w) {
+async function sendWelcomeEmail(env, email, w) { return sendCodeEmail(env, email, w, "welcome"); }
+
+async function sendCodeEmail(env, email, w, kind) {
   if (!env.BREVO_API_KEY) return false;
+  const loyalty = kind === "loyalty";
+  const heading = loyalty ? `A thank you: ${w.percent}% off your next order` : `${w.percent}% off your first order`;
+  const subject = loyalty ? `Your FLÒ reward: ${w.percent}% off` : `Your FLÒ code: ${w.percent}% off`;
+  const rule = loyalty ? "One use, good until" : "One use, first order only, good until";
+  const after = loyalty ? "Thank you for shopping with us." : "We will email you when the drop opens.";
   const until = new Date(w.expires * 1000).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" });
   const shop = env.SITE_URL || "https://floshops.com";
   const html = `<!doctype html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Your FLÒ code</title></head>
@@ -614,12 +634,12 @@ async function sendWelcomeEmail(env, email, w) {
 <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background-color:#faf8f4;margin:0;padding:32px 16px;"><tr><td align="center">
 <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width:480px;background:#ffffff;border:1px solid #e2ddd4;">
 <tr><td style="padding:32px 32px 8px 32px;text-align:center;font-size:28px;font-style:italic;font-family:Georgia,'Times New Roman',serif;">FLÒ</td></tr>
-<tr><td style="padding:8px 32px 0 32px;text-align:center;"><p style="margin:0;font-size:22px;line-height:1.3;font-family:Georgia,'Times New Roman',serif;">${w.percent}% off your first order</p></td></tr>
+<tr><td style="padding:8px 32px 0 32px;text-align:center;"><p style="margin:0;font-size:22px;line-height:1.3;font-family:Georgia,'Times New Roman',serif;">${heading}</p></td></tr>
 <tr><td style="padding:20px 32px 0 32px;text-align:center;"><div style="display:inline-block;border:1px dashed #6b4f3a;padding:14px 22px;font-size:20px;letter-spacing:.08em;font-weight:600;">${w.code}</div></td></tr>
-<tr><td style="padding:16px 32px 0 32px;text-align:center;"><p style="margin:0;font-size:14px;line-height:1.7;color:#45423d;">Enter it on the payment page at <a href="${shop}" style="color:#6b4f3a;">floshops.com</a>. One use, first order only, good until ${until}. We will email you when the drop opens.</p></td></tr>
+<tr><td style="padding:16px 32px 0 32px;text-align:center;"><p style="margin:0;font-size:14px;line-height:1.7;color:#45423d;">Enter it on the payment page at <a href="${shop}" style="color:#6b4f3a;">floshops.com</a>. ${rule} ${until}. ${after}</p></td></tr>
 <tr><td style="padding:24px 32px 28px 32px;text-align:center;"><p style="margin:0;font-size:11px;line-height:1.7;color:#86817a;">You joined the FLÒ list. Reply to this email and we will take you off it.</p></td></tr>
 </table></td></tr></table></body></html>`;
-  const text = `FLÒ\n\n${w.percent}% off your first order: ${w.code}\n\nEnter it on the payment page at ${shop}. One use, first order only, good until ${until}. We will email you when the drop opens.\n\nYou joined the FLÒ list. Reply to this email and we will take you off it.`;
+  const text = `FLÒ\n\n${heading}: ${w.code}\n\nEnter it on the payment page at ${shop}. ${rule} ${until}. ${after}\n\nYou joined the FLÒ list. Reply to this email and we will take you off it.`;
   try {
     const res = await fetch("https://api.brevo.com/v3/smtp/email", {
       method: "POST",
@@ -628,7 +648,7 @@ async function sendWelcomeEmail(env, email, w) {
         sender: { email: "hello@floshops.com", name: "flò" },
         replyTo: { email: "hello@floshops.com" },
         to: [{ email }],
-        subject: `Your FLÒ code: ${w.percent}% off`,
+        subject,
         htmlContent: html,
         textContent: text
       })
