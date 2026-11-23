@@ -3,7 +3,7 @@ window.FLO_CONFIG = {
   // "prelaunch": shoppers can browse, but instead of Add to bag they get a "notify me" sign-up,
   //              and the bag and checkout are switched off.
   // "live":      Add to bag and checkout are on (connect the checkout worker first, see README).
-  mode: "live",
+  mode: "prelaunch", // opens Dec 11, 2026: change back to "live" that morning
 
   // The checkout worker's base URL. Powers sign-ups, loyalty and the contact form right away,
   // even in prelaunch - only the "live" mode above (and checkoutUrl below) gates actual buying.

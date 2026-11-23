@@ -207,7 +207,7 @@
     if (!el || !catalog) return;
     const free = `Free shipping over ${money(catalog.shipping.freeOver)}`;
     const code = CFG.launch && CFG.launch.code;
-    if (prelaunch) el.innerHTML = `Drop 001 is coming soon<span class="hide-sm"> &nbsp;·&nbsp; ${free}</span>`;
+    if (prelaunch) el.innerHTML = `Drop 001 opens Dec 11<span class="hide-sm"> &nbsp;·&nbsp; ${free}</span>`;
     else if (code) el.innerHTML = `${esc(CFG.launch.offer)} with code ${esc(code)}<span class="hide-sm"> &nbsp;·&nbsp; ${free}</span>`;
     else el.innerHTML = `${free}<span class="hide-sm"> &nbsp;·&nbsp; Every piece made to order</span>`;
   }
@@ -1117,7 +1117,7 @@
       const box = $("#pdp-notify");
       box.innerHTML = notifyMarkup(p.flag
         ? `${esc(p.name)} isn't available to order yet. Follow along to hear when it is.`
-        : `Drop 001 is coming soon. ${esc(p.name)}, ${fromPrice(p).replace("From", "from")}.`);
+        : `Drop 001 opens Dec 11. ${esc(p.name)}, ${fromPrice(p).replace("From", "from")}.`);
       box.hidden = false;
       bindNotify(box);
     }
