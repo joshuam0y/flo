@@ -10,7 +10,7 @@
       "name": "Palm Springs Tee",
       "type": "tee",
       "category": "tees",
-      "price": 24.99,
+      "price": 29.99,
       "badge": "Drop 001",
       "colors": [
         {
@@ -191,10 +191,10 @@
       "whiteBg": true,
       "printify": "6ac24858d101e467a00a3f8b",
       "sizePrices": {
-        "2XL": 36,
-        "3XL": 36,
-        "4XL": 36,
-        "5XL": 36
+        "2XL": 37.99,
+        "3XL": 37.99,
+        "4XL": 37.99,
+        "5XL": 37.99
       },
       "postcard": {
         "place": "Palm Springs",
@@ -419,12 +419,12 @@
       "name": "Tsigrado Beach Tee",
       "type": "tee",
       "category": "tees",
-      "price": 24.99,
+      "price": 29.99,
       "sizePrices": {
-        "2XL": 36,
-        "3XL": 36,
-        "4XL": 36,
-        "5XL": 36
+        "2XL": 37.99,
+        "3XL": 37.99,
+        "4XL": 37.99,
+        "5XL": 37.99
       },
       "badge": "New",
       "colors": [
@@ -621,12 +621,12 @@
       "name": "California Malibu Tee",
       "type": "tee",
       "category": "tees",
-      "price": 24.99,
+      "price": 29.99,
       "sizePrices": {
-        "2XL": 36,
-        "3XL": 36,
-        "4XL": 36,
-        "5XL": 36
+        "2XL": 37.99,
+        "3XL": 37.99,
+        "4XL": 37.99,
+        "5XL": 37.99
       },
       "badge": "New",
       "front": "classic",
@@ -1131,10 +1131,10 @@
       "name": "Aruba Tee",
       "type": "tee",
       "category": "tees",
-      "price": 24.99,
+      "price": 29.99,
       "sizePrices": {
-        "2XL": 36,
-        "3XL": 36
+        "2XL": 37.99,
+        "3XL": 37.99
       },
       "badge": "New",
       "colors": [
@@ -1203,7 +1203,7 @@
       "name": "Apparel Crewneck",
       "type": "crew",
       "category": "crewnecks",
-      "price": 39,
+      "price": 47.99,
       "badge": "Drop 001",
       "colors": [
         {
@@ -1417,10 +1417,10 @@
       "whiteBg": true,
       "printify": "6acbf5c0b378754520066f4a",
       "sizePrices": {
-        "2XL": 49,
-        "3XL": 49,
-        "4XL": 49,
-        "5XL": 49
+        "2XL": 59.99,
+        "3XL": 59.99,
+        "4XL": 59.99,
+        "5XL": 59.99
       }
     },
     {
@@ -1428,7 +1428,7 @@
       "name": "Forward Crewneck",
       "type": "crew",
       "category": "crewnecks",
-      "price": 37,
+      "price": 53.99,
       "badge": "Drop 001",
       "colors": [
         {
@@ -1555,9 +1555,9 @@
       "whiteBg": true,
       "printify": "6ac27f66424802d4ea07a45c",
       "sizePrices": {
-        "2XL": 46,
-        "3XL": 46,
-        "4XL": 46
+        "2XL": 66.99,
+        "3XL": 66.99,
+        "4XL": 66.99
       }
     },
     {
@@ -1565,7 +1565,7 @@
       "name": "Champs Long Sleeve",
       "type": "longsleeve",
       "category": "longsleeves",
-      "price": 28,
+      "price": 33.99,
       "badge": "Drop 001",
       "colors": [
         {
@@ -1766,10 +1766,10 @@
       "whiteBg": true,
       "printify": "6acbff615a6821eb4003d559",
       "sizePrices": {
-        "2XL": 33,
-        "3XL": 33,
-        "4XL": 33,
-        "5XL": 33
+        "2XL": 41.99,
+        "3XL": 41.99,
+        "4XL": 41.99,
+        "5XL": 41.99
       }
     },
     {
@@ -1777,7 +1777,7 @@
       "name": "Champs Sweatpant",
       "type": "pant",
       "category": "bottoms",
-      "price": 55,
+      "price": 73.99,
       "badge": "Drop 001",
       "colors": [
         {
@@ -1854,7 +1854,7 @@
       "whiteBg": true,
       "printify": "6acc463ed111f9cb2b087aa0",
       "sizePrices": {
-        "2XL": 60
+        "2XL": 82.99
       }
     },
     {
