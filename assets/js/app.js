@@ -107,6 +107,7 @@
       html += `<p class="account__code"><b>${esc(data.reward.code)}</b> <button class="label link-u" data-copy="${esc(data.reward.code)}">Copy</button></p>
         <p class="account__fine">${data.reward.percent}% off, one use, until ${shortDate(data.reward.expires)}.</p>`;
     }
+    if (!data.reward && !data.signedIn) html += `<p class="account__fine">Reward codes are emailed to you when you earn them, and show here once you sign in.</p>`;
     return html;
   }
 
@@ -145,7 +146,7 @@
       const res = await fetch(rewardsEndpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email })
+        body: JSON.stringify({ email, sessionToken: getSession()?.sessionToken })
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(data.error || "Something went wrong. Please try again.");
