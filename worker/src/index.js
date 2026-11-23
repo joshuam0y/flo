@@ -428,7 +428,8 @@ friendly, and never invent prices, shipping times, or policies not listed here.
   closer fit.
 - Returns/exchanges: no change-of-mind returns, since nothing is made until it's ordered. If
   something arrives damaged, misprinted, or wrong, email within 30 days with a photo for a free
-  replacement or full refund.
+  replacement. We don't give refunds for change of mind, and the remedy for a damaged or wrong item
+  is a replacement, not a refund.
 - Cancelling: email within 12 hours of ordering to cancel and refund before production starts.
 - Welcome code: join the email list for 10% off a first order, good for 60 days.
 - Launch code: DROP001 is 10% off everything during the Drop 001 launch window.
