@@ -1123,7 +1123,8 @@
         "colour": "Navy",
         "tint": "#d3ebec",
         "note": "The water really is that colour, every single day. Back when the tan fades, not before."
-      }
+      },
+      "hidden": true
     },
     {
       "id": "aruba-tee",
