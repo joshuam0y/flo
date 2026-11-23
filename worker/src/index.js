@@ -340,7 +340,8 @@ async function subscribe(request, env, cors) {
     await env.SUBSCRIBERS.put(key, JSON.stringify({ joined: saved?.joined || new Date().toISOString(), code, percent, expires }));
   }
   await addToEmailList(env, key, { code, percent, expires });
-  return json({ ok: true, code, percent, expires }, 200, cors);
+  const emailed = await sendWelcomeEmail(env, key, { code, percent, expires });
+  return json({ ok: true, code, percent, expires, emailed }, 200, cors);
 }
 
 /* ---------- Contact form ---------- */
@@ -599,6 +600,44 @@ async function addToEmailList(env, email, w) {
     if (!res.ok) console.error("Brevo", res.status, await res.text());
   } catch (err) {
     console.error("Brevo", err);
+  }
+}
+
+// Emails the new sign-up their welcome code, so they have it outside this browser. Only runs when a code is first
+// made (signing up again shows the saved code and sends nothing). Never blocks or fails a sign-up.
+async function sendWelcomeEmail(env, email, w) {
+  if (!env.BREVO_API_KEY) return false;
+  const until = new Date(w.expires * 1000).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" });
+  const shop = env.SITE_URL || "https://floshops.com";
+  const html = `<!doctype html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Your FLÒ code</title></head>
+<body style="margin:0;padding:0;background-color:#faf8f4;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;color:#161513;">
+<table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background-color:#faf8f4;margin:0;padding:32px 16px;"><tr><td align="center">
+<table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width:480px;background:#ffffff;border:1px solid #e2ddd4;">
+<tr><td style="padding:32px 32px 8px 32px;text-align:center;font-size:28px;font-style:italic;font-family:Georgia,'Times New Roman',serif;">FLÒ</td></tr>
+<tr><td style="padding:8px 32px 0 32px;text-align:center;"><p style="margin:0;font-size:22px;line-height:1.3;font-family:Georgia,'Times New Roman',serif;">${w.percent}% off your first order</p></td></tr>
+<tr><td style="padding:20px 32px 0 32px;text-align:center;"><div style="display:inline-block;border:1px dashed #6b4f3a;padding:14px 22px;font-size:20px;letter-spacing:.08em;font-weight:600;">${w.code}</div></td></tr>
+<tr><td style="padding:16px 32px 0 32px;text-align:center;"><p style="margin:0;font-size:14px;line-height:1.7;color:#45423d;">Enter it on the payment page at <a href="${shop}" style="color:#6b4f3a;">floshops.com</a>. One use, first order only, good until ${until}. We will email you when the drop opens.</p></td></tr>
+<tr><td style="padding:24px 32px 28px 32px;text-align:center;"><p style="margin:0;font-size:11px;line-height:1.7;color:#86817a;">You joined the FLÒ list. Reply to this email and we will take you off it.</p></td></tr>
+</table></td></tr></table></body></html>`;
+  const text = `FLÒ\n\n${w.percent}% off your first order: ${w.code}\n\nEnter it on the payment page at ${shop}. One use, first order only, good until ${until}. We will email you when the drop opens.\n\nYou joined the FLÒ list. Reply to this email and we will take you off it.`;
+  try {
+    const res = await fetch("https://api.brevo.com/v3/smtp/email", {
+      method: "POST",
+      headers: { "api-key": env.BREVO_API_KEY, "Content-Type": "application/json", accept: "application/json" },
+      body: JSON.stringify({
+        sender: { email: "hello@floshops.com", name: "flò" },
+        replyTo: { email: "hello@floshops.com" },
+        to: [{ email }],
+        subject: `Your FLÒ code: ${w.percent}% off`,
+        htmlContent: html,
+        textContent: text
+      })
+    });
+    if (!res.ok) { console.error("Brevo welcome email", res.status, await res.text()); return false; }
+    return true;
+  } catch (err) {
+    console.error("Brevo welcome email", err);
+    return false;
   }
 }
 
